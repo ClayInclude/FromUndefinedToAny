@@ -1,0 +1,81 @@
+% package CLAYNOTE
+% @author Clay
+% @date 2019.03.11
+% @version v0.1.0
+\ProvidesPackage{claynote}[2019/03/11 v0.1]
+
+% require package
+\RequirePackage{geometry}
+\RequirePackage{multitoc}
+\RequirePackage{import}
+\RequirePackage{hyperref}
+\RequirePackage{metalogo}
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{environ}
+\RequirePackage{color}
+\RequirePackage{amsmath}
+\RequirePackage{bm}
+\RequirePackage{ntheorem}
+\RequirePackage{array}
+\RequirePackage{xparse}
+\RequirePackage{mhchem}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{tabularx}
+\RequirePackage{diagbox}
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+\RequirePackage{enumerate}
+
+% package settings
+% geometry settings
+\geometry{a4paper, centering, scale = 0.8}
+
+% hyperref settings
+\definecolor{deepblue}{RGB}{20, 66, 137}
+
+\hypersetup%
+{%
+    bookmarksnumbered = true,%
+    colorlinks = true,%
+    linkcolor = deepblue,%
+    citecolor = black%
+}
+
+% listings settings
+\lstset%
+{%
+    basicstyle = \ttfamily,%
+    keywordstyle = \color{green}\bfseries,%
+    commentstyle = \color{blue}\rmfamily\itshape,%
+    stringstyle = \color{red},%
+    numbers = right,%
+    rulesepcolor=\color{red!20!green!20!blue!20},%
+    breaklines=true%
+}
+
+% indentfirst settings
+\setlength{\parindent}{2em}
+
+% content settings
+\setboolean{@multitoc@toc}{true}
+\setboolean{@multitoc@lot}{true}
+\setboolean{@multitoc@lof}{true}
+
+\ctexset%
+{%
+    chapter =%
+    {%
+        name = \S%
+    }%
+}
+
+% tabularx
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{Z}{>{\raggedleft\arraybackslash}X}
+
+\endinput
