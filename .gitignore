@@ -8,3 +8,6 @@
 *.toc
 
 .vscode/ipch
+
+*.exe
+*.out
