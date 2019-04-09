@@ -18,7 +18,7 @@ int main(void)
     f2 = i2 / 100.0;
     printf("%i divided by 100.0 produces %f\n", i2, f2);
 
-    f2 = (float) i2 / 100;
+    f2 = (float)i2 / 100;
     printf("(float) %i diveded by 100 produces %f\n", i2, f2);
 
     return 0;

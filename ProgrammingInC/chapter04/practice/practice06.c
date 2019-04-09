@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include <math.h>
+#include <stdarg.h>
+#include <stdio.h>
 
 double polynomial(double x, int max, ...);
 
@@ -31,7 +31,7 @@ double power(double x, int y)
     {
         return x * power(x, y - 1);
     }
-    
+
     return 0;
 }
 
@@ -45,7 +45,7 @@ double polynomial(double x, int max, ...)
 {
     double sum = 0;
 
-    va_list args;
+    va_list args = NULL;
     va_start(args, max);
 
     for (int i = 0; i <= max; ++i)

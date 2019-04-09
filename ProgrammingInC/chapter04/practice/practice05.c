@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    char c, d;
+    char c = 0, d = 0;
 
     c = 'd';
     d = c;
