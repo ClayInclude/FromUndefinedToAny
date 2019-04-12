@@ -9,7 +9,7 @@ int main(void)
     printf("Type in your number: ");
     scanf_s("%i", &number);
 
-    printf("The absolute value is %i\n", number);
+    printf("The absolute value is %i\n", abs(number));
 
     return 0;
 }
