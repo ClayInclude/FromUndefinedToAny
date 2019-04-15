@@ -10,6 +10,8 @@ int main(void)
     printf("%lf\n", squareRoot(2));
     printf("%lf\n", squareRoot(4));
     printf("%lf\n", squareRoot(100));
+
+    return 0;
 }
 
 double absolute(double n)

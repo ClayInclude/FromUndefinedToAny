@@ -10,6 +10,8 @@ int main(void)
     printf("%-10i%-10i\n", 7, getTotal(7));
     printf("%-10i%-10i\n", 15, getTotal(15));
     printf("%-10i%-10i\n", -15, getTotal(-15));
+
+    return 0;
 }
 
 int getTotal(int n)

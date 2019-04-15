@@ -8,6 +8,8 @@ int main(void)
     nextMultiple(365, 7);
     nextMultiple(12258, 23);
     nextMultiple(996, 4);
+
+    return 0;
 }
 
 void nextMultiple(int i, int j)

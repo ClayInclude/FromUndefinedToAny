@@ -7,8 +7,10 @@ int main(void)
 {
     int n = 0;
 
-    print(scanInt(&n));
-
+    for (int i = 0; i < 5; ++i)
+    {
+        print(scanInt(&n));
+    }
     return 0;
 }
 
@@ -19,11 +21,22 @@ int scanInt(int *n)
     return *n;
 }
 
+int calculateTriangularNumber(int n)
+{
+    int triangularNumber = 0;
+
+    for (int i = 1; i <= n; ++i)
+    {
+        triangularNumber += i;
+    }
+
+    return triangularNumber;
+}
+
 void print(int n)
 {
     char *rank[4] = {"st", "nd", "rd", "th"};
     int index = 0;
-    int sum = 0;
 
     if (n > 4)
     {
@@ -38,12 +51,7 @@ void print(int n)
         return;
     }
 
-    for (int i = 1; i <= n; ++i)
-    {
-        sum += i;
-    }
-
-    printf("The %i%s triangular number is %i\n", n, rank[index], sum);
+    printf("The %i%s triangular number is %i\n", n, rank[index], calculateTriangularNumber(n));
 
     return;
 }

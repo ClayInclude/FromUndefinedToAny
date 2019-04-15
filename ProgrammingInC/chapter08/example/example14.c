@@ -1,62 +1,72 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-void convert(int n, int base, char *result);
+void getNumberAndBase(void);
+void convert(void);
+void displayConvertedNumber(void);
 
 int main(void)
 {
-    char result[64] = {0};
-
-    convert(10, 2, result);
-    convert(10, 8, result);
-    convert(10, 16, result);
-    convert(100, 2, result);
-    convert(10, 8, result);
-    convert(10, 16, result);
-    convert(128362, 16, result);
+    getNumberAndBase();
+    convert();
+    displayConvertedNumber();
 
     return 0;
 }
 
 char const baseDigital[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
-void clear(char *array, int length)
+char result[64] = {0};
+int number = 0;
+int base = 0;
+
+void clear()
 {
-    for (int i = 0; i < length; ++i)
+    for (int i = 0; i < 64; ++i)
     {
-        array[i] = '\0';
+        result[i] = '\0';
     }
 }
 
-void convert(int n, int base, char *result)
+void getNumberAndBase(void)
 {
-    bool flag = true;
-    int number = n;
-    int remain = 0;
-    int index = 0;
-    char temp[64] = {'\0'};
-    int i = 0;
+    printf("Number to be converted?\n");
+    scanf_s("%i", &number);
+
+    printf("Base?\n");
+    scanf_s("%i", &base);
 
     if (base <= 1 || base > 16)
     {
         printf("Illegal base!");
 
-        return;
+        base = 10;
     }
 
-    if (n < 0)
+    return;
+}
+
+void convert()
+{
+    bool flag = true;
+    int remain = 0;
+    int index = 0;
+    char temp[64] = {'\0'};
+    int i = 0;
+
+    if (number < 0)
     {
-        n = -n;
+        number = -number;
         flag = false;
     }
-    else if (n == 0)
+    else if (number == 0)
     {
         printf("0\n");
 
         return;
     }
 
-    clear(result, 64);
+    clear();
 
     for (; number && index < 63; ++index)
     {
@@ -77,6 +87,11 @@ void convert(int n, int base, char *result)
 
     result[i] = '\0';
 
+    return;
+}
+
+void displayConvertedNumber(void)
+{
     printf("%s\n", result);
 
     return;

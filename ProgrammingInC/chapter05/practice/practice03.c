@@ -10,6 +10,8 @@ int main(void)
     {
         triangularNumber(i);
     }
+
+    return 0;
 }
 
 int triangularNumber(int n)

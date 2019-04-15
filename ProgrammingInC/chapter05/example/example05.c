@@ -11,6 +11,7 @@ int main(void)
     {
         print(scanInt(&n));
     }
+    return 0;
 }
 
 int scanInt(int *n)

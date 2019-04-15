@@ -10,6 +10,8 @@ int main(void)
     reverse(13579);
     reverse(-0);
     reverse(-13579);
+
+    return 0;
 }
 
 void _reverse(int n)

@@ -48,6 +48,8 @@ int main(void)
 
         printf("%f\n", answer);
     }
+
+    return 0;
 }
 
 void add(double n)

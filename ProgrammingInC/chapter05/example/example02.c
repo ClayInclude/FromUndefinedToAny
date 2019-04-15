@@ -10,6 +10,8 @@ int main(void)
     print(4);
     print(5);
     print(200);
+
+    return 0;
 }
 
 void print(int n)

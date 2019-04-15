@@ -6,6 +6,8 @@ int main(void)
 {
     print(100, 0);
     print(200, 10);
+
+    return 0;
 }
 
 int getIndex(int n)

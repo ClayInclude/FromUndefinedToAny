@@ -10,6 +10,8 @@ int main(void)
     {
         printf("%-10i%-10i\n", i, factorial(i));
     }
+
+    return 0;
 }
 
 int factorial(int n)

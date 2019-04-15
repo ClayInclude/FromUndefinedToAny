@@ -10,6 +10,8 @@ int main(void)
     printf("%zu", sizeof("number"));
 
     translate(number);
+
+    return 0;
 }
 
 void translate(char const *number)
