@@ -8,6 +8,7 @@
 *.toc
 
 .vscode/ipch
+.vscode/tasks.json
 
 *.exe
 *.out
