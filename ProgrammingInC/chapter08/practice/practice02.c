@@ -16,7 +16,7 @@ int main(void)
 
 int scanInt(int *n)
 {
-    scanf_s("%d", n);
+    scanf("%d", n);
 
     return *n;
 }
@@ -52,6 +52,4 @@ void print(int n)
     }
 
     printf("The %i%s triangular number is %i\n", n, rank[index], calculateTriangularNumber(n));
-
-    return;
 }

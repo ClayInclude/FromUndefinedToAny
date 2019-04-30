@@ -32,7 +32,6 @@ void convert(int n, int base, char *result)
 {
     bool flag = true;
     int number = n;
-    int remain = 0;
     int index = 0;
     char temp[64] = {'\0'};
     int i = 0;
@@ -46,7 +45,6 @@ void convert(int n, int base, char *result)
 
     if (n < 0)
     {
-        n = -n;
         flag = false;
     }
     else if (n == 0)
@@ -78,6 +76,4 @@ void convert(int n, int base, char *result)
     result[i] = '\0';
 
     printf("%s\n", result);
-
-    return;
 }

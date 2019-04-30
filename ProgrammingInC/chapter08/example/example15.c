@@ -17,10 +17,8 @@ void autoStatic(void)
     auto int autoVar = 1;
     static int staticVar = 1;
 
-    printf("autoVar = %i, staticVar = %i\n", autoVar, staticVar);
-
     ++autoVar;
     ++staticVar;
 
-    return;
+    printf("autoVar = %i, staticVar = %i\n", autoVar, staticVar);
 }

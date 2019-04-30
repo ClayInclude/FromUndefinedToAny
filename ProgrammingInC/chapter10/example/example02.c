@@ -3,7 +3,6 @@
 
 typedef struct __String
 {
-    struct __String *self;
     char _string[120];
 
     int (*length)(struct __String *self);
@@ -29,7 +28,7 @@ int String_length(String *self)
 String __String_new(char const *str)
 {
     int index = 0;
-    String s = {&s, {0}, &String_length};
+    String s = {{0}, &String_length};
 
     while (true)
     {
@@ -46,6 +45,7 @@ String __String_new(char const *str)
 
     return s;
 }
+
 struct
 {
     String (*new)(char const *str);

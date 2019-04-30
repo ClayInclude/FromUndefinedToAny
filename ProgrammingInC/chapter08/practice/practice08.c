@@ -25,8 +25,6 @@ void quadratic(double a, double b, double c)
 {
     x1 = (-b + sqrt(delta)) / (2 * a);
     x2 = (-b - sqrt(delta)) / (2 * a);
-
-    return;
 }
 
 void linear(double b, double c)
@@ -39,8 +37,6 @@ void linear(double b, double c)
     }
 
     x1 = x2 = -c / b;
-
-    return;
 }
 
 void equation(double a, double b, double c)
@@ -66,6 +62,4 @@ void equation(double a, double b, double c)
             return;
         }
     }
-
-    return;
 }

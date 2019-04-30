@@ -22,14 +22,17 @@ void updateSec(dateAndTime *t);
 
 int main(void)
 {
-    dateAndTime dt = {{0, 0, 0}, {0, 0, 0}};
+    dateAndTime dt = {{0, 0, 0},
+                      {0, 0, 0}};
 
     printf("Enter your Time(yyyy mm dd hh:mm:ss\n");
-    scanf_s("%i%i%i%i:%i:%i", &dt.date.year, &dt.date.month, &dt.date.day, &dt.time.hour, &dt.time.minute, &dt.time.second);
+    scanf("%i%i%i%i:%i:%i", &dt.date.year, &dt.date.month, &dt.date.day, &dt.time.hour, &dt.time.minute,
+          &dt.time.second);
 
     updateSec(&dt);
 
-    printf("Next second is :%i/%i/%i/ %.2i:%.2i:%.2i\n", dt.date.year, dt.date.month, dt.date.day, dt.time.hour, dt.time.minute, dt.time.second);
+    printf("Next second is :%i/%i/%i/ %.2i:%.2i:%.2i\n", dt.date.year, dt.date.month, dt.date.day, dt.time.hour,
+           dt.time.minute, dt.time.second);
 
     return 0;
 }

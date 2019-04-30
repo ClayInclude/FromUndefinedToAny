@@ -1,8 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define newTime(_year, _month, _day) \
-    (time) { .year = _year, .month = _month, .day = _day }
+#define newTime(_year, _month, _day) (time) { .year = _year, .month = _month, .day = _day }
 
 typedef struct
 {

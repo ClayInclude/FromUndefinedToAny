@@ -7,7 +7,7 @@ int main(void)
     double number = 0;
 
     printf("Type in your number: ");
-    scanf_s("%lf", &number);
+    scanf("%lf", &number);
 
     printf("The absolute value is %lf\n", absolute(number));
 

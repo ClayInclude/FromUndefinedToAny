@@ -8,7 +8,7 @@ int main(void)
     int number = 0;
 
     printf("Please type in a number:\n");
-    scanf_s("%i", &number);
+    scanf("%i", &number);
 
     printf("Sign = %i\n", getSign(number));
 

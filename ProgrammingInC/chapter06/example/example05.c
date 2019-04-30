@@ -8,7 +8,7 @@ int main(void)
     int year = 0;
 
     printf("Enter the year to be tested:\n");
-    scanf_s("%i", &year);
+    scanf("%i", &year);
 
     if (isLeapYear(year))
     {

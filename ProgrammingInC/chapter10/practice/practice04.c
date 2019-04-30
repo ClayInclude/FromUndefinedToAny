@@ -35,6 +35,4 @@ void substr(char const *source, char *sub, int index, int num)
     sub[i] = '\0';
 
     printf("%s's substring from %i to %i is %s\n", source, _i, _i + i - 1, sub);
-
-    return;
 }

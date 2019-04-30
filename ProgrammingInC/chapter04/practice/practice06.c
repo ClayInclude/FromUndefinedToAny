@@ -31,8 +31,6 @@ double power(double x, int y)
     {
         return x * power(x, y - 1);
     }
-
-    return 0;
 }
 
 /**

@@ -24,6 +24,4 @@ void multiplyBy2(float *array, int n)
     {
         array[i] *= 2;
     }
-
-    return;
 }

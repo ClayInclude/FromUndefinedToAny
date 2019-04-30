@@ -39,6 +39,4 @@ void print(int n)
     }
 
     printf("The %i%s triangular number is %i\n", n, rank[index], sum);
-
-    return;
 }

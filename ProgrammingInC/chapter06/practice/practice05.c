@@ -30,8 +30,6 @@ void _reverse(int n)
     {
         _reverse(n);
     }
-
-    return;
 }
 
 void reverse(int n)
@@ -52,6 +50,4 @@ void reverse(int n)
     }
 
     printf("\n");
-
-    return;
 }

@@ -19,7 +19,7 @@ int main(void)
 
     while (!isEnd)
     {
-        scanf_s("%lf %c", &number, &op, 1);
+        scanf("%lf %c", &number, &op);
 
         switch (op)
         {

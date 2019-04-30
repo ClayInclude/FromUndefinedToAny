@@ -4,9 +4,9 @@ void translate(char const *number);
 
 int main(void)
 {
-    char const number[12] = {0};
+    char number[12] = {0};
 
-    scanf_s("%s", number, 12);
+    scanf("%11s", number);
     printf("%zu", sizeof("number"));
 
     translate(number);
@@ -17,16 +17,18 @@ int main(void)
 void translate(char const *number)
 {
     char const *const en[10] =
-        {"zero",
-         "one",
-         "two",
-         "three",
-         "four",
-         "five",
-         "six",
-         "seven",
-         "eight",
-         "nine"};
+        {
+            "zero",
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine"
+        };
 
     char const *p = number;
 
@@ -36,6 +38,4 @@ void translate(char const *number)
     }
 
     printf("\n");
-
-    return;
 }

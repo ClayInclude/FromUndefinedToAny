@@ -7,7 +7,7 @@ int main(void)
     int numFibs = 0;
 
     printf("How many Fibonacci numbers do you want?\n");
-    scanf_s("%i", &numFibs);
+    scanf("%i", &numFibs);
 
     int cache[numFibs + 1];
 

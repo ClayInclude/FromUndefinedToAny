@@ -17,7 +17,7 @@ int main(void)
     struct time next = {0, 0, 0};
 
     printf("Enter today's date (yyyy mm dd)\n");
-    scanf_s("%i%i%i", &next.year, &next.month, &next.day);
+    scanf("%i%i%i", &next.year, &next.month, &next.day);
 
     if (next.year < 1)
     {
@@ -35,7 +35,9 @@ int main(void)
     int monthDay = months[next.month - 1];
 
     if (isLeapYear(next.year) && next.month == 2)
+    {
         ++monthDay;
+    }
 
     if (next.day > monthDay || next.day < 1)
     {

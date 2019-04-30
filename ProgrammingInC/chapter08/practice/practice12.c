@@ -6,7 +6,12 @@ void displayMatrix_4(double (*matrix)[4]);
 
 int main(void)
 {
-    double source[4][5] = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}};
+    double source[4][5] =
+        {{1,  2,  3,  4,  5},
+         {6,  7,  8,  9,  10},
+         {11, 12, 13, 14, 15},
+         {16, 17, 18, 19, 20}
+        };
     double destination[5][4] = {0};
 
     transposeMatrix(source, destination);
@@ -28,8 +33,6 @@ void displayMatrix_5(double (*matrix)[5])
 
         printf("\n");
     }
-
-    return;
 }
 
 void displayMatrix_4(double (*matrix)[4])
@@ -43,8 +46,6 @@ void displayMatrix_4(double (*matrix)[4])
 
         printf("\n");
     }
-
-    return;
 }
 
 void transposeMatrix(double (*source)[5], double (*destination)[4])
@@ -56,6 +57,4 @@ void transposeMatrix(double (*source)[5], double (*destination)[4])
             (*(destination + j))[i] = (*(source + i))[j];
         }
     }
-
-    return;
 }

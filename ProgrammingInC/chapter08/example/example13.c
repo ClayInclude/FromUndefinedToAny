@@ -9,7 +9,8 @@ int main(void)
         {
             [0] = {1, 2, 3, 4, 5},
             {12, 10, 52, 0, 7},
-            {[2] = 2}};
+            {[2] = 2}
+        };
 
     scalarMultiply(matrix, 3);
     displayMatrix(matrix);
@@ -26,8 +27,6 @@ void scalarMultiply(int (*matrix)[5], int scalar)
             matrix[row][column] *= scalar;
         }
     }
-
-    return;
 }
 
 void displayMatrix(int (*matrix)[5])
@@ -41,6 +40,4 @@ void displayMatrix(int (*matrix)[5])
 
         printf("\n");
     }
-
-    return;
 }

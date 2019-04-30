@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-double arraySum(double *array, int len);
+double arraySum(double const *array, int len);
 
 int main(void)
 {
@@ -11,7 +11,7 @@ int main(void)
     return 0;
 }
 
-double arraySum(double *array, int len)
+double arraySum(double const *array, int len)
 {
     double sum = 0;
 

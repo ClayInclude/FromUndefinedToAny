@@ -14,7 +14,7 @@ int main(void)
     struct time now = {0, 0, 0};
 
     printf("Enter the time (hh:mm:ss)\n");
-    scanf_s("%i:%i:%i", &now.hour, &now.minute, &now.seconds);
+    scanf("%i:%i:%i", &now.hour, &now.minute, &now.seconds);
 
     if (now.hour > 23 || now.hour < 1 || now.minute > 59 || now.minute < 1 || now.seconds > 59 || now.seconds < 1)
     {

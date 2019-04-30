@@ -31,7 +31,7 @@ time toStruct(int second)
     int minute = second % 60;
     int hour = second / 60;
 
-    return (time){.hour = hour, .minute = minute, .second = sec};
+    return (time) {.hour = hour, .minute = minute, .second = sec};
 }
 
 int toSecond(time const *t)

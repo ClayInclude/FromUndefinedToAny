@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int minimum(int *array, int n);
+int minimum(int const *array, int n);
 
 int main(void)
 {
@@ -13,7 +13,7 @@ int main(void)
     return 0;
 }
 
-int minimum(int *array, int n)
+int minimum(int const *array, int n)
 {
     int min = *array;
     for (int i = 1; i < n; ++i)

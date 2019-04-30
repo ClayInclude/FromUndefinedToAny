@@ -8,18 +8,20 @@ int main(void)
 
     printf("Entering grades: \n");
 
-    while (scanf_s("%i", &grade) && grade != EOF)
+    while (scanf("%i", &grade) && grade != EOF)
     {
         ++numberOfGrade;
         gradeTotal += grade;
 
         if (grade < 60)
+        {
             ++failureCount;
+        }
 
         getchar();
     }
 
-    printf("Grade average = %.2f\n", (float)gradeTotal / numberOfGrade);
+    printf("Grade average = %.2f\n", (float) gradeTotal / numberOfGrade);
     printf("Number of failures = %i\n", failureCount);
 
     return 0;

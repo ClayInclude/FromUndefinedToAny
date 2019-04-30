@@ -10,7 +10,7 @@ int main(void)
 
     for (int p = 5; !cache[49]; p += 2)
     {
-        int limit = sqrt(p);
+        int limit = (int) sqrt(p);
 
         flag = true;
 

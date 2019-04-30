@@ -15,15 +15,15 @@ int main(void)
     date from = {0, 0, 0}, to = {0, 0, 0};
 
     printf("Enter two days:\n");
-    scanf_s("%i%i%i", &from.year, &from.month, &from.day);
-    scanf_s("%i%i%i", &to.year, &to.month, &to.day);
+    scanf("%i%i%i", &from.year, &from.month, &from.day);
+    scanf("%i%i%i", &to.year, &to.month, &to.day);
 
     printf("DiffDays is %i.\n", diffDays(&from, &to));
 
     return 0;
 }
 
-int _f(date const* d)
+int _f(date const *d)
 {
     if (d->month <= 2)
     {
@@ -35,7 +35,7 @@ int _f(date const* d)
     }
 }
 
-int _g(date const* d)
+int _g(date const *d)
 {
     if (d->month <= 2)
     {
@@ -47,12 +47,12 @@ int _g(date const* d)
     }
 }
 
-int _n(date const* d)
+int _n(date const *d)
 {
     return 1461 * _f(d) / 4 + 153 * _g(d) / 5 + d->day;
 }
 
-int diffDays(date const* from, date const* to)
+int diffDays(date const *from, date const *to)
 {
     return abs(_n(from) - _n(to));
 }

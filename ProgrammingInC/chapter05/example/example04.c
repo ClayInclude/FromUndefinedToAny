@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int scanInt(int *n);
 void print(int n);
@@ -14,7 +15,7 @@ int main(void)
 
 int scanInt(int *n)
 {
-    scanf_s("%d", n);
+    scanf("%d", n);
 
     return *n;
 }
@@ -44,6 +45,4 @@ void print(int n)
     }
 
     printf("The %i%s triangular number is %i\n", n, rank[index], sum);
-
-    return;
 }

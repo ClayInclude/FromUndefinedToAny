@@ -21,6 +21,4 @@ void calculateTriangularNumber(int n)
     }
 
     printf("Triangular number %i is %i\n", n, triangularNumber);
-
-    return;
 }

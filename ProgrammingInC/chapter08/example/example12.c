@@ -24,8 +24,6 @@ void swap(int *x, int *y)
 
     *x = *y;
     *y = temp;
-
-    return;
 }
 
 int partition(int *array, int low, int high)

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int minimum(int *array);
+int minimum(int const *array);
 
 int main(void)
 {
@@ -10,7 +10,7 @@ int main(void)
 
     for (int i = 0; i < 10; ++i)
     {
-        scanf_s("%i", &score[i]);
+        scanf("%i", &score[i]);
     }
 
     printf("Minimum score is %i\n", minimum(score));
@@ -18,7 +18,7 @@ int main(void)
     return 0;
 }
 
-int minimum(int *array)
+int minimum(int const *array)
 {
     int min = *array;
     for (int i = 1; i < 10; ++i)

@@ -15,7 +15,7 @@ int main(void)
     date now = {0, 0, 0};
 
     printf("Enter a day:\n");
-    scanf_s("%i%i%i", &now.year, &now.month, &now.day);
+    scanf("%i%i%i", &now.year, &now.month, &now.day);
 
     printf("Day is %s.\n", diffDays(&now));
 

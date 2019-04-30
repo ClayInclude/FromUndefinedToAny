@@ -15,6 +15,4 @@ int main(void)
 void nextMultiple(int i, int j)
 {
     printf("%10d%10d     %-10d\n", i, j, i + j - i % j);
-
-    return;
 }

@@ -5,7 +5,7 @@ int main(void)
     double x = 0, y = 0;
 
     printf("Enter two numbers: \n");
-    scanf_s("%d %d", &x, &y);
+    scanf("%lf %lf", &x, &y);
 
     if (y)
     {

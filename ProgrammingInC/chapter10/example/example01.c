@@ -33,6 +33,4 @@ void concat(char *source, char const *str)
     }
 
     source[index] = '\0';
-
-    return;
 }

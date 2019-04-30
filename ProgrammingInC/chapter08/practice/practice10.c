@@ -14,7 +14,7 @@ int main(void)
 
 bool prime(int n)
 {
-    int limit = sqrt(n);
+    int limit = (int) sqrt(n);
 
     for (int i = 3; i <= limit; i += 2)
     {

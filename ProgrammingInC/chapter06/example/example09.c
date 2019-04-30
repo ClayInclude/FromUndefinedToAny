@@ -6,7 +6,7 @@ int main(void)
     char op = 0;
 
     printf("Type in your expression.\n");
-    scanf_s("%f %c %f", &value1, &op, 1, &value2);
+    scanf("%f %c %f", &value1, &op, &value2); // NOLINT(cert-err34-c)
 
     switch (op)
     {
@@ -32,7 +32,7 @@ int main(void)
                 result = value1 / value2;
             }
         }
-        break;
+            break;
         default:
             printf("Unkown operator.\n");
 

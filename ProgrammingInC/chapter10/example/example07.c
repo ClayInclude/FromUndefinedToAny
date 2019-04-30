@@ -40,6 +40,4 @@ void countWords(char const *str)
     }
 
     printf("%s    word -- %i", str, words);
-
-    return;
 }

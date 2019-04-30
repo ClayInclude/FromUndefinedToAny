@@ -28,6 +28,4 @@ void concat(char *result, char const *str1, char const *str2)
     }
 
     result[index] = '\0';
-
-    return;
 }

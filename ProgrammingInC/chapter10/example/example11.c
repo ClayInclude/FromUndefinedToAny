@@ -27,5 +27,4 @@ void strToInt(char const *str)
     }
 
     printf("\n");
-    return;
 }

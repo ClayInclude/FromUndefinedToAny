@@ -6,7 +6,7 @@ int main(void)
 
     printf("Enter your responses: (enter 999 to exit)\n");
 
-    while (scanf_s("%i", &response) && response != 999)
+    while (scanf("%i", &response) && response != 999)
     {
         if (response < 1 || response > 10)
         {

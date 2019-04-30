@@ -9,7 +9,7 @@ int main(void)
     char c;
 
     printf("Enter a single character:\n");
-    scanf_s("%c", &c);
+    scanf("%c", &c);
 
     if (isAlpha(c))
     {

@@ -31,10 +31,10 @@ void clear()
 void getNumberAndBase(void)
 {
     printf("Number to be converted?\n");
-    scanf_s("%i", &number);
+    scanf("%i", &number);
 
     printf("Base?\n");
-    scanf_s("%i", &base);
+    scanf("%i", &base);
 
     if (base <= 1 || base > 16)
     {
@@ -42,14 +42,11 @@ void getNumberAndBase(void)
 
         base = 10;
     }
-
-    return;
 }
 
 void convert()
 {
     bool flag = true;
-    int remain = 0;
     int index = 0;
     char temp[64] = {'\0'};
     int i = 0;
@@ -86,13 +83,9 @@ void convert()
     }
 
     result[i] = '\0';
-
-    return;
 }
 
 void displayConvertedNumber(void)
 {
     printf("%s\n", result);
-
-    return;
 }

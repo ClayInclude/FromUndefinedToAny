@@ -80,6 +80,4 @@ void readLine(char *line)
     } while (true);
 
     line[++index] = '\0';
-
-    return;
 }

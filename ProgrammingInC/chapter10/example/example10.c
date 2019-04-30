@@ -20,15 +20,15 @@ typedef struct
 entry const dictionary[] =
     {
         {"aardvark", "a burrowing African mammal"},
-        {"abyss", "a bottomless pit"},
-        {"acumen", "mentally sharp; keen"},
-        {"addle", "to become confused"},
-        {"aerie", "a high nest"},
-        {"affix", "to append; attach"},
-        {"agar", "a jelly made from seaweed"},
-        {"ahoy", "a nautical call of greeting"},
+        {"abyss",    "a bottomless pit"},
+        {"acumen",   "mentally sharp; keen"},
+        {"addle",    "to become confused"},
+        {"aerie",    "a high nest"},
+        {"affix",    "to append; attach"},
+        {"agar",     "a jelly made from seaweed"},
+        {"ahoy",     "a nautical call of greeting"},
         {"aigrette", "an ornamental cluster of feathers"},
-        {"ajar", "partially opened"}};
+        {"ajar",     "partially opened"}};
 
 int compareStrings(char const *str1, char const *str2)
 {
@@ -74,6 +74,4 @@ void lookup(char const *key)
             high = mid;
         }
     }
-
-    return;
 }

@@ -62,14 +62,11 @@ void getNumberAndBase(void)
             break;
         }
     }
-
-    return;
 }
 
 void convert()
 {
     bool flag = true;
-    int remain = 0;
     int index = 0;
     char temp[64] = {'\0'};
     int i = 0;
@@ -106,13 +103,9 @@ void convert()
     }
 
     result[i] = '\0';
-
-    return;
 }
 
 void displayConvertedNumber(void)
 {
     printf("%s\n", result);
-
-    return;
 }

@@ -7,9 +7,9 @@ int main(void)
     for (int count = 0; count < 10; ++count)
     {
         printf("Enter dollars: ");
-        scanf_s("%i", &dollars);
+        scanf("%i", &dollars);
         printf("Enter cents: ");
-        scanf_s("%i", &cents);
+        scanf("%i", &cents);
 
         dollars += cents / 100;
         cents %= 100;

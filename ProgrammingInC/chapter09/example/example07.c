@@ -21,7 +21,8 @@ int main(void)
             {30, "Sep"},
             {31, "Oct"},
             {30, "Nov"},
-            {31, "Dec"}};
+            {31, "Dec"}
+        };
 
     printf("Month Number of Days\n");
     printf("----- ------ -- ----\n");

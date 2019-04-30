@@ -13,6 +13,4 @@ int main(void)
 void printMessage(void)
 {
     printf("Programming is fun.\n");
-
-    return;
 }

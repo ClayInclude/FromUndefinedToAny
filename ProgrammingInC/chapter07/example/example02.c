@@ -8,7 +8,7 @@ int main(void)
 
     for (int i = 0; i < 20; ++i)
     {
-        scanf_s("%i", &response);
+        scanf("%i", &response);
 
         if (response < 1 || response > 10)
         {

@@ -20,7 +20,6 @@ int main(void)
 
     printf("\n");
 
-
     return 0;
 }
 
@@ -72,6 +71,4 @@ void quickSort(int *array, int low, int high)
     int q = partition(array, low, high);
     quickSort(array, low, q - 1);
     quickSort(array, q + 1, high);
-
-    return;
 }

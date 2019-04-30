@@ -16,7 +16,7 @@ int main(void)
     struct time next = {0, 0, 0};
 
     printf("Enter today's date (yyyy mm dd)\n");
-    scanf_s("%i%i%i", &next.year, &next.month, &next.day);
+    scanf("%i%i%i", &next.year, &next.month, &next.day);
 
     int errcode = checkTime(&next);
     if (errcode)

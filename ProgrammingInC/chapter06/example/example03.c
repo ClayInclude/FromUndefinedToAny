@@ -9,7 +9,7 @@ int main(void)
     int number = 0;
 
     printf("Enter your number to be tested:\n");
-    scanf_s("%i", &number);
+    scanf("%i", &number);
 
     printf("The number is %s.\n", desc[isOdd(number)]);
 

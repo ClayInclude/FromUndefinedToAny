@@ -6,7 +6,7 @@ int main(void)
     char op = 0;
 
     printf("Type in your expression.\n");
-    scanf_s("%f %c %f", &value1, &op, 1, &value2);
+    scanf("%f %c %f", &value1, &op, &value2);
 
     if (op == '+')
     {
