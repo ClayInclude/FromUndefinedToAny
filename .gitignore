@@ -1,9 +1,12 @@
 *.aux
+*.dot
+*.ps
 *.lof
 *.log
 *.lot
 *.out
 *.pdf
+*.synctex.gz
 *.thm
 *.toc
 
