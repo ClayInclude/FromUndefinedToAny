@@ -127,3 +127,4 @@ add_executable(ProgrammingInC_c10_p_03 ProgrammingInC/chapter10/practice/practic
 add_executable(ProgrammingInC_c10_p_04 ProgrammingInC/chapter10/practice/practice04.c)
 add_executable(ProgrammingInC_c10_p_05 ProgrammingInC/chapter10/practice/practice05.c)
 add_executable(ProgrammingInC_c10_p_06 ProgrammingInC/chapter10/practice/practice06.c)
+add_executable(ProgrammingInC_c10_p_07 ProgrammingInC/chapter10/practice/practice07.c)
