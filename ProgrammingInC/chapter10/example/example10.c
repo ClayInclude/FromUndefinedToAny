@@ -28,7 +28,8 @@ entry const dictionary[] =
         {"agar",     "a jelly made from seaweed"},
         {"ahoy",     "a nautical call of greeting"},
         {"aigrette", "an ornamental cluster of feathers"},
-        {"ajar",     "partially opened"}};
+        {"ajar",     "partially opened"}
+    };
 
 int compareStrings(char const *str1, char const *str2)
 {

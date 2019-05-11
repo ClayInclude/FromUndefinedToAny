@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void testRemoveString(char *src, int start, int numbers);
+void testRemoveString(char *str, int start, int numbers);
 
 int main(void)
 {
@@ -10,24 +10,24 @@ int main(void)
     return 0;
 }
 
-void removeString(char *src, int start, int numbers)
+void removeString(char *str, int start, int numbers)
 {
     if (!numbers) return;
 
-    src += start;
-    char const *keep = src + numbers;
+    str += start;
+    char const *keep = str + numbers;
 
     while (*keep != '\0')
     {
-        *src++ = *keep++;
+        *str++ = *keep++;
     }
 
-    *src = '\0';
+    *str = '\0';
 }
 
-void testRemoveString(char *src, int start, int numbers)
+void testRemoveString(char *str, int start, int numbers)
 {
-    printf("%s remove %i char from %i: ", src, numbers, start);
-    removeString(src, start, numbers);
-    printf("%s\n", src);
+    printf("%s remove %i char from %i: ", str, numbers, start);
+    removeString(str, start, numbers);
+    printf("%s\n", str);
 }

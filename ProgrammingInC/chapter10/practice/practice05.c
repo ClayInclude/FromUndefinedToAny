@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int findString(char const *src, char const *sub);
+int findString(char const *str, char const *find);
 
 int main(void)
 {
@@ -13,28 +13,28 @@ int main(void)
     return 0;
 }
 
-int findString(char const *src, char const *sub)
+int findString(char const *str, char const *find)
 {
-    char const *temp = src;
+    char const *temp = str;
     bool flag = false;
 
     while (*temp != '\0')
     {
-        if (*temp == *sub)
+        if (*temp == *find)
         {
             flag = true;
             int i = 0;
 
             while (++i)
             {
-                if (*(temp + i) != *(sub + i))
+                if (*(temp + i) != *(find + i))
                 {
-                    if (*(sub + i) == '\0') break;
+                    if (*(find + i) == '\0') break;
 
                     flag = false;
                     break;
                 }
-                else if (*(temp + i) == '\0' && *(sub + i) == '\0')
+                else if (*(temp + i) == '\0' && *(find + i) == '\0')
                 {
                     break;
                 }
@@ -43,7 +43,7 @@ int findString(char const *src, char const *sub)
 
         if (flag)
         {
-            return temp - src;
+            return temp - str;
         }
 
         ++temp;
