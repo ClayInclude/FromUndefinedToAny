@@ -1,0 +1,70 @@
+%%
+%% Author: Clay
+%% 2019/5/15
+%%
+
+\section{命题逻辑}
+{
+    \subsection{引言}
+    {
+        逻辑规则给出数学语句的准确含义，这些规则用来区分有效和无效的数学论证。
+    }
+
+    \subsection{命题}
+    {
+        首先介绍逻辑的基本构件---命题。
+        \emreg{命题}是一个陈述语句，它或真或假，但不能既真又假。
+
+        用字母来表示\emreg{命题变元}，它是代表命题的变量。
+        如果一个命题是真命题，它的\emreg{真值}为真，用\emcode{T}表示；
+        如果它是假命题，其真值为假，用\emcode{F}表示。
+
+        涉及命题的逻辑领域称为\emreg{命题演算}或\emreg{命题逻辑}。
+
+        称为\emreg{复合命题}的新命题是由已知命题用逻辑运算符组合而来。
+
+        \begin{defines}
+            令 $p$ 为一命题，则 $p$ 的否定记作 $\neg p$ （也可记作 $\bar p$ ），指``不是 $p$ 所指的情形。''
+
+            命题 $\neg p$ 读作``非 $p$ ''。
+            $p$ 的否定（ $\neg p$ ）的真值和 $p$ 的真值相反。
+        \end{defines}
+ 
+        \begin{wraptable}{r}{.3333\textwidth{}}
+            \centering
+
+            \begin{tabular}{c|c}
+                \hline
+                $p$ & $\neg p$ \\
+                \hline
+                \emcode{T} & \emcode{F} \\
+                \emcode{F} & \emcode{T} \\
+                \hline
+            \end{tabular}
+
+            \caption{命题之否定的真值表}
+            \label{c01s01t01}
+        \end{wraptable}
+
+        表\ref{c01s01t01}是命题 $p$ 及其否定的\emreg{真值表}。
+
+        命题的否定也可以看作\emreg{否定运算符}作用在命题上的结果。
+        否定运算符从一个已知命题构造出一个新命题。
+        现在引入从两个或多个已知命题构造新命题的逻辑运算符。
+        这些逻辑运算符也称为\emreg{联结词}。
+
+        \begin{defines}
+            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的合取即命题`` $p$ 并且 $q$ ''，记作 $p \wedge q$ 。
+            当 $p$ 和 $q$ 都是真时， $p \wedge q$ 命题为真，否则为假。
+        \end{defines}
+
+        在合取逻辑中，有时用到\emreg{但是}一词，而非\emreg{并且(and)}一词。
+        
+        \begin{defines}
+            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的析取即命题`` $p$ 或 $q$''，记作 $p \vee q$ 。
+            当 $p$ 和 $q$ 均为假时，析取命题 $p \vee q$ 为假， 否则为真。
+        \end{defines}
+
+        在析取中使用的联结词\emreg{或(or)}对应于词\emreg{或}在自然语言中所使用的两种情况之一，
+    }
+}

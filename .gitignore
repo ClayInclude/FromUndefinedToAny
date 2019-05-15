@@ -6,7 +6,7 @@
 *.lot
 *.out
 *.pdf
-*.synctex.gz
+*.synctex*
 *.thm
 *.toc
 
