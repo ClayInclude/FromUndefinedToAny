@@ -65,6 +65,49 @@
             当 $p$ 和 $q$ 均为假时，析取命题 $p \vee q$ 为假， 否则为真。
         \end{defines}
 
-        在析取中使用的联结词\emreg{或(or)}对应于词\emreg{或}在自然语言中所使用的两种情况之一，
+        在析取中使用的联结词\emreg{或(or)}对应于词\emreg{或}在自然语言中所使用的两种情况之一，即\emreg{兼或(inclusive or)}。
+        
+        \begin{defines}
+            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的异或（记作 $p \oplus q$ ）是这样一个命题，当 $p$ 和 $q$ 中恰好只有一个为真时命题为真，否则为假。
+        \end{defines}
+
+        \begin{minipage}[c]{\textwidth{}}
+            \begin{minipage}[c]{.5\textwidth{}}
+                \begin{table}[H]
+                    \centering
+
+                    \begin{tabular}{cc|c}
+                        \hline
+                        $p$ & $q$ & $p \wedge q$ \\
+                        \hline
+                        \emcode{T} & \emcode{T} & \emcode{T} \\
+                        \emcode{T} & \emcode{F} & \emcode{F} \\
+                        \emcode{F} & \emcode{T} & \emcode{F} \\
+                        \emcode{F} & \emcode{F} & \emcode{F} \\
+                        \hline
+                    \end{tabular}
+
+                    \caption{两命题合取的真值表}
+                \end{table}
+            \end{minipage}%
+            \begin{minipage}[c]{.5\textwidth{}}
+                \begin{table}[H]
+                    \centering
+
+                    \begin{tabular}{cc|c}
+                        \hline
+                        $p$ & $q$ & $p \vee q$ \\
+                        \hline
+                        \emcode{T} & \emcode{T} & \emcode{T} \\
+                        \emcode{T} & \emcode{F} & \emcode{T} \\
+                        \emcode{F} & \emcode{T} & \emcode{T} \\
+                        \emcode{F} & \emcode{F} & \emcode{F} \\
+                        \hline
+                    \end{tabular}
+
+                    \caption{两命题析取的真值表}
+                \end{table}
+            \end{minipage}
+        \end{minipage}
     }
 }
