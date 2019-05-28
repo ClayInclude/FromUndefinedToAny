@@ -24,9 +24,9 @@
         称为\emreg{复合命题}的新命题是由已知命题用逻辑运算符组合而来。
 
         \begin{defines}
-            令 $p$ 为一命题，则 $p$ 的否定记作 $\neg p$ （也可记作 $\bar p$ ），指``不是 $p$ 所指的情形。''
+            令 $p$ 为一命题，则 $p$ 的否定记作 $\neg p$ （也可记作 $\bar p$ ），指\emspe{不是 $p$ 所指的情形}。
 
-            命题 $\neg p$ 读作``非 $p$ ''。
+            命题 $\neg p$ 读作\emspe{非 $p$ }。
             $p$ 的否定（ $\neg p$ ）的真值和 $p$ 的真值相反。
         \end{defines}
  
@@ -43,10 +43,7 @@
             \end{tabular}
 
             \caption{命题之否定的真值表}
-            \label{c01s01t01}
         \end{wraptable}
-
-        表\ref{c01s01t01}是命题 $p$ 及其否定的\emreg{真值表}。
 
         命题的否定也可以看作\emreg{否定运算符}作用在命题上的结果。
         否定运算符从一个已知命题构造出一个新命题。
@@ -54,14 +51,14 @@
         这些逻辑运算符也称为\emreg{联结词}。
 
         \begin{defines}
-            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的合取即命题`` $p$ 并且 $q$ ''，记作 $p \wedge q$ 。
+            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的合取即命题\emspe{ $p$ 并且 $q$ }，记作 $p \wedge q$ 。
             当 $p$ 和 $q$ 都是真时， $p \wedge q$ 命题为真，否则为假。
         \end{defines}
 
         在合取逻辑中，有时用到\emreg{但是}一词，而非\emreg{并且(and)}一词。
         
         \begin{defines}
-            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的析取即命题`` $p$ 或 $q$''，记作 $p \vee q$ 。
+            令 $p$ 和 $q$ 为命题， $p$ 和 $q$ 的析取即命题\emspe{ $p$ 或 $q$ }，记作 $p \vee q$ 。
             当 $p$ 和 $q$ 均为假时，析取命题 $p \vee q$ 为假， 否则为真。
         \end{defines}
 
@@ -115,7 +112,7 @@
     {
         \begin{defines}
             令 $p$ 和 $q$ 为命题。
-            条件语句 $p \rightarrow q$ 是命题``如果 $p$ ，则 $q$ ''。
+            条件语句 $p \rightarrow q$ 是命题\emspe{如果 $p$ ，则 $q$ }。
             当 $p$ 为真而 $q$ 为假时，条件语句 $p \rightarrow q$ 为假，否则为真。
             在条件语句 $p \rightarrow q$ 中， $p$ 称为假设（前件、前提）， $q$ 称为结论（后件）。
         \end{defines}
@@ -123,7 +120,7 @@
         语句 $p \rightarrow q$ 称为条件语句，因为 $p \rightarrow q$ 可以断定在条件 $p$ 成立的时候 $q$ 为真。
         条件语句也称为\emreg{蕴含}。
 
-        \begin{minipage}[c]{\textwidth{}}
+        \begin{minienv}
             \begin{minipage}[c]{.5\textwidth{}}
                 \begin{table}[H]
                     \centering
@@ -160,9 +157,9 @@
                     \caption{条件命题 $p \rightarrow q$ 的真值表}
                 \end{table}
             \end{minipage}%
-        \end{minipage}
+        \end{minienv}
 
-        \itemcaption{逆命题、逆否命题与反命题}
+        \paraph{逆命题、逆否命题与反命题}
         {
             命题 $q \rightarrow p$ 称为 $p \rightarrow q$ 的逆命题，而 $p \rightarrow q$ 的逆否命题是 $\neg q \rightarrow \neg p$ 。
             命题 $\neg p \rightarrow \neg q$ 称为 $p \rightarrow q$ 的反命题。
@@ -173,20 +170,45 @@
             条件语句的逆与反也是等价的。
         }
 
-        % \begin{wraptable}{r}{.3333\textwidth{}}
-        %     \centering
+        \begin{defines}
+            令 $p$ 和 $q$ 为命题。
+            双条件语句 $p \leftrightarrow q$ 是命题\emspe{ $p$ 当且仅当 $q$}。
+            当 $p$ 和 $q$ 具有同样的真值时，双条件语句为真，否则为假。
+            双条件语句也称为双向蕴含。
+        \end{defines}
 
-        %     \begin{tabular}{c|c}
-        %         \hline
-        %         $p$ & $\neg p$ \\
-        %         \hline
-        %         \emcode{T} & \emcode{F} \\
-        %         \emcode{F} & \emcode{T} \\
-        %         \hline
-        %     \end{tabular}
+        \begin{wraptable}{r}{.3333\textwidth{}}
+            \centering
 
-        %     \caption{命题之否定的真值表}
-        %     \label{c01s01t01}
-        % \end{wraptable}
+            \begin{tabular}{cc|c}
+                \hline
+                $p$ & $q$ & $p \rightarrow q$ \\
+                \hline
+                \emcode{T} & \emcode{T} & \emcode{T} \\
+                \emcode{T} & \emcode{F} & \emcode{F} \\
+                \emcode{F} & \emcode{T} & \emcode{F} \\
+                \emcode{F} & \emcode{F} & \emcode{T} \\
+                \hline
+            \end{tabular}
+
+            \caption{双条件语句 $p \leftrightarrow q$ 的真值表}
+        \end{wraptable}
+
+        双条件语句可以用缩写符号\emcode{iff}代替\emreg{当且仅当(if and only if)}。
+        $p \leftrightarrow q$ 与 $p \rightarrow q \wedge q \rightarrow p$ 有完全相同的真值。
+
+        \paraph{双条件的隐式使用}
+        {
+            在自然语言中双条件并不总是显式地使用。
+            特别是在自然语言中很少使用双条件中的\emreg{当且仅当}结构。
+            通常用\emreg{如果，那么}或\emreg{仅当}结构来表示双蕴含。
+            \emreg{当且仅当}的另一部分则是隐含的。
+            也就是逆命题是蕴含的而没有明说出来。
+        }
+    }
+
+    \subsection{复合命题的真值表}
+    {
+        可以用联结词来构造含有一些命题变元的结构复杂
     }
 }

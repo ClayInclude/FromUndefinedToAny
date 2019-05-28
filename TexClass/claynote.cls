@@ -130,11 +130,21 @@
     \end{@practices}
 }
 
+\newtheorem*{@minienv}{}
+\NewDocumentEnvironment{minienv}{}
+{
+    \begin{@minienv}
+        \begin{minipage}[c]{\textwidth{}}
+}
+{       \end{minipage}
+    \end{@minienv}
+}
+
 % defined emphasis
 \def\emreg#1{\textit{#1}}
-\def\emspe#1{\textit{#1}}
+\def\emspe#1{\textbf{#1}}
 \def\emans#1{\textit{#1}}
-\def\emcode#1{\textit{#1}}
+\def\emcode#1{\textsl{#1}}
 
 % special paragraph
 \def\solution#1{\textbf{解：}#1}
