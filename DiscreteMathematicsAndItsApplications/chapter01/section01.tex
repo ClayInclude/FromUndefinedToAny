@@ -169,14 +169,7 @@
             一个条件语句与它的逆否命题是等价的。
             条件语句的逆与反也是等价的。
         }
-
-        \begin{defines}
-            令 $p$ 和 $q$ 为命题。
-            双条件语句 $p \leftrightarrow q$ 是命题\emspe{ $p$ 当且仅当 $q$}。
-            当 $p$ 和 $q$ 具有同样的真值时，双条件语句为真，否则为假。
-            双条件语句也称为双向蕴含。
-        \end{defines}
-
+                
         \begin{wraptable}{r}{.3333\textwidth{}}
             \centering
 
@@ -194,6 +187,13 @@
             \caption{双条件语句 $p \leftrightarrow q$ 的真值表}
         \end{wraptable}
 
+        \begin{defines}
+            令 $p$ 和 $q$ 为命题。
+            双条件语句 $p \leftrightarrow q$ 是命题\emspe{ $p$ 当且仅当 $q$}。
+            当 $p$ 和 $q$ 具有同样的真值时，双条件语句为真，否则为假。
+            双条件语句也称为双向蕴含。
+        \end{defines}
+
         双条件语句可以用缩写符号\emcode{iff}代替\emreg{当且仅当(if and only if)}。
         $p \leftrightarrow q$ 与 $p \rightarrow q \wedge q \rightarrow p$ 有完全相同的真值。
 
@@ -209,6 +209,77 @@
 
     \subsection{复合命题的真值表}
     {
-        可以用联结词来构造含有一些命题变元的结构复杂
+        可以用联结词来构造含有一些命题变元的结构复杂的复合命题。
+        可以用真值表来决定这些复合命题的真值。
+    }
+
+    \subsection{逻辑运算符的优先级}
+    {
+        通常使用括号来规定复合命题中的逻辑运算符的作用顺序。
+        为了减少括号的数量，规定否定运算符优先于其他所有逻辑运算符。
+
+        另一个常用的优先级规则是合取运算符优先于析取运算符。
+
+        最后，一个已被接受的规则是条件运算符和双条件运算符的优先级低于合取和析取运算符。
+
+        \begin{table}[htb]
+            \centering
+
+            \begin{tabular}{c|c}
+                \hline
+                运算符 & 优先级 \\
+                \hline
+                $\neg$ & 1 \\
+                \hline
+                $\wedge$ & 2 \\
+                $\vee$ & 3 \\
+                \hline
+                $\rightarrow$ & 4 \\
+                $\leftrightarrow$ & 5 \\
+                \hline
+            \end{tabular}
+
+            \caption{逻辑运算符的优先级}
+        \end{table}
+    }
+
+    \subsection{逻辑运算和位运算}
+    {
+        \begin{wraptable}{r}{.3333\textwidth{}}
+            \centering
+
+            \begin{tabular}{c|c}
+                \hline
+                真值 & 位 \\
+                \hline
+                \emspe{T} & $1$ \\
+                \emspe{F} & $0$ \\
+                \hline
+            \end{tabular}
+        \end{wraptable}
+
+        位一词的含义来自\emreg{二进制数字(binary digit)}。
+        如果一个变量的值或为真或为假，则此变量就称为\emreg{布尔变量}。
+
+        计算机的\emreg{位运算}对应于逻辑联结词。
+        
+        \begin{table}[htb]
+            \centering
+
+            \[
+                \begin{array}{c|c|c|c|c}
+                    \hline
+                    x & y & x \vee y & x \wedge y & x \oplus y \\
+                    \hline
+                    0 & 0 & 0 & 0 & 0 \\
+                    0 & 1 & 1 & 0 & 1 \\
+                    1 & 0 & 1 & 0 & 1 \\
+                    1 & 1 & 1 & 1 & 0 \\
+                    \hline
+                \end{array}
+            \]
+
+            \caption{位运算符的真值表}
+        \end{table}
     }
 }
