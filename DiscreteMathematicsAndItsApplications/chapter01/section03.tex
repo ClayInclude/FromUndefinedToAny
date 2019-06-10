@@ -1,0 +1,64 @@
+%%
+%% Author: Clay
+%% 2019/6/10
+%%
+
+\section{命题等价式}
+{
+    \subsection{引言}
+    {
+        数学证明中使用的一个重要步骤就是用真值相同的一条语句替换另一条语句。
+        因此，从给定复合命题生成具有相同真值命题的方法广泛使用于数学证明的构造。
+
+        \begin{defines}
+            一个真值永远是真的复合命题，称为永真式(tautology)，也成为重言式。
+            一个真值永远为假的复合命题，称为矛盾式(contradicition)。
+            既不是永真式又不是矛盾式的复合命题称为可能式(contingency)。
+        \end{defines}
+
+        \begin{table}[htb]
+            \centering
+
+            \[
+                \begin{array}{c|c|c|c}
+                    \hline
+                    p & \neg p & p \vee \neg p & p \wedge \neg p \\
+                    \hline
+                    T & F & T & F \\
+                    F & T & T & F \\
+                    \hline
+                \end{array}
+            \]
+
+            \caption{永真式和矛盾式的例子}
+        \end{table}
+    }
+
+    \subsection{逻辑等价式}
+    {
+        在所有可能的情况下都有相同真值的两个复合命题称为\emreg{逻辑等价}的。
+
+        \begin{wraptable}{r}{.3333\textwidth{}}
+            \centering
+
+            \[
+                \begin{array}{c}
+                    \hline
+                    \neg (p \wedge q) \equiv \neg p \vee \neg q \\
+                    \neg (p \vee q) \equiv \neg p \wedge \neg q \\
+                    \hline
+                \end{array}
+            \]
+
+            \caption{德 $\cdot$ 摩根律}
+        \end{wraptable}
+
+        \begin{defines}
+            如果 $p \leftrightarrow q$ 是，永真式，则复合命题 $p$ 和 $q$ 是逻辑等价的。
+            用记号 $p \equiv q$ 表示 $p$ 和 $q$ 是逻辑等价的。
+        \end{defines}
+
+        判断两个复合命题是否等价的方法之一是使用真值表。
+        特别地，复合命题 $p$ 和 $q$ 是等价的，当且仅当对应它们真值的两列完全一致。
+    }
+}
