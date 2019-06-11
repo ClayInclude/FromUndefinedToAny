@@ -1,0 +1,16 @@
+{
+    "practices":
+    {
+        "scope": "latex",
+        "prefix": "practices",
+        "body":
+        [
+            "\\begin{practices}",
+            "    \\begin{enumerate}[a)]",
+            "        \\item $1",
+            "    \\end{enumerate}",
+            "\\end{practices}"
+        ],
+        "description": "DicreteMath"
+    }
+}

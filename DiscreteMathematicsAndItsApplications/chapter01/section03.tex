@@ -36,8 +36,6 @@
 
     \subsection{逻辑等价式}
     {
-        在所有可能的情况下都有相同真值的两个复合命题称为\emreg{逻辑等价}的。
-
         \begin{wraptable}{r}{.3333\textwidth{}}
             \centering
 
@@ -53,6 +51,8 @@
             \caption{德 $\cdot$ 摩根律}
         \end{wraptable}
 
+        在所有可能的情况下都有相同真值的两个复合命题称为\emreg{逻辑等价}的。
+
         \begin{defines}
             如果 $p \leftrightarrow q$ 是，永真式，则复合命题 $p$ 和 $q$ 是逻辑等价的。
             用记号 $p \equiv q$ 表示 $p$ 和 $q$ 是逻辑等价的。
@@ -60,5 +60,137 @@
 
         判断两个复合命题是否等价的方法之一是使用真值表。
         特别地，复合命题 $p$ 和 $q$ 是等价的，当且仅当对应它们真值的两列完全一致。
+
+        德 $\cdot$ 摩根律可以扩展为：
+        \begin{align}
+            \neg (p_1 \vee p_2 \vee \cdots \vee p_n) \equiv (\neg p_1 \wedge \neg p_2 \wedge \cdots \wedge \neg p_n)
+        \end{align}
+
+        和
+        \begin{align}
+            \neg (p_1 \wedge p_2 \wedge \cdots \wedge p_n) \equiv (\neg p_1 \vee \neg p_2 \vee \cdots \vee \neg p_n)
+        \end{align}
+
+        有时用符号 $\bigvee\limits_{j = 1}^n p_j$ 来表示 $p_1 \vee p_2 \vee \cdots \vee p_n$ ，用 $\bigwedge\limits_{j = 1}^n p_j$ 来表示 $p_1 \wedge p_2 \wedge \cdots \wedge p_n$ 。
+        采用这种记法扩展的德 $\cdot$ 摩根律就可以简洁地写成 $\neg (\bigvee\limits_{j = 1}^n p_j) \equiv \bigwedge\limits_{j = 1}^n \neg p_j$ 和 $\neg (\bigwedge\limits_{j = 1}^n p_j) \equiv \bigvee\limits_{j = 1}^n \neg p_j$ 。
+
+        \begin{minipage}[c]{\textwidth{}}
+            \begin{minipage}[c]{.6\textwidth{}}
+                \begin{table}[H]
+                    \centering
+
+                    \begin{tabular}{l|c}
+                        \hline
+                        \multicolumn{1}{c|}{等价式} & 名称 \\
+                        \hline
+                        $p \wedge T \equiv p$ & \multirow{2}*{恒等律} \\
+                        $p \vee F \equiv p$ & \\
+                        \hline
+                        $p \vee T \equiv T$ & \multirow{2}*{支配律} \\
+                        $p \wedge F \equiv F$ & \\
+                        \hline
+                        $p \vee p \equiv p$ & \multirow{2}*{幂等律} \\
+                        $p \wedge p \equiv p$ & \\
+                        \hline
+                        $\neg (\neg q) \equiv q$ & 双重否定律 \\
+                        \hline
+                        $p \vee q \equiv q \vee p$ & \multirow{2}*{交换律} \\
+                        $p \wedge q \equiv q \wedge p$ & \\
+                        \hline
+                        $(p \vee q) \vee r \equiv p \vee (q \vee r)$ & \multirow{2}*{结合律} \\
+                        $(p \wedge q) \wedge r \equiv p \wedge (q \wedge r)$ & \\
+                        \hline
+                        $p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$ & \multirow{2}*{分配律} \\
+                        $p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r)$ & \\
+                        \hline
+                        $\neg (p \wedge q) \equiv \neg p \vee \neg q$ & \multirow{2}*{德 $\cdot$ 摩根律} \\
+                        $\neg (p \vee q) \equiv \neg p \wedge \neg q$ & \\
+                        \hline
+                        $p \vee (p \wedge q) \equiv p$ & \multirow{2}*{吸收律} \\
+                        $p \wedge (p \vee q) \equiv p$ & \\
+                        \hline
+                        $p \vee \neg p \equiv T$ & \multirow{2}*{否定律} \\
+                        $p \wedge \neg p \equiv F$ & \\
+                        \hline
+                    \end{tabular}
+
+                    \caption{逻辑等价式}
+                \end{table}
+            \end{minipage}%
+            \begin{minipage}[c]{.4\textwidth{}}
+                \begin{minipage}[c]{\textwidth{}}
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{l}
+                                \hline
+                                p \rightarrow q \equiv \neg p \vee q \\
+                                p \rightarrow q \equiv \neg q \rightarrow \neg p \\
+                                p \vee q \equiv \neg p \rightarrow q \\
+                                p \wedge q \equiv \neg (p \rightarrow \neg q) \\
+                                \neg (p \rightarrow q) \equiv p \wedge \neg q \\
+                                (p \rightarrow q) \wedge (p \rightarrow r) \equiv p \rightarrow (q \wedge r) \\
+                                (p \rightarrow r) \wedge (q \rightarrow r) \equiv (p \vee q) \rightarrow r \\
+                                (p \rightarrow q) \vee (p \rightarrow r) \equiv p \rightarrow (q \vee r) \\
+                                (p \rightarrow r) \vee (q \rightarrow r) \equiv (p \wedge q) \rightarrow r \\
+                                \hline
+                            \end{array}
+                        \]
+
+                        \caption{条件命题的逻辑等价式}
+                    \end{table}
+                \end{minipage}%
+
+                \vfill
+
+                \begin{minipage}[c]{\textwidth{}}
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{l}
+                                \hline
+                                p \leftrightarrow q \equiv (p \rightarrow q) \wedge (q \rightarrow p) \\
+                                p \leftrightarrow q \equiv \neg p \leftrightarrow \neg q \\
+                                p \leftrightarrow q \equiv (p \wedge q) \vee (\neg p \wedge \neg q) \\
+                                \neg (p \leftrightarrow q) \equiv p \leftrightarrow \neg q \\
+                                \hline
+                            \end{array}
+                        \]
+
+                        \caption{双条件命题的逻辑等价式}
+                    \end{table}
+                \end{minipage}
+            \end{minipage}
+        \end{minipage}
+    }
+
+    \subsection{德 $\cdot$ 摩根律的运用}
+    {
+        $\neg (p \wedge q) \equiv \neg p \vee \neg q$ 说明一个析取式的否定是由各分命题否定的合取式组成的。
+        $\neg (p \vee q) \equiv \neg p \wedge \neg q$说明一个合取式的否定是由各分命题否定的析取式组成的。
+    }
+
+    \subsection{构造新的逻辑等价式}
+    {
+        复合命题中的一个命题可以用与它逻辑等价的复合命题替换，而不改变原复合命题的真值。
+        如果 $p$ 和 $q$ 是逻辑等价的， $q$ 和 $r$ 是逻辑等价的，那么 $p$ 和 $r$ 也是逻辑等价的。
+    }
+
+    \subsection{命题的可满足性}
+    {
+        一个复合命题称为是\emreg{可满足的}，如果存在一个对其变元的真值赋值使其为真。
+        当不存在这样的赋值时，即当复合命题对所有变元的真值赋值都是假的，则复合命题是\emreg{不可满足的}。
+        注意一个复合命题是不可满足的当且仅当它的否定对所有变元的真值赋值都是真的，也就是说，当且仅当它的否定是永真式。
+
+        当找到一个特定的使得复合命题为真的真值赋值时，就证明了它是可满足的。
+        这样的一个赋值成为这个特定的可满足性问题的一个\emreg{解}。
+        要证明一个复合命题是不可满足的，需要证明每一组变元的真值赋值都使其为假。
+    }
+
+    \subsection{可满足性的应用}
+    {
+        在不同领域中的许多问题都可以用命题可满足性来建立模型。
     }
 }

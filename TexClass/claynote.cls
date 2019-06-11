@@ -119,7 +119,7 @@
     \end{@examples}
 }
 
-\newtheorem*{@practices}{习题}[section]
+\newtheorem{@practices}{习题}[section]
 \NewDocumentEnvironment{practices}{o}
 {
     \IfNoValueTF{#1}
