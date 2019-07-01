@@ -144,3 +144,7 @@ add_executable(ProgrammingInC_c11_e_07 ProgrammingInC/chapter11/example/example0
 add_executable(ProgrammingInC_c11_e_08 ProgrammingInC/chapter11/example/example08.c)
 add_executable(ProgrammingInC_c11_e_09 ProgrammingInC/chapter11/example/example09.c)
 add_executable(ProgrammingInC_c11_e_10 ProgrammingInC/chapter11/example/example10.c)
+add_executable(ProgrammingInC_c11_e_11 ProgrammingInC/chapter11/example/example11.c)
+add_executable(ProgrammingInC_c11_e_12 ProgrammingInC/chapter11/example/example12.c)
+add_executable(ProgrammingInC_c11_e_13 ProgrammingInC/chapter11/example/example13.c)
+add_executable(ProgrammingInC_c11_e_14 ProgrammingInC/chapter11/example/example14.c)
