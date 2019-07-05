@@ -179,3 +179,5 @@ add_executable(ProgrammingInC_c16_p_03 ProgrammingInC/chapter16/practice/practic
 add_executable(ProgrammingInC_c16_p_04 ProgrammingInC/chapter16/practice/practice04.c)
 add_executable(ProgrammingInC_c16_p_05 ProgrammingInC/chapter16/practice/practice05.c)
 add_executable(ProgrammingInC_c16_p_06 ProgrammingInC/chapter16/practice/practice06.c)
+add_executable(ProgrammingInC_c17_e_01 ProgrammingInC/chapter17/example/example01.c)
+
