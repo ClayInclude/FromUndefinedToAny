@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 project(FromUndefinedToAny C)
+project(FromUndefinedToAny CXX)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
@@ -180,4 +181,10 @@ add_executable(ProgrammingInC_c16_p_04 ProgrammingInC/chapter16/practice/practic
 add_executable(ProgrammingInC_c16_p_05 ProgrammingInC/chapter16/practice/practice05.c)
 add_executable(ProgrammingInC_c16_p_06 ProgrammingInC/chapter16/practice/practice06.c)
 add_executable(ProgrammingInC_c17_e_01 ProgrammingInC/chapter17/example/example01.c)
-
+add_executable(ProgrammingInC_c18_e_01 ProgrammingInC/chapter18/example/example01.c)
+add_executable(ProgrammingInC_c18_e_02 ProgrammingInC/chapter18/example/example02.c)
+add_executable(ProgrammingInC_c18_e_03 ProgrammingInC/chapter18/example/example03.c)
+add_executable(ProgrammingInC_c18_e_04 ProgrammingInC/chapter18/example/example04.c)
+add_executable(ProgrammingInC_c18_e_05 ProgrammingInC/chapter18/example/example05.c)
+add_executable(ProgrammingInC_c19_e_01 ProgrammingInC/chapter19/example/example01.c)
+add_executable(ProgrammingInC_c19_e_03 ProgrammingInC/chapter19/example/example03.cpp)
