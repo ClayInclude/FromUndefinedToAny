@@ -5,9 +5,10 @@
         "prefix": "practices",
         "body":
         [
+            "%$1.",
             "\\begin{practices}",
             "    \\begin{enumerate}[a)]",
-            "        \\item $1",
+            "        \\item $2",
             "    \\end{enumerate}",
             "\\end{practices}"
         ],
