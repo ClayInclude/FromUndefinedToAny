@@ -7,7 +7,7 @@
         [
             "%$1.",
             "\\begin{practices}",
-            "    \\begin{enumerate}[a)]",
+            "    \\begin{enumerate}[A.]",
             "        \\item $2",
             "    \\end{enumerate}",
             "\\end{practices}"
