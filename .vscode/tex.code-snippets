@@ -1,8 +1,8 @@
 {
-    "practices":
+    "pracitem":
     {
         "scope": "latex",
-        "prefix": "practices",
+        "prefix": "pracitem",
         "body":
         [
             "%$1.",
@@ -10,6 +10,19 @@
             "    \\begin{enumerate}[A.]",
             "        \\item $2",
             "    \\end{enumerate}",
+            "\\end{practices}"
+        ],
+        "description": "DicreteMath"
+    },
+    "pracsingle":
+    {
+        "scope": "latex",
+        "prefix": "pracsingle",
+        "body":
+        [
+            "%$1.",
+            "\\begin{practices}",
+            "    $2",
             "\\end{practices}"
         ],
         "description": "DicreteMath"

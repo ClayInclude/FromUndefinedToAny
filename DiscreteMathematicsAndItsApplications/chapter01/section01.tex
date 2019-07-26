@@ -345,7 +345,7 @@
                 \item 真。
                 \item 真。
                 \item 假。
-                \item 真。
+                \item 假。
                 \item 假。
             \end{enumerate}
         \end{practices}
@@ -378,7 +378,7 @@
         %9.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 在新泽西海岸游泳是不允许的。
+                \item 在新泽西海岸附近没有发现过鲨鱼。
                 \item 在新泽西海岸游泳是允许的并且在海岸附近发现过鲨鱼。
                 \item 在新泽西海岸有用是不允许的，或者在海岸附近发现过鲨鱼。
                 \item 如果在新泽西海岸游泳是允许的，那么在海岸附近没有发现过鲨鱼。
@@ -436,7 +436,7 @@
                 \item $p \rightarrow q$
                 \item $\neg p \rightarrow \neg q$
                 \item $p \rightarrow q$
-                \item $neg p \wedge q$
+                \item $\neg p \wedge q$
                 \item $q \rightarrow p$
             \end{enumerate}
         \end{practices}
@@ -444,9 +444,9 @@
         %14.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $p \wedge \neg q$
+                \item $r \wedge \neg q$
                 \item $p \wedge q \wedge r$
-                \item $p \rightarrow r$
+                \item $r \rightarrow p$
                 \item $p \wedge \neg q \wedge r$
                 \item $(p \wedge q) \rightarrow r$
                 \item $(p \vee q) \leftrightarrow r$
@@ -460,6 +460,7 @@
                 \item $\neg p \wedge q \wedge r$
                 \item $r \rightarrow (q \leftrightarrow \neg p)$
                 \item $\neg q \wedge \neg p \wedge r$
+                \item $(q \rightarrow (\neg r \wedge \neg p)) \wedge \neg ((\neg r \wedge \neg p) \rightarrow q)$
                 \item $(p \wedge r) \rightarrow \neg q$
             \end{enumerate}
         \end{practices}
@@ -479,7 +480,7 @@
             \begin{enumerate}[A.]
                 \item 假
                 \item 真
-                \item 假
+                \item 真
                 \item 真
             \end{enumerate}
         \end{practices}
@@ -531,8 +532,8 @@
                 \item 如果吹了南风，则预示着春天要来了。
                 \item 如果你的计算机购买时间不超过一年，则保修单有效。
                 \item 如果Willy行骗，那么就会被抓住。
-                \item 如果你支付了订阅费，那么你就能访问网站。
-                \item 如果你想当选，那么你必须了解合适的人群。
+                \item 如果你想访问网站，那么你必须支付订阅费。
+                \item 如果你了解合适的人群，那么你会当选。
                 \item 如果Carol坐船，那么他就会晕船。
             \end{enumerate}
         \end{practices}
@@ -540,13 +541,13 @@
         %23.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 如果吹了东北分，那么就会下雪。
+                \item 如果吹了东北风，那么就会下雪。
                 \item 如果天暖持续一周，那么苹果树就会开花。
-                \item 如果活塞队打败了湖人队，那么久意味着他们赢得了冠军。
+                \item 如果活塞队赢得了冠军，那么久意味着他们打败了湖人队。
                 \item 如果要到达达朗斯峰的顶峰，那么必须走8英里。
                 \item 如果能世界闻名，那么就能得到终身教授职位。
                 \item 如果你驾车超过400英里，那么就需要买汽油了。
-                \item 如果你购买的CD机不超过90天，那么你的保单是有效的。
+                \item 如果你的保单是有效的，那么你购买CD机不足90天。
                 \item 如果水不是太凉，那么Jan要去游泳。
             \end{enumerate}
         \end{practices}
@@ -554,13 +555,13 @@
         %24.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 如果你给我发一封电子邮件，那么我会记得把地址发给你。
+                \item 如果我把地址发给你，那么你一定给我发了一封电子邮件。
                 \item 如果你出生在美国，那么你可以成为美国公民。
                 \item 如果你保存好课本，那么它会是你未来其他课程有用的参考书。
                 \item 如果红翼队的守门员表现出色，那么红翼队将赢得斯坦利杯。
-                \item 如果你有最好的信誉，那么你会获得这一职位。
+                \item 如果你获得这一职位，那么表明你有最好的信誉。
                 \item 如果有风暴，那么沙滩会受到侵蚀。
-                \item 如果你有一个有效的口令，那么你能登录到服务器。
+                \item 如果你能登录到服务器，那么你有一个有效的口令。
                 \item 如果你不是太晚才开始爬山，那么你能登顶。
             \end{enumerate}
         \end{practices}
@@ -649,7 +650,7 @@
         %29.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $4$
+                \item $2$
                 \item $16$
                 \item $64$
                 \item $16$
@@ -937,9 +938,9 @@
                                 p & q & p \leftrightarrow q & \neg p \leftrightarrow q & (p \leftrightarrow q) \oplus (\neg p \leftrightarrow q) \\
                                 \hline
                                 0 & 0 & 1 & 0 & 1 \\
-                                0 & 1 & 1 & 1 & 0 \\
+                                0 & 1 & 0 & 1 & 1 \\
                                 1 & 0 & 0 & 1 & 1 \\
-                                1 & 1 & 1 & 1 & 0 \\
+                                1 & 1 & 1 & 0 & 1 \\
                                 \hline
                             \end{array}
                         \]
@@ -1423,14 +1424,14 @@
                         \[
                             \begin{array}{c|c|c|c|c|c}
                                 \hline
-                                p & q & r & p \leftrightarrow q & \neg p \leftrightarrow r & (p \leftrightarrow q) \vee (\neg p \leftrightarrow r) \\
+                                p & q & r & p \leftrightarrow q & \neg q \leftrightarrow r & (p \leftrightarrow q) \vee (\neg q \leftrightarrow r) \\
                                 \hline
                                 0 & 0 & 0 & 1 & 0 & 1 \\
                                 0 & 0 & 1 & 1 & 1 & 1 \\
-                                0 & 1 & 0 & 0 & 0 & 0 \\
-                                0 & 1 & 1 & 0 & 1 & 1 \\
-                                1 & 0 & 0 & 0 & 1 & 1 \\
-                                1 & 0 & 1 & 0 & 0 & 0 \\
+                                0 & 1 & 0 & 0 & 1 & 1 \\
+                                0 & 1 & 1 & 0 & 0 & 0 \\
+                                1 & 0 & 0 & 0 & 0 & 0 \\
+                                1 & 0 & 1 & 0 & 1 & 1 \\
                                 1 & 1 & 0 & 1 & 1 & 1 \\
                                 1 & 1 & 1 & 1 & 0 & 1 \\
                                 \hline
@@ -1597,7 +1598,45 @@
         %45.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 
+                \item $0.2$
+                \item $0.6$
+            \end{enumerate}
+        \end{practices}
+
+        %46.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $0.4$
+                \item $0.2$
+            \end{enumerate}
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $0.8$
+                \item $0.6$
+            \end{enumerate}
+        \end{practices}
+
+        %48.
+        \begin{practices}
+            不是。这是一个悖论，无法给出一个真值。
+        \end{practices}
+
+        %49.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 列表中第99条为真，其余为假。
+                \item 1-50条为真，50-99为假。
+                \item 不可能发生。
+            \end{enumerate}
+        \end{practices}
+
+        %50.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不存在。这是个一悖论。
             \end{enumerate}
         \end{practices}
     }

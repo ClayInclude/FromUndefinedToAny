@@ -55,4 +55,198 @@
         \emreg{或门(OR gate)}接受两个输入信号 $p$ 和 $q$ ，每个一位，产生信号 $p \vee q$ 作为输出。
         \emreg{与门(AND gate)}接受两个输入信号 $p$ 和 $q$ ，每个一位，产生信号 $p \wedge q$ 作为输出。
     }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            $\neg a \rightarrow e$
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            $m \rightarrow (e \vee p)$
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            $g \rightarrow (\neg m \wedge \neg b \wedge r)$
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            $(d \vee s) \rightarrow w$
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            $e \rightarrow (a \wedge (b \vee p) \wedge r)$
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            $u \rightarrow (b_{32} \wedge g_{1} \wedge r_{1} \wedge h_{16}) \vee (b_{64} \wedge g_{2} \wedge r_{2} \wedge h_{32})$
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $q \rightarrow p$
+                \item $q \wedge \neg p$
+                \item $q \rightarrow p$
+                \item $\neg q \rightarrow \neg p$
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $r \wedge \neg p$
+                \item $q \rightarrow (p \wedge r)$
+                \item $\neg r \rightarrow \neg q$
+                \item $\neg p \wedge r \rightarrow q$
+            \end{enumerate}
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            令 $p$ 为：系统处于多用户态， $q$ 为：系统运行正常， $r$ 为：核心程序起作用。
+
+            则系统规范说明为： $p \leftrightarrow q$ , $q \rightarrow r$ , $\neg q \vee \neg p$ , $\neg p \rightarrow \neg q$ , $p$ 。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c|c}
+                        \hline
+                        p & q & r & p \leftrightarrow q & q \rightarrow r & \neg q \vee \neg p & \neg p \rightarrow \neg q & p \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+                        0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+
+            不一致。
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            令 $p$ 为：系统对软件进行了升级， $q$ 为：用户能访问文件系统， $r$ 为：用户能保存新文件。
+
+            则系统规范说明为： $\neg q \rightarrow p$ , $q \rightarrow r$ , $\neg r \rightarrow \neg p$ 。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        p & q & r & \neg q \rightarrow p & q \rightarrow r & \neg r \rightarrow \neg p \\
+                        \hline
+                        0 & 0 & 0 & 0 & 1 & 1 \\
+                        0 & 0 & 1 & 0 & 1 & 1 \\
+                        0 & 1 & 0 & 1 & 0 & 1 \\
+                        0 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 1 & 0 \\
+                        1 & 0 & 1 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 1 & 0 & 0 \\
+                        1 & 1 & 1 & 1 & 1 & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+
+            一致。
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            令 $p$ 为：路由器能向边缘系统发送分组， $q$ 为：路由器支持新的地址空间， $r$ 为：路由器要安装新的版本文件。
+
+            则系统规范说明为： $p \rightarrow q$ , $q \rightarrow r$ , $r \rightarrow p$ , $\neg q$ 。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        p & q & r & p \rightarrow q & q \rightarrow r & r \rightarrow p & \neg q \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 & 1 \\
+                        0 & 1 & 0 & 1 & 0 & 1 & 0 \\
+                        0 & 1 & 1 & 1 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 1 & 0 & 1 & 0 \\
+                        1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+
+            一致。
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            令 $p$ 为：系统未加锁， $q$ 为：新消息被排队， $r$ 为：系统运行正常。
+
+            则系统规范说明为： $p \rightarrow q$ , $p \leftrightarrow r$ , $\neg q \rightarrow \neg q$ , $\neg p \rightarrow \neg q$ , $q$ 。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c}
+                        \hline
+                        p & q & r & p \rightarrow q & p \leftrightarrow r & \neg q \rightarrow \neg q & \neg p \rightarrow \neg q & q \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 \\
+                        0 & 1 & 1 & 1 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+                        1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+
+            一致。
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item New AND Jersey AND beach
+                \item the AND isle AND of AND Jersey AND beach
+            \end{enumerate}
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item West AND Virginia AND hiking
+                \item (NOT West AND Virginia) AND hiking
+            \end{enumerate}
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            如果我问你向右边的岔路口是否通向遗址，你会说是吗？
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 无论是说真话的还是说假话的，都会回答``不''。
+                \item 如果我问你你是否说真话，你会回答是吗？
+            \end{enumerate}
+        \end{practices}
+    }
 }
