@@ -26,5 +26,21 @@
             "\\end{practices}"
         ],
         "description": "DicreteMath"
+    },
+    "tarray":
+    {
+        "scope": "latex",
+        "prefix": "tarray",
+        "body":
+        [
+            "\\begin{table}[${1:H}]",
+            "    \\[",
+            "        \\begin{array}{$2}",
+            "            $3",
+            "       \\end{array}",
+            "   \\]",
+            "\\end{table}$4"
+        ],
+        "description": "DicreteMath"
     }
 }

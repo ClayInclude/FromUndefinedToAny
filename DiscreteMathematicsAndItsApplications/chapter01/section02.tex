@@ -172,7 +172,7 @@
 
             \begin{table}[H]
                 \[
-                    \begin{array}{c|c|c|c|c|c}
+                    \begin{array}{c|c|c|c|c|c|c}
                         \hline
                         p & q & r & p \rightarrow q & q \rightarrow r & r \rightarrow p & \neg q \\
                         \hline
@@ -200,7 +200,7 @@
 
             \begin{table}[H]
                 \[
-                    \begin{array}{c|c|c|c|c|c|c}
+                    \begin{array}{c|c|c|c|c|c|c|c}
                         \hline
                         p & q & r & p \rightarrow q & p \leftrightarrow r & \neg q \rightarrow \neg q & \neg p \rightarrow \neg q & q \\
                         \hline
@@ -247,6 +247,188 @@
                 \item 无论是说真话的还是说假话的，都会回答``不''。
                 \item 如果我问你你是否说真话，你会回答是吗？
             \end{enumerate}
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            第一位和第二位教授想要咖啡。
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            Jasmine和Kanti；Jasmine；谁都不邀请。
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            A是骑士。B是无赖。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c}
+                        \hline
+                        A & B & (\neg A \vee \neg B) \otimes A \\
+                        \hline
+                        0 & 0 & 0 \\
+                        0 & 1 & 0 \\
+                        1 & 0 & 1 \\
+                        1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            A是无赖，B是骑士。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c}
+                        \hline
+                        A & B & (A \wedge B) \otimes A & (\neg A) \otimes B \\
+                        \hline
+                        0 & 0 & 1 & 0 \\
+                        0 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 \\
+                        1 & 1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            A和B都是骑士。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c}
+                        \hline
+                        A & B & (\neg A \vee B) \otimes A \\
+                        \hline
+                        0 & 0 & 0 \\
+                        0 & 1 & 0 \\
+                        1 & 0 & 0 \\
+                        1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            都有可能。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c}
+                        \hline
+                        A & B & A \otimes A & B \otimes B \\
+                        \hline
+                        0 & 0 & 1 & 1 \\
+                        0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 \\
+                        1 & 1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            A是无赖，B是骑士。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c}
+                        \hline
+                        A & B & (\neg A \wedge \neg B) \otimes A \\
+                        \hline
+                        0 & 0 & 0 \\
+                        0 & 1 & 1 \\
+                        1 & 0 & 0 \\
+                        1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            A是骑士，B是间谍，C是无赖。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & (\neg C) \otimes A & A \otimes B & \neg C \\
+                        \hline
+                        0 & 0 & 0 & 0 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 0 & 0 & 1 \\
+                        0 & 1 & 1 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 1 & 0 & 0 & 0 \\
+                        1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 1 & 0 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            A是骑士，B是间谍，C是无赖。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & A \otimes A & \neg B & B \otimes C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 0 & 0 \\
+                        0 & 1 & 1 & 1 & 0 & 1 \\
+                        1 & 0 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 0 & 1 & 0 & 0 \\
+                        1 & 1 & 1 & 1 & 0 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            无解。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & \neg A & \neg B & \neg C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 0 & 1 \\
+                        0 & 1 & 1 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 0 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 1 & 0 \\
+                        1 & 1 & 0 & 0 & 0 & 1 \\
+                        1 & 1 & 1 & 0 & 0 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
         \end{practices}
     }
 }
