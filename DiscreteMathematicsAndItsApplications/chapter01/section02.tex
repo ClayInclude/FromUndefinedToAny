@@ -75,7 +75,7 @@
 
         %4.
         \begin{practices}
-            $(d \vee s) \rightarrow w$
+            $w \rightarrow (d \vee s)$
         \end{practices}
 
         %5.
@@ -102,7 +102,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $r \wedge \neg p$
-                \item $q \rightarrow (p \wedge r)$
+                \item $(p \wedge r) \rightarrow q$
                 \item $\neg r \rightarrow \neg q$
                 \item $\neg p \wedge r \rightarrow q$
             \end{enumerate}
@@ -118,15 +118,15 @@
                 \[
                     \begin{array}{c|c|c|c|c|c|c|c}
                         \hline
-                        p & q & r & p \leftrightarrow q & q \rightarrow r & \neg q \vee \neg p & \neg p \rightarrow \neg q & p \\
+                        p & q & r & p \leftrightarrow q & q \rightarrow r & \neg r \vee \neg p & \neg p \rightarrow \neg p & p \\
                         \hline
                         0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
                         0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
-                        0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
-                        0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+                        0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 0 & 1 & 1 & 1 & 0 \\
                         1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
-                        1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
-                        1 & 1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 1 & 0 & 1 & 1 \\
+                        1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
                         1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
                         \hline
                     \end{array}
@@ -224,7 +224,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item New AND Jersey AND beach
-                \item the AND isle AND of AND Jersey AND beach
+                \item (the AND isle AND of AND Jersey) NOT (New AND Jersey) AND beach
             \end{enumerate}
         \end{practices}
 
@@ -429,6 +429,281 @@
                    \end{array}
                \]
             \end{table}
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            A是骑士，B是间谍，C是无赖。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & A \otimes A & A \otimes B & \neg C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 0 & 1 \\
+                        0 & 1 & 1 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 1 & 1 & 0 & 0 \\
+                        1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            无解。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & A \otimes A & A \otimes B & B \otimes C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 0 & 0 \\
+                        0 & 1 & 1 & 1 & 0 & 1 \\
+                        1 & 0 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 1 & 1 & 0 & 0 \\
+                        1 & 1 & 0 & 1 & 1 & 0 \\
+                        1 & 1 & 1 & 1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            任何一种情况都有可能。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & A \otimes A & B \otimes B & C \otimes C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 0 & 1 & 1 & 1 \\
+                        0 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            A是间谍，B是无赖，C是骑士。
+            A是骑士，B是间谍，C是无赖。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & A \otimes A & B \otimes B & \neg A \otimes C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 0 \\
+                        0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 0 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            无解。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c}
+                        \hline
+                        A & B & C & A \otimes A & B \otimes B & C \otimes C \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 0 \\
+                        0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 0 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item Jones是凶手。
+                \item 三人都是凶手。
+            \end{enumerate}
+        \end{practices}
+
+        %33.
+        \begin{practices}
+            不能确定。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c}
+                        \hline
+                        F & M & J & \neg F \rightarrow J & J \rightarrow M \\
+                        \hline
+                        0 & 0 & 0 & 0 & 1 \\
+                        0 & 0 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 0 & 1 \\
+                        0 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 0 \\
+                        1 & 1 & 0 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            Kevin和Vijay在聊天。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c|c|c|c}
+                        \hline
+                        K & H & R & V & A & K \vee H & R \oplus V & A \rightarrow R & V \otimes K & H \rightarrow (A \wedge K) \\
+                        \hline
+                        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+                        0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        0 & 0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 \\
+                        0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 1 \\
+                        0 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 0 & 0 \\
+                        0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\
+                        0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+                        0 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 \\
+                        1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 1 \\
+                        1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 \\
+                        1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\
+                        1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 \\
+                        1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+                        1 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 \\
+                        1 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 \\
+                        1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 \\
+                        1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            男管家为A，厨师为B，园丁为C，杂役为D。
+            则男管家和厨师一定在说谎。
+
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c|c}
+                        \hline
+                        A & B & C & D & A \rightarrow B & \neg (B \wedge C) & C \wedge D & D \rightarrow \neg B \\
+                        \hline
+                        0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        0 & 1 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+                        0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\
+                        1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+                        1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %36.
+        \begin{practices}
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c|c}
+                        \hline
+                        A & C & D & J & C & \neg J & D & \neg D \\
+                        \hline
+                        0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+                        0 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+                        0 & 0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+                        0 & 0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+                        0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+                        0 & 1 & 1 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\
+                        1 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+                        1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\
+                        1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 \\
+                        1 & 0 & 1 & 1 & 0 & 0 & 1 & 0 \\
+                        1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 \\
+                        1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 \\
+                        1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+
+            \begin{enumerate}[A.]
+                \item John。
+                \item Carlos
+            \end{enumerate}
+        \end{practices}
+
+        %37.
+        \begin{practices}
+            第一扇门的提示为假，第二扇门为真。
+            第二扇门后面。
         \end{practices}
     }
 }
