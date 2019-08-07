@@ -711,7 +711,7 @@
             日本人养斑马，挪威人喜欢和水。
 
             \begin{table}[H]
-                \begin{tabular}{c|c|c|c|c}
+                \begin{tabular}{c|c|c|c|c|c}
                     \hline
                     & 1 & 2 & 3 & 4 & 5 \\
                     \hline
@@ -728,6 +728,53 @@
         %39.
         \begin{practices}
             只有一名是诚实的。
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\neg p \vee \neg q$
+                \item $\neg (p \vee (\neg p \wedge q))$
+            \end{enumerate}
+        \end{practices}
+
+        %41.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\neg (p \wedge (q \vee \neg r))$
+                \item $(\neg p \wedge \neg q) \vee (p \wedge r)$
+            \end{enumerate}
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            \begin{tikzpicture}[circuit logic US]
+                \matrix[column sep=7mm]
+                {
+                    \node (i0) {p}; &                               & & \\
+                                    & \node [and gate, inputs={normal,inverted}] (a1) {a};     & & \\
+                    \node (i1) {q}; &                               & \node [or gate] (o) {1}; & \node (l) {l}; \\
+                                    & \node [nand gate] (a2) {a};    & & \\
+                    \node (i2) {r}; &                               & & \\
+                };
+                \draw (i0.east) -- ++(right:3mm) |- (a1.input 1);
+                \draw (i1.east) -- ++(right:3mm) |- (a1.input 2);
+                \draw (i1.east) -- ++(right:3mm) |- (a2.input 1);
+                \draw (i2.east) -- ++(right:3mm) |- (a2.input 2);
+                \draw (a1.output) -- ++(right:3mm) |- (o.input 1);
+                \draw (a2.output) -- ++(right:3mm) |- (o.input 2);
+                \draw (o.output) -- ++(right:3mm) |- (l);
+            \end{tikzpicture}
+            % \begin{tikzpicture}[circuit logic US]
+            %     \matrix[column sep=7mm]
+            %     {
+            %         \node (p) {p}
+
+            %         \node (r) {r}
+
+            %         \node (q) {q}
+            %     }
+            % \end{tikzpicture}
         \end{practices}
     }
 }
