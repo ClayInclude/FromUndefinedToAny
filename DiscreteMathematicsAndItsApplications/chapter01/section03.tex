@@ -193,4 +193,251 @@
     {
         在不同领域中的许多问题都可以用命题可满足性来建立模型。
     }
+
+    %1.
+    \begin{practices}
+        \begin{enumerate}[A.]
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c}
+                            \hline
+                            p & p \wedge T & p \\
+                            \hline
+                            0 & 0 & 0 \\
+                            1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c}
+                            \hline
+                            p & p \vee F & p \\
+                            \hline
+                            0 & 0 & 0 \\
+                            1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c}
+                            \hline
+                            p & p \wedge F & F \\
+                            \hline
+                            0 & 0 & 0 \\
+                            1 & 0 & 0 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c}
+                            \hline
+                            p & p \vee T & T \\
+                            \hline
+                            0 & 1 & 1 \\
+                            1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c}
+                            \hline
+                            p & p \vee p & p \\
+                            \hline
+                            0 & 0 & 0 \\
+                            1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c}
+                            \hline
+                            p & p \wedge p & p \\
+                            \hline
+                            0 & 0 & 0 \\
+                            1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+        \end{enumerate}
+    \end{practices}
+
+    %2.
+    \begin{practices}
+        \begin{table}[H]
+            \[
+                \begin{array}{c|c|c}
+                    \hline
+                    p & \neg \neg p & p \\
+                    \hline
+                    0 & 0 & 0 \\
+                    1 & 1 & 1 \\
+                \end{array}
+            \]
+        \end{table}
+    \end{practices}
+
+    %3.
+    \begin{practices}
+        \begin{enumerate}[A.]
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c|c}
+                            \hline
+                            p & q & p \vee q & q \vee p \\
+                            \hline
+                            0 & 0 & 0 & 0 \\
+                            0 & 1 & 1 & 1 \\
+                            1 & 0 & 1 & 1 \\
+                            1 & 1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c|c}
+                            \hline
+                            p & q & p \wedge q & q \wedge p \\
+                            \hline
+                            0 & 0 & 0 & 0 \\
+                            0 & 1 & 0 & 0 \\
+                            1 & 0 & 0 & 0 \\
+                            1 & 1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+        \end{enumerate}
+    \end{practices}
+
+    %4.
+    \begin{practices}
+        \begin{enumerate}[A.]
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c|c|c}
+                            \hline
+                            p & q & r & (p \vee q) \ vee r & q \vee (p \vee r) \\
+                            \hline
+                            0 & 0 & 0 & 0 & 0 \\
+                            0 & 0 & 1 & 1 & 1 \\
+                            0 & 1 & 0 & 1 & 1 \\
+                            0 & 1 & 1 & 1 & 1 \\
+                            1 & 0 & 0 & 1 & 1 \\
+                            1 & 0 & 1 & 1 & 1 \\
+                            1 & 1 & 0 & 1 & 1 \\
+                            1 & 1 & 1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+            \item
+            {
+                \begin{table}[H]
+                    \[
+                        \begin{array}{c|c|c|c|c}
+                            \hline
+                            p & q & r & (p \wedge q) \wedge r & q \wedge (p \wedge r) \\
+                            \hline
+                            0 & 0 & 0 & 0 & 0 \\
+                            0 & 0 & 1 & 0 & 0 \\
+                            0 & 1 & 0 & 0 & 0 \\
+                            0 & 1 & 1 & 0 & 0 \\
+                            1 & 0 & 0 & 0 & 0 \\
+                            1 & 0 & 1 & 0 & 0 \\
+                            1 & 1 & 0 & 0 & 0 \\
+                            1 & 1 & 1 & 1 & 1 \\
+                        \end{array}
+                    \]
+                \end{table}
+            }
+        \end{enumerate}
+    \end{practices}
+
+    %5.
+    \begin{practices}
+        \begin{table}[H]
+            \[
+                \begin{array}{c|c|c|c|c|c|c|c}
+                    \hline
+                    p & q & r & q \vee r & p \wedge (q \vee r) & p \wedge q & p \wedge r & (p \wedge q) \vee (p \wedge r) \\
+                    \hline
+                    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+                    0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+                    0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+                    0 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+                    1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+                    1 & 0 & 1 & 1 & 1 & 0 & 1 & 1 \\
+                    1 & 1 & 0 & 1 & 1 & 1 & 0 & 1 \\
+                    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                \end{array}
+            \]
+        \end{table}
+    \end{practices}
+
+    %6.
+    \begin{practices}
+        \begin{table}[H]
+            \[
+                \begin{array}{c|c|c|c}
+                    \hline
+                    p & q & \neg (p \wedge q) &\neg p \vee \neg q \\
+                    \hline
+                    0 & 0 & 1 & 1 \\
+                    0 & 1 & 1 & 1 \\
+                    1 & 0 & 1 & 1 \\
+                    1 & 1 & 0 & 0 \\
+                \end{array}
+            \]
+        \end{table}
+    \end{practices}
+
+    %7.
+    \begin{practices}
+        \begin{enumerate}[A.]
+            \item Jane不富裕，或者不快乐。
+            \item Carlos明天既不骑自行车，也不跑步。
+            \item Mei不是步行也不乘公共汽车去上课。
+            \item Ibrahim不聪明或者不用功。
+        \end{enumerate}
+    \end{practices}
+
+    %8.
+    \begin{practices}
+        \begin{enumerate}[A.]
+            \item Kwame不会在工业界找工作并且也不会去研究生院读书。
+            \item Yoshiko不会掌握Java或者不会掌握微积分。
+            \item James不年轻或者不强壮。
+            \item Rita不会搬到俄勒冈州也不会搬到华盛顿去。
+        \end{enumerate}
+    \end{practices}
 }

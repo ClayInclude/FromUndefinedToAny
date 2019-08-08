@@ -708,7 +708,7 @@
 
         %38.
         \begin{practices}
-            日本人养斑马，挪威人喜欢和水。
+            日本人养斑马，挪威人喜欢喝水。
 
             \begin{table}[H]
                 \begin{tabular}{c|c|c|c|c|c}
@@ -751,30 +751,45 @@
             \begin{tikzpicture}[circuit logic US]
                 \matrix[column sep=7mm]
                 {
-                    \node (i0) {p}; &                               & & \\
-                                    & \node [and gate, inputs={normal,inverted}] (a1) {a};     & & \\
-                    \node (i1) {q}; &                               & \node [or gate] (o) {1}; & \node (l) {l}; \\
-                                    & \node [nand gate] (a2) {a};    & & \\
-                    \node (i2) {r}; &                               & & \\
+                    \node (p) {p};  &                                                           &                           \\
+                                    & \node [and gate, inputs = {normal, inverted}] (a1) {};    &                           \\
+                    \node (r) {r};  &                                                           & \node [or gate] (o) {};   \\
+                                    & \node [and gate, inputs = {normal, inverted}] (a2) {};    &                           \\
+                    \node (q) {q};  &                                                           &                           \\
                 };
-                \draw (i0.east) -- ++(right:3mm) |- (a1.input 1);
-                \draw (i1.east) -- ++(right:3mm) |- (a1.input 2);
-                \draw (i1.east) -- ++(right:3mm) |- (a2.input 1);
-                \draw (i2.east) -- ++(right:3mm) |- (a2.input 2);
+                \draw (p.east) -- ++(right:3mm) |- (a1.input 1);
+                \draw (r.east) -- ++(right:3mm) |- (a1.input 2);
+                \draw (r.east) -- ++(right:3mm) |- (a2.input 1);
+                \draw (q.east) -- ++(right:3mm) |- (a2.input 2);
                 \draw (a1.output) -- ++(right:3mm) |- (o.input 1);
                 \draw (a2.output) -- ++(right:3mm) |- (o.input 2);
-                \draw (o.output) -- ++(right:3mm) |- (l);
+                \draw (o.output) -- ++(right:3mm);
             \end{tikzpicture}
-            % \begin{tikzpicture}[circuit logic US]
-            %     \matrix[column sep=7mm]
-            %     {
-            %         \node (p) {p}
+        \end{practices}
 
-            %         \node (r) {r}
-
-            %         \node (q) {q}
-            %     }
-            % \end{tikzpicture}
+        %43.
+        \begin{practices}
+            \begin{tikzpicture}[circuit logic US]
+                \matrix[column sep=9mm]
+                {
+                    \node (q) {q};  & & \node [and gate, inputs = {inverted, normal}] (a1) {};  & & \\
+                                    & \node [or gate, inputs = {inverted, inverted}] (o1) {};   & & & \\
+                    \node (p) {p};  & & & \node [or gate] (o3) {};                                & \\
+                                    & \node [or gate] (o2) {};                                  & & & \\
+                    \node (r) {r};  & & \node [and gate, inputs = {normal, inverted}] (a2) {};  & & \\
+                };
+                \draw (q.east) -- ++(right:1mm) |- (a1.input 1);
+                \draw (q.east) -- ++(right:2mm) |- (o2.input 2);
+                \draw (p.east) -- ++(right:4mm) |- (o1.input 1);
+                \draw (p.east) -- ++(right:5mm) |- (a2.input 2);
+                \draw (r.east) -- ++(right:7mm) |- (o1.input 2);
+                \draw (r.east) -- ++(right:8mm) |- (o2.input 1);
+                \draw (o1.output) -- ++(right:3mm) |- (a1.input 2);
+                \draw (o2.output) -- ++(right:3mm) |- (a2.input 1);
+                \draw (a1.output) -- ++(right:3mm) |- (o3.input 1);
+                \draw (a2.output) -- ++(right:3mm) |- (o3.input 2);
+                \draw (o3.output) -- ++(right:3mm);
+            \end{tikzpicture}
         \end{practices}
     }
 }
