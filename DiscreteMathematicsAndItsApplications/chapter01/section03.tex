@@ -628,28 +628,106 @@
             \begin{enumerate}[A.]
                 \item
                 {
-                    当且仅当 $p = F$ 且 $p \wedge q = T$ 时，该条件语句为假。
-                    若 $p = F$ ，则 $p \wedge q = F$ ，故该条件语句为永真式。
+                    \begin{align*}
+                        (p \wedge q) \rightarrow p
+                        &\equiv \neg (p \wedge q) \vee q \\
+                        &\equiv (\neg p \vee \neg q) \vee q \\
+                        &\equiv \neg p \vee (\neg q \vee q) \\
+                        &\equiv \neg p \vee T \\
+                        &\equiv T
+                    \end{align*}
                 }
                 \item
                 {
-                    当且仅当 $p = T$ 且 $p \vee q = F$ 时，该条件语句为假。
-                    若 $p = T$ ，则 $p \vee q = T$ ，故该条件语句为永真式。
+                    \begin{align*}
+                        p \rightarrow (p \vee q)
+                        &\equiv \neg p \vee (p \vee q) \\
+                        &\equiv (neg p \vee p) \vee q \\
+                        &\equiv T \vee q \\
+                        &\equiv T
+                    \end{align*}
                 }
                 \item
                 {
-                    当且仅当 $\neg p = T$ 且 $p \rightarrow q = F$ 时，该条件语句为假。
-                    若 $\neg p = T$ ，则 $p \vee q = T$ ，故该条件语句为永真式。
+                    \begin{align*}
+                        \neg p \rightarrow (p \rightarrow q)
+                        &\equiv p \vee (\neg p \vee q) \\
+                        &\equiv T \vee q \\
+                        &\equiv T
+                    \end{align*}
                 }
                 \item
                 {
-                    当且仅当 $p \wedge q = T$ 且 $p \rightarrow q = F$ 时，该条件语句为假。
-                    若 $p \wedge q = T$ ，可得 $p = T, q = T$ ，则 $p \vee q = T$ ，故该条件语句为永真式。
+                    \begin{align*}
+                        (p \wedge q) \rightarrow (p \rightarrow q)
+                        &\equiv (\neg p \vee \neg q) \vee (\neg p \vee q) \\
+                        &\equiv \neg p \vee T \\
+                        &\equiv T
+                    \end{align*}
                 }
                 \item
                 {
-                    当且仅当 $p = F$ 且 $p \wedge q = T$ 时，该条件语句为假。
-                    若 $p = F$ ，则 $p \wedge q = F$ ，故该条件语句为永真式。
+                    \begin{align*}
+                        \neg (p \rightarrow q) \rightarrow p
+                        &\equiv (\neg p \vee q) \vee p \\
+                        &\equiv T \vee q \\
+                        &\equiv T
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \neg (p \rightarrow q) \rightarrow \neg q
+                        &\equiv (\neg p \vee q) \vee \neg q \\
+                        &\equiv p \vee T \\
+                        &\equiv T
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        [\neg p \wedge (p \vee q)] \rightarrow q
+                        &\equiv p \vee \neg (p \vee q) \vee q \\
+                        &\equiv p \vee (\neg p \wedge \neg q) \vee q \\
+                        &\equiv (p \vee \neg p) \wedge (p \vee \neg q) \vee q \\
+                        &\equiv [T \wedge (p \vee \neg q)] \ vee q \\
+                        &\equiv (T \vee q) \wedge (q \vee p \vee \neg q) \\
+                        &\equiv T \wedge (T \vee p) \\
+                        &\equiv T
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        [(p \rightarrow q) \wedge (q \rightarrow r)] \rightarrow (p \rightarrow r)
+                        &\equiv \neg (p \rightarrow q) \vee \neg (q \rightarrow r) \vee (p \rightarrow r) \\
+                        &\equiv (p \wedge \neg q) \vee (q \wedge \neg r) \vee (\neg p \vee r) \\
+                        &\equiv [(p \vee (q \wedge \neg r)) \wedge (\neg q \vee (q \wedge \neg r))] \vee (\neg p \vee r) \\
+                        &\equiv [(p \vee (q \wedge \neg r)) \wedge ((\neg q \vee q) \wedge (q \vee \neg r))] \vee (\neg p \vee r) \\
+                        &\equiv [(p \vee (q \wedge \neg r)) \wedge (T \wedge (q \vee \neg r))] \vee (\neg p \vee r) \\
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \neg p \rightarrow (p \rightarrow q) &= p \vee (\neg p \vee q) \\
+                        &= T \vee q \\
+                        &= T
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        (p \wedge q) \rightarrow (p \rightarrow q) &= (\neg p \vee \neg q) \vee (\neg p \vee q) \\
+                        &= \neg p \vee T \\
+                        &= T
+                    \end{align*}
                 }
             \end{enumerate}
         \end{practices}
