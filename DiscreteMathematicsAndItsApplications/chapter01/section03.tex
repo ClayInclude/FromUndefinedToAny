@@ -1028,5 +1028,78 @@
                \]
             \end{table}
         \end{practices}
+
+        %33.
+        \begin{practices}
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c|c|c|c}
+                        \hline
+                        p & q & r & s & p \rightarrow q & r \rightarrow s & (p \rightarrow q) \rightarrow (r \rightarrow s) & p \rightarrow r & q \rightarrow s & (p \rightarrow r) \rightarrow (q \rightarrow s) \\
+                        \hline
+                        0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 \\
+                        0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+                        0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\
+                        1 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\
+                        1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 \\
+                        1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+                        1 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+                        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $p \wedge \neg q$
+                \item $p \vee (q \wedge (r \vee F))$
+                \item $(p \vee \neg q) \wedge (q \vee T)$
+            \end{enumerate}
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $p \vee \neg q \vee \neg r$
+                \item $(p \vee q \vee r) \wedge s$
+                \item $(p \wedge T) \vee (q \wedge F)$
+            \end{enumerate}
+        \end{practices}
+
+        %36.
+        \begin{practices}
+            当 $s$ 是一个足够简单的命题时，不包含 $\vee \wedge F T$时。
+        \end{practices}
+
+        %37.
+        \begin{practices}
+            当经过两次对换，所有的符号又变回原命题，所以相等。
+        \end{practices}
+
+        %38.
+        \begin{practices}
+            根据对偶式的定义，进行替换后相等。
+        \end{practices}
+
+        %39.
+        \begin{practices}
+            根据德 $\cdot$ 摩根定律， $\neg p$ 和 $p^{*}$ 是相同的，只不过其中原子命题 $p_i$ 被其否定代替。
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            $p \wedge q \wedge \neg r$
+        \end{practices}
     }
 }
