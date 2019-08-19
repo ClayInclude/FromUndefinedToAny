@@ -1101,5 +1101,53 @@
         \begin{practices}
             $p \wedge q \wedge \neg r$
         \end{practices}
+
+        %41.
+        \begin{practices}
+            多个命题的异或，若含奇数个真命题，则结果为真；
+            若含偶数个真命题，则结果为假。
+
+            多个命题的同或，若含奇数个假命题，则结果为假；
+            若含偶数个假命题，则结果为真。
+
+            $\neg (p \otimes q \otimes r)$
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            写出每一行的合取。
+            若值为真，则不变，若值为假，则取反。
+            将所有项做析取，得到析取范式。
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            写出真值表，根据42题可得，其复合命题可以仅使用 $\neg \wedge \vee$ 表达。
+            故 $\neg \wedge \vee$ 是功能完备的。
+        \end{practices}
+
+        %44.
+        \begin{practices}
+            \begin{align*}
+                \neg (\neg p \wedge \neg q)
+                &\equiv \neg \neg p \vee \neg \neg q \\
+                &\equiv p \vee q
+            \end{align*}
+
+            根据43题，其复合命题中所有的 $p \vee q$ 都可以用 $\neg (\neg p \wedge \neg q)$ 代替。
+            故 $\neg \wedge$ 是功能完备的。
+        \end{practices}
+
+        %45.
+        \begin{practices}
+            \begin{align*}
+                \neg (\neg p \vee \neg q)
+                &\equiv \neg \neg p \wedge \neg \neg q \\
+                &\equiv p \wedge q
+            \end{align*}
+
+            根据43题，其复合命题中所有的 $p \wedge q$ 都可以用 $\neg (\neg p \vee \neg q)$ 代替。
+            故 $\neg \vee$ 是功能完备的。
+        \end{practices}
     }
 }
