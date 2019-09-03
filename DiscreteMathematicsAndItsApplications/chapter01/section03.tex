@@ -1155,14 +1155,105 @@
             \begin{table}[H]
                 \[
                     \begin{array}{c|c|c}
+                        \hline
                         p & q & p | q \\
+                        \hline
                         0 & 0 & 1 \\
                         0 & 1 & 1 \\
                         0 & 1 & 1 \\
                         1 & 1 & 0 \\
+                        \hline
                    \end{array}
                \]
             \end{table}
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c}
+                        \hline
+                        p & q & p | q & \neg (p \wedge q) \\
+                        \hline
+                        0 & 0 & 1 & 1 \\
+                        0 & 1 & 1 & 1 \\
+                        0 & 1 & 1 & 1 \\
+                        1 & 1 & 0 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %48.
+        \begin{practices}
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c}
+                        \hline
+                        p & q & p \downarrow q \\
+                        \hline
+                        0 & 0 & 1 \\
+                        0 & 1 & 0 \\
+                        0 & 1 & 0 \\
+                        1 & 1 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %49.
+        \begin{practices}
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c}
+                        \hline
+                        p & q & p \downarrow q & \neg (p \vee q) \\
+                        \hline
+                        0 & 0 & 1 & 1 \\
+                        0 & 1 & 0 & 0 \\
+                        0 & 1 & 0 & 0 \\
+                        1 & 1 & 0 & 0 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %50.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{table}[H]
+                        \[
+                            \begin{array}{c|c|c}
+                                \hline
+                                p & p \downarrow p & \neg p \\
+                                \hline
+                                0 & 1 & 1 \\
+                                1 & 0 & 0 \\
+                                \hline
+                           \end{array}
+                       \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{align*}
+                        (p \downarrow q) \downarrow (p \downarrow q)
+                        &\equiv \neg (p \downarrow q) \\
+                        &\equiv \neg (\neg (p \vee q)) \\
+                        &\equiv p \vee q
+                    \end{align*}
+                }
+                \item
+                {
+                    根据45题， $\{\downarrow\}$ 是功能完备集。
+                }
+            \end{enumerate}
         \end{practices}
     }
 }
