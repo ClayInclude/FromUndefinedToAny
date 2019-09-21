@@ -1255,5 +1255,188 @@
                 }
             \end{enumerate}
         \end{practices}
+
+        %51.
+        \begin{practices}
+            \begin{align*}
+                p \rightarrow q
+                &\equiv (neg p) \vee q \\
+                &\equiv (p \downarrow p) \vee q \\
+                &\equiv [(p\ downarrow p) \downarrow q] \downarrow [(p\ downarrow p) \downarrow q]
+            \end{align*}
+        \end{practices}
+
+        %52.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{table}[H]
+                        \[
+                            \begin{array}{c|c|c}
+                                \hline
+                                p & p | p & \neg p \\
+                                \hline
+                                0 & 1 & 1 \\
+                                1 & 0 & 0 \\
+                                \hline
+                           \end{array}
+                       \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{align*}
+                        (p | q) | (p | q)
+                        &\equiv \neg (p | q) \\
+                        &\equiv \neg (\neg (p \wedge q)) \\
+                        &\equiv p \wedge q
+                    \end{align*}
+                }
+                \item
+                {
+                    根据44题， $\{\downarrow\}$ 是功能完备集。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %53.
+        \begin{practices}
+            \begin{align*}
+                p | q
+                &\equiv \neg (p \wedge q) \\
+                &\equiv \neg (q \wedge p) \\
+                &\equiv q | p
+            \end{align*}
+        \end{practices}
+
+        %54.
+        \begin{practices}
+            \begin{table}[H]
+                \[
+                    \begin{array}{c|c|c|c|c|c|c}
+                        \hline
+                        p & q & r & (q | r) & (p | q) & p | (q | r) & (p | q) | r \\
+                        \hline
+                        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+                        0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+                        0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+                        1 & 0 & 0 & 1 & 1 & 0 & 1 \\
+                        1 & 0 & 1 & 1 & 1 & 0 & 0 \\
+                        1 & 1 & 0 & 1 & 0 & 0 & 1 \\
+                        1 & 1 & 1 & 0 & 0 & 1 & 1 \\
+                        \hline
+                   \end{array}
+               \]
+            \end{table}
+        \end{practices}
+
+        %55.
+        \begin{practices}
+            ?
+        \end{practices}
+
+        %56.
+        \begin{practices}
+            若 $p, q$ 逻辑等价，则其拥有相同的真值表， $q, r$ 逻辑等价，则也有相同的真值表。
+            所以 $p, q, r$ 真值表相同，即 $p, q, r$ 三者互为逻辑等价。
+        \end{practices}
+
+        %57.
+        \begin{practices}
+            目录数据库没有打开，或者系统在初始状态，或者监控程序被置于关闭状态。
+        \end{practices}
+
+        %58.
+        \begin{practices}
+            五个同时为真。
+        \end{practices}
+
+        %59.
+        \begin{practices}
+            九个同时为真。
+        \end{practices}
+
+        %60.
+        \begin{practices}
+            根据定义，对于每一种真值，不可满足式的否定真值都为真，所以不可满足的复合命题的否定是永真式。
+            对于每一种真值，永真式的否定真值都为假，所以永真式的否定是不可满足的。
+        \end{practices}
+
+        %61.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    当 $p = False, q = False$ 时，命题为真。
+                }
+                \item
+                {
+                    不可满足。
+                }
+                \item
+                {
+                    不可满足。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %62.
+        \begin{practices}
+            根据最大项之积， $4$ 个命题变元，只要少于 $2^4 = 16$ 个最大项，都是可满足的。
+
+            \begin{enumerate}[A.]
+                \item
+                {
+                    最大项最多有10个。
+                }
+                \item
+                {
+                    最大项最多有12个。
+                }
+                \item
+                {
+                    $p \vee \neg q \vee \neg s$ 最大项为 $p \vee \neg q \vee r \vee \neg s, p \vee \neg q \vee \neg r \vee \neg s$ ， $p \vee \neg q \vee \neg r$ 最大项为 $p \vee \neg q \vee \neg r \vee s, p \vee \neg q \vee \neg r \vee \neg s$ 。
+                    其中 $p \vee \neg q \vee \neg r \vee \neg s$ 重复，即只有三个最大项。其余六项最多有12个最大项，最大项不超过15个。
+                }
+            \end{enumerate}
+
+            三个命题均为可满足的。
+        \end{practices}
+
+        %63.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    对于已知数的每个单元，当第 $i$ 行第 $j$ 列的单元是已知数 $n$ 时，断言 $p(i, j, n)$ 。
+                }
+                \item
+                {
+                    断言每一行包含了每一个数：
+
+                    \[
+                        \bigwedge^{4}_{i = 1}\bigwedge^{4}_{n = 1}\bigvee^{4}_{j = 1} p(i, j, n)
+                    \]
+                }
+                \item
+                {
+                    断言每一列包含了每一个数：
+
+                    \[
+                        \bigwedge^{4}_{j = 1}\bigwedge^{4}_{n = 1}\bigvee^{4}_{i = 1} p(i, j, n)
+                    \]
+                }
+                \item
+                {
+                    断言每一个四宫格包含了每一个数：
+
+                    \[
+                        \bigwedge^{1}_{r = 0}\bigwedge^{1}_{s = 0}\bigwedge^{4}_{n = 1}\bigvee^{2}_{i = 1}\bigvee^{2}_{j = 1} p(3r + i, 3s + j, n)
+                    \]
+                }
+            \end{enumerate}
+        \end{practices}
     }
 }
