@@ -1,0 +1,124 @@
+{
+    // 控制按下 "Enter" 键是否像 "Tab" 键一样接受建议。这能减少“插入新行”和“接受建议”命令之间的歧义。若此项的值为 "smart"，则仅在文字改变时，"Enter" 键才能接受建议。
+    "editor.acceptSuggestionOnEnter": "off",
+    // 当打开文件时，将基于文件内容检测 "editor.tabSize" 和 "editor.insertSpaces"。
+    "editor.detectIndentation": false,
+    "editor.fontSize": 15,
+    // 默认行尾字符。使用 \n 表示 LF，\r\n 表示 CRLF。
+    "files.eol": "\n",
+    // 自定义要在 Windows 上运行的终端。
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+    // 控制资源管理器是否应在删除文件到废纸篓时进行确认。
+    "explorer.confirmDelete": false,
+    // 控制在资源管理器内拖放移动文件或文件夹时是否进行确认。
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Monokai",
+    // 指定在工作台中使用的图标主题，或指定 "null" 以不显示任何文件图标。
+    "workbench.iconTheme": "vscode-great-icons",
+    // 在未能恢复上一会话信息的情况下，控制启动时显示的编辑器。选择 "none" 表示启动时不打开编辑器，"welcomePage" 表示打开欢迎页面(默认)，"newUntitledFile" 表示打开新的无标题文档(仅打开一个空工作区)。
+    "workbench.startupEditor": "newUntitledFile",
+    // Markdownlint规则
+    "markdownlint.config": {
+        "MD033": {
+            "allowed_elements": [
+                "sub",
+                "sup"
+            ]
+        }
+    },
+    "markdown.extension.toc.updateOnSave": false,
+    "editor.wordWrap": "on",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "--synctex",
+                "--pdf",
+                "--tex-option=\"-interaction=nonstopmode\"",
+                "--tex-option=\"-file-line-error\"",
+                "%DOC%.tex"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%.aux"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex->xelatex",
+            "tools": [
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xe->bib->xe->xe->xe",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ],
+    // "latex-workshop.latex.clean.onFailBuild.enabled": true,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.badbox.show": false,
+    "latex-workshop.message.log.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    // "latex-workshop.latex.autoBuild.onSave.enabled": false,
+    "latex-workshop.message.update.show": false,
+    "editor.fontFamily": "'Source Code Pro', Consolas, 'Courier New', monospace",
+    "systemverilog.disableIndexing": true,
+    "typescript.suggest.completeFunctionCalls": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "extensions.ignoreRecommendations": false,
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "search.exclude": {
+        "**/bin-debug": true,
+        "**/bin-release": true
+    },
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "lua.format.indentCount": 4,
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.intelliSenseMode": "msvc-x64",
+    "C_Cpp.loggingLevel": "Information",
+    "C_Cpp.autoAddFileAssociations": false,
+    "window.zoomLevel": 0,
+    "C_Cpp.updateChannel": "Insiders",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: true, ColumnLimit: 0, AccessModifierOffset: -4, AlignAfterOpenBracket: AlwaysBreak}",
+    "breadcrumbs.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.snippetSuggestions": "top",
+    "markdown-preview-enhanced.enableScriptExecution": true,
+    "latex-workshop.tikzpreview.enabled": false,
+    "latex-workshop.tikzpreview.parseTeXFile": false,
+    "markdown-preview-enhanced.mermaidTheme": "dark",
+    "markdown-preview-enhanced.previewTheme": "monokai.css"
+}

@@ -1436,7 +1436,32 @@
                         \bigwedge^{1}_{r = 0}\bigwedge^{1}_{s = 0}\bigwedge^{4}_{n = 1}\bigvee^{2}_{i = 1}\bigvee^{2}_{j = 1} p(3r + i, 3s + j, n)
                     \]
                 }
+                \item
+                {
+                    断言没有一个单元包含多于一个数，对所有可能的 $p(i, i, n) \rightarrow \neg p(i, j, n^{\prime})$ 取合取，其中 $n, n^{\prime}, i, j$的取值范围是 $1 \sim 4$ 并且 $n \neq n^{\prime}$ 。
+                }
             \end{enumerate}
+        \end{practices}
+
+        %64.
+        \begin{practices}
+            \[
+                \bigwedge^{9}_{i = 1} \bigwedge^{9}_{j = 1} \bigvee^{9}_{n = 1} p(i, j, n)
+            \]
+        \end{practices}
+
+        %65.
+        \begin{practices}
+            要断言第 $j$ 列包含数 $n$ ，构成 $\bigvee\limits^{9}_{i = 1} p(i, j, n)$ 。
+            要断言第 $j$ 列包含所有的 $n$ 个数，将 $n$ 的所有九个可能值的析取式做合取，得到 $\bigwedge\limits^{9}_{n = 1} \bigvee\limits^{9}_{i = 1} p(i, j, n)$ 。
+            要断言每一列包含了每一个数，将九列做合取，得到了： $\bigwedge\limits^{9}_{j = 1} \bigwedge\limits^{9}_{n = 1} \bigvee\limits^{9}_{i = 1} p(i, j, n)$ 。
+        \end{practices}
+
+        %66.
+        \begin{practices}
+            要断言某个九宫格包含数 $n$ ，构成 $\bigvee\limits^{3}_{i = 1}\bigvee\limits^{3}_{j = 1} p(3r + i, 3s + j, n)$ 。
+            要断言某个九宫格包含所有的 $n$ 个数，将 $n$ 的所有九个可能值的析取式做合取，得到 $\bigwedge\limits^{9}_{n = 1}\bigvee\limits^{3}_{i = 1}\bigvee\limits^{3}_{j = 1} p(3r + i, 3s + j, n)$ 。
+            要断言每一个九宫格包含了每一个数，将九个九宫格做合取，得到了： $\bigwedge\limits^{2}_{r = 0}\bigwedge\limits^{2}_{s = 0}\bigwedge\limits^{9}_{n = 1}\bigvee\limits^{3}_{i = 1}\bigvee\limits^{3}_{j = 1} p(3r + i, 3s + j, n)$ 。
         \end{practices}
     }
 }
