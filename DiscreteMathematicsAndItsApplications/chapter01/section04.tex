@@ -19,5 +19,74 @@
 
         语句 $P(x)$ 也可以说成是命题函数 $P$ 在 $x$ 的值。
         一旦给变量 $x$ 赋一个值，语句 $P(x)$ 就成为命题并具有真值。
+
+        一般地，设计 $n$ 个变量 $x_1, x_2, \cdots, x_n$ 的语句可以表示成
+        $$P(x_1, x_2, \cdots, x_n)$$
+        形式为 $P(x_1, x_2, \cdots, x_n)$ 的语句是 \emreg{命题函数} $P$ 在 $n$ 元组 $(x_1, x_2, \cdots, x_n)$ 的值， $P$ 也称为\emreg{ $n$ 位谓词} 或 \emreg{ $n$ 元谓词}。 
+
+        \paraph{前置和后置条件}
+        {
+            谓词还可以用来验证计算机程序，也就是证明当给定合法输入时计算机程序总是能产生所期望的输出。（除非建立了程序的正确性，否则无论测试了多少次都不能证明程序对所有输入都产生期望的输出，除非能测试到每个输入值。）
+            描述合法输入的语句叫做\emreg{前置条件}，而程序运行的输出应该满足的条件称为\emreg{后置条件}。
+        }
+    }
+
+    \subsection{量词}
+    {
+        有一种称为\emreg{量化}的重要方式也可以从命题函数生成一个命题。
+        量化表示在何种程度上谓词对于一个范围的个体成立。
+        这里集中讨论两类量化：
+        全称量化，它告诉我们一个谓词在所考虑的范围内对每一个个体都为真；
+        存在量化，它告诉我们一个谓词在所考虑范围内的一个或多个个体为真。
+        处理谓词和量词的逻辑领域称为\emreg{谓词演算}。
+
+        \paraph{全称量词}
+        {
+            许多数学命题断言某一性质对于变量在某一特定域内的所有值均为真，这一特定域称为变量的\emreg{论域 (domain of discourse)}（或\emreg{全体域 (universe of discourse)}），时常简称为\emreg{域 (domain)}。
+            使用全称量词时必须指定论域，否则语句的\emreg{全称量化}就是无定义的。
+
+            \begin{defines}
+                $P(x)$ 的\emspe{全称量化}是语句
+                $$P(x) \text{对} x \text{在其论域的所有值为真。}$$
+                符号 $\forall xP(x)$ 表示
+            \end{defines}
+        }
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $true$
+                \item $true$
+                \item $false$
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $true$
+                \item $false$
+                \item $false$
+                \item $true$
+            \end{enumerate}
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $true$
+                \item $false$
+                \item $false$
+                \item $false$
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            $x = 2$
+        \end{practices}
     }
 }
