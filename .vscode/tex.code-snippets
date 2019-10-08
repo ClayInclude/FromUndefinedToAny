@@ -1,8 +1,8 @@
 {
-    "pracitem":
+    "pracItem":
     {
         "scope": "latex",
-        "prefix": "pracitem",
+        "prefix": "pracItem",
         "body":
         [
             "%$1.",
@@ -12,12 +12,12 @@
             "    \\end{enumerate}",
             "\\end{practices}"
         ],
-        "description": "DicreteMath"
+        "description": "DiscreteMath"
     },
-    "pracsingle":
+    "pracSingle":
     {
         "scope": "latex",
-        "prefix": "pracsingle",
+        "prefix": "pracSingle",
         "body":
         [
             "%$1.",
@@ -25,12 +25,12 @@
             "    $2",
             "\\end{practices}"
         ],
-        "description": "DicreteMath"
+        "description": "DiscreteMath"
     },
-    "tarray":
+    "tArray":
     {
         "scope": "latex",
-        "prefix": "tarray",
+        "prefix": "tArray",
         "body":
         [
             "\\begin{table}[${1:H}]",
@@ -41,6 +41,6 @@
             "   \\]",
             "\\end{table}$4"
         ],
-        "description": "DicreteMath"
+        "description": "DiscreteMath"
     }
 }

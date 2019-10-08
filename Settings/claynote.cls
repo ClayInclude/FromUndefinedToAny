@@ -62,7 +62,7 @@
 %     {\begin{@defines}\mbox{}\par}
 %     {\begin{@defines}[#1]\mbox{}\par}
 % }
-% {    
+% {
 %     \end{@defines}
 % }
 

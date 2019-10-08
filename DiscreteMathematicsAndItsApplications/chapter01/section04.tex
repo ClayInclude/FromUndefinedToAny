@@ -47,10 +47,59 @@
 
             \begin{defines}
                 $P(x)$ 的\emspe{全称量化}是语句
-                $$P(x) \text{对} x \text{在其论域的所有值为真。}$$
-                符号 $\forall xP(x)$ 表示
+                $$P(x)\text{对}x\text{在其论域的所有值为真。}$$
+                符号 $\forall xP(x)$ 表示 $P(x)$ 的全称量化，其中 $\forall$ 称为\emspe{全称量词}。
+                命题 $\forall xP(x)$ 读做``对所有 $x, P(x)$''或``对每个 $x, P(x)$''。
+                一个使 $P(x)$ 为假的个体称为 $\forall xP(x)$ 的\emspe{反例}。
             \end{defines}
+
+            \begin{table}[htb]
+                \centering
+
+                \begin{tabular}{c|c|c}
+                    \hline
+                    命题 & 什么时候为真 & 什么时候为假 \\
+                    \hline
+                    $\forall xP(x)$ & 对每一个 $x, P(x)$ 都为真 & 有一个 $x$ 使 $P(x)$ 为假 \\
+                    $\exists xP(x)$ & 有一个 $x$ 使 $P(x)$ 为真 & 对每一个 $x, P(x)$ 都为假 \\
+                    \hline
+                \end{tabular}
+
+                \caption{量词}
+            \end{table}
+
+            如果论域为空，那么 $\forall xP(x)$ 对任何命题函数 $P(x)$ 都为真。
+
+            要证明当 $x$ 在论域中时 $P(x)$ 不总为真，方法之一就是寻找一个 $\forall xP(x)$ 的反例。
         }
+
+        \paraph{存在量词}
+        {
+            许多数学定理断言：有一个个体使得某种性质成立。
+
+            \begin{defines}
+                $P(x)$ 的存在量化是命题
+                $$\text{论域中存在一个个体}x\text{满足}P(x)\text{。}$$
+                用符号 $\exists xP(x)$ 表示 $P(x)$ 的存在量化，其中 $\exists$ 称为存在量词。
+            \end{defines}
+
+            使用存在量词时必须指定论域，否则语句的\emreg{存在量化}就是无定义的。
+
+            如果论域为空，那么 $\exists xP(x)$ 对任何命题函数 $P(x)$ 都为假。
+        }
+
+        \paraph{唯一性量词}
+        {
+            其他量词中最常见的是\emreg{唯一性量词}，用符号 $\exists !$ 或 $\exists_1$ 表示。
+        }
+    }
+
+    \subsection{约束论域的量词}
+    {
+        要限定一个量词的论域时，变量必须满足的条件直接放在量词的后面。
+
+        全称量化的约束和一个条件语句的全称量化等价。
+        存在量化的约束和一个合取式的存在量化等价。
     }
 
     \subsection{练习}

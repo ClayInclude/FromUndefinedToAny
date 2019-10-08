@@ -1,0 +1,5 @@
+[user]
+	name = Your Name
+	email = your@gmail.com
+[core]
+	autocrlf = false
