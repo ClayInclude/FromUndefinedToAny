@@ -104,7 +104,7 @@
 
     \subsection{量词的优先级}
     {
-        量词 $\forall$ 和 $\exsits$ 比命题演算中的所有逻辑运算符都具有更高的优先级。
+        量词 $\forall$ 和 $\exists$ 比命题演算中的所有逻辑运算符都具有更高的优先级。
     }
 
     \subsection{变量绑定}
@@ -112,6 +112,55 @@
         当量词作用与变量 $x$ 的时候，此变量的这次出现为\emreg{约束的}。
         一个变量的出现被成为是\emreg{自由的}，如果没有被量词约束或设置为某一特定值。
         命题函数中的所有变量出现必须是约束的或者被设置未等于某个特定值的，才能把它转变为一个命题。
+    }
+
+    \subsection{涉及量词的逻辑等价式}
+    {
+        \begin{defines}
+            涉及谓词和量词的语句是等价的当且仅当无论用什么谓词代入这些语句，也无论为这些命题函数里的变量指定什么论域，它们都有相同的真值。
+            用 $S \equiv T$ 表示涉及谓词和量词的两个语句 $S$ 和 $T$ 是逻辑等价的。
+        \end{defines}
+    }
+
+    \subsection{量化表达式的否定}
+    {
+        量词的否定规则称为\emreg{量词的德·摩根律}。
+
+        \begin{table}[htb]
+            \centering
+
+            \begin{tabular}{c|c|c|c}
+                \hline
+                否定 & 等价语句 & 何时为真 & 何时为假 \\
+                \hline
+                $\neg \exists xP(x)$ & $\forall x \neg P(x)$ & 对每个 $x, P(x)$ 为假 & 有个 $x$ ，使 $p(x)$ 为真 \\
+                $\neg \forall xP(x)$ & $\exists x \neg P(x)$ & 有个 $x$ ，使 $p(x)$ 为假 & 对每个 $x, P(x)$ 为真 \\
+                \hline
+            \end{tabular}
+        \end{table}
+    }
+
+    \subsection{将语句到逻辑表达式的翻译}
+    {
+        将汉语（或其他自然语言）语句翻译成逻辑表达式，这在数学、逻辑编程、人工智能、软件工程以及许多其他学科中是一项重要的任务。
+    }
+
+    \subsection{系统规范说明中量词的使用}
+    {
+        1.2节使用命题来表示系统规范说明。
+        然而，许多系统规范说明涉及谓词和量词。
+    }
+
+    \subsection{选自路易斯·卡罗尔的例子}
+    {
+        前两句称为\emreg{前提(premise)}，第三句称为\emreg{结论(conlusion)}。
+        合在一起作为一个整体称为是一个\emreg{论证(argument)}。
+    }
+
+    \subsection{逻辑程序设计}
+    {
+        Prolog(Programming in Logic)程序包括一组声明，其中包括两类语句：\emreg{Prolog事实}和\emreg{Prolog规则}。
+        Prolog事实通过指定那些满足谓词的元素来定义谓词。
     }
 
     \subsection{练习}
@@ -148,6 +197,212 @@
         %4.
         \begin{practices}
             $x = 2$
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 存在一位学生每个工作日都花5个多小时上课。
+                \item 每一位学生每个工作日都花5个多小时上课。
+                \item 存在一位学生没有每个工作日都花5个多小时上课。
+                \item 每一位学生没有每个工作日都花5个多小时上课。
+            \end{enumerate}
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 存在一位学生已经去过北达科他。
+                \item 每一位学生已经去过北达科他。
+                \item 不存在一位学生已经去过北达科他。
+                \item 存在一位学生没有已经去过北达科他。
+                \item 不是每一位学生已经去过北达科他。
+                \item 每一位学生都没有去过北达科他。
+            \end{enumerate}
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 对于每一个人，如果他是一个喜剧演员，那么他很有趣。
+                \item 对于每一个人，他都是一个喜剧演员，并且他很有趣。
+                \item 存在这样的人，如果他是一个喜剧演员，那么他很有趣。
+                \item 存在这样的人，他是一个喜剧演员，并且他很有趣。
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 对于每一只动物，如果它是兔子，那么它会跳跃。
+                \item 对于每一只动物，它都是兔子，并且它会跳跃。
+                \item 存在一只动物，如果它是兔子，那么它会跳跃。
+                \item 存在一只动物，它是兔子，并且它会跳跃。
+            \end{enumerate}
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x (P(x) \wedge Q(x))$
+                \item $\exists x (P(x) \wedge \neg Q(x))$
+                \item $\forall x (P(x) \vee Q(x))$
+                \item $\forall x \neg (P(x) \vee Q(x))$
+            \end{enumerate}
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x (C(x) \wedge D(x) \wedge F(x))$
+                \item $\forall x (C(x) \vee D(x) \vee F(x))$
+                \item $\exists x (C(x) \wedge D(x) \wedge \neg F(x))$
+                \item $\neg \exists x (C(x) \wedge D(x) \wedge F(x))$
+                \item $\exists x C(x) \wedge \exists x D(x) \wedge \exists x F(x)$
+            \end{enumerate}
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 0
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 1
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $P(0) \vee P(1) \vee P(2) \vee P(3) \vee P(4)$
+                \item $P(0) \wedge P(1) \wedge P(2) \wedge P(3) \wedge P(4)$
+                \item $\neg P(0) \vee \neg P(1) \vee \neg P(2) \vee \neg P(3) \vee \neg P(4)$
+                \item $\neg P(0) \wedge \neg P(1) \wedge \neg P(2) \wedge \neg P(3) \wedge \neg P(4)$
+                \item $\neg (P(0) \vee P(1) \vee P(2) \vee P(3) \vee P(4))$
+                \item $\neg (P(0) \wedge P(1) \wedge P(2) \wedge P(3) \wedge P(4))$
+            \end{enumerate}
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $P(-2) \vee P(-1) \vee P(0) \vee P(1) \vee P(2)$
+                \item $P(-2) \wedge P(-1) \wedge P(0) \wedge P(1) \wedge P(2)$
+                \item $\neg P(-2) \vee \neg P(-1) \vee \neg P(0) \vee \neg P(1) \vee \neg P(2)$
+                \item $\neg P(-2) \wedge \neg P(-1) \wedge \neg P(0) \wedge \neg P(1) \wedge \neg P(2)$
+                \item $\neg (P(-2) \vee P(-1) \vee P(0) \vee P(1) \vee P(2))$
+                \item $\neg (P(-2) \wedge P(-1) \wedge P(0) \wedge P(1) \wedge P(2))$
+            \end{enumerate}
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $P(1) \vee P(2) \vee P(3) \vee P(4) \vee P(5)$
+                \item $P(1) \wedge P(2) \wedge P(3) \wedge P(4) \wedge P(5)$
+                \item $\neg (P(1) \vee P(2) \vee P(3) \vee P(4) \vee P(5))$
+                \item $\neg (P(1) \wedge P(2) \wedge P(3) \wedge P(4) \wedge P(5))$
+                \item $(P(1) \wedge P(2) \wedge P(4) \wedge P(5)) \vee (\neg P(1) \vee \neg P(2) \vee \neg P(3) \vee \neg P(4) \vee \neg P(5))$
+            \end{enumerate}
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $P(-5) \vee P(-3) \vee P(-1) \vee P(1) \vee P(3) \vee P(5)$
+                \item $P(-5) \wedge P(-3) \wedge P(-1) \wedge P(1) \wedge P(3) \wedge P(5)$
+                \item $P(-5) \wedge P(-3) \wedge P(-1) \wedge P(3) \wedge P(5)$
+                \item $P(1) \wedge P(3) \wedge P(5)$
+                \item $(\neg P(-5) \vee \neg P(-3) \vee \neg P(-1) \vee \neg P(1) \vee \neg P(3) \vee \neg P(5) \wedge (P(-5) \wedge P(-3) \wedge P(-1)))$
+            \end{enumerate}
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 学过离散数学的人；没有学过离散数学的人。
+                \item 21岁以上的人；21岁以下的人。
+                \item 拥有相同母亲的两人；母亲不同的两人。
+                \item 祖母不相同的两人；祖母相同的两人。
+            \end{enumerate}
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 说印地语的人；不说印地语的人。
+                \item 21岁以上的人；21岁以下的人。
+                \item 拥有相同名字的两个人；名字不相同的两个人。
+                \item 认识两个以上其他人的人；认识两个以下其他人的人。
+            \end{enumerate}
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            令 $C(x)$ 为命题函数 ``$x$ 在你的班上''。
+            \begin{enumerate}[A.]
+                \item $\exists x H(x)$ ； $\exists x (C(x) \wedge H(x))$ 。
+                \item $\forall x H(x)$ ； $\forall x (C(x) \rightarrow H(x))$ 。
+                \item $\exists x \neg H(x)$ ； $\exists x (C(x) \wedge \neg H(x))$ 。
+                \item $\exists x H(x)$ ； $\exists x (C(x) \wedge H(x))$ 。
+                \item $\forall x \neg H(x)$ ； $\exists x (C(x) \rightarrow \neg H(x))$ 。
+            \end{enumerate}
         \end{practices}
     }
 }
