@@ -553,8 +553,191 @@
                 \item $\forall x ((F(x, 25000) \vee S(x, 25)) \rightarrow V(x))$
                 \item $\forall x (((M(x) \wedge T(3)) \vee (\neg M(x) \wedge T(3.5))) \rightarrow C(x))$
                 \item $\forall x ((P(x, 60) \vee (P(x, 45) \wedge D(x))) \rightarrow G(x))$
-                \item 
+                \item $\exists x ((P(x, 21)) \wedge G(x, A))$
             \end{enumerate}
+        \end{practices}
+
+        %38.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 存在一个系统处于开放状态。
+                \item 所有的系统都处于故障或诊断状态。
+                \item 存在一个系统处于开放状态或存在一个系统处于诊断状态。
+                \item 存在一个系统处于不可用状态。
+                \item 所有的系统都处于不可工作状态。
+            \end{enumerate}
+        \end{practices}
+
+        %39.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 如果一台打印机不能提供服务并且很忙，那么有一份打印作业丢了。
+                \item 如果所有的打印机都很忙，那么有一份打印作业在队列中。
+                \item 如果有一份打印作业在队列中并且丢了，那么有一台打印机不能提供服务。
+                \item 如果所有的打印机都很忙，并且所有的打印作业都在队列中，那么会有打印作业丢失。
+            \end{enumerate}
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $S(30) \rightarrow \forall x W(x)$
+                \item $E \rightarrow \forall x (O(x) \wedge C(x))$
+                \item $L \rightarrow B$
+                \item $(M(8) \wedge S(56)) \rightarrow P$
+            \end{enumerate}
+        \end{practices}
+
+        %41.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $S(10) \rightarrow \exists x C(x)$
+                \item $\forall x S(x) \rightarrow A$
+                \item $\forall x(\neg M(x)) S(x)$
+                \item $\forall x(\neg S(x)) C(x)$
+            \end{enumerate}
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x V(x)$
+                \item $L \rightarrow \forall x V(x)$
+                \item $D(x) \rightarrow D(y)$
+                \item $(S(100, 500) \wedge \neg D(x)) \rightarrow \exists x W(x)$
+            \end{enumerate}
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            若 $P(x)$ 有真有假， $Q(x)$ 总是为假，则 $\forall x P(x) \rightarrow \forall x Q(x)$ 为真， $\forall (P(x) \rightarrow Q(x))$ 为假。
+        \end{practices}
+
+        %44.
+        \begin{practices}
+            若 $P(x)$ 有真有假， $Q(x)$ 有真有假，则 $\forall x P(x) \leftrightarrow \forall x Q(x)$ 总是为真， $\forall (P(x) \leftrightarrow Q(x))$ 不一定为真。
+        \end{practices}
+
+        %45.
+        \begin{practices}
+            若 $P(x)$ 和 $Q(x)$ 有一个为真，则两条语句都为真。如果都为假，则两条语句都为假。
+        \end{practices}
+
+        %46.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 如果 $A$ 为真，则左边为真，右边每一项都为真，整体为真。如果 $A$ 为假，两边都等价于 $\forall x P(x)$ 。
+                \item 如果 $A$ 为真，则左边为真，右边每一项都为真，整体为真。如果 $A$ 为假，两边都等价于 $\exists x P(x)$ 。
+            \end{enumerate}
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 如果 $A$ 为假，则左边为假，右边每一项都为假，整体为假。如果 $A$ 为真，两边都等价于 $\forall x P(x)$ 。
+                \item 如果 $A$ 为假，则左边为假，右边每一项都为假，整体为假。如果 $A$ 为真，两边都等价于 $\exists x P(x)$ 。
+            \end{enumerate}
+        \end{practices}
+
+        %48.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 如果 $A$ 为假，则左右都为真。如果 $A$ 为真，若 $P(x)$ 有真有假，则两边都为假，若 $P(x)$ 都为真，则两边都为真。
+                \item 如果 $A$ 为假，则左右都为真。如果 $A$ 为真，若 $P(x)$ 有真有假，则两边都为真，若 $P(x)$ 都为假，则两边都为假。
+            \end{enumerate}
+        \end{practices}
+
+        %49.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 如果 $A$ 为真，则左右都为真。如果 $A$ 为假，若 $P(x)$ 有真有假，则两边都为真，若 $P(x)$ 都为真，则两边都为真。
+                \item 如果 $A$ 为真，则左右都为真。如果 $A$ 为假，若 $P(x)$ 有真有假，则两边都为真，若 $P(x)$ 都为真，则两边都为假。
+            \end{enumerate}
+        \end{practices}
+
+        %50.
+        \begin{practices}
+            $P(x)$ 一半为真， $Q(x)$ 另一半为真。
+        \end{practices}
+
+        %51.
+        \begin{practices}
+            存在一个 $P(x)$ 为真，存在一个 $Q(x)$ 为真，但不同时为真。
+        \end{practices}
+
+        %52.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %53.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %54.
+        \begin{practices}
+            $P(1) \wedge \neg P(2) \wedge \neg p(3) \vee \neg P(1) \wedge P(2) \wedge \neg p(3) \vee \neg P(1) \wedge \neg P(2) \wedge p(3)$
+        \end{practices}
+
+        %55.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item juana; kiko
+                \item math273; cs301
+                \item juana; kiko
+            \end{enumerate}
+        \end{practices}
+
+        %56.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 1
+                \item cs301
+                \item juana; kiko
+                \item chan
+            \end{enumerate}
+        \end{practices}
+
+        %57.
+        \begin{practices}
+            \begin{codelist}
+                \begin{lstlisting}
+                    sibling(X, Y) :- mother(M, X), mother(M, Y), father(F, X), father(F, Y).
+                \end{lstlisting}
+            \end{codelist}
+        \end{practices}
+
+        %58.
+        \begin{practices}
+            \begin{codelist}
+                \begin{lstlisting}
+                    grandfather(X, Y) :- mother(C, Y), father(X, C); father(C, Y), father(X, Y).
+                \end{lstlisting}
+            \end{codelist}
+        \end{practices}
+
+        %59.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x (P(x) \rightarrow \neg Q(x))$
+                \item $\forall x (Q(x) \rightarrow R(x))$
+                \item $\forall x (P(x) \rightarrow R(x))$
+            \end{enumerate}
+
+            不能。不无知的人也可能爱慕虚荣。
         \end{practices}
     }
 }
