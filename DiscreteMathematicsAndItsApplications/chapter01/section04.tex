@@ -196,7 +196,11 @@
 
         %4.
         \begin{practices}
-            $x = 2$
+            \begin{enumerate}[A.]
+                \item 0
+                \item 1
+                \item 1
+            \end{enumerate}
         \end{practices}
 
         %5.
@@ -256,7 +260,7 @@
             \begin{enumerate}[A.]
                 \item $\exists x (C(x) \wedge D(x) \wedge F(x))$
                 \item $\forall x (C(x) \vee D(x) \vee F(x))$
-                \item $\exists x (C(x) \wedge D(x) \wedge \neg F(x))$
+                \item $\exists x (C(x) \wedge \neg D(x) \wedge F(x))$
                 \item $\neg \exists x (C(x) \wedge D(x) \wedge F(x))$
                 \item $\exists x C(x) \wedge \exists x D(x) \wedge \exists x F(x)$
             \end{enumerate}
@@ -300,7 +304,7 @@
         %14.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 0
+                \item 1
                 \item 1
                 \item 1
                 \item 0
@@ -368,7 +372,7 @@
                 \item $P(-5) \vee P(-3) \vee P(-1) \vee P(1) \vee P(3) \vee P(5)$
                 \item $P(-5) \wedge P(-3) \wedge P(-1) \wedge P(1) \wedge P(3) \wedge P(5)$
                 \item $P(-5) \wedge P(-3) \wedge P(-1) \wedge P(3) \wedge P(5)$
-                \item $P(1) \wedge P(3) \wedge P(5)$
+                \item $P(1) \vee P(3) \vee P(5)$
                 \item $(\neg P(-5) \vee \neg P(-3) \vee \neg P(-1) \vee \neg P(1) \vee \neg P(3) \vee \neg P(5) \wedge (P(-5) \wedge P(-3) \wedge P(-1)))$
             \end{enumerate}
         \end{practices}
@@ -458,7 +462,7 @@
         \begin{practices}
             令 $R(x)$ 为命题函数``$x$ 在正确的位置上''， $E(x)$ 为命题函数``$x$ 状态良好''， $T(x)$ 为命题函数``$x$是（你的）工具''。
             \begin{enumerate}[A.]
-                \item $\exists x \not R(x)$
+                \item $\exists x \neg R(x)$
                 \item $\forall x (T(x) \rightarrow (R(x) \wedge E(x)))$
                 \item $\forall x (R(x) \wedge E(x))$
                 \item $\neg \exists x (R(x) \wedge E(x))$
@@ -472,7 +476,7 @@
             \begin{enumerate}[A.]
                 \item $\exists x T(x)$
                 \item $\forall x (C(x) \rightarrow T(\neg x)$
-                \item $\exists x \exists y (\neg C(x) \wedge \neg T(X) \wedge \neg C(y) \wedge \neg T(y) \wedge T(x \vee y))$
+                \item $\exists x \exists y (\neg C(x) \wedge \neg T(x) \wedge \neg C(y) \wedge \neg T(y) \wedge T(x \vee y))$
                 \item $\forall x \forall y ((T(x) \wedge T(y)) \rightarrow T(x \wedge y))$
             \end{enumerate}
         \end{practices}
@@ -511,7 +515,7 @@
         %33.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 所有的狗都不会学习新的技巧。
+                \item 所有年长的狗都不会学习新的技巧。
                 \item 有一只兔子会微积分。
                 \item 有一只鸟不会飞。
                 \item 有一只狗会说话。
@@ -532,7 +536,7 @@
         %35.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $x = 0$
+                \item 不存在反例。
                 \item $x = 0$
                 \item $x \neq 1$
             \end{enumerate}
@@ -706,27 +710,23 @@
                 \item 0
                 \item 1
                 \item cs301
-                \item juana; kiko
+                \item grossman
                 \item chan
             \end{enumerate}
         \end{practices}
 
         %57.
         \begin{practices}
-            \begin{codelist}
                 \begin{lstlisting}
-                    sibling(X, Y) :- mother(M, X), mother(M, Y), father(F, X), father(F, Y).
+sibling(X, Y) :- mother(M, X), mother(M, Y), father(F, X), father(F, Y).
                 \end{lstlisting}
-            \end{codelist}
         \end{practices}
 
         %58.
         \begin{practices}
-            \begin{codelist}
                 \begin{lstlisting}
-                    grandfather(X, Y) :- mother(C, Y), father(X, C); father(C, Y), father(X, Y).
+grandfather(X, Y) :- mother(C, Y), father(X, C); father(C, Y), father(X, C).
                 \end{lstlisting}
-            \end{codelist}
         \end{practices}
 
         %59.
@@ -734,10 +734,41 @@
             \begin{enumerate}[A.]
                 \item $\forall x (P(x) \rightarrow \neg Q(x))$
                 \item $\forall x (Q(x) \rightarrow R(x))$
-                \item $\forall x (P(x) \rightarrow R(x))$
+                \item $\forall x (P(x) \rightarrow \neg R(x))$
+                \item 不能。不无知的人也可能爱慕虚荣。
             \end{enumerate}
+        \end{practices}
 
-            不能。不无知的人也可能爱慕虚荣。
+        %60.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x (P(x) \rightarrow Q(x))$
+                \item $\exists x (R(x) \wedge \neg Q(x))$
+                \item $\exists x (R(x) \wedge \neg P(x))$
+                \item 能。
+            \end{enumerate}
+        \end{practices}
+
+        %61.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x (P(x) \rightarrow \neg Q(x))$
+                \item $\forall x (R(x) \rightarrow \neg S(x))$
+                \item $\forall x (\neg Q(x) \rightarrow  S(x))$
+                \item $\forall x (P(x) \rightarrow \neg R(x))$
+                \item 能。
+            \end{enumerate}
+        \end{practices}
+
+        %62.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x (P(x) \rightarrow \neg S(X))$
+                \item $\forall x (R(x) \rightarrow S(x))$
+                \item $\forall x (Q(x) \rightarrow P(x))$
+                \item $\forall x (Q(x) \rightarrow \neg S(x))$
+                \item 能。
+            \end{enumerate}
         \end{practices}
     }
 }
