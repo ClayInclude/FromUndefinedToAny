@@ -778,11 +778,11 @@
                                     & \node [or gate] (o2) {};                                  & & & \\
                     \node (r) {r};  & & \node [and gate, inputs = {normal, inverted}] (a2) {};  & & \\
                 };
-                \draw (q.east) -- ++(right:1mm) |- (a1.input 1);
+                \draw (q.east) -- ++(right:2mm) |- (a1.input 1);
                 \draw (q.east) -- ++(right:2mm) |- (o2.input 2);
-                \draw (p.east) -- ++(right:4mm) |- (o1.input 1);
+                \draw (p.east) -- ++(right:5mm) |- (o1.input 1);
                 \draw (p.east) -- ++(right:5mm) |- (a2.input 2);
-                \draw (r.east) -- ++(right:7mm) |- (o1.input 2);
+                \draw (r.east) -- ++(right:8mm) |- (o1.input 2);
                 \draw (r.east) -- ++(right:8mm) |- (o2.input 1);
                 \draw (o1.output) -- ++(right:3mm) |- (a1.input 2);
                 \draw (o2.output) -- ++(right:3mm) |- (a2.input 1);

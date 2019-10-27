@@ -3,15 +3,15 @@
     "editor.acceptSuggestionOnEnter": "off",
     // 当打开文件时，将基于文件内容检测 "editor.tabSize" 和 "editor.insertSpaces"。
     "editor.detectIndentation": false,
+    "editor.fontSize": 15,
     // 默认行尾字符。使用 \n 表示 LF，\r\n 表示 CRLF。
     "files.eol": "\n",
     // 自定义要在 Windows 上运行的终端。
-    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+    // "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
     // 控制资源管理器是否应在删除文件到废纸篓时进行确认。
     "explorer.confirmDelete": false,
     // 控制在资源管理器内拖放移动文件或文件夹时是否进行确认。
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Monokai",
     // 指定在工作台中使用的图标主题，或指定 "null" 以不显示任何文件图标。
     "workbench.iconTheme": "vscode-great-icons",
     // 在未能恢复上一会话信息的情况下，控制启动时显示的编辑器。选择 "none" 表示启动时不打开编辑器，"welcomePage" 表示打开欢迎页面(默认)，"newUntitledFile" 表示打开新的无标题文档(仅打开一个空工作区)。
@@ -25,6 +25,7 @@
             ]
         }
     },
+    "markdown.extension.toc.updateOnSave": false,
     "editor.wordWrap": "on",
     "latex-workshop.latex.tools": [
         {
@@ -71,14 +72,17 @@
             ]
         }
     ],
+    // "latex-workshop.latex.clean.onFailBuild.enabled": true,
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.badbox.show": false,
     "latex-workshop.message.log.show": false,
     "latex-workshop.message.warning.show": false,
     "latex-workshop.showContextMenu": true,
     "latex-workshop.view.pdf.viewer": "tab",
+    // "latex-workshop.latex.autoBuild.onSave.enabled": false,
     "latex-workshop.message.update.show": false,
     "editor.fontFamily": "'Source Code Pro', Consolas, 'Courier New', monospace",
+    "systemverilog.disableIndexing": true,
     "typescript.suggest.completeFunctionCalls": true,
     "javascript.suggest.completeFunctionCalls": true,
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -112,6 +116,9 @@
     "emmet.showSuggestionsAsSnippets": true,
     "editor.snippetSuggestions": "top",
     "markdown-preview-enhanced.enableScriptExecution": true,
+    "latex-workshop.tikzpreview.enabled": false,
+    "latex-workshop.tikzpreview.parseTeXFile": false,
     "markdown-preview-enhanced.mermaidTheme": "dark",
-    "markdown-preview-enhanced.previewTheme": "monokai.css"
+    "markdown-preview-enhanced.previewTheme": "monokai.css",
+    "workbench.colorTheme": "Monokai"
 }

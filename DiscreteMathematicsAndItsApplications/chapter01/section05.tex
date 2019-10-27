@@ -21,5 +21,65 @@
     \subsection{量词的顺序}
     {
         量词的顺序是很重要的，除非所有量词均为全称量词或均为存在量词。
+
+        \begin{table}[htb]
+            \centering
+
+            \begin{tabular}{c|c|c}
+                \hline
+                语句 & 何时为真 & 何时为假 \\
+                \hline
+                \tabincell{c}{$\forall x \forall y P(x, y)$ \\ $\forall y \forall x P(x, y)$} & 对每一对 $x, y$ ， $P(x, y)$ 均为真 & 存在一对 $x, y$ 使得 $P(x, y)$ 为假 \\
+                \hline
+                $\forall x \exists y P(x, y)$ & 对每个 $x$ ，都存在一个 $y$ 使得 $P(x, y)$ 为真 & 存在一个 $x$ 使得 $P(x, y)$ 对每个 $y$ 均为假 \\
+                \hline
+                $\exists x \forall y P(x, y)$ & 存在一个 $x$ ，使得 $P(x, y)$ 对每个 $y$ 均为真 & 对每个 $x$ ，存在一个 $y$ 使得 $P(x, y)$ 为假 \\
+                \hline
+                \tabincell{c}{$\forall x \forall y P(x, y)$ \\ $\forall y \forall x P(x, y)$} & 存在一对 $x, y$ ，使得 $P(x, y)$ 为真 & 对每一对 $x, y$ ， $P(x, y)$ 均为假 \\
+                \hline
+            \end{tabular}
+
+            \caption{两个变量的量化式}
+        \end{table}
+    }
+
+    \subsection{数学语句到嵌套量词语句的翻译}}
+    {
+        用汉语表达的数学语句可以被翻译成逻辑表达式。
+    }
+
+    \subsection{嵌套量词到自然语言的翻译}
+    {
+        用嵌套量词表达汉语语句的表达式可能会相当复杂。
+        在翻译这样的表达式时，第一步是写出表达式中量词和谓词的含义，第二步是用简单的句子来表达这个含义。
+    }
+
+    \subsection{汉语语句到逻辑表达式的翻译}
+    {
+        需要使用\emreg{空量化(null quantification)}的规则，当受量词约束的变元没有出现在语句的某一部分时可以使用。
+    }
+
+    \subsection{嵌套量词的否定}
+    {
+        带嵌套量词语句的否定可以通过连续的应用单个量词语句的否定规则得到。
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 对于每个 $x$ ，存在一个 $y$ 使得 $x < y$ 成立。
+                \item 对于所有 $x, y$ ，如果它们都是非负数，那么它们的积也是非负数。
+                \item 对于所有 $x, y$ ，都存在一个 $z$ 等于它们的积。
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 
+            \end{enumerate}
+        \end{practices}
     }
 }
