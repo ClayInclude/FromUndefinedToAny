@@ -215,9 +215,6 @@
     \cleardoublepage%
 }
 
-% table
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-
 % macro is powerful, be careful.
 
 % excerpt from Do Not Go Gentle Into That Good Night:

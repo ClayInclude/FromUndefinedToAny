@@ -29,13 +29,13 @@
                 \hline
                 语句 & 何时为真 & 何时为假 \\
                 \hline
-                \tabincell{c}{$\forall x \forall y P(x, y)$ \\ $\forall y \forall x P(x, y)$} & 对每一对 $x, y$ ， $P(x, y)$ 均为真 & 存在一对 $x, y$ 使得 $P(x, y)$ 为假 \\
+                \makecell{$\forall x \forall y P(x, y)$ \\ $\forall y \forall x P(x, y)$} & 对每一对 $x, y$ ， $P(x, y)$ 均为真 & 存在一对 $x, y$ 使得 $P(x, y)$ 为假 \\
                 \hline
                 $\forall x \exists y P(x, y)$ & 对每个 $x$ ，都存在一个 $y$ 使得 $P(x, y)$ 为真 & 存在一个 $x$ 使得 $P(x, y)$ 对每个 $y$ 均为假 \\
                 \hline
                 $\exists x \forall y P(x, y)$ & 存在一个 $x$ ，使得 $P(x, y)$ 对每个 $y$ 均为真 & 对每个 $x$ ，存在一个 $y$ 使得 $P(x, y)$ 为假 \\
                 \hline
-                \tabincell{c}{$\forall x \forall y P(x, y)$ \\ $\forall y \forall x P(x, y)$} & 存在一对 $x, y$ ，使得 $P(x, y)$ 为真 & 对每一对 $x, y$ ， $P(x, y)$ 均为假 \\
+                \makecell{$\forall x \forall y P(x, y)$ \\ $\forall y \forall x P(x, y)$} & 存在一对 $x, y$ ，使得 $P(x, y)$ 为真 & 对每一对 $x, y$ ， $P(x, y)$ 均为假 \\
                 \hline
             \end{tabular}
 
@@ -43,7 +43,7 @@
         \end{table}
     }
 
-    \subsection{数学语句到嵌套量词语句的翻译}}
+    \subsection{数学语句到嵌套量词语句的翻译}
     {
         用汉语表达的数学语句可以被翻译成逻辑表达式。
     }
@@ -115,8 +115,8 @@
                 \item 至少有一位学生访问过www.imdb.org。
                 \item Jose Orez至少访问过一个网站。
                 \item 存在一个网站，Ashok Puri和Cindy Yoon都访问过。
-                \item 如果David Belcher访问过所有的网站，那么还有另外一个人也访问过所有的网站。
-                \item 存在两个不同的人 $x$ 和 $y$ ，$x$ 访问过所有的网站当且仅当 $y$ 访问过所有的网站。
+                \item 除了David Belcher之外，还有另外一个人也访问过David Belcher访问过的所有网站。
+                \item 存在两个不同的人 $x$ 和 $y$ ，他们恰好访问过相同的网站。
             \end{enumerate}
         \end{practices}
 
@@ -127,8 +127,8 @@
                 \item 有一位学生注册了Math 695。
                 \item Carol Sitea注册了至少一门课程。
                 \item 至少一位学生同时注册了Math 222和CS 252。
-                \item 如果一位学生注册了所有课程，那么有另一位学生也注册了所有课程。
-                \item 存在两个不同的学生 $x$ 和 $y$ ，$x$ 注册了所有课程当且仅当 $y$ 也注册了所有课程。
+                \item 有两位学生不同的学生，其中一人注册了另一人所有注册的课程。
+                \item 有两位学生恰好注册了相同的课程。
             \end{enumerate}
         \end{practices}
 
@@ -139,7 +139,29 @@
                 \item 存在一位学生喜欢Korean并且所有的学生都喜欢Mexican。
                 \item 存在一样食物，Monique Arsenault或Jay Johnson至少一人喜欢。
                 \item 存在一样食物，在两位学生中只有一人喜欢。
+                \item 存在两位学生，一位学生喜欢所有的食物当且仅当另一位学生也喜欢所有的食物。
                 \item 
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x \exists y Q(x, y)$
+                \item $\neg \exists x \exists y Q(x, y)$
+                \item $\exists x (Q(x, Jeopardy) \wedge Q(x, Whiil of Fortune))$
+                \item $\forall y \exists x Q(x, y)$
+                \item $\exists a \exists b ((a \neq b) \wedge Q(a, Jeopardy) \wedge (b, Jeopardy))$
+            \end{enumerate}
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x L(x, Jerry)$
+                \item $\forall x \exists y L(x, y)$
+                \item $\exists y \forall x L(x, y)$
+                \item $\neg \exists x \forall y L(x, y)$
             \end{enumerate}
         \end{practices}
     }
