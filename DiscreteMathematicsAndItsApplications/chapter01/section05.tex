@@ -139,8 +139,8 @@
                 \item 存在一位学生喜欢Korean并且所有的学生都喜欢Mexican。
                 \item 存在一样食物，Monique Arsenault或Jay Johnson至少一人喜欢。
                 \item 存在一样食物，在两位学生中只有一人喜欢。
-                \item 存在两位学生，一位学生喜欢所有的食物当且仅当另一位学生也喜欢所有的食物。
-                \item 
+                \item 存在两位学生，对所有的食物看法都相同。
+                \item 每一对学生当中，都存在一样食物，两人看法相同。
             \end{enumerate}
         \end{practices}
 
@@ -162,6 +162,37 @@
                 \item $\forall x \exists y L(x, y)$
                 \item $\exists y \forall x L(x, y)$
                 \item $\neg \exists x \forall y L(x, y)$
+                \item $\exists y \neg L(Lydia, y)$
+                \item $\exists x \forall y \neg L(y, x)$
+                 \item $\exists y (\forall x L(x, y) \wedge \forall w \forall z (L(w, z) \rightarrow (z = y)))$
+                 \item $\exists ! z \exists ! y ((z \neq y) \wedge L(Lynn, y) \wedge (L(Lynn, z)))$
+                \item $\forall x L(x, x)$
+                 \item $\exists x \forall y ((x \neq y) \rightarrow \neg L(x, y))$
+            \end{enumerate}
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x F(x, Fred)$
+                \item $\forall x F(Evelyn, x)$
+                \item $\forall x \exists y F(x, y)$
+                \item $\neg \exists x \forall y F(x, y)$
+                \item $\forall y \exists x F(x, y)$
+                \item $\forall x \neg (F(x, Fred) \wedge F(x, Jerry))$
+                 \item $\exists ! z \exists ! y ((z \neg y) \wedge F(Nancy, z) \wedge F(nancy, y))$
+                 \item $\exists ! x \forall y F(x, y)$
+                \item $\forall x \neg F(x, x)$
+                 \item $\exists x \exists ! y ((x \neq y) \wedge F(x, y))$
+            \end{enumerate}
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A(Lois, Michaels)$
+                \item $\forall x (S(x) \rightarrow A(x, Gross))$
+                \item $\forall x (F(x) \rightarrow (A(x, Miller) \vee A(Miller, x)))$
             \end{enumerate}
         \end{practices}
     }
