@@ -164,10 +164,10 @@
                 \item $\neg \exists x \forall y L(x, y)$
                 \item $\exists y \neg L(Lydia, y)$
                 \item $\exists x \forall y \neg L(y, x)$
-                 \item $\exists y (\forall x L(x, y) \wedge \forall w \forall z (L(w, z) \rightarrow (z = y)))$
-                 \item $\exists ! z \exists ! y ((z \neq y) \wedge L(Lynn, y) \wedge (L(Lynn, z)))$
+                \item $\exists y (\forall x L(x, y) \wedge \forall w ((\forall z L(w, z) \rightarrow (z = y))))$
+                \item $\exists z \exists y ((z \neq y) \wedge L(Lynn, y) \wedge (L(Lynn, z)) \wedge (\forall w L(Lynn, w) \rightarrow (w = z \vee w = y)))$
                 \item $\forall x L(x, x)$
-                 \item $\exists x \forall y ((x \neq y) \rightarrow \neg L(x, y))$
+                \item $\exists x \forall y ((x = y) \leftrightarrow L(x, y))$
             \end{enumerate}
         \end{practices}
 
@@ -180,10 +180,10 @@
                 \item $\neg \exists x \forall y F(x, y)$
                 \item $\forall y \exists x F(x, y)$
                 \item $\forall x \neg (F(x, Fred) \wedge F(x, Jerry))$
-                 \item $\exists ! z \exists ! y ((z \neg y) \wedge F(Nancy, z) \wedge F(nancy, y))$
-                 \item $\exists ! x \forall y F(x, y)$
+                \item $\exists z \exists y ((z \neg y) \wedge F(Nancy, z) \wedge F(Nancy, y) \wedge (\forall w F(Nancy, w) \rightarrow (w = z \vee w = y)))$
+                \item $\exists x (\forall y F(x, y) \wedge \forall w ((\forall z F(w, z)) \rightarrow (z = x)))$
                 \item $\forall x \neg F(x, x)$
-                 \item $\exists x \exists ! y ((x \neq y) \wedge F(x, y))$
+                \item $\exists x \exists y ((x \neq y) \wedge F(x, y) \wedge F(x, x) \wedge (\forall z (F(x, z) \rightarrow (z = x \vee z = y))))$
             \end{enumerate}
         \end{practices}
 
@@ -193,6 +193,48 @@
                 \item $A(Lois, Michaels)$
                 \item $\forall x (S(x) \rightarrow A(x, Gross))$
                 \item $\forall x (F(x) \rightarrow (A(x, Miller) \vee A(Miller, x)))$
+                \item $\exists x (S(x) \wedge (\forall y (F(y) \rightarrow \neg A(x, y))))$
+                \item $\exists y (F(y) \wedge (\forall x (S(x) \rightarrow \neg A(x, y))))$
+                \item $\exists x (S(x) \wedge (\forall y (F(y) \rightarrow A(x, y))))$
+                \item $\exists x (F(x) \wedge (\forall y (F(y) \rightarrow A(x, y))))$
+                \item $\exists x (S(x) \wedge (\forall y (F(y) \rightarrow \neg A(y, x))))$
+            \end{enumerate}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\neg I(Jerry)$
+                \item $\neg C(Rachel, Chelsea)$
+                \item $\neg C(Jan, Sharon)$
+                \item $\forall x \neg (C(x, Bob))$
+                \item $\forall x (x \neq Joseph \leftrightarrow C(x, Sanjay))$
+                \item $\exists x (\neg I(x))$
+                \item $\neg \forall x (I(x))$
+                \item $\exists x (I(x) \wedge \forall y (I(y) \rightarrow (y = x)))$
+                \item $\exists x (\neg I(x) \wedge \forall y (\neg I(y) \rightarrow (y = x)))$
+                \item $\forall x (I(x) \rightarrow (\exists y ((x \neq y) \wedge C(x, y))))$
+                \item $\exists x (I(x) \wedge (\forall y (\neg C(x, y))))$
+                \item $\exists x \exists y (\neg C(x, y))$
+                \item $\exists x (\forall y (C(x, y)))$
+                \item $\exists x \exists y (x \neq y \wedge \forall z \neg (C(x, z) \wedge C(y, z)))$
+                \item $\exists x \exists y (x \neq y \wedge \forall z (C(x, z) \vee C(y, z)))$
+            \end{enumerate}
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\neg M(Chou, Koko)$
+                \item $\neg (M(Arlene, Sarah) \wedge T(Arlene, Sarah))$
+                \item $\neg M(Deborah, Jose)$
+                \item $\forall x (M(x, Ken))$
+                \item $\forall x \neg (T(x, Nina))$
+                \item $\forall x (M(x, Avi) \vee T(x, Avi))$ f
+                \item $\exists x (\forall y M(x, y))$ g
+                \item $\exists x \exists y (M(x, y) \vee T(x, y))$ h
+                \item $\exists x \exists y ((x \neq y) \wedge M(x, y) \wedge M(y, x))$
+                \item 
             \end{enumerate}
         \end{practices}
     }
