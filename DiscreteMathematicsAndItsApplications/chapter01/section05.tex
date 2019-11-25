@@ -230,12 +230,441 @@
                 \item $\neg M(Deborah, Jose)$
                 \item $\forall x (M(x, Ken))$
                 \item $\forall x \neg (T(x, Nina))$
-                \item $\forall x (M(x, Avi) \vee T(x, Avi))$ f
-                \item $\exists x (\forall y M(x, y))$ g
-                \item $\exists x \exists y (M(x, y) \vee T(x, y))$ h
+                \item $\forall x (M(x, Avi) \vee T(x, Avi))$
+                \item $\exists x (\forall y M(x, y))$
+                \item $\exists x \exists y (M(x, y) \vee T(x, y))$
                 \item $\exists x \exists y ((x \neq y) \wedge M(x, y) \wedge M(y, x))$
-                \item 
+                \item $\exists x (M(x, x))$
+                \item $\exists x (\forall y (y \neq x) \wedge (\neg M(y, x) \wedge \neg (T(y, x))))$
+                \item $\forall x \forall y ((x \neq y) \wedge (M(y, x) \vee T(y, x)))$
+                \item $\exists x \exists y ((x \neq y) \wedge M(x, y) \wedge T(y, x))$
+                \item $\exists x \exists y ((x \neq y) \wedge \forall z ((x \neq z) \wedge (y \neq z) \wedge (M(x, z) \vee M(y, z) \vee T(x, z) \vee T(y, z))))$
             \end{enumerate}
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x (E(x))$
+                \item $\forall x (\exists y S(x, y))$
+                \item $\exists x (G(x, Alaska) \wedge \neg G(x, Hawaii))$
+                \item $\forall x \exists y (P(x, y))$
+                \item $\exists x \exists y \forall z (S(y, z) \rightarrow C(x, y))$
+                \item $\exists x \exists y ((x \neq y) \wedge G(x, y) \wedge \forall z (G(x, z) \rightarrow (z = y)))$
+                \item $\forall x \exists y (C(x, y))$
+            \end{enumerate}
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x (C(x) \rightarrow D(x))$
+                \item $\exists x (H(x))$
+                \item $\forall x \exists y (C(x, y))$
+                \item $\exists x \exists y (C(x, y))$
+                \item $\forall x \forall y (G(x, y))$
+                \item $\exists x \forall y (G(x, y))$
+                \item $\forall x \exists y (G(x, y))$
+            \end{enumerate}
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x (G(x, 3))$ ; 1
+                \item $\forall x (C(x))$ ; 0
+                \item $\exists x (\neg M(x) \wedge \neg G(x, 3))$; 1
+                \item $\forall x (G(x, 2) \vee C(x))$ ; 0
+                \item $\exists x \forall y \exists z (G(z, y) \wedge C(z, x))$ ; 1
+            \end{enumerate}
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x \exists y (A(x, y) \wedge \forall z ((z \neq y) \rightarrow (\neg A(x, z))))$
+                \item $\exists p \forall e (H(e) \wedge S(p) \rightarrow C)$
+                \item $\forall x \forall y (S(y, .edu) \rightarrow A(x, y))$
+                \item $\exists x \exists y ((x \neq y) \wedge (\forall s(\forall z M(s, z)) \leftrightarrow (s = x \vee s = y)))$
+            \end{enumerate}
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall e \exists c (H(e) \wedge A(c))$
+                \item $\forall u \exists m (C(u, m) \rightarrow E(u))$
+                \item $\forall e ((\exists x C(x) \leftrightarrow \exists p (R(p))))$
+                \item $\forall x \forall y ((x \neq y) \rightarrow \exists p \exists q ((p \neq q) \wedge Z(p, x, y) \wedge Z(q, x, y)))$
+                \item $\forall x (((\neg A \rightarrow \neg \forall y (K(x, y))) \wedge (A \rightarrow \forall (x, y))))$
+            \end{enumerate}
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (x + y) < 0)$
+                \item $\neg \forall x \forall y ((x > 0 \wedge y > 0) \rightarrow (x - y) > 0)$
+                \item $\forall x \forall y (x^2 + y^2 >= (x + y)^2)$
+                \item $\forall x \forall y (|x \times y| = |x| \times |y|)$
+            \end{enumerate}
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (x + y) < 0)$
+                \item $\forall x \forall y ((x > 0 \wedge y > 0) \rightarrow (x + y) / 2 > 0)$
+                \item $\neg \forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (x - y) < 0))$
+                \item $\forall x \forall y (|x + y| <= |x| + |y|)$
+            \end{enumerate}
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            $\forall x ((x > 0) \rightarrow \exists a \exists b \exists c \exists d (x = a^2 + b^2 + c^2 + d^2))$
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            $\exists x ((x > 0) \rightarrow \forall a \forall b \forall c (x \neq a^2 + b^2 + c^2))$
+        \end{practices}
+        
+
+        %23.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (xy > 0))$
+                \item $\forall x (x - x = 0)$
+                \item $\forall x ((x > 0) \rightarrow (\exists a \exists b (x = a^2 \wedge x = b^2) \wedge \forall y ((x = y^2) \rightarrow (y = a \vee y = b))))$
+                \item $\forall x ((x < 0) \rightarrow \forall y (x \neq y^2))$
+            \end{enumerate}
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 存在一个实数，使得其他所有实数加上它都与自身相等。
+                \item 一个非负实数减去一个负实数，差一定为正实数。
+                \item 存在两个非正数，其差为正数。
+                \item 对于所有的实数，它们都不为零当且仅当他们的积不为零。
+            \end{enumerate}
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 存在一个实数，使得其他所有实数乘以它都与自身相等。
+                \item 两个负数的积是正数。
+                \item 存在两个这样的数，其中一个数的平方大于另一个数，但是其本身小于另一个数。
+                \item 任意两个实数之和都存在一个实数与其相等。
+            \end{enumerate}
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 1
+                \item 0
+                \item 0
+                \item 1
+                \item 1
+                \item 1
+                \item 0
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 1
+                \item 1
+                \item 1
+                \item 0
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+                \item 0
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        \forall x \forall y P(x, y)
+                        &\equiv \forall x (P(x, 1) \wedge P(x, 2) \wedge P(x, 3)) \\
+                        &\equiv (P(1, 1) \wedge P(1, 2) \wedge P(1, 3)) \wedge (P(2, 1) \wedge P(2, 2) \wedge P(2, 3)) \wedge (P(3, 1) \wedge P(3, 2) \wedge P(3, 3))
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \exists x \exists y P(x, y)
+                        &\equiv \exists x (P(x, 1) \vee P(x, 2) \vee P(x, 3)) \\
+                        &\equiv (P(1, 1) \vee P(1, 2) \vee P(1, 3)) \vee (P(2, 1) \vee P(2, 2) \vee P(2, 3)) \vee (P(3, 1) \vee P(3, 2) \vee P(3, 3))
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \exists x \forall y P(x, y)
+                        &\equiv \exists x (P(x, 1) \wedge P(x, 2) \wedge P(x, 3)) \\
+                        &\equiv (P(1, 1) \wedge P(1, 2) \wedge P(1, 3)) \exists (P(2, 1) \wedge P(2, 2) \wedge P(2, 3)) \exists (P(3, 1) \wedge P(3, 2) \wedge P(3, 3))
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \forall x \exists y P(x, y)
+                        &\equiv \forall x (P(x, 1) \vee P(x, 2) \vee P(x, 3)) \\
+                        &\equiv (P(1, 1) \vee P(1, 2) \vee P(1, 3)) \forall (P(2, 1) \vee P(2, 2) \vee P(2, 3)) \forall (P(3, 1) \vee P(3, 2) \vee P(3, 3))
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall y \forall x (\neg P(x, y))$
+                \item $\exists x \forall y (\neg P(x, y))$
+                \item $\forall y (\neg Q(y) \vee \exists R(x, y))$
+                \item $\forall y (\forall x (\neg R(x, y)) \wedge \exists x (S(x, y)))$
+                \item $\forall y(\exists \forall (\neg T(x, y, z)) \wedge \forall x \exists z (\neg U(x, y, z)))$
+            \end{enumerate}
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x \forall y \exists z (\neg T(x, y, z))$
+                \item $\exists x \forall y (\neg P(x, y) \vee \exists x \forall y \neg Q(x, y))$
+                \item $\forall x \forall y (\neg Q(x, y) \leftrightarrow Q(y, z))$
+                \item $\exists y \forall x \forall z (\neg T(x, y, z) \wedge \neg Q(x, y))$
+            \end{enumerate}
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall z \exists y \exists x \neg T(x, y, z)$
+                \item $\forall x \forall y \neg P(x, y) \wedge \exists x \exists y \neg Q(x, y)$
+                \item $\forall x \forall y \neg Q(x, y) \leftrightarrow Q(y, x)$
+                \item $\exists y \forall x \forall z (\neg T(x, y, z) \wedge \neg Q(x, y))$
+            \end{enumerate}
+        \end{practices}
+
+        %33.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x \exists y \neg P(x, y)$
+                \item $\exists y \forall x \neg P(x, y)$
+                \item $\exists y \exists x (\neg P(x, y) \wedge \neg Q(x, y))$
+                \item $(\forall x \forall y P(x, y) \vee (\exists x \exists y \neg Q(x, y)))$
+                \item $\exists x (\forall y \exists z \neg P(x, y, z) \vee \forall z \exists y \neg P(x, y, z))$
+            \end{enumerate}
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            真： $\{1, 3\}$ ；
+            假： $\{1, 2, 3\}$ 。
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            真： $\{1, 2, 3, 4\}$ ；
+            假： $\{1\}$ 。
+        \end{practices}
+
+        %36.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x \neg L(x, 1000)$ ; $\exists x L(x, 1000)$
+                \item $\exists x \exists y (x \neq y \wedge \forall z (z = y \leftrightarrow C(x, z)))$ ; $\forall x \forall y (x \neg y \rightarrow \exists z \neg (z = y \leftrightarrow \neg C(x, z)))$
+                \item $\neg \exists x \exists y \exists z (x \neq y \wedge x \neq z \wedge y \neq z \wedge \forall w (w \neq x) \rightarrow (C(x, w) \leftrightarrow (w = y \vee w = z)))$ ; $\exists x \exists y \exists z (x \neq y \wedge x \neq z \wedge y \neq z \wedge \forall w (w \neq x) \rightarrow (C(x, w) \leftrightarrow (w = y \vee w = z)))$
+                \item $\exists x \forall y D(x, y)$ ; $\forall x \exists y \neg D(x, y)$
+                \item $\neg \exists x \exists y D(x, y)$ ; $\exists x \exists y D(x, y)$
+            \end{enumerate}
+        \end{practices}
+
+        %37.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\forall x \exists y \exists z (x \neq y \rightarrow \forall w ((w = y \vee w = z) \leftrightarrow G(x, w)))$ ; $\exists x \forall y \forall z ((x \neq y) \wedge \exists w \neg ((w = y \vee w = z) \leftrightarrow G(x, w)))$
+                \item $\exists x \forall y (y \neq Libya \rightarrow G(x, y))$ ; $\forall x \exists y (y \neq Libya \wedge \neg G(x, y))$
+                \item $\neg \exists x \forall y C(x, y)$ ; $\exists \forall y C(x, y)$
+                \item $\forall x (M(x, Kevin Bacon) \vee \exists y (M(y, Kevin Bacon) \wedge M(x, y)))$ ; $\exists x (\neg M(x, Kevin Bacon) \wedge \forall y (M(y, Kevin Bacon) \rightarrow \neg M(x, y))))$
+            \end{enumerate}
+        \end{practices}
+
+        %38.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\exists x \neg L(x, Math)$
+                \item $\forall x C(x, Computer)$
+                \item $\forall x \exists y \neg C(x, y)$
+                \item $\forall x \forall y \neg G(x, y)$
+            \end{enumerate}
+        \end{practices}
+
+        %39.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $x = 3, y = -3$
+                \item $x = -1$
+                \item $x = 0.5 y = 1$
+            \end{enumerate}
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $x = 0$
+                \item 永真式
+                \item $x = 1, y = 1$
+            \end{enumerate}
+        \end{practices}
+
+        %41.
+        \begin{practices}
+            $\forall x \forall y (xy \equiv yx)$
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            $\forall x \forall y \forall z (x(y + z) \equiv xy + xz)$
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            $\forall x \exists y (\forall z (z = y) \leftrightarrow R(x, z))$
+        \end{practices}
+
+        %44.
+        \begin{practices}
+            $\forall x \exists y \exists z (\forall w (R(x, w) \rightarrow (w = y \vee w = z)))$
+        \end{practices}
+
+        %45.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %46.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            \begin{align*}
+                \neg \exists x \forall y P(x, y)
+                &\equiv \forall x \neg \forall y P(x, y) \\
+                &\equiv \forall x \exists y \neg P(x, y)
+            \end{align*}
+        \end{practices}
+
+        %48.
+        \begin{practices}
+            \begin{align*}
+                \forall x P(x) \vee \forall y Q(y)
+                &\equiv \forall x (P(x) \vee \forall y (Q(y))) \\
+                &\equiv \forall x (\forall y (P(x) \vee Q(y))) \\
+                &\equiv \forall x \forall y (P(x) \vee Q(y))
+            \end{align*}
+        \end{practices}
+
+        %49.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        \forall x P(x) \wedge \exists y Q(y)
+                        &\equiv \forall x (P(x) \wedge \exists y (Q(y))) \\
+                        &\equiv \forall x (\exists y (P(x) \wedge Q(y))) \\
+                        &\equiv \forall x \exists y (P(x) \wedge Q(y))
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \forall x P(x) \vee \exists y Q(y)
+                        &\equiv \forall x (P(x) \vee \exists y (Q(y))) \\
+                        &\equiv \forall x (\exists y (P(x) \vee Q(y))) \\
+                        &\equiv \forall x \exists y (P(x) \vee Q(y))
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %50.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        \exists x P(x) \vee \exists y Q(y) \vee A
+                        &\equiv \exists x \exists y (P(x) \vee Q(y) \vee A)
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \neg (\forall x P(x) \vee \forall y Q(y))
+                        &\equiv \exists x \exists y (\neg P(x) \wedge \neg Q(y))
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        \exists x P(x) \rightarrow \exists y Q(y)
+                        &\equiv \neg \exists x P(x) \vee \exists y Q(y) \\
+                        &\equiv \forall x \exists y (\neg P(x) \vee Q(y))
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %51.
+        \begin{practices}
+            使用1.4节练习 $45~46$ 及本节练习 $48~49$ ，将量词往外剥离。
+        \end{practices}
+
+        %52.
+        \begin{practices}
+            $\exists !x P(x) \equiv \exists x (P(x) \wedge \forall y (P(y) \rightarrow (y = x)))$
         \end{practices}
     }
 }
