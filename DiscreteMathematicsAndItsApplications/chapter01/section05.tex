@@ -180,7 +180,7 @@
                 \item $\neg \exists x \forall y F(x, y)$
                 \item $\forall y \exists x F(x, y)$
                 \item $\forall x \neg (F(x, Fred) \wedge F(x, Jerry))$
-                \item $\exists z \exists y ((z \neg y) \wedge F(Nancy, z) \wedge F(Nancy, y) \wedge (\forall w F(Nancy, w) \rightarrow (w = z \vee w = y)))$
+                \item $\exists z \exists y ((z \neq y) \wedge F(Nancy, z) \wedge F(Nancy, y) \wedge (\forall w F(Nancy, w) \rightarrow (w = z \vee w = y)))$
                 \item $\exists x (\forall y F(x, y) \wedge \forall w ((\forall z F(w, z)) \rightarrow (z = x)))$
                 \item $\forall x \neg F(x, x)$
                 \item $\exists x \exists y ((x \neq y) \wedge F(x, y) \wedge F(x, x) \wedge (\forall z (F(x, z) \rightarrow (z = x \vee z = y))))$
@@ -211,11 +211,11 @@
                 \item $\forall x (x \neq Joseph \leftrightarrow C(x, Sanjay))$
                 \item $\exists x (\neg I(x))$
                 \item $\neg \forall x (I(x))$
-                \item $\exists x (I(x) \wedge \forall y (I(y) \rightarrow (y = x)))$
-                \item $\exists x (\neg I(x) \wedge \forall y (\neg I(y) \rightarrow (y = x)))$
+                \item $\exists x (\forall y (I(y) \rightarrow (y = x)))$
+                \item $\exists x (\forall y (\neg I(y) \rightarrow (y = x)))$
                 \item $\forall x (I(x) \rightarrow (\exists y ((x \neq y) \wedge C(x, y))))$
-                \item $\exists x (I(x) \wedge (\forall y (\neg C(x, y))))$
-                \item $\exists x \exists y (\neg C(x, y))$
+                \item $\exists x (I(x) \wedge (\forall y ((x \neq y) \rightarrow \neg C(x, y))))$
+                \item $\exists x \exists y ((x \neq y) \wedge \neg C(x, y))$
                 \item $\exists x (\forall y (C(x, y)))$
                 \item $\exists x \exists y (x \neq y \wedge \forall z \neg (C(x, z) \wedge C(y, z)))$
                 \item $\exists x \exists y (x \neq y \wedge \forall z (C(x, z) \vee C(y, z)))$
@@ -226,19 +226,19 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $\neg M(Chou, Koko)$
-                \item $\neg (M(Arlene, Sarah) \wedge T(Arlene, Sarah))$
+                \item $\neg (M(Arlene, Sarah) \wedge \neg T(Arlene, Sarah))$
                 \item $\neg M(Deborah, Jose)$
                 \item $\forall x (M(x, Ken))$
                 \item $\forall x \neg (T(x, Nina))$
                 \item $\forall x (M(x, Avi) \vee T(x, Avi))$
-                \item $\exists x (\forall y M(x, y))$
-                \item $\exists x \exists y (M(x, y) \vee T(x, y))$
+                \item $\exists x (\forall y (y \neq x \rightarrow M(x, y)))$
+                \item $\exists x \exists y (y \neq x \rightarrow (M(x, y) \vee T(x, y)))$
                 \item $\exists x \exists y ((x \neq y) \wedge M(x, y) \wedge M(y, x))$
                 \item $\exists x (M(x, x))$
                 \item $\exists x (\forall y (y \neq x) \wedge (\neg M(y, x) \wedge \neg (T(y, x))))$
                 \item $\forall x \forall y ((x \neq y) \wedge (M(y, x) \vee T(y, x)))$
                 \item $\exists x \exists y ((x \neq y) \wedge M(x, y) \wedge T(y, x))$
-                \item $\exists x \exists y ((x \neq y) \wedge \forall z ((x \neq z) \wedge (y \neq z) \wedge (M(x, z) \vee M(y, z) \vee T(x, z) \vee T(y, z))))$
+                \item $\exists x \exists y ((x \neq y) \wedge \forall z ((x \neq z) \wedge (y \neq z) \rightarrow (M(x, z) \vee M(y, z) \vee T(x, z) \vee T(y, z))))$
             \end{enumerate}
         \end{practices}
 
@@ -250,7 +250,7 @@
                 \item $\exists x (G(x, Alaska) \wedge \neg G(x, Hawaii))$
                 \item $\forall x \exists y (P(x, y))$
                 \item $\exists x \exists y \forall z (S(y, z) \rightarrow C(x, y))$
-                \item $\exists x \exists y ((x \neq y) \wedge G(x, y) \wedge \forall z (G(x, z) \rightarrow (z = y)))$
+                \item $\exists x \exists y ((x \neq y) \wedge G(x, y) \wedge \forall z (G(x, z) \rightarrow (x = y \vee x = z)))$
                 \item $\forall x \exists y (C(x, y))$
             \end{enumerate}
         \end{practices}
@@ -313,21 +313,21 @@
         %20.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $\forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (x + y) < 0)$
+                \item $\forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (xy) > 0)$
                 \item $\forall x \forall y ((x > 0 \wedge y > 0) \rightarrow (x + y) / 2 > 0)$
                 \item $\neg \forall x \forall y ((x < 0 \wedge y < 0) \rightarrow (x - y) < 0))$
-                \item $\forall x \forall y (|x + y| <= |x| + |y|)$
+                \item $\forall x \forall y (|x + y| \leq |x| + |y|)$
             \end{enumerate}
         \end{practices}
 
         %21.
         \begin{practices}
-            $\forall x ((x > 0) \rightarrow \exists a \exists b \exists c \exists d (x = a^2 + b^2 + c^2 + d^2))$
+             $\forall x \exists a \exists b \exists c \exists d ((x > 0) \rightarrow (x = a^2 + b^2 + c^2 + d^2))$
         \end{practices}
 
         %22.
         \begin{practices}
-            $\exists x ((x > 0) \rightarrow \forall a \forall b \forall c (x \neq a^2 + b^2 + c^2))$
+             $\exists x \forall a \forall b \forall c ((x > 0) \wedge (x \neq a^2 + b^2 + c^2))$
         \end{practices}
         
 
@@ -344,7 +344,7 @@
         %24.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 存在一个实数，使得其他所有实数加上它都与自身相等。
+                \item 实数存在加法单位元。
                 \item 一个非负实数减去一个负实数，差一定为正实数。
                 \item 存在两个非正数，其差为正数。
                 \item 对于所有的实数，它们都不为零当且仅当他们的积不为零。
@@ -354,7 +354,7 @@
         %25.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item 存在一个实数，使得其他所有实数乘以它都与自身相等。
+                \item 实数存在乘法单位元。
                 \item 两个负数的积是正数。
                 \item 存在两个这样的数，其中一个数的平方大于另一个数，但是其本身小于另一个数。
                 \item 任意两个实数之和都存在一个实数与其相等。
@@ -431,7 +431,7 @@
                     \begin{align*}
                         \exists x \forall y P(x, y)
                         &\equiv \exists x (P(x, 1) \wedge P(x, 2) \wedge P(x, 3)) \\
-                        &\equiv (P(1, 1) \wedge P(1, 2) \wedge P(1, 3)) \exists (P(2, 1) \wedge P(2, 2) \wedge P(2, 3)) \exists (P(3, 1) \wedge P(3, 2) \wedge P(3, 3))
+                        &\equiv (P(1, 1) \wedge P(1, 2) \wedge P(1, 3)) \vee (P(2, 1) \wedge P(2, 2) \wedge P(2, 3)) \vee (P(3, 1) \wedge P(3, 2) \wedge P(3, 3))
                     \end{align*}
                 }
                 \item
@@ -439,7 +439,7 @@
                     \begin{align*}
                         \forall x \exists y P(x, y)
                         &\equiv \forall x (P(x, 1) \vee P(x, 2) \vee P(x, 3)) \\
-                        &\equiv (P(1, 1) \vee P(1, 2) \vee P(1, 3)) \forall (P(2, 1) \vee P(2, 2) \vee P(2, 3)) \forall (P(3, 1) \vee P(3, 2) \vee P(3, 3))
+                        &\equiv (P(1, 1) \vee P(1, 2) \vee P(1, 3)) \wedge (P(2, 1) \vee P(2, 2) \vee P(2, 3)) \wedge (P(3, 1) \vee P(3, 2) \vee P(3, 3))
                     \end{align*}
                 }
             \end{enumerate}
@@ -451,7 +451,7 @@
                 \item $\forall y \forall x (\neg P(x, y))$
                 \item $\exists x \forall y (\neg P(x, y))$
                 \item $\forall y (\neg Q(y) \vee \exists R(x, y))$
-                \item $\forall y (\forall x (\neg R(x, y)) \wedge \exists x (S(x, y)))$
+                \item $\forall y (\forall x (\neg R(x, y)) \wedge \exists x \neg (S(x, y)))$
                 \item $\forall y(\exists \forall (\neg T(x, y, z)) \wedge \forall x \exists z (\neg U(x, y, z)))$
             \end{enumerate}
         \end{practices}
@@ -461,8 +461,8 @@
             \begin{enumerate}[A.]
                 \item $\exists x \forall y \exists z (\neg T(x, y, z))$
                 \item $\exists x \forall y (\neg P(x, y) \vee \exists x \forall y \neg Q(x, y))$
-                \item $\forall x \forall y (\neg Q(x, y) \leftrightarrow Q(y, z))$
-                \item $\exists y \forall x \forall z (\neg T(x, y, z) \wedge \neg Q(x, y))$
+                \item $\exists x \forall y (\neg P(x, y) \vee \forall z \neg R(x, y, z))$
+                \item $\exists y \forall x (\neg P(x, y) \wedge \neg Q(x, y))$
             \end{enumerate}
         \end{practices}
 
@@ -543,14 +543,14 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $x = 0$
-                \item 永真式
+                \item $x = -200$
                 \item $x = 1, y = 1$
             \end{enumerate}
         \end{practices}
 
         %41.
         \begin{practices}
-            $\forall x \forall y (xy \equiv yx)$
+             $\forall x \forall y \forall z ((xy)z \equiv x(yz))$
         \end{practices}
 
         %42.
@@ -582,7 +582,7 @@
             \begin{enumerate}[A.]
                 \item 0
                 \item 1
-                \item 0
+                \item 1
             \end{enumerate}
         \end{practices}
 
@@ -664,7 +664,7 @@
 
         %52.
         \begin{practices}
-            $\exists !x P(x) \equiv \exists x (P(x) \wedge \forall y (P(y) \rightarrow (y = x)))$
+             $\exists !x P(x) \equiv \exists x \forall y (P(y) \rightarrow (y = x))$
         \end{practices}
     }
 }
