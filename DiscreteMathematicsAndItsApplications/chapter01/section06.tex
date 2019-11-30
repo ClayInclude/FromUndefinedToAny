@@ -55,9 +55,71 @@
                 \hline
                 推理规则 & 永真式 & 名称 \\
                 \hline
+                \makecell{$p$ \\ $\underline{p \rightarrow q}$ \\ $\therefore q$} & $(p \wedge (p \rightarrow q)) \rightarrow q$ & 假言推理 \\
+                \hline
+                \makecell{$\neg q$ \\ $\underline{p \rightarrow q}$ \\ $\therefore \neg p$} & $(\neg q \wedge (p \rightarrow q)) \rightarrow \neg p$ & 取拒式 \\
+                \hline
+                \makecell{$p \rightarrow q$ \\ $\underline{q \rightarrow r}$ \\ $\therefore p \rightarrow r$} & $((p \rightarrow q) \wedge (q \rightarrow r)) \rightarrow (p \rightarrow r)$ & 假言三段论 \\
+                \hline
+                \makecell{$p \vee q$ \\ $\underline{\neg p}$ \\ $\therefore q$} & $((p \vee q) \wedge \neg p) \rightarrow q$ & 析取三段论 \\
+                \hline
+                \makecell{$\underline{p}$ \\ $\therefore p \vee q$} & $p \rightarrow (p \vee q)$ & 附加律 \\
+                \hline
+                \makecell{$\underline{p \wedge q}$ \\ $\therefore p$} & $(p \wedge q) \rightarrow p$ & 化简律 \\
+                \hline
+                \makecell{$p$ \\ $\underline{q}$ \\ $\therefore p \wedge q$} & $(p \wedge q) \rightarrow (p \wedge q)$ & 合取律 \\
+                \hline
+                \makecell{$p \vee q$ \\ $\underline{\neg p \vee r}$ \\ $\therefore q \vee r$} & $((p \vee q) \wedge (\neg p \vee r)) \rightarrow (q \vee r)$ & 消解律 \\
+                \hline
             \end{tabular}
 
             \caption{推理规则}
         \end{table}
+    }
+
+    \subsection{使用推理规则建立论证}
+    {
+        当有多个前提时，常常需要用到多个推理规则来证明一个论证是有效的。
+
+        也可以用真值表来证明只要四个前提的每一个都为真，那么结论也为真。
+    }
+
+    \subsection{消解律}
+    {
+        已经开发出的计算机程序能够将定理的推理和证明任务自动化。
+        许多这类程序利用称为\emreg{消解律(resolution)}的推理规则。
+        这个推理规则基于永真式：
+        $$((p \vee q) \wedge (\neg p \vee r)) \rightarrow (q \vee r)$$
+        消解规则最后的析取式 $q \vee r$ 称为\emreg{消解式(resolvent)}。
+        当在此永真式中令 $q = r$ 时，可得 $(p \vee q) \wedge (\neg p \vee q) \rightarrow q$ 。
+        而且，当令 $r = F$ 时，可得 $(p \vee q) \wedge \neg p \rightarrow q$ ，这是永真式，析取三段论规则就基于此式。
+
+        消解律在基于逻辑规则的编程语言中扮演着重要的角色，可以用消解律来构建自动定理证明系统。
+        要使用消解律作为仅有的推理规则来构造命题逻辑中的逻辑，假设和结论必须表示为\emreg{子句(clause)}，这里子句是指变量或其否定的一个析取式。
+    }
+
+    \subsection{谬误}
+    {
+        几种常见的谬误都来源于不正确的论证。
+        这些谬误看上去像是推理规则，但是它们是基于可满足式而不是永真式。
+
+        命题 $((p \rightarrow q) \wedge q) \rightarrow p$ 不是永真式，这类不正确的推理称为\emreg{肯定结论的谬误(fallacy of affirming the conclusion)}。
+
+        命题 $((p \rightarrow q )\wedge \neg p) \rightarrow \neg q$ 不是永真式，这类不正确的推理称为\emreg{否定假设的谬误(fallacy of denying the hypothesis)}。
+    }
+
+    \subsection{量化命题的推理规则}
+    {
+        \emreg{全称实例(universal instantiation)}是从给定前提 $\forall x P(x)$ 得出 $P(c)$ 为真的推理规则，其中 $c$ 是论域里的一个特定成员。
+
+        \emreg{全程引入(existential geralization)}是从对论域里所有元素 $c$ 都有 $P(c)$ 为真的前提推出 $\forall x P(x)$ 为真的推理规则。
+        所选择的元素 $c$ 必须是论域里一个任意的元素，而不是特定的元素。
+        从 $\forall x P(x)$ 断言对于论语中元素 $c$ 的存在性时，我们不能对 $c$ 进行控制，并且除了 $c$ 来自于论域以外不能对 $c$ 做出任何假设。
+
+        \emreg{存在实例(existential instantiation)}是允许从 $\exists x P(x)$ 得出论域中存在一个元素 $c$ 使得 $P(c)$ 为真的推理规则。
+        这里不能选择一个任意值的 $c$ ，而必须是使得 $P(c)$ 为真的那个 $c$ 。
+        通常不知道 $c$ 是什么，而仅仅知道它存在。
+
+        \emreg{存在引入(existential geralization)}是用来从已知有一特定的 $c$ 是 $P(c)$ 为真时得出 $\exists x P(x)$ 为真的推理规则。
     }
 }
