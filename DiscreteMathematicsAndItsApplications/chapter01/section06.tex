@@ -121,5 +121,25 @@
         通常不知道 $c$ 是什么，而仅仅知道它存在。
 
         \emreg{存在引入(existential geralization)}是用来从已知有一特定的 $c$ 是 $P(c)$ 为真时得出 $\exists x P(x)$ 为真的推理规则。
+
+        \begin{table}[htb]
+            \centering
+
+            \begin{tabular}{c|c}
+                \hline
+                推理规则 & 名称 \\
+                \hline
+                \makecell{$\underline{\forall x P(x)}$ \\ $\therefore P(x)$} & 全称实例 \\
+                \hline
+                \makecell{$\underline{P(c), \text{任意}c}$ \\ $\therefore \forall x P(x)$} & 全称引入 \\
+                \hline
+                \makecell{$\underline{\exists x P(x)}$ \\ $\therefore P(x), \text{对某个元素}c$} & 存在实例 \\
+                \hline
+                \makecell{$\underline{P(x), \text{对某个元素}c}$ \\ $\therefore \exists x P(x)$} & 存在引入 \\
+                \hline
+            \end{tabular}
+
+            \caption{量化命题的推理规则}
+        \end{table}
     }
 }
