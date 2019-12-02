@@ -112,7 +112,7 @@
     {
         \emreg{全称实例(universal instantiation)}是从给定前提 $\forall x P(x)$ 得出 $P(c)$ 为真的推理规则，其中 $c$ 是论域里的一个特定成员。
 
-        \emreg{全程引入(existential geralization)}是从对论域里所有元素 $c$ 都有 $P(c)$ 为真的前提推出 $\forall x P(x)$ 为真的推理规则。
+        \emreg{全称引入(existential geralization)}是从对论域里所有元素 $c$ 都有 $P(c)$ 为真的前提推出 $\forall x P(x)$ 为真的推理规则。
         所选择的元素 $c$ 必须是论域里一个任意的元素，而不是特定的元素。
         从 $\forall x P(x)$ 断言对于论语中元素 $c$ 的存在性时，我们不能对 $c$ 进行控制，并且除了 $c$ 来自于论域以外不能对 $c$ 做出任何假设。
 
@@ -141,5 +141,363 @@
 
             \caption{量化命题的推理规则}
         \end{table}
+    }
+
+    \subsection{命题和量化命题推理规则的组合使用}
+    {
+        由于全称实例和假言推理在一起使用是如此广泛，所以这种规则的组合有时称为\emreg{全称假言推理(universal modus ponens)}。
+        这个规则告诉我们：如果 $\forall x (P(x) \rightarrow Q(x))$ 为真，并且如果 $P(a)$ 对在全称量词论域中的一个特定元素 $a$ 为真，那么 $Q(a)$ 也肯定为真。
+        
+        \begin{align*}
+            &\forall x (P(x) \rightarrow Q(x)) \\
+            &\underline{P(x), \text{其中a是论域中一个特定的元素}} \\
+            \therefore &Q(a)
+        \end{align*}
+
+        \emreg{全称取拒式(universal modus tollens)}将全称实例和取拒式组合在一起。
+
+        \begin{align*}
+            &\forall x (P(x) \rightarrow Q(x)) \\
+            &\underline{\neg Q(a), \text{其中a是论域中一个特定的元素}} \\
+            \therefore &\neg P(a)
+        \end{align*}
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            假言推理，有效。能。
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            取拒式，有效。能。
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 附加律
+                \item 化简律
+                \item 假言推理
+                \item 取拒式
+                \item 假言三段论
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 化简律
+                \item 析取三段论
+                \item 假言推理
+                \item 附加律
+                \item 假言三段论
+            \end{enumerate}
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            $p$ ：Randy很用功。
+            $q$ ：Randy是一个笨孩子。
+            $r$ ：Randy不会得到工作。
+
+            \begin{align*}
+                &p \rightarrow q &\text{前提引入} \\
+                &p &\text{前提引入} \\
+                &q &\text{假言推理} \\
+                &q \rightarrow r &\text{前提引入} \\
+                &r &\text{假言推理}
+            \end{align*}
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            $p$ ：天不下雨
+            $q$ ：天不起雾
+            $r$ ：帆船比赛举行
+            $s$ ：进行救生表演
+            $t$ ：颁发奖杯
+
+            \begin{align*}
+                &r \rightarrow t &\text{前提引入} \\
+                &\neg t &\text{前提引入} \\
+                &\neg r &\text{取拒式} \\
+                &\neg r \vee \neg s &\text{附加律} \\
+                &\neg (r \wedge s) &\text{德·摩根定律} \\
+                &(p \vee q) \rightarrow (r \wedge s) &\text{前提引入} \\
+                &\neg (p \vee q) &\text{取拒式} \\
+                &\neg p \wedge \neg q &\text{德·摩根定律} \\
+                &\neg p &\text{化简律}
+            \end{align*}
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            全称假言推理。
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            全称取拒式。
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 我在周四休假；我周二没有休假；周四下雨。
+                \item 我没有吃辣的食物；我睡觉时没有打雷。
+                \item 我聪明。
+                \item Ralph没有主修计算机。
+                \item 你购买许多东西就是对你有利。
+                \item 老鼠啃咬它们的食物；野兔不是啮齿类动物。
+            \end{enumerate}
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 我没有打曲棍球。
+                \item 我在周一工作；周一是晴天或者半晴；我没有在周二工作；我没有在周五工作。
+                \item 蜻蜓有6条腿；蜘蛛不是昆虫。
+                \item Homer不是学生。
+                \item 豆腐不好吃。
+                \item 我看见大象在路上跑。
+            \end{enumerate}
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            令 $p \equiv (p_1, p_2, \cdots , p_n)$ 。
+            若 $p \wedge q$ 和 $r$ 都为真，则 $p$ 和 $q \rightarrow r$ 也一定为真。
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            \begin{align*}
+                &\neg p \vee \neg t \vee r \vee s \\
+                &\neg s \\
+                &\neg p \vee \neg t \vee r \\
+                &\neg t \vee r \vee \neg u \\
+                &\neg (t \wedge u) \vee r \\
+                &\neg q \vee r
+            \end{align*}
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 全称假言推理；存在引入。
+                \item 全称假言推理；存在引入。
+                \item 全称假言三段论。
+                \item 合取律；存在实例。
+            \end{enumerate}
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 全称假言推理；存在引入。
+                \item 全称假言推理；全称引入。
+                \item 全称假言推理；存在引入。
+                \item 全称假言推理；存在引入。
+            \end{enumerate}
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 全称假言推理。
+                \item 肯定结论的谬误。
+                \item 否定假设的谬误。
+                \item 全称取拒式。
+            \end{enumerate}
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 全称取拒式。
+                \item 否定假设的谬误。
+                \item 肯定结论的谬误。
+                \item 全称假言推理。
+            \end{enumerate}
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            不能选取任意的 $x$ 。
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            不能选取任意的 $s$ 。
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 肯定结论的谬误。
+                \item 取拒式。
+                \item 否定假设的谬误。
+            \end{enumerate}
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 肯定结论的谬误。
+                \item 假言推理。
+            \end{enumerate}
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            取拒式。
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            取拒式。
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            化简律错误。
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            化简律错误。
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            \begin{align*}
+                &\forall x (P(x) \rightarrow Q(x)) \\
+                &P(a) \rightarrow Q(a) \\
+                &\neg Q(a) \\
+                &\neg P(a)
+            \end{align*}
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            通过全称实例，对于任意 $c$ ，都有 $P(c) \rightarrow Q(c)$ 和 $Q(c) \rightarrow R(c)$ 。
+            于是对于任意 $c$ ，都有 $P(c) \rightarrow R(c)$ 。
+            通过全称引入，有 $\forall x P(x) \rightarrow R(c)$ 。
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            \begin{align*}
+                &\forall x (P(x) \wedge R(x)) \\
+                &\forall x P(x) \\
+                &\forall x (P(x) \rightarrow (Q(x) \wedge S(x))) \\
+                &\forall x (Q(x) \wedge S(x)) \\
+                &\forall x R(x) \\
+                &\forall x S(x) \\
+                &\forall x (R(x \wedge S(x)))
+            \end{align*}
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            \begin{align*}
+                &\forall x (P(x) \vee Q(x)) \\
+                &\forall x (P(x) \vee \neg Q(x) \vee R(x)) \\
+                &\forall x (P(x) \vee P(x) \vee R(x)) \\
+                &\forall x (P(x) \vee R(x)) \\
+                &\forall x (\neg R(x) \rightarrow P(x))
+            \end{align*}
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            \begin{align*}
+                &\forall x (P(x) \vee Q(x)) \\
+                &\forall x (\neg Q(x) \vee S(x)) \\
+                &\forall x (P(x) \vee S(x)) \\
+                &\forall x (\neg R(x) \vee \neg S(x)) \\
+                &\forall x (\neg R(x) \vee P(x)) \\
+                &\forall x (\neg P(x) \rightarrow \neg R(x)) \\
+                &\exists x (\neg P(x) \rightarrow \neg R(x)) \\
+                &\exists x (\neg P(x)) \\
+                &\exists x (\neg R(x))
+            \end{align*}
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            $p$ ：Allen是一个好男孩。
+            $q$ ：Hillary是一个好女孩。
+            $r$ ：David很开心。
+
+            \begin{align*}
+                &\neg p \vee q \\
+                &p \vee r \\
+                &q \vee r
+            \end{align*}
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            $p$ ：天没下雨。
+            $q$ ：Yvette带雨伞了。
+            $r$ ：Yvette没有被淋湿。
+
+            \begin{align*}
+                &p \vee q \\
+                &\neg q \vee r \\
+                &p \vee r \\
+                &\neg p \vee r \\
+                &r
+            \end{align*}
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            \begin{align*}
+                ((p \vee q) \wedge (\neg p \vee r)) \rightarrow (q \vee r)
+                &\equiv ((p \vee F) \wedge (\neg p \vee F)) \rightarrow (F \vee F) \\
+                &\equiv (p \wedge \neg p) \rightarrow F \\
+                \therefore (p \wedge \neg p) \equiv F
+            \end{align*}
+        \end{practices}
+
+        %33.
+        \begin{practices}
+            \begin{align*}
+                (p \vee q) \wedge (\neg p \vee q) \wedge (p \vee \neg q) \wedge (\neg p \vee \neg q)
+                &\equiv (q \vee q) \wedge (\neg q \vee \neg q) \\
+                &\equiv q \wedge \neg q \\
+                &\equiv F
+            \end{align*}
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            $p$ ：逻辑是很容易的。
+            $q$ ：有许多学生喜欢逻辑。
+            $r$ ：数学是容易的。
+
+            $\neg p \vee \neg q$
+
+            $\neg r \vee p$
+
+            \begin{enumerate}[A.]
+                \item $\neg q \vee \neg r$ ；有效。
+                \item $r \vee \neg q$ ；无效。
+                \item $\neg r \vee \neg p$ ；无效。
+                \item $p \vee \neg r$ ；无效。
+                \item $q \vee (\neg r \vee p)$ 无效。
+            \end{enumerate}
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            有效。
+        \end{practices}
     }
 }
