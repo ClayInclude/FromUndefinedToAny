@@ -99,4 +99,286 @@
             不是有理数的实数称为无理数。
         \end{defines}
     }
+
+    \subsection{归谬证明法}
+    {
+        假设我们要证明命题 $p$ 是真的。
+        再假定我们能找到一个矛盾式 $q$ 使得 $\neg p \rightarrow q$ 为真。
+        因为 $q$ 是假的，而 $\neg p \rightarrow q$ 是真的，所以能够得出结论 $\neg p$ 为假，这意味着 $p$ 为真。
+
+        因为无论 $r$ 是什么，命题 $r \wedge \neg r$ 就是矛盾式。
+        所以如果能够证明对某个命题 $r$ ， $\neg p \rightarrow (r \wedge \neg r)$ 为真，就能证明 $p$ 是真的。
+        这种类型的证明称为\emreg{归谬证明法(proof by contradiction)}。
+        由于归谬证明法不是直接证明结论，所以它是另一种间接证明法。
+
+        归谬证明法可以用于证明条件语句。
+        在证明中，我们首先假设结论的否定为真。
+        然后采用定理的前提和结论的否定来得到一个矛盾式。
+        这样证明是有效的原因是基于 $p \rightarrow q$ 与 $(p \wedge \neg q) \rightarrow F$ 是逻辑等价的。
+
+        可以把一个条件语句的反证改写成归谬证明。
+        在 $p \rightarrow q$ 的反证里，假定 $\neg q$ 为真。
+        然后证明 $\neg p$ 也必为真。
+        为了把 $p \rightarrow q$ 的反证改写成归谬证明，假定 $p$ 和 $\neg q$ 都为真。
+        然后利用 $\neg q \rightarrow \neg p$ 的证明步骤来证明 $\neg p$ 也必然为真。
+        这样导出矛盾式 $p \wedge \neg p$ ，从而完成归谬证明。
+
+        也可以用归谬法证明 $p \rightarrow q$ 是真的。
+        通过假设 $p$ 和 $\neg q$ 都为真来证明 $q$ 也一定为真。
+        这蕴含着 $q$ 和 $\neg q$ 都为真，导致矛盾。
+        这一点告诉我们，可以将一个直接证明转变为一个归谬证明。
+
+        \paraph{等价证明法}
+        {
+            为了证明一个双条件命题的定理，即形如 $p \leftrightarrow q$ 的语句，我们证明 $p \rightarrow q$ 和 $q \rightarrow p$ 都是真的。
+            这个方法的有效性是建立在重言式的基础上：
+            $$(p \leftrightarrow q) \leftrightarrow (p \rightarrow q) \wedge (q \rightarrow p)$$
+
+            有时候一个定理会阐述多个命题都是等价的。
+            这样的定理阐述命题 $p_1, p_2, \cdots , p_n$ 都是等价的，这样可以写成
+            $$p_1 \leftrightarrow p_2 \cdots \leftrightarrow p_n$$
+            这就是说，所有 $n$ 个命题都有相同的真值。
+            证明这些命题互相等价的一种方式是使用永真式
+            $$(p_1 \leftrightarrow p_2 \cdots \leftrightarrow p_n) \leftrightarrow (p_1 \rightarrow p_2) \wedge (p_2 \cdots \rightarrow \cdots p_n) \wedge (p_n \rightarrow p_1)$$
+        }
+
+        \paraph{反例证明法}
+        {
+            要证明形如 $\forall x P(x)$ 的语句为假，只要能寻找一个反例，即存在一个例子 $x$ 是 $P(x)$ 为假。
+        }
+    }
+
+    \subsection{证明中的错误}
+    {
+        数学证明的每一步都应当是正确的，并且结论必须从之前的步骤中逻辑地导出。
+
+        许多不正确的论证都基于一种称为\emreg{窃取论题}的谬误。
+        当证明的一个或多个步骤基于待证明命题的真实性时，就会发生这样的谬误。
+        换句话说，当命题使用自身或等价于自身的命题来进行证明时会产生这种谬误。
+        所以这种谬误也称为\emreg{循环推理}。
+
+        \emreg{在证明中犯错是学习过程的一部分。}
+    }
+
+    \subsection{良好的开端}
+    {
+        有许多定理通过直接利用前提和定理中的名词的定义很容易构造其证明。
+        不过，要是不借助于灵活地利用反证法或归谬证明，或其他的证明技术，证明一个定理通常还是很困难的。
+        构造证明是一种只能通过体验来学习的艺术，这体验包括写证明、让他人评论你的证明，以及阅读和分析其他证明。
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            若 $m = 2k + 1, n = 2l + 1$ ，则 $m$ 和 $n$ 之和 $m + n = 2k + 1 + 2l + 1 = 2(k + l + 1)$ 是偶数。
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            若 $m = 2k, n = 2l$ ，则 $m$ 和 $n$ 之和 $m + n = 2k + 2l = 2(k + l)$ 是偶数。
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            若 $m = 2k$ ，则 $m$ 的平方 $m^2 = (2k)^2 = 4k^2 = 2(2k^2)$ 是偶数。
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            若 $m = 2k$ ，则 $m$ 的相反数 $n = -m = -2k = 2(-k)$ 是偶数。
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            若 $m + n$ 和 $n + p$ 是偶数，则和也为偶数： $m + n + n + p = 2k$ 。
+            又有： $m + p = 2k - 2n = 2(k -n)$ 也为偶数。
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            若 $m = 2k + 1, n = 2l + 1$ ，则 $m$ 和 $n$ 之积 $mn = (2k + 1)(2l + 1) = 4kl + 2k + 2l + 1 = 2(2kl + k +l) + 1$ 为奇数。
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            若 $m = 2k+ 1$ ，则有 $(k + 1)^2 - k^2 = k^2 + 2k + 1 - k^2 = 2k + 1 = m$ 。
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            若 $m = n^2$ ，
+            当 $n = 0$ ， $m + 2 = 2$ 不是完全平方数。
+            当 $n \geq 1$ ，则比 $m$ 大的最小完全平方数为 $(n + 1)^2 = n^2 + 2n + 1 > n^2 + 2 = m + 2$，故 $m + 2$ 不是完全平方数。
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            令 $s$ 是有理数， $i$ 是无理数，和为 $u = s + i$ 为有理数。
+            则 $u + (-s) = i$ 为有理数，故得出矛盾，所以和为无理数。
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            令 $m = a / b$ ， $n = c / d$ ，则 $mn = ac / bd$ 。
+            因为 $b$ 和 $d$ 都不为 $0$ ，故 $bd$ 不为 $0$ ， $mn$ 为有理数。
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            $\sqrt{2} \times \sqrt{2} = 2$ ，故两个无理数之积不一定是无理数。
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            若 $m$ 为有理数， $n$ 为无理数，其积 $l$ 为有理数，则 $l = mn$ ， $n = l / m = l \times \frac{1}{m}$ 。
+            显然 $\frac{1}{m}$ 也为有理数，根据练习10可得， $n$ 也为有理数，故矛盾。
+            所有有理数和无理数的乘积也为无理数。
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            若 $\frac{1}{x}$ 为有理数，则 $x$ 也为有理数，故矛盾。
+            所以如果 $x$ 为无理数， $\frac{1}{x}$ 也为无理数。
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            若 $x = \frac{p}{q}$ ，且 $p \neq 0$ ，则 $\frac{1}{x} = \frac{q}{p}$ ，也为有理数。
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            假设 $x < 1$ 且 $y < 1$ ，则 $x + y < 2$ 。
+            故可得，如果 $x + y \geq 2$ ，则 $x \geq 1$ 或 $y \geq 1$ 。
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            假设 $m$ 和 $n$ 都为奇数，根据练习6可得 $mn$ 也为奇数。
+            故可得，如果 $mn$ 为偶数，则 $m$ 和 $n$ 之中至少有一个为偶数。
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            若 $n = 2k + 1$ ，则 $(2k + 1)^3 + 5 = (2k)^3 + 6(2k)^2 + 1 + 5 = 2(4k^3 + 3(2k)^2 + 3)$ 为偶数。
+            故 $n$ 为偶数。
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            若 $n = 2k + 1$ ，则 $3(2k + 1) +2 = 6k + 5 = 2(3k + 2) + 1$ 为奇数。
+            故 $n$ 为偶数。 
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            空证明。
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            平凡证明。
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            平凡证明。
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            假设不能拿到一双颜色一样的袜子，则最多能够选择两只，与前提矛盾。
+            故一定能得到一双蓝袜子或一双黑袜子。
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            假设没有10天出现在每星期的同一天里，则最多只能选63天，与前提矛盾。
+            故在任意64天中至少有10天在每星期的同一天里。
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            假设至多有两天出现在同一个月份里，则最多只能选24天，与前提矛盾。
+            故任意25天中至少有3天在同一个月份。
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            若有 $r = a / b$ ，则 $(a / b)^3 + (a / b) + 1 = 0$ ，
+            两边同时乘以 $b^3$ ：
+            $a^3 + ab^2 + b^3 = 0$
+            若 $a$ 和 $b$ 之中有一个为奇数，则 $a^3 + ab^2 + b^3$ 为奇数，得出矛盾。
+            故 $a$ 和 $b$ 都为偶数。
+            因为 $a / b$ 是既约分数，这里得出 $a$ 和 $b$ 都能被 $2$ 整除，得出矛盾。
+            故没有有理数 $r$ 使得 $r^3 + r + 1 = 0$ 。
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            若 $n = 2k$ ，则 $7n + 4 = 14k + 4 = 2(7k + 2)$ 也为偶数。
+            若 $7n + 4 = 2k$ ，则 $n = 2k - 4 - 6n = 2(k - 2 - 3n)$ 也为偶数。
+
+            证毕。
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            若 $n = 2k + 1$ ，则 $5(2k + 1) + 6 = 10k + 11 = 2(5k + 5) + 1$ 为奇数。
+            若 $5n + 6 = 2k + 1$ ，则 $n = 2k - 5 - 4n = 2(k - 2n - 3) + 1$ 也为奇数。
+
+            证毕。
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            若 $m^2 = n^2$ ，同时开方得 $m = n$ 或 $m = -n$ 。
+            若 $m = n$ 或 $m = -n$ ，则 $m^2 = n^2$ 。
+
+            证毕。
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            若 $m \neq 1$ 且 $m \neq -1$ ，则 $mn$ 有一个大于 $1$ 的因子。
+            但是 $mn = 1$ ， $1$ 没有这个因子，故 $m$ 一定等于 $1$ 或者 $-1$ ，可得出 $n$ 也等于 $1$ 或 $-1$ 。
+            若 $m = 1, n = 1$ 或 $m = -1, n = -1$ ，则 $mn = 1$ 。
+
+            证毕。
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            \begin{align*}
+                a < b \\
+                2a < a + b \\
+                a < \frac{a + b}{2}
+            \end{align*}
+
+            可得 $\rmnum 1 \leftrightarrow \rmnum 2$ 。
+
+            \begin{align*}
+                a < b \\
+                a + b < 2b \\
+                \frac{a + b}{2} < b
+            \end{align*}
+
+            可得 $\rmnum 1 \leftrightarrow \rmnum 3$ 。
+
+            证毕。
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            \begin{align*}
+                3x + 2 = 2k;
+                x = 2k - 2 - 2x;
+                x = 2(k - 1 - x);
+
+                x + 5 = 2(k - 1 - x) + 5
+                x + 5 = 2(k + 1)
+            \end{align*}
+        \end{practices}
+    }
 }
