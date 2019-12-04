@@ -351,17 +351,17 @@
         %30.
         \begin{practices}
             \begin{align*}
-                a < b \\
-                2a < a + b \\
-                a < \frac{a + b}{2}
+                a &< b \\
+                2a &< a + b \\
+                a &< \frac{a + b}{2}
             \end{align*}
 
             可得 $\rmnum 1 \leftrightarrow \rmnum 2$ 。
 
             \begin{align*}
-                a < b \\
-                a + b < 2b \\
-                \frac{a + b}{2} < b
+                a &< b \\
+                a + b &< 2b \\
+                \frac{a + b}{2} &< b
             \end{align*}
 
             可得 $\rmnum 1 \leftrightarrow \rmnum 3$ 。
@@ -372,13 +372,20 @@
         %31.
         \begin{practices}
             \begin{align*}
-                3x + 2 = 2k;
-                x = 2k - 2 - 2x;
-                x = 2(k - 1 - x);
-
-                x + 5 = 2(k - 1 - x) + 5
-                x + 5 = 2(k + 1)
+                3x + 2 &= 2k \\
+                x &= 2k - 2 - 2x \\
+                x &= 2(k - 1 - x) \\
+                \\
+                x + 5 &= 2(k - 1 - x) + 5 \\
+                x + 5 &= 2(k + 1 - x) + 1 \\
+                \\
+                x^2 &= (2(k - 1 - x))^2 \\
+                x^2 &= 2(2(k - 1 - x)^2) \\
             \end{align*}
+
+            以上等式每一步都可逆，故 $\rmnum 1 \leftrightarrow \rmnum 2 \leftrightarrow \rmnum 3$ 。
+
+            证毕。
         \end{practices}
     }
 }
