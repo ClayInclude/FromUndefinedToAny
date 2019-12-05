@@ -1,0 +1,40 @@
+%%
+%% Author: Clay
+%% 2019/12/5
+%%
+
+\section{证明的方法和策略}
+{
+    \subsection{引言}
+    {
+        数学家工作时，他们拟定猜测并试图证明或推翻之。
+    }
+
+    \subsection{穷举证明法和分情形证明法}
+    {
+        有时候采用单一的论证不能在定理的所有可能情况下都成立，故不能证明该定理。
+        现在介绍一种通过分别考虑不同的情况的来证明定理的方法。
+        该方法是基于现在要介绍的一个推理规则。
+        为了证明如下的条件语句
+        $$(p_1 \vee p_2 \vee \cdots \vee p_n) \rightarrow q$$
+        可以用永真式
+        $$((p_1 \vee p_2 \vee \cdots \vee p_n) \rightarrow q) \leftrightarrow ((p_1 \rightarrow q) \wedge (p_2 \rightarrow q) \wedge \cdots \wedge (p_n \rightarrow q))$$
+        作为推理规则。
+        这个推理规则说明可以通过分别证明每个条件语句 $p_i \rightarrow q(i = 1, 2, \cdots , n)$ 来证明由命题 $p_1, p_2, \cdots , p_n$ 的析取式组成前提的原条件语句。
+        这种论证称为\emreg{分情形证明法(proof by cases)}。
+
+        \paraph{穷举证明法}
+        {
+            有些定理可以通过检验相对少量的例子来证明。
+            这样的证明叫做\emreg{穷举证明法(exhaustive proof, proof by exhaustion)}，因为这些证明是要穷尽所有可能性的。
+            一个穷举证明法是分情形证明的特例，这里每一种情形检验一个例子。
+
+            注意当不可能列出所有要检查的情形时，即使是计算机也不能检查所有情形。
+        }
+
+        \paraph{分情形证明法}
+        {
+            分情形证明一定要覆盖定理中出现的所有可能的情况。
+        }
+    }
+}
