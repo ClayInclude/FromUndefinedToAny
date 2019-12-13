@@ -293,5 +293,393 @@
         \begin{practices}
             $0$ 和 $1$ 。
         \end{practices}
+
+        %12.
+        \begin{practices}
+            至少有两个数字符号相同，所以存在两个数字乘积为正。
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            令 $x = 2, y = \sqrt{2}$ ，若 $2^{\sqrt{2}}$ 为无理数，则得证。
+            若为有理数，则令 $x = 2^{\sqrt{2}}, y = \sqrt{2} / 4$ ，则 $(2^{\sqrt{2}})^{\sqrt{2} / 4} = 2^{\sqrt{2} \times \sqrt{2} / 4} = 2^{2 / 4} = 2^{1 / 2} = \sqrt{2}$ 。
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            令 $a = 2, b = 1 / 2$ ，则 $2^{1 / 2} = \sqrt{2}$ 为无理数。
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 当 $y$ 使得 $P(y)$ 为真当且仅当 $x = y$ 。
+                \item $x$ 使得 $P(x)$ 为真，并且如果 $x$ 和 $y$ 同时使得 $P(x)$ 和 $P(y)$ 为真，那么 $x = y$ 。
+                \item 存在 $x$ 使得 $P(x)$ 为真，并且如果 $y$ 使得 $P(y)$ 为真那么 $x = y$ 。
+            \end{enumerate}
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            如果 $ax + b = c$ ， 那么 $x = (c - b) / a$ 。
+            如果有 $r$ 为方程解，那么 $ar + b = c$ ，得出 $r = (c - b) / a = x$ 。
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            \begin{enumerate}[i.]
+                \item
+                {
+                    如果 $a > c, b > c$ ，那么 $a - c = b - c$ ，得出 $a = b$ ，得出矛盾。
+                }
+                \item
+                {
+                    如果 $a < c, b < c$ ，那么 $c - a = c - b$ ，得出 $a = b$ ，得出矛盾。
+                }
+                \item
+                {
+                    不失一般性，假设 $a < c, b > c$ ，那么 $c - a = b - c$ ，得出 $c = (a + b) / 2$ 。
+                    如果有 $r$ 满足该式，则 $r - a = b - r$ ，得出 $r = (a + b) / 2 = c$ 。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            如果 $n > r$ ，那么 $|n - r| < 1 / 2$ ，有 $n < r + 1 / 2$ 。
+            如果 $r > n$ ，那么 $|r - n| < 1 / 2$ ，有 $n > r - 1 / 2$ 。
+
+            故 $r - 1 / 2 < n < r + 1 / 2$ 。
+            如果有 $m$ 满足条件，则 $m$ 和 $n$ 的距离不超过 $r + 1 / 2 - (r - 1 / 2) = 1$ ，且都为整数，故 $m = n$ 。
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            如果 $n$ 是奇数，那么 $n = 2k + 1 = k - 2 + k + 3$ ， $k = (n - 1) / 2$ 。
+            如果有 $l$ 满足条件，则 $n = l - 2 + l + 3$ ， $l = (n - 1) / 2 = k$ 。
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            令 $n = x - \epsilon$ ，则 $n$ 是 $x$ 向下取整，此时 $n$ 和 $\epsilon$ 都是唯一。
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            令 $n = x + \epsilon$ ，则 $n$ 是 $x$ 向上取整，此时 $n$ 和 $\epsilon$ 都是唯一。
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            \begin{align*}
+                (x - 1 / x)^2 &\geq 0 \\
+                x^2 - 2 + 1 / x^2 &\geq 0 \\
+                x^2 + 1 / x^2 \geq 2
+            \end{align*}
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            \begin{align*}
+                2xy / (x + y) &< \sqrt{xy} \\
+                (2xy / (x + y)) \times ((x + y) / 2\sqrt{xy}) &< \sqrt{xy} \times ((x + y) / 2\sqrt{xy}) \\
+                \sqrt{xy} &< (x + y) / 2
+            \end{align*}
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            \begin{align*}
+                \sqrt{\frac{x^2 + y^2}{2}} &\geq \frac{x + y}{2} \\
+                \frac{x^2 + y^2}{2} &\geq \frac{(x + y)^2}{4} \\
+                2x^2 + 2y^2 &\geq x^2 + 2xy + y^2 \\
+                x^2 - 2xy + y^2 &\geq 0 \\
+                (x - y)^2 &\geq 0
+            \end{align*}
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            每次总和增加 $|j - k|$ ，同时减少 $j + k$ 。
+            保持奇偶性不变，则最后一个数必定是奇数。
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            如果要得到9个0，则上一步需要时9个0或者9个1。
+            而之前每一步中，每对相邻的位必然不同。
+            故得出矛盾。
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            由例5可知，2次幂的末尾只有 $0, 1, 4, 5, 6, 9$ 。
+            故 $x^4 = (x^2)^2$ 。
+            所以4次幂的末尾只有 $1, 6, 5, 0$ 。
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            末尾两位数字都由 $00, 01, 04, 09, 16, 25, 36, 49, 64, 81, 21, 44, 69, 96, 56, 89, 24, 61, 41, 84, 29, 76$ 组成。
+            令 $n = 100a + b, n^2 = (100a + b)^2 = 10000a^2 + 200ab + b^2 = 100(100a^2 + 2ab) + b^2$ ，故可认为 $b^2$ 和 $n^2$ 末尾两数字相同。
+            分情形证明即可。
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            \begin{enumerate}[i.]
+                \item $n = 1$ ， $1 + 1 \neq 100$ 。
+                \item $n = 2$ ， $4 + 8 \neq 100$ 。
+                \item $n = 3$ ， $9 + 27 \neq 100$ 。
+                \item $n = 4$ ， $16 + 64 \neq 100$ 。
+                \item $n \geq 5$ 时， $n^2 + n^3 \geq 100$ 。
+            \end{enumerate}
+
+            故不存在整数解。
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            $x$ 为 $-2, -1, 0, 1, 2$ ， $y$ 为 $-1, 0, 1$ 。
+            都不满足。
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            $x = 5, y = 0$ 时有解。
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            令 $x = m^2 - n^2, y = 2mn, z = m^2 + n^2$ ，则 $x^2 + y^2 = (m^2 - n^2)^2 + (2mn)^2 = m^4 - 2m^2n^2 + n^4 + 4m^2n^2 = (m^2 + n^2)^2 = z^2$ ，故由无数个解。
+        \end{practices}
+
+        %33.
+        \begin{practices}
+            如果 $a > \sqrt[3]{n}, b > \sqrt[3]{n}, c > \sqrt[3]{n}$ ，则 $abc > (\sqrt[3]{n})^3 = n$ ，得出矛盾。
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            令 $\sqrt[3]{2} = a / b$ ，其中 $a$ 和 $b$ 不可约分，则 $2 = a^3 / b^3$ ， $a^3 = 2b^3$ ，由于奇偶性不变，此时 $a$ 为偶数。
+            假设为 $a = 2s$ ，则 $8s^3 = 2b^3$ ， $b$ 也为偶数。
+            得出矛盾。
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            找到一个特定的公分母，令给定的有理数为 $a / b, c / b$ ，其中 $b$ 为正整数， $a, c$ 为整数， $a < c$ ，同时有 $(a + 1) / b \leq c / b$ 。
+            又有 $x = (a + \sqrt{2} / 2) / b$ 在两数之间，且为无理数。
+        \end{practices}
+
+        %36.
+        \begin{practices}
+            令 $a$ 为有理数， $b$ 为无理数，则 $(a + b) / 2$ 为无理数且在两数之间。
+        \end{practices}
+
+        %37.
+        \begin{practices}
+            如果执行交换，则在总和上加上了 $x_iy_j + x_jy_i$ ，同时减去了 $x_iy_i + x_jy_j$ ，净效果是加上了 $x_iy_j + x_jy_i - x_iy_i - x_jy_j = (x_j - x_i)(y_i - y_j)$ ，由排序规则可求出值。
+        \end{practices}
+
+        %38.
+        \begin{practices}
+            \begin{enumerate}[1.]
+                \item (8, 0, 0)
+                \item (3, 2, 3)
+                \item (6, 2, 0)
+                \item (6, 0, 2)
+                \item (1, 5, 2)
+                \item (1, 4, 3)
+            \end{enumerate}
+        \end{practices}
+
+        %39.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 6
+                        \item 3
+                        \item 10
+                        \item 5
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 7
+                        \item 22
+                        \item 11
+                        \item 34
+                        \item 17
+                        \item 52
+                        \item 26
+                        \item 13
+                        \item 40
+                        \item 20
+                        \item 10
+                        \item 5
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 17
+                        \item 52
+                        \item 26
+                        \item 13
+                        \item 40
+                        \item 20
+                        \item 10
+                        \item 5
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 21
+                        \item 64
+                        \item 32
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 11
+                        \item 34
+                        \item 17
+                        \item 52
+                        \item 26
+                        \item 13
+                        \item 40
+                        \item 20
+                        \item 10
+                        \item 5
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 35
+                        \item 106
+                        \item 53
+                        \item 160
+                        \item 80
+                        \item 40
+                        \item 20
+                        \item 10
+                        \item 5
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+                \item
+                {
+                    \begin{enumerate}[1.]
+                        \item 113
+                        \item 340
+                        \item 170
+                        \item 85
+                        \item 256
+                        \item 128
+                        \item 64
+                        \item 32
+                        \item 16
+                        \item 8
+                        \item 4
+                        \item 2
+                        \item 1
+                    \end{enumerate}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %41.
+        \begin{practices}
+            不失一般性，假设左上角和右上角被去除了。
+            则可以用三个骨牌填充最上面一行，下面七行都用水平骨牌填充。
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            分别用三个骨牌填充最上面和最下面一行，则中间六行都可以用水平骨牌填充。
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            因为有偶数格数，则行为偶数或列为偶数。
+            前者可以用垂直骨牌拼接，后者可以用水平骨牌拼接。
+        \end{practices}
+
+        %44.
+        \begin{practices}
+            染色后，不失一般性，有12个白色和13个黑色格子，而四个角都是黑色格子，去掉之后剩下12个白色格子和10个黑色格子。
+        \end{practices}
+
+        %45.
+        \begin{practices}
+            粗略计算，最多有 $8!$ 种情况，没法用穷举法。
+        \end{practices}
+
+        %46.
+        \begin{practices}
+            去掉一黑一白后，一条通路就变成了两条，每条通路从不同的颜色开始，以另一种颜色结尾，是偶数长度。
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            去掉一个白色角相邻的两个黑色方格，则没有骨牌可以覆盖到这个角。
+        \end{practices}
+
+        %48.
+        \begin{practices}
+            $(3, 3), (3, 6) , (6, 3), (6, 6)$
+        \end{practices}
     }
 }
