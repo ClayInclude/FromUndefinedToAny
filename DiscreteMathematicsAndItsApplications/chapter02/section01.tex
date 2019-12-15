@@ -115,5 +115,32 @@
         \end{defines}
 
         我们要强调集合 $A$ 是集合 $B$ 的子集但是 $A \neq B$ 时，就写成 $A \subset B$ 并说 $A$ 是 $B$ 的\emreg{真子集}。
+        如果 $A \subset B$ 是真的，则必有 $A \subseteq B$ 且必有 $B$ 的某个元素 $x$ 不是 $A$ 的元素。
+        即 $A$ 是 $B$ 的真子集当且仅当
+        $$\forall A x (x \in A \rightarrow x \in B) \wedge \exists x (x \in b \wedge x \notin A)$$
+        为真。
+
+        \paraph{证明两个集合相等}
+        {
+            证明两个集合具有相同元素的一个有效方法是证明每个集合是另一个的子集。
+            换言之，可以证明如果 $A$ 和 $B$ 为集合并且 $A \subseteq B$ 和 $B \subseteq A$ ，则有 $A = B$ 。
+        }
+    }
+
+    \subsection{集合的大小}
+    {
+        \begin{defines}
+            令 $S$ 为集合。
+            如果 $S$ 中恰有 $n$ 个不同的元素，这里 $n$ 是非负整数，我们就说 $S$ 是有限集，而 $n$ 是 $S$ 的基数。
+            $S$ 的基数记为 $|S|$ 。
+        \end{defines}
+
+        \begin{defines}
+            术语\emspe{基数(cardinality)}来自于将术语\emspe{基数(cardinal number)}作为一个有限集的大小的常用语。
+        \end{defines}
+
+        \begin{defines}
+            一个集合称为是无限的如果它不是有限的。
+        \end{defines}
     }
 }
