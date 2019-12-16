@@ -35,7 +35,7 @@
 
         \begin{align*}
             N &= {0, 1, 2, 3, \cdots}, \text{自然数集} \\
-            Z &= {\cdots, -2, -1, 0, 1, 2, \cdots}, \text{整数集} \\
+            Z &= {\cdots , -2, -1, 0, 1, 2, \cdots}, \text{整数集} \\
             Z^+ &= {1, 2, 3, \cdots}, \text{正整数集} \\
             Q &= {p / q | p \in Z, q \in Z, \text{且} q \neq 0}, \text{有理数集} \\
             R, &\text{实数集} \\
@@ -142,5 +142,273 @@
         \begin{defines}
             一个集合称为是无限的如果它不是有限的。
         \end{defines}
+    }
+
+    \subsection{幂集}
+    {
+        \begin{defines}
+            给定集合 $S$ ， $S$ 的幂集(power set)是集合 $S$ 所有子集的集合。
+            $S$ 的幂集记为 $P (S)$ 。
+        \end{defines}
+
+        如果一个集合有 $n$ 个元素，那么它的幂集 $2^n$ 个元素。
+    }
+
+    \subsection{笛卡儿积}
+    {
+        由于集合是无序的，所以就需要用一种不同的结构来表示有序的聚集。
+        这就是有序 $n$ 元组。
+
+        \begin{defines}
+            有序 $n$ 元组 (ordered n-tuple) $(a_1, a_2, \cdots , a_n)$ 是以 $a_1$ 为第一个元素， $a_2$ 为第二个元素， $\cdots$ ， $a_n$ 为第 $n$ 个元素的有序聚集。
+        \end{defines}
+
+        两个有序 $n$ 元组是相等的当且仅当每一对对应的元素都相等。
+        特别地，有序二元组称为\emreg{序偶(ordered pair)}。
+
+        \begin{defines}
+            令 $A$ 和 $B$ 为集合。
+            $A$ 和 $B$ 的笛卡儿积(Cartesian product)用 $A \times B$ 表示，是所有序偶 $(a, b)$ 的集合，其中 $a \in A$ 且 $b \in B$ 。
+            于是，
+            $$A \times B = \{(a, b) | a \in A \wedge b \in B\}$$
+        \end{defines}
+
+        \begin{defines}
+            集合 $A_1, A_2, \cdots , A_n$ 的笛卡儿积用 $A_1 \times A_2 \times \cdots \times A_n$ 表示，是有序 $n$ 元组 $(a_1, a_2, \cdots , a_n)$ 的集合，
+            其中 $a_i$ 属于 $A_i, i = 1, 2, \cdots , n$ 。
+            换言之，
+            $$A_1 \times A_2 \times \cdots \times A_n = \{(a_1, a_2, \cdots , a_n) | a_i \in A_i, i = 1, 2, \cdots , n\}$$
+        \end{defines}
+
+        用记号 $A^2$ 来表示 $A \times A$ ，即集合 $A$ 和自身的迪卡儿积。
+        更一般地，
+        $$A^n = \{(a_1, a_2, \cdots , a_n) | a_i \in A, i = 1, 2, \cdots , n\}$$
+    }
+
+    \subsection{使用带量词的集合符号}
+    {
+        有时候通过特定的符号来显式的限定一个量化命题的论域。
+        $\forall x \in S (P(x))$ 是 $\forall x (x \in S \rightarrow P(x))$ 的简写。
+        $\exists x \in S (P(x))$ 是 $\exists x (x \in S \rightarrow P(x))$ 的简写。
+    }
+
+    \subsection{真值集和量词}
+    {
+        给定谓词 $P$ 和论域 $D$ ，定义 $P$ 的\emreg{真值集(truth set)}为 $D$ 中使 $P(x)$ 为真的元素 $x$ 组成的集合。
+        $P(x)$ 的真值集记为 $\{x \in D | P(x)\}$ 。
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{-1, 1\}$
+                \item $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}$
+                \item $\{0, 1, 4, 9, 16, 25, 36, 49, 64, 81\}$
+                \item $\varnothing$
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{x \in Z | x mod 3 = 0 \wedge 0 \leq x \leq 12\}$
+                \item $\{x \in Z | |x| < 4\}$
+                \item $\{x | x = m | x = n | x = o | x = p\}$
+            \end{enumerate}
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是；是
+                \item 不是；不是
+                \item 是；不是
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是；是
+                \item 不是；是
+                \item 不是；不是
+            \end{enumerate}
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            \begin{align*}
+                B &\subseteq A \\
+                C &\subseteq A \\
+                C &\subseteq D
+            \end{align*}
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 1
+                \item 0
+                \item 0
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 0
+                \item 1
+                \item 1
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 0
+                \item 0
+                \item 1
+                \item 0
+                \item 1
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 0
+                \item 1
+                \item 1
+                \item 1
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 0
+                \item 1
+                \item 1
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+
+        \end{practices}
+
+        %13.
+        \begin{practices}
+
+        \end{practices}
+
+        %14.
+        \begin{practices}
+
+        \end{practices}
+
+        %15.
+        \begin{practices}
+
+        \end{practices}
+
+        %16.
+        \begin{practices}
+
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            如果 $A \subseteq B$ ，则 $x \in A \rightarrow x \in B$ 。
+            如果 $B \subseteq C$ ，则 $x \in B \rightarrow x \in C$ 。
+            于是有 $x \in A \rightarrow x \in C$ ，故 $A \subseteq C$ 。
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            $A = \varnothing, B = \{\varnothing\}$
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 2
+                \item 3
+            \end{enumerate}
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 1
+                \item 2
+                \item 3
+            \end{enumerate}
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{\varnothing, \{a\}\}$
+            \end{enumerate}
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            能。
+            如果 $A \neq B$ ，则不可能有相同的幂集。
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 8
+                \item 16
+                \item 2
+            \end{enumerate}
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是
+                \item $\{a\}$
+                \item 不是
+                \item $\{a, b\}$
+            \end{enumerate}
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            
+        \end{practices}
     }
 }
