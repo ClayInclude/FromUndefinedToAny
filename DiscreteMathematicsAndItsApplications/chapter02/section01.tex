@@ -213,7 +213,7 @@
         %2.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $\{x \in Z | x mod 3 = 0 \wedge 0 \leq x \leq 12\}$
+                \item $\{x \in Z | x \text{是} 3 \text{的倍数} \wedge 0 \leq x \leq 12\}$
                 \item $\{x \in Z | |x| < 4\}$
                 \item $\{x | x = m | x = n | x = o | x = p\}$
             \end{enumerate}
@@ -287,7 +287,7 @@
                 \item 0
                 \item 1
                 \item 0
-                \item 1
+                \item 0
                 \item 1
             \end{enumerate}
         \end{practices}
@@ -301,7 +301,7 @@
                 \item 1
                 \item 1
                 \item 1
-                \item 1
+                \item 0
             \end{enumerate}
         \end{practices}
 
@@ -378,6 +378,8 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $\{\varnothing, \{a\}\}$
+                \item $\{\varnothing, \{a\}, \{b\}, \{a, b\}\}$
+                \item $\{\varnothing, \{\varnothing\}, \{\{\varnothing\}\}, \{\varnothing, \{\varnothing\}\}\}$
             \end{enumerate}
         \end{practices}
 
@@ -408,7 +410,202 @@
 
         %25.
         \begin{practices}
-            
+            如果 $P(A) \subseteq P(B)$ ，假设 $a \in A$ ，则 $\{a\} \subseteq A$ ，所以 $\{a\} \in P(A)$ 。
+            因为 $P(A) \subseteq P(B)$ ，所以 $\{a\} \in P(B)$ ，意味着 $$\{a\} \subseteq B$$ ，即 $a \in B$ 。
+
+            如果 $A \subseteq B$ ，则有如果 $C \subseteq A$ 则 $C \subseteq B$ 。
+            那么有 $P(A) \subseteq P(B)$。
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            如果 $A \subseteq C$ 且 $B \subseteq D$ ，假设 $x = (a, b), a \in A, b \in B, x \in A \times B$ 。
+            则有 $x \in C \times D$ 。
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \times B = \{(a, y), (a, z), (b, y), (b, z), (c, y), (c, z), (d, y), (d, z)\}$
+                \item $B \times A = \{(y, a), (y, b), (y, c), (y, d), (z, a), (z, b), (z, c), (z, d)\}$
+            \end{enumerate}
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            $\{(x, y) | x \in \text{数学系开设的课程}, y \in \text{所有数学教授}\}$
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            $\{(x, y, z) | x \in \text{航线集合}, y \in \text{地点集合}, z \in \text{地点集合}\}$
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            $A$ 和 $B$ 至少有一个为空集合。
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            $\varnothing \times A = \{(x, y) | x \in \varnothing, y \in A\} = \varnothing = \{(x, y) | x \in A, y \in \varnothing\} = A \times \varnothing$
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        &A \times B \times C = \\
+                        &\{(a, x, 0), (a, x, 1), (a, y, 0), (a, y, 1), (b, x, 0), (b, x, 1), \\
+                        &(b, y, 0), (b, y, 1), (c, x, 0), (c, x, 1), (c, y, 0), (c, y, 1)\}
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        &C \times B \times A = \\
+                        &\{(0, x, a), (0, x, b), (0, x, c), (0, y, a), (0, y, b), (0, y, c), \\
+                        &(1, x, a), (1, x, b), (1, x, c), (1, y, a), (1, y, b), (1, y, c)\}
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        &C \times A \times B = \\
+                        &\{(0, a, x), (0, a, y), (0, b, x), (0, b, y), (0, c, x), (0, c, y), \\
+                        &(1, a, x), (1, a, y), (1, b, x), (1, b, y), (1, c, x), (1, c, y)\}
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        &B \times B \times B = \\
+                        &\{(x, x, x), (x, x, y), (x, y, x), (x, y, y), \\
+                        &(y, x, x), (y, x, y), (y, y, x), (y, y, y)\}
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %33.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        &A^2 = \\
+                        &\{(0, 0), (0, 1), (0, 3), (1, 0), (1, 1), (1, 3), (3, 0), (3, 1), (3, 3)\}
+                    \end{align*}
+                }
+                \item
+                {
+                    \begin{align*}
+                        &A^2 = \\
+                        &\{(1, 1), (1, 2), (1, a), (1, b), (2, 1), (2, 2), (2, a), (2, b), \\
+                        &(a, 1), (a, 2), (a, a), (a, b), (b, 1), (b, 2), (b, a), (b, b)\}
+                    \end{align*}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A^3 = \{(a, a, a)\}$
+                \item $A^3 = \{(0, 0, 0), (0, 0, a), (0, a, 0), (0, a, a), (a, 0, 0), (a, 0, a), (a, a, 0), (a, a, a)\}$
+            \end{enumerate}
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            $mn$
+        \end{practices}
+
+        %36.
+        \begin{practices}
+            $mnp$
+        \end{practices}
+
+        %37.
+        \begin{practices}
+            $m^n$
+        \end{practices}
+
+        %38.
+        \begin{practices}
+            如果 $A \neq B$ ，不失一般性，假设 $x \in A \wedge x \notin B$ 。
+            由于 $B$ 为非空集合，所以存在 $(x, y) \in A \times B$ ，但是 $B \times A$ 中没有 $(y, x)$ 因为 $x \notin B$ 。
+        \end{practices}
+
+        %39.
+        \begin{practices}
+            前者得到三元组，后者得到二元组。
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            前者得到二元组，后者得到三元组。
+        \end{practices}
+
+        %41.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 0
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 1
+                \item 1
+            \end{enumerate}
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{-1, 0, 1\}$
+                \item $Z - \{0, 1\}$
+                \item $\varnothing$
+            \end{enumerate}
+        \end{practices}
+
+        %44.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{x > 1\}$
+                \item $\varnothing$
+                \item $Z - \{0, 1\}$
+            \end{enumerate}
+        \end{practices}
+
+        %45.
+        \begin{practices}
+            当 $a = c$ 且 $b = d$ 时， $\{\{a\}, \{a, b\}\} = \{\{c\}, \{c, d\}\}$ 。
+            如果 $\{\{a\}, \{a, b\}\} = \{\{c\}, \{c, d\}\}$ ，当 $a = b$ 时， $\{\{a\}, \{a, b\}\} = \{\{a\}\}$ ，于是 $\{\{a\}\} = \{\{c\}\}$ ，可得 $a = b = c = d$ 。
+            当 $a \neq b$ 时， $\{\{a\}, \{a, b\}\}$ 中有两个元素，一个元素的基数为1，另一个为2。故基数为1的两个集合相同 $\{a\} = \{c\}$ ， $a = c$ 。
+            另一个集合也相同，故 $b = d$ 。
+        \end{practices}
+
+        %46.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 如果 $S$ 是它自己的一个元素，那么 $S$ 不应该包含它自己。
+                \item 如果 $S$ 不是自己的一个元素，那么 $S$ 应该包含它自己。
+            \end{enumerate}
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            令集合 $S$ 长度为 $n$ ，则分别写出基数为0（空集），1 $\cdots$ n 的子集，子集中的元素来自于集合 $S$ ，包含所有组合且不重复。
         \end{practices}
     }
 }

@@ -1,0 +1,279 @@
+%%
+%% Author: Clay
+%% 2019/12/17
+%%
+
+\section{集合运算}
+{
+    \subsection{引言}
+    {
+        两个或多个集合可以以许多不同的方式结合在一起。
+
+        \begin{defines}
+            令 $A$ 和 $B$ 为集合。
+            集合 $A$ 和 $B$ 的并集，用 $A \cup B$ 表示，是一个集合，它包含 $A$ 或 $B$ 或同时在 $A$ 和 $B$ 中的元素。
+        \end{defines}
+
+        \begin{defines}
+            令 $A$ 和 $B$ 为集合。
+            集合 $A$ 和 $B$ 的交集，用 $A \cap B$ 表示，是一个集合，它包含同时在 $A$ 和 $B$ 中的元素。
+        \end{defines}
+
+        \begin{defines}
+            两个集合称为是不相交的，如果它们的交集为空集。
+        \end{defines}
+
+        $$|A \cup B| = |A| + |B| - |A \cap B|$$
+        把这一结果推广到任意多个集合的并集就是所谓的包含排斥原理或简称\emreg{容斥原理(principle of inclusion-exclusion)}。
+
+        \begin{defines}
+            令 $A$ 和 $B$ 为集合。
+            $A$ 和 $B$ 的差集，用 $A - B$ 表示，是一个集合，它包含属于 $A$ 而不属于 $B$ 的元素。
+            $A$ 和 $B$ 的差集也成为 $B$ 相对于 $A$ 的补集。
+        \end{defines}
+
+        \begin{defines}
+            集合 $A$ 和 $B$ 的差集有时候也记为 $A \setminus B$ 。
+        \end{defines}
+
+        \begin{defines}
+            令 $U$ 为全集。
+            集合 $A$ 的补集，用 $\bar{A}$ 表示，是 $A$ 相对于 $U$ 的补集。
+            所以，集合 $A$ 的补集是 $U - A$ 。
+        \end{defines}
+    }
+
+    \subsection{集合恒等式}
+    {
+        \begin{table}[htb]
+            \centering
+
+            \begin{tabular}{l|l}
+                \hline
+                \multicolumn{1}{c|}{等价式} & \multicolumn{1}{c}{名称}\\
+                \hline
+                $A \cap U = A$ & \multirow{2}*{恒等律} \\
+                $A \cup \varnothing = A$ & \\
+                \hline
+                $A \cup U = U$ & \multirow{2}*{支配律} \\
+                $A \cap \varnothing = \varnothing$ & \\
+                \hline
+                $A \cup A = A$ & \multirow{2}*{幂等律} \\
+                $A \cap A = A$ & \\
+                \hline
+                $\bar{(\bar{A})} = A$ & 补律 \\
+                \hline
+                $A \cup B = B \cup A$ & \multirow{2}*{交换律} \\
+                $A \cap B = B \cap A$ & \\
+                \hline
+                $A \cup (B \cup C) = (A \cup B) \cup C$ & \multirow{2}*{结合律} \\
+                $A \cap (B \cap C) = (A \cap B) \cap c$ & \\
+                \hline
+                $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ & \multirow{2}*{分配律} \\
+                $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ & \\
+                \hline
+                $\bar{A \cap B} = \bar{A} \cup \bar{B}$ & \multirow{2}*{德·摩根律} \\
+                $\bar{A \cup B} = \bar{A} \cap \bar{B}$ & \\
+                \hline
+                $A \cup (A \cap B) = A$ & \multirow{2}*{吸收律} \\
+                $A \cap (A \cup B) = A$ & \\
+                \hline
+                $A \cup \bar{A} = U$ & \multirow{2}*{互补律} \\
+                $A \cap \bar{A} = \varnothing$ & \\
+                \hline
+            \end{tabular}
+
+            \caption{集合恒等式}
+        \end{table}
+
+        证明集合相等的另一种方法是证明每一个是另一个的子集。
+
+        集合恒等式还可以通过\emreg{成员表}来证明。
+    }
+
+    \subsection{扩展的并集和交集}
+    {
+        \begin{defines}
+            一组集合的并集是包含那些至少是这组集合中一个集合成员的元素的集合。
+        \end{defines}
+
+        用下列符号
+        $$A_1 \cup A_2 \cup \cdots \cup A_n \cup \cdots = \bigcup_{i = 1}^{\infty} A_i$$
+        表示集合 $A_1, A_2, \cdots , A_n, \cdots$ 的并集。
+
+        \begin{defines}
+            一组集合的交集是包含那些属于这组集合中所有成员集合的元素的集合。
+        \end{defines}
+
+        用下列符号
+        $$A_1 \cap A_2 \cap \cdots \cap A_n \cap \cdots = \bigcap_{i = 1}^{\infty} A_i$$
+        表示集合 $A_1, A_2, \cdots , A_n, \cdots$ 的交集。
+
+        更一般地，当 $I$ 是一个集合时，我们有 $\cap_{i \in I} A_i = \{x | \forall i \in I (x \in A_i)\}$ 和 $\cup_{i \in I} A_i = \{x | \exists i \in I (x \in A_i)\}$ 。
+    }
+
+    \subsection{集合的计算机表示}
+    {
+        假定全集 $U$ 是有限的。
+        首先为 $U$ 的元素任意规定一个顺序，例如 $a_1, a_2, \cdots , a_n$ 。
+        于是可以用长度为 $n$ 的位串来表示 $U$ 的子集 $A$ ：
+        其中位串中第 $i$ 位是$1$ ，如果 $a_i$ 属于 $A$ ；
+        是 $0$ ，如果 $a_i$ 不属于 $A$ 。
+
+        用位串表示集合便于计算集合的补集、并集、交集和差集。
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 住在离学校一英里以内且走路上学的学生。
+                \item 住在离学校一英里以内或走路上学的学生。
+                \item 住在离学校一英里以内，并且不是走路上学的学生。
+                \item 走路上学，并且不是住在离学校一英里以内的学生。
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cap B$
+                \item $A - B$
+                \item $A \cup B$
+                \item $\bar{A \cup B}$
+            \end{enumerate}
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{0, 1, 2, 3, 4, 5, 6\}$
+                \item $\{3\}$
+                \item $\{1, 2, 4, 5\}$
+                \item $\{0, 6\}$
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $B$
+                \item $A$
+                \item $\varnothing$
+                \item $\{f, g, h\}$
+            \end{enumerate}
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            $\bar{\bar{A}} = \{x | x \notin \bar{A}\} = \{x | \neg (\neg x \in A)\} = \{x | x \in A\} = A$
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cup \varnothing = \{x | x \in A \vee x \in \varnothing\} = \{x | x \in A\} = A$
+                \item $A \cap \U = \{x | x \in A \wedge x \in \U\} = \{x | x \in A\} = A$
+            \end{enumerate}
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cup \U = \{x | x \in A \vee x \in U\} = \{x | x \in U\} = U$
+                \item $A \cap \varnothing = \{x | x \in A \wedge x \in \varnothing\} = \{x | x \in \varnothing\} = \varnothing$
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cup A = \{x | x \in A \vee x \in A\} = \{x | x \in A\} = A$
+                \item $A \cap A = \{x | x \in A \wedge x \in A\} = \{x | x \in A\} = A$
+            \end{enumerate}
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cup \bar{A} = \{x | x \in A \vee x \in \bar{A}\} = \{x | x \in U\} = U$
+                \item $A \cap \bar{A} = \{x | x \in A \wedge x \in \bar{A}\} = \varnothing$
+            \end{enumerate}
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A - \varnothing = \{x | x \in A \wedge x \notin \varnothing\} = \{x | x \in A\} = A$
+                \item $\varnothing - A = \{x | x \in \varnothing \wedge x \notin A\} = \varnothing$
+            \end{enumerate}
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cup B = \{x | x \in A \vee x \in B\} = B \cup A$
+                \item $A \cap B = \{x | x \in A \wedge x \in B\} = B \cap A$
+            \end{enumerate}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            假设 $x \in (A \cap B)$ ，则 $x \in A \wedge x \in B$ ，并且 $x \in (A \cup (A \wedge B))$ 。
+            如果 $x \notin (A \cap B)$ ，则 $x \notin A, x \notin (A \cap B)$ 。
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            假设 $x \in (A \cap (A \cup B))$ ，则 $x \in A \wedge x \in (A \cup B)$ 。
+            如果 $x \notin (A \cap (A \cup B))$ ，则 $x \notin A \vee x \notin (A \cup B)$ 。
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            $A = (A - B) \cup (A \cap B) = \{1, 3, 5, 6, 7, 8, 9\}$
+
+            $B = (B - A) \cup (A \cap B) = \{2, 3, 6, 9, 10\}$
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            \begin{align*}
+                \bar{A \cup B}
+                &= \{x | x \notin (A \cup B)\} \\
+                &= \{x | x \notin A \wedge x \notin B\} \\
+                &= \bar{A} \cap \bar{B}
+            \end{align*}
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $(x \in (A \cap B)) = (x \in A \wedge x \in B) \rightarrow (x \in A)$
+                \item $(x \in A) \rightarrow (x \in A \vee x \in B) = (x \in A \cup B)$
+                \item $(x \in A \wedge x \notin B) \rightarrow (x \in A)$
+                \item $(x \in A \wedge (x \in B \wedge x \notin A)) = (\varnothing)$
+            \end{enumerate}
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            \begin{align*}
+                \bar{A \cap B \cap C}
+                &= \{x | x \notin (A \cap B \cap C)\} \\
+                &= \{x | x \notin A \vee x \notin B \vee x \notin C\} \\
+                &= \bar{A} \cup \bar{B} \cup \bar{C}
+            \end{align*}
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $(x \in A \vee x \in B) \rightarrow (x \in A \vee x \in B \vee x \in C)$
+                \item $(x \in A \wedge x \in B \wedge x \in C) \rightarrow (x \in A \wedge x \in B)$
+                \item $
+            \end{enumerate}
+        \end{practices}
+    }
+}
