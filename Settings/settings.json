@@ -120,5 +120,5 @@
     "latex-workshop.tikzpreview.parseTeXFile": false,
     "markdown-preview-enhanced.mermaidTheme": "dark",
     "markdown-preview-enhanced.previewTheme": "monokai.css",
-    "workbench.colorTheme": "Monokai"
+    "editor.tabCompletion": "on"
 }

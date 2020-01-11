@@ -141,7 +141,7 @@
                 \item $A \cap B$
                 \item $A - B$
                 \item $A \cup B$
-                \item $\bar{A \cup B}$
+                \item $\bar{A} \cup \bar{B}$
             \end{enumerate}
         \end{practices}
 
@@ -174,14 +174,14 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $A \cup \varnothing = \{x | x \in A \vee x \in \varnothing\} = \{x | x \in A\} = A$
-                \item $A \cap \U = \{x | x \in A \wedge x \in \U\} = \{x | x \in A\} = A$
+                \item $A \cap U = \{x | x \in A \wedge x \in U\} = \{x | x \in A\} = A$
             \end{enumerate}
         \end{practices}
 
         %7.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $A \cup \U = \{x | x \in A \vee x \in U\} = \{x | x \in U\} = U$
+                \item $A \cup U = \{x | x \in A \vee x \in U\} = \{x | x \in U\} = U$
                 \item $A \cap \varnothing = \{x | x \in A \wedge x \in \varnothing\} = \{x | x \in \varnothing\} = \varnothing$
             \end{enumerate}
         \end{practices}
@@ -304,7 +304,7 @@
         %21.
         \begin{practices}
             \begin{align*}
-                x \in A \vee (x \in B \vee x \in C) \\
+                x \in A \vee (x \in B \vee x \in C)
                 &= (x \in A \vee x \in B) \vee x \in C
             \end{align*}
         \end{practices}
@@ -312,7 +312,7 @@
         %22.
         \begin{practices}
             \begin{align*}
-                x \in A \wedge (x \in B \wedge x \in C) \\
+                x \in A \wedge (x \in B \wedge x \in C)
                 &= (x \in \wedge x \in B) \wedge x \in C
             \end{align*}
         \end{practices}
@@ -320,7 +320,7 @@
         %23.
         \begin{practices}
             \begin{align*}
-                x \in A \vee (x \in B \wedge x \in C) \\
+                x \in A \vee (x \in B \wedge x \in C)
                 &= (x \in A \vee x \in B) \wedge (x \in A \vee x \in C)
             \end{align*}
         \end{practices}
@@ -328,7 +328,7 @@
         %24.
         \begin{practices}
             \begin{align*}
-                (x \in A \wedge x \notin B) \wedge x \notin C \\
+                (x \in A \wedge x \notin B) \wedge x \notin C
                 &= (x \in A \wedge x \notin C) \wedge x \notin B \\
                 &= (x \in A \wedge x \notin C) \wedge x \notin (B - C)
             \end{align*}
@@ -339,8 +339,8 @@
             \begin{enumerate}[A.]
                 \item $\{4, 6\}$
                 \item $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$
-                \item $\{4, 6, 8, 10\}$
-                \item $\{2, 4, 5, 6, 7, 8, 9, 10\}$
+                \item $\{4, 5, 6, 8, 10\}$
+                \item $\{0, 2, 4, 5, 6, 7, 8, 9, 10\}$
             \end{enumerate}
         \end{practices}
 
@@ -427,14 +427,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $(A \cup B) - (A \cap B) = (B \cup A) - (B \cap A)$
-                \item
-                {
-                    \begin{align*}
-                        (((A \cup B) - (A \cap B)) \cup B) - (((A \cup B) - (A \cap B)) \cap B) \\
-                        &= (A \cup B) - B \\
-                        &= A
-                    \end{align*}
-                }
+                \item $(((A \cup B) - (A \cap B)) \cup B) - (((A \cup B) - (A \cap B)) \cap B) = (A \cup B) - B = A$
             \end{enumerate}
         \end{practices}
 
@@ -482,24 +475,24 @@
         %47.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $A_i$
-                \item $A_1$
+                \item $\{1, 2, \cdots n\}$
+                \item $\{1\}$
             \end{enumerate}
         \end{practices}
 
         %48.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $A_i$
-                \item $A_1$
+                \item $\{-n, \cdots, -2, -1, 0, 1, 2, \cdots n\}$
+                \item $\{-n, \cdots, -2, -1, 0, 1\}$
             \end{enumerate}
         \end{practices}
 
         %49.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $\{1, x, 3, \cdots , i\}$
-                \item $\varnothing$
+                \item $A_n$
+                \item $\{0, 1\}$
             \end{enumerate}
         \end{practices}
 
@@ -509,7 +502,7 @@
                 \item $Z^+$; $\varnothing$
                 \item $A_i$; $\{0\}$
                 \item $\{x | x > 0\}$; $A_1$
-                \item $\{x | x > 1\}$; $\varnoting$
+                \item $\{x | x > 1\}$; $\varnothing$
             \end{enumerate}
         \end{practices}
 
@@ -579,8 +572,51 @@
             \begin{enumerate}[A.]
                 \item $\{1, 2, 3, \{1, 2, 3\}\}$
                 \item $\{\varnothing\}$
-                \item $
+                \item $\{\varnothing, \{\varnothing\}\}$
+                \item $\{\varnothing, \{\varnothing\}, \{\varnothing, \{\varnothing\}\}\}$
             \end{enumerate}
+        \end{practices}
+
+        %60.
+        \begin{practices}
+            $n + 1$
+        \end{practices}
+
+        %61.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{3 \cdot a, 3 \cdot b, 1 \cdot c, 4 \cdot d\}$
+                \item $\{2 \cdot a, 2 \cdot b\}$
+                \item $\{1 \cdot a, 1 \cdot c\}$
+                \item $\{1 \cdot b, 4 \cdot d\}$
+                \item $\{5 \cdot a, 5 \cdot b, 1 \cdot c, 4 \cdot d\}$
+            \end{enumerate}
+        \end{practices}
+
+        %62.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $A \cup B$
+                \item $A \cap B$
+                \item $B - A$
+                \item $A + B$
+            \end{enumerate}
+        \end{practices}
+
+        %63.
+        \begin{practices}
+            $$\bar{F} = \{0.4 Alice, 0.1 Brian, 0.6 Fred, 0.9 Oscar, 0.5 Rita\}$$
+            $$\bar{R} = \{0.6 Alice, 0.2 Brian, 0.8 Fred, 0.1 Oscar, 0.3 Rita\}$$
+        \end{practices}
+
+        %64.
+        \begin{practices}
+            $$F \cup R = \{0.6 Alice, 0.9 Brian, 0.4 Fred, 0.9 Oscar, 0.7 Rita\}$$
+        \end{practices}
+
+        %65.
+        \begin{practices}
+            $$F \cap R = \{0.4 Alice, 0.8 Brian, 0.2 Fred, 0.1 Oscar, 0.5 Rita\}$$
         \end{practices}
     }
 }
