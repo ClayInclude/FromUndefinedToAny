@@ -17,5 +17,64 @@
         \begin{defines}
             函数有时也称为\emspe{映射(mapping)}或者\emspe{变换(transformation)}。
         \end{defines}
+
+        $A$ 到 $B$ 的关系就是集合 $A \times B$ 的子集。
+        对于 $A$ 到 $B$ 的关系，如果对每一个元素 $a \in A$ 都有且仅有一个序偶 $(a, b)$ ，则它就定义了 $A$ 到 $B$ 的一个函数 $f$ 。
+        这个函数通过指派 $f(a) = b$ 来定义，其中 $(a, b)$ 是关系中唯一以 $a$ 为第一个元素的序偶。
+
+        \begin{defines}
+            如果 $f$ 是 $A$ 到 $B$ 的函数，我们说 $A$ 是 $f$ 的\emspe{定义域(domain)}，而 $B$ 是 $f$ 的\emspe{陪域(codomain)}。
+            如果 $f(a) = b$ ，我们说 $b$ 是 $a$ 的\emspe{像(image)}，而 $a$ 是 $b$ 的\emspe{原像(preimage)}。
+            $f$ 的\emspe{值域(range)}或像是 $A$ 中元素的所有像的集合。
+            如果 $f$ 是 $A$ 到 $B$ 的函数，我们说 $f$ 把 $A$ \emspe{映射(map)}到 $B$ 。
+        \end{defines}
+
+        当两个函数有相同的定义域、陪域，定义域中的每个元素映射到陪域中相同的元素时，这两个函数是\emreg{相等的}。
+
+        一个函数称为是\emreg{实值函数}如果其陪域是实数集合。
+        如果其陪域是整数集合则称为\emreg{整数值函数}。
+
+        \begin{defines}
+            令 $f_1$ 和 $f_2$ 是从 $A$ 到 $R$ 的函数，那么 $f_1 + f_2$ 和 $f_1f_2$ 也是从 $A$ 到 $R$ 的函数，其定义为对于任意 $x \in A$
+
+            \begin{align*}
+                (f_1 + f_2)(x) &= f_1(x) + f_2(x)
+                (f_1f_2)(x) &= f_1(x)f_2(x)
+            \end{align*}
+        \end{defines}
+
+        \begin{defines}
+            令 $f$ 为从 $A$ 到 $B$ 的函数， $S$ 为 $A$ 的一个子集。
+            $S$ 在函数 $f$ 下的像是由 $S$ 中元素的像组成的 $B$ 的子集。
+            我们用 $f(S)$ 表示 $S$ 的像，于是
+
+            \begin{align*}
+                f(S) = {t | \exists s \in S (t = f(s))}
+            \end{align*}
+
+            也用简写 $\{f(s) | s \in S\}$ 来表示这个集合。
+        \end{defines}
+
+        \begin{defines}
+            用 $f(S)$ 表示集合 $S$ 在函数 $f$ 下的像可能会有潜在的二义性。
+            这里， $f(S)$ 表示一个集合，而不是函数 $f$ 在集合 $S$ 处的值。
+        \end{defines}
+    }
+
+    \subsection{一对一和映上函数}
+    {
+        \begin{defines}
+            函数 $f$ 是\emspe{一对一(one-to-one)}或\emspe{单射函数(injection)}，当且仅当对于 $f$ 的定义域中的所有 $a$ 和 $b$ 有 $f(a) = f(b)$ 蕴含 $a = b$ 。
+            一个函数如果是一对一的 ，就称为是单射的(injective)。
+        \end{defines}
+
+        \begin{defines}
+            我们可以用量词来表达 $f$ 是一对一的，如 $\forall a \forall b (f(a) = f(b) \rightarrow a = b)$ 或等价地 $\forall a \forall b (a \neq b \rightarrow f(a) \neq f(b))$ ，其中论域是函数的定义域。
+        \end{defines}
+
+        \begin{defines}
+            定义域和陪域都是实数集子集的函数 $f$ 称为是递增的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \leq f(y)$ ；称为是严格递增的，如果当 $x < y$ 时有 $f(x) < f(y)$ 。
+            类似地， $f$ 称为是递减的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \geq f(y)$ ；称为是严格递减的，当 $x < y$ 时有 $f(x) > f(y)$ （定义中严格一次意味着严格不等式）。
+        \end{defines}
     }
 }
