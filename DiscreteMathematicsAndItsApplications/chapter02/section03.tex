@@ -76,5 +76,576 @@
             定义域和陪域都是实数集子集的函数 $f$ 称为是递增的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \leq f(y)$ ；称为是严格递增的，如果当 $x < y$ 时有 $f(x) < f(y)$ 。
             类似地， $f$ 称为是递减的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \geq f(y)$ ；称为是严格递减的，当 $x < y$ 时有 $f(x) > f(y)$ （定义中严格一次意味着严格不等式）。
         \end{defines}
+
+        \begin{defines}
+            一个从 $A$ 到 $B$ 的函数 $f$ 称为\emspe{映上(onto)}或\emspe{满射(surjection)}函数，当且仅当对每个 $b \in B$ 有元素 $a \in A$ 使得 $f(a) = b$ 。一个函数如果是映上的就称为是\emspe{满射的(surjective)}。
+        \end{defines}
+
+        \begin{defines}
+            函数 $f$ 是\emspe{一一对应(one-to-one correspondance)}或\emspe{双射(bijection)}函数，如果它既是一对一又是映上的。
+            这样的函数称为是\emspe{双射的(bijective)}。
+        \end{defines}
+
+        恒等函数是这样的函数,它给每个元素指派到自身.
+        函数 $\iota_A$ 是一对一和映上的,所以他是双射函数。
+
+        假设 $f : A \rightarrow B$ 。
+
+        \begin{description}
+            \item[要证明 $f$ 是单射的：] 证明对于任意 $x, y \in A$ ，如果 $f(x) = f(y)$ ，则 $x = y$ 。
+            \item[要证明 $f$ 不是单射的：] 找到特定的 $x, y \in A$ ，使得 $x \neq y \wedge f(x) = f(y)$ 。
+            \item[要证明 $f$ 是满射的：] 考虑任意元素 $y \in B$ ，并找到一个元素 $x \in A$ 使得 $f(x) = y$ 。
+            \item[要证明 $f$ 不是满射的：] 找到一个特定的 $y \in B$ ，使得对于任意元素 $x \in A$ 有 $f(x) \neq y$ 。   
+        \end{description}
+    }
+
+    \subsection{反函数和函数组合}
+    {
+        \begin{defines}
+            令 $f$ 为从集合 $A$ 到 $B$ 的一一对应。
+            $f$ 的反函数（或逆函数）是这样的函数，它指派给 $B$ 中元素 $b$ 的是 $A$ 中使得 $f(a) = b$ 的唯一元素 $a$ 。
+            $f$ 的反函数用 $f^{-1}$ 表示。
+            于是，当 $f(a) = b$ 是 $f^{-1}(b) = a$ 。
+        \end{defines}
+
+        如果函数不是一一对应的，就无法定义反函数。
+        一一对应关系称为\emreg{可逆的(invertible)}，否则称为\emreg{不可逆的(not invertible)}。
+
+        \begin{defines}
+            令 $g$ 为从集合 $A$ 到集合 $B$ 的函数， $f$ 是从集合 $B$ 到集合 $C$ 的函数，函数 $f$ 和 $g$ 的\emspe{合成(composition)}，记作 $f \circ g$ ，定义为对任意 $a \in A$
+            $$(f \circ g)(a) = f(g(a))$$
+        \end{defines}
+
+        \begin{defines}
+            $f \circ g$ 和 $g \circ f$ 并不相等。
+            换言之，对函数的合成而言交换律不成立。
+        \end{defines}
+
+         在构造函数和它的反函数的合成时，不论以什么次序合成，得到的都是恒等函数。
+         因此 $f^{-1} \circ f = \iota_A$ 和 $f \circ f^{-1} = \iota_B$ 。
+         这就是说， $(f^{-1})^{-1} = f$ 。
+    }
+
+    \subsection{函数的图}
+    {
+        \begin{defines}
+            令 $f$ 为从集合 $A$ 到集合 $B$ 的函数，函数 $f$ 的\emspe{图像(graph)}是序偶集合 $\{(a, b) | a \in A \wedge f(a) = b\}$ 。
+        \end{defines}
+    }
+
+    \subsection{一些重要的函数}
+    {
+        \begin{defines}
+            下取整函数(floor)指派给实数 $x$ 的是小于等于 $x$ 的最大整数，用 $\lfloor x \rfloor$ 表示。
+            上取整函数(ceil)指派给实数 $x$ 的是大于等于 $x$ 的最小整数，用 $\lceil x \rceil$ 表示。
+        \end{defines}
+
+        \begin{defines}
+            下取整函数也常称为最大整数函数，这时经常用 $[x]$ 表示。
+        \end{defines}
+
+        \begin{table}[htb]
+            \[
+                \begin{array}{l}
+                    \hline
+                    \lfloor x \rfloor \leftrightarrow n \leq x < n + 1 \\
+                    \lceil x \rceil \leftrightarrow n - 1 < x \leq x \\
+                    \lfloor x \rfloor \leftrightarrow x - 1 < n \leq x \\
+                    \lceil x \rceil \leftrightarrow x \leq n < x + 1 \\
+                    \hline
+                    x - 1 < \lfloor x \rfloor \leq x \leq \lceil x \rceil < x + 1 \\
+                    \hline
+                    \lfloor -x \rfloor = - \lceil x \rceil \\
+                    \lceil -x \rceil = - \lfloor x \rfloor \\
+                    \hline
+                    \lfloor x + n \rfloor = \lfloor x \rfloor + n \\
+                    \lceil x + n \rceil = \lceil x \rceil + n \\
+                    \hline
+                \end{array}
+            \]
+        \end{table}
+
+        常用的另一个函数是\emreg{阶乘函数 $f : N \rightarrow Z^+$}，几位 $f(n) = n!$ 。
+    }
+
+    \subsection{部分函数}
+    {
+        在抽象的数学里，也常讨论那些只在实数的一个子集上有定义的函数。
+
+        \begin{defines}
+            一个从集合 $A$ 到集合 $B$ 的\emspe{部分函数(partial function)} $f$ 是给 $A$ 的一个子集（称为 $f$ 的\emspe{定义域(domain of definition)}中的每个元素 $a$ 指派唯一的一个 $B$ 中的元素 $b$ 。
+            集合 $A$ 和 $B$ 分别称为 $f$ 的域和陪域。
+            我们说 $f$ 对于 $A$ 中但不在 $f$ 的定义域中的元素\emspe{无定义(undefined)}。
+            当 $f$ 的定义域等于 $A$ 时，就说 $f$ 是\emspe{全函数(total function)}。
+        \end{defines}
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $f$ 对于 $x = 0$ 无定义。
+                \item $f$ 对于 $x < 0$ 无定义。
+                \item 不是函数。
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是函数。
+                \item 是。
+                \item $f$ 对于 $n = 2$ 无定义。
+            \end{enumerate}
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是函数。
+                \item 是函数。
+                \item 不是函数。
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 定义域：非负整数，值域： $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$ 。
+                \item 定义域：正整数，值域：非负整数。
+                \item 定义域：所有位串，值域：非负整数。
+                \item 定义域：所有位串，值域：非负整数。
+            \end{enumerate}
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 定义域：所有位串，值域：非负整数。
+                \item 定义域：所有位串，值域：非负整数。
+                \item 定义域：所有位串，值域： $\{0, 1, 2, 3, 4, 5, 6, 7\}$ 。
+                \item 定义域：正整数，值域：所有最大完全平方数。
+            \end{enumerate}
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 定义域：正整数序偶，值域：正整数。
+                \item 定义域：正整数，值域： $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$ 。
+                \item 定义域：所有位串，值域：非负整数。
+                \item 定义域：正整数，值域：正整数。
+                \item 定义域：所有位串，值域： $\{\varnothing, 1, 11, 111, 1111, \cdots\}$ 。
+            \end{enumerate}
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 定义域：正整数序偶，值域：正整数。
+                \item 定义域：正整数，值域： $\{0, 1, 2, 3, 4, 5, ,6 ,7, 8, 9, 10\}$ 。
+                \item 定义域：所有位串，值域：非负整数。
+                \item 定义域：所有位串，值域：非负整数。
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $1$
+                \item $2$
+                \item $-1$
+                \item $0$
+                \item $3$
+                \item $-2$
+                \item $1$
+                \item $2$
+            \end{enumerate}
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $1$
+                \item $0$
+                \item $0$
+                \item $-1$
+                \item $3$
+                \item $-1$
+                \item $2$
+                \item $1$
+            \end{enumerate}
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 不是
+                \item 不是
+            \end{enumerate}
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            A
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 不是
+                \item 是
+                \item 不是
+            \end{enumerate}
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            A 和 C
+        \end{practices}
+
+        %14.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 不是
+                \item 是
+                \item 是
+                \item 不是
+            \end{enumerate}
+        \end{practices}
+
+        %15.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 不是
+                \item 是
+                \item 是
+                \item 是
+            \end{enumerate}
+        \end{practices}
+
+        %16.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 是
+                \item 不是
+                \item 不是
+            \end{enumerate}
+        \end{practices}
+
+        %17.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是
+                \item 不是
+                \item 不是
+                \item 是
+            \end{enumerate}
+        \end{practices}
+
+        %18.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 班上所有学生的电话号码的集合。
+                \item 班上所有学生学号的集合。
+                \item 班上所有学生最后得分的集合。
+                \item 班上所有学生家乡的集合。
+            \end{enumerate}
+        \end{practices}
+
+        %19.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 所有老师办公室的集合。
+                \item 所有老师制定的巴士的集合。
+                \item 所有老师薪水的集合。
+                \item 所有老师社会保险号的集合。
+            \end{enumerate}
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $f(n) = n + 1$
+                \item $f(n) = \lceil n / 2 \rceil$
+                \item $f(n) = -n$
+                \item $f(n) = n^2$
+            \end{enumerate}
+        \end{practices}
+
+        %21.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $f(n) = |n| + 1$
+                \item $f(n) = |n|$
+                \item 当 $n \geq 0$ 时， $f(n) = 2x + 1$ ，当 $n < 0$ 时， $f(n) = -2x$
+                \item $f(n) = n^2$
+            \end{enumerate}
+        \end{practices}
+
+        %22.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 不是
+                \item 不是
+                \item 是
+            \end{enumerate}
+        \end{practices}
+
+        %23.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 是
+                \item 不是
+                \item 是
+                \item 不是
+            \end{enumerate}
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            若 $f(x)$ 是严格递增的，则令 $a < b$ ，有 $f(a) < f(b)$ ，由 $g(x) = 1 / f(x)$ 可得 $g(a) > g(b)$ ，则 $g(x)$ 为严格递减。
+            若 $g(x)$ 是严格递减的，则令 $a < b$ ，有 $g(a) > g(b)$ ，由 $g(x) = 1 / f(x)$ 可得 $f(a) < f(b)$ ，则 $f(x)$ 为严格递增。
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            同上。
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    若 $f(x)$ 是从 $R$ 到自身的严格递增函数，则不失一般性 $f(a) < f(b)$ ，则 $a < b$ 。
+                    故 $(f(a) \neq f(b)) \rightarrow a \neq b$ ，等价于 $(a = b) \leftrightarrow (f(a) = f(b))$ 。
+                    根据定义， $f(x)$ 是一对一的。
+                }
+                \item
+                {
+                    $f(x) = 0$
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            同上。
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            因为 $e^x$ 始终大于 $0$ ，故其不是满射。
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            因为 $x \neq 0$ 时， $|x| = |-x|$ ，故其不是单射。
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{1\}$
+                \item $\{-1, 0, 5, 9, 15\}$
+                \item $\{0, 1, 2\}$
+                \item $\{0, 1, 5, 16\}$
+            \end{enumerate}
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{1, 0, 3\}$
+                \item $\{0, 1, 3, 5, 8\}$
+                \item $\{0, 8, 16, 40\}$
+                \item $\{1, 12, 33, 35\}$
+            \end{enumerate}
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $Z$
+                \item $N$
+                \item $R$
+            \end{enumerate}
+        \end{practices}
+
+        %33.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    令 $a \neq b$ ，又有 $f(x)$ 和 $g(x)$ 都为单射函数，故 $g(a) \neq g(b) \wedge f(g(a)) \neq f(g(b))$ 。
+                    所以 $(f \circ g)(a) \neq (f \circ g)(b)$ ， $f \circ g$ 为单射函数。
+                }
+                \item
+                {
+                    令 $c \in C$ ，又有 $f(x)$ 和 $g(x)$ 都为满射函数，故存在 $b \in B$ 和 $a \in A$ 使得  $f(b) = c \wedge g(a) = b$ 。
+                    所以 $(f \circ g)(a) = c$ ， $f \circ g$ 为满射函数。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %34.
+        \begin{practices}
+            不能。
+        \end{practices}
+
+        %35.
+        \begin{practices}
+            不能。
+        \end{practices}
+
+        %36.
+        \begin{practices}
+            \begin{align*}
+                f \circ g
+                &= f(g(x)) \\
+                &= f((x + 2)) \\
+                &= (x + 2)^2 + 1 \\
+                &= x^2 + 4x + 5
+            \end{align*}
+
+            \begin{align*}
+                g \circ f
+                &= g(f(x)) \\
+                &= g((x^2 + 1)) \\
+                &= x^2 + 3
+            \end{align*}
+        \end{practices}
+
+        %37.
+        \begin{practices}
+            \begin{align*}
+                f + g
+                &= f(x) + g(x) \\
+                &= x^2 + 1 + x + 2 \\
+                &= x^2 + x + 3
+            \end{align*}
+
+            \begin{align*}
+                fg
+                &= f(x)g(x) \\
+                &= (x^2 + 1)(x + 2) \\
+                &= x^3 + 2x^2 + x + 2
+            \end{align*}
+        \end{practices}
+
+        %38.
+        \begin{practices}
+            根据定义可得， $f(x)$ 和 $g(x)$ 互为反函数。
+            $(f^{-1}(ax + b) = x) \rightarrow (f^{-1}(x) = x / a - b / a)$ 。
+            故 $c = 1 / a, d = - b / a$ 。
+        \end{practices}
+
+        %39.
+        \begin{practices}
+            令 $x_1 \neq x_2$ ，则 $ax_1 + b \neq ax_2 + b$ 。
+            故 $f(x)$ 为单射。
+            任何 $y \in R$ 都有 $x \in R$ 使得 $f(x) = y$ 成立，其中 $x = y / a - b / a$ 。
+            故 $f(x)$ 为满射。
+            则 $f(x)$ 为双射， $f^{-1}(x) = x / a - b / a$ 。
+        \end{practices}
+
+        %40.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    令 $s \in S, t \in T$ ，则 $y_s \in f(S \cup T) \wedge y_t \in f(S \cup T) \wedge y_s \in f(S) \wedge y_t \in f(T)$ ，故等式成立。
+                }
+                \item
+                {
+                    若 $x \in S \cap T$ ，则 $f(x) \in f(S \cap T) \wedge f(x) \in f(S) \wedge f(x) \in f(T)$ ，故等式成立。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %41.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    $f(x) = |x|, S = \{x | x < 0\}, T = \{x | x >= 0\}$
+                }
+                \item
+                {
+                    令 $s \in S, t \in T$ ，若相等，则 $f(S) \cap f(T) \subseteq f(S \cap T)$ 。
+                    若不相等，则 $f(s) \neq f(t)$ ，其像不会出现在值中，也有 $f(S) \cap f(T) \subseteq f(S \cap T)$ 。
+                    故左右两集合相等。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %42.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{-1, 1\}$
+                \item $\{x | -1 < x < 1\}$
+                \item $\{x | x < -2 \vee x > 2\}$
+            \end{enumerate}
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\{x | 0 \leq x < 1\}$
+                \item $\{x | -1 \leq x < 2\}$
+                \item $\varnothing$
+            \end{enumerate}
+        \end{practices}
+
+        %44.
+        \begin{practices}
+            因为函数不会出现一对多，所以类似练习40可证明。
+        \end{practices}
+
+        %45.
+        \begin{practices}
+            同上。
+        \end{practices}
+
+        %46.
+        \begin{practices}
+            令 $x = n + m$ ，其中 $n$ 为整数部分， $0 \leq m < 1$ 。
+            当 $m < 0.5$ 时， $\lfloor n + m + 0.5 \rfloor = n$ ；
+            当 $m >= 0.5$ 时， $\lfloor n + m + 0.5 \rfloor = n + 1$ 。
+            证毕。
+        \end{practices}
+
+        %47.
+        \begin{practices}
+            同上。
+        \end{practices}
+
+        %48.
+        \begin{practices}
+            当 $x$ 为整数时， $\lfloor x \rfloor = \lceil x \rceil = x$ 。
+            当 $x$ 不为整数时，令 $x = n + m$ ，其中 $n$ 为整数部分， $0 \leq m < 1$ 。 $\lceil n + m \rceil = n + 1, \lfloor n + m \rfloor = n$ 。
+            证毕。
+        \end{practices}
+
+        %49.
+        \begin{practices}
+            令 $x = n + m$ ，其中 $n$ 为整数部分， $0 \leq m < 1$ 。
+            $\lfloor n + m \rfloor = n, \lceil n + m \rceil = n + 1$ 。
+            由不等式性质可得出 $x - 1 < \lfloor x \rfloor \leq x \leq \lceil x \rceil x + 1$ 。
+            证毕。
+        \end{practices}
+
+        %50.
+        \begin{practices}
+            令 $x = n + l$ ，其中 $n$ 为整数部分， $0 \leq l < 1$ 。
+        \end{practices}
     }
 }
