@@ -74,7 +74,7 @@
 
         \begin{defines}
             定义域和陪域都是实数集子集的函数 $f$ 称为是递增的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \leq f(y)$ ；称为是严格递增的，如果当 $x < y$ 时有 $f(x) < f(y)$ 。
-            类似地， $f$ 称为是递减的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \geq f(y)$ ；称为是严格递减的，当 $x < y$ 时有 $f(x) > f(y)$ （定义中严格一次意味着严格不等式）。
+            类似地， $f$ 称为是递减的，如果对 $f$ 的定义域中的 $x$ 和 $y$ ，当 $x < y$ 时有 $f(x) \geq f(y)$ ；称为是严格递减的，当 $x < y$ 时有 $f(x) > f(y)$ （定义中严格一词意味着严格不等式）。
         \end{defines}
 
         \begin{defines}
@@ -223,7 +223,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item 定义域：所有位串，值域：非负整数。
-                \item 定义域：所有位串，值域：非负整数。
+                \item 定义域：所有位串，值域：非负偶数。
                 \item 定义域：所有位串，值域： $\{0, 1, 2, 3, 4, 5, 6, 7\}$ 。
                 \item 定义域：正整数，值域：所有最大完全平方数。
             \end{enumerate}
@@ -304,7 +304,7 @@
 
         %13.
         \begin{practices}
-            A 和 C
+            A
         \end{practices}
 
         %14.
@@ -324,7 +324,7 @@
                 \item 是
                 \item 不是
                 \item 是
-                \item 是
+                \item 不是
                 \item 是
             \end{enumerate}
         \end{practices}
@@ -455,7 +455,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $\{1\}$
-                \item $\{-1, 0, 5, 9, 15\}$
+                \item $\{-1, 1, 5, 8, 15\}$
                 \item $\{0, 1, 2\}$
                 \item $\{0, 1, 5, 16\}$
             \end{enumerate}
@@ -591,7 +591,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $\{-1, 1\}$
-                \item $\{x | -1 < x < 1\}$
+                \item $\{x | -1 < x < 0 \vee 0 < x < 1\}$
                 \item $\{x | x < -2 \vee x > 2\}$
             \end{enumerate}
         \end{practices}
@@ -646,6 +646,274 @@
         %50.
         \begin{practices}
             令 $x = n + l$ ，其中 $n$ 为整数部分， $0 \leq l < 1$ 。
+            $\lceil n + l + m \rceil = n + m + 1, \lceil n + l \rceil + m = n + 1 + m$ 。
+            证毕。
+        \end{practices}
+
+        %51.
+        \begin{practices}
+            令 $x = m + l$ ，其中 $m$ 为整数部分， $0 \leq l < 1$ 。
+
+            \begin{enumerate}[A.]
+                \item
+                {
+                    如果 $m + l < n$ ，那么 $\lfloor m + l \rfloor = m < n$ 。
+                    如果 $\lfloor m + l \rfloor = m < n, x < n$ 。
+                }
+                \item
+                {
+                    如果 $n < m + l$ ，那么 $n < m + 1 = \lceil m + l \rceil$ 。
+                    如果 $n < \lceil m + l \rceil$ ，那么 $ n \leq m + 1, n < m + l$ 。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %52.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    如果 $m + l \leq n$ ，$\lceil m + l \rceil < m + 1$ ，又因为 $n$ 为整数，所以 $\lceil m + l \rceil \leq n$ 。
+                    如果 $\lceil m + l \rceil \leq n$ ，那么 $m + 1 \leq n$ ，所以 $x \leq n$ 。
+                }
+                \item
+                {
+                    如果 $n \leq m + l$ ，那么 $n \leq m < \lfloor x \rfloor$ 。
+                    如果 $n \leq \lfloor x \rfloor$ ，那么 $n \leq m \leq m + l$ 。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %53.
+        \begin{practices}
+            如果 $n$ 为偶数，则有 $n = 2k$ ， $\lfloor 2k / 2 \rfloor = k = n / 2$ 。
+            如果 $n$ 为奇数，则有 $n = 2k + 1$ ， $\lfloor k + 0.5 \rfloor = k = (n - 1) / 2$ 。
+        \end{practices}
+
+        %54.
+        \begin{practices}
+            令 $x = n + m$ ，其中 $n$ 为整数部分， $0 \leq m < 1$ 。
+            则 $-x = -n - m = -n - 1 + (1 - m)$ ，故可证。
+        \end{practices}
+
+        %55.
+        \begin{practices}
+            同上。
+        \end{practices}
+
+        %56.
+        \begin{practices}
+            $\lfloor b \rfloor - \lceil a \rceil + 1$
+        \end{practices}
+
+        %57.
+        \begin{practices}
+            $\lceil b \rceil - \lfloor a \rfloor - 1$
+        \end{practices}
+
+        %58.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 2
+                \item 63
+                \item 375
+            \end{enumerate}
+        \end{practices}
+
+        %59.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 3
+                \item 126
+                \item 3600
+            \end{enumerate}
+        \end{practices}
+
+        %60.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 3018
+                \item 7075
+                \item 23584
+            \end{enumerate}
+        \end{practices}
+
+        %61.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 100
+                \item 256
+                \item 1030
+                \item 30200
+            \end{enumerate}
+        \end{practices}
+
+        %62.
+        \begin{practices}
+
+        \end{practices}
+
+        %63.
+        \begin{practices}
+
+        \end{practices}
+
+        %64.
+        \begin{practices}
+
+        \end{practices}
+
+        %65.
+        \begin{practices}
+
+        \end{practices}
+
+        %66.
+        \begin{practices}
+
+        \end{practices}
+
+        %67.
+        \begin{practices}
+
+        \end{practices}
+
+        %68.
+        \begin{practices}
+
+        \end{practices}
+
+        %69.
+        \begin{practices}
+            \begin{align*}
+                f^{-1}(x^3 + 1) &= x \\
+                f^{-1}(x) = \sqrt[3]{x - 1}
+            \end{align*}
+        \end{practices}
+
+        %70.
+        \begin{practices}
+            \begin{align*}
+                ((f \circ g) \circ (g^{-1} \circ f^{-1}))(a)
+                &= f(g(g^{-1}(f^{-1}(a)))) \\
+                &= f(f^{-1}(a)) \\
+                &= a
+            \end{align*}
+
+            \begin{align*}
+                ((g^{-1} \circ f^{-1}) \circ (f \circ g))(b)
+                &= f^{-1}(g^{-1}(g(f(b)))) \\
+                &= f^{-1}(f(b)) \\
+                &= b
+            \end{align*}
+        \end{practices}
+
+        %71.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $x \in (A \cap B) \leftrightarrow x \in A \wedge x \in B$
+                \item $x \in (A \cup B) \leftrightarrow x \in A \vee x \in B$
+                \item $x \in \bar{A} \leftrightarrow x \notin A$
+                \item $x \in (A \oplus B) \leftrightarrow (x \in A \wedge x \notin B) \vee (x \notin A \wedge x \in B)$
+            \end{enumerate}
+        \end{practices}
+
+        %72.
+        \begin{practices}
+            如果函数是单射，但不是满射，那么基数不会相等。
+            如果函数是满射，但不是单射，那么基数不会相等。
+            证毕。
+        \end{practices}
+
+        %73.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item T
+                \item F
+                \item T
+                \item F
+                \item F
+            \end{enumerate}
+        \end{practices}
+
+        %74.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item T
+                \item F
+                \item T
+                \item F
+                \item T
+            \end{enumerate}
+        \end{practices}
+
+        %75.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    令 $x = n^2 + m + \epsilon$ ， $n^2$ 为小于 $x$ 的最大平方数。
+                    $\sqrt{\lfloor x \rfloor}$ 和 $\sqrt{\lfloor n^2 + m \rfloor}$ 都处于 $[n, n+1)$ 之间，故可证。
+                }
+                \item
+                {
+                    同上。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %76.
+        \begin{practices}
+            令 $x = m + n$ 。
+            当 $n < 1 / 3$ 时，左右都等于 $3m$ 。
+            当 $1 / 3 \leq n < 2 / 3$ 时，左右都等于 $3m + 1$ 。
+            当 $2 / 3 \leq n < 1$ 时，左右都等于 $3m + 2$ 。
+        \end{practices}
+
+        %77.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $n \neq 0$
+                \item T
+                \item $n \neq 0$
+                \item T
+                \item $m > n$
+            \end{enumerate}
+        \end{practices}
+
+        %78.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    良定义。
+                }
+                \item
+                {
+                    见例77。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %79.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    根据题意， $S$ 具有 $m$ 个元素，将第一个元素指派到 $1$ ，第二个指派到 $2$ ， $...$ 第 $m$ 个元素指派到 $m$ 。
+                }
+                \item
+                {
+                    同上。
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %80.
+        \begin{practices}
+            如果 $S$ 为有限集，则真子集 $A$ 与 $S$ 基数不同，不可能存在一一对应关系。
         \end{practices}
     }
 }
