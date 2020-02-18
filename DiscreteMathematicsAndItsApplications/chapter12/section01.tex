@@ -1,0 +1,523 @@
+%%
+%% Author: Clay
+%% 2020/2/18
+%%
+
+\section{布尔函数}
+{
+    \subsection{引言}
+    {
+        布尔代数提供的是集合 $\{0, 1\}$ 上的运算和规则。
+
+        布尔代数中的恒等式可以直接转换为复合命题中的等价式。
+    }
+
+    \subsection{布尔表达式和布尔函数}
+    {
+        设 $B = \{0, 1\}$ ，则 $B^n = \{(x_1, x_2, \cdots, x_n) | x_i \in B, 1 \leq i \leq n\}$ 是由 $0, 1$ 能构成的所有 $n$ 元组的集合。
+        变元 $x$ 如果仅从 $B$ 中取值，则称该变元为\emreg{布尔变元}。
+        从 $B^n$ 到 $B$ 的函数称为\emreg{$n$ 元布尔函数}。
+
+        布尔函数也可由变元和布尔运算构成的表达式来表示。
+        关于变元 $x_1, x_2, \cdots, x_n$ 的\emreg{布尔表达式}可以递归地定义如下：
+
+        \begin{enumerate}
+            \item $0, 1, x_1, x_2, \cdots, x_n$ 是布尔表达式。
+            \item 如果 $E_1, E_2$ 是布尔表达式，则 $\overline{E_1}, E_1E_2, E_1 + E_2$ 是布尔表达式。
+        \end{enumerate}
+
+        每个布尔表达式表示一个布尔函数，此函数的值是通过在表达式中用 $0, 1$ 替换变元得到的。
+
+        $n$ 个变元的布尔函数 $F$ 和 $G$ 是相等的，当且仅当 $F(b_1, b_2, \cdots, b_n) = G(b_1, b_2, \cdots, b_n)$ ，其中 $b_1, b_2, \cdots, b_n$ 属于 $B$ 。
+        表示同一个函数的不同的布尔表达式称为是\emreg{等价的}。
+        布尔函数 $F$ 的\emreg{补函数}是 $\overline{F}$ ，其中 $\overline{F}(x_1, \cdots, x_n) = \overline{F(x_1, \cdots, x_n)}$ 。
+        设 $F$ 和 $G$ 是 $n$ 元布尔函数，函数的\emreg{布尔和} $F + G$ 与\emreg{布尔积} $FG$ 分别定义为：
+        
+        \begin{align*}
+            (F + G)(x_1, \cdots, x_n) &= F(x_1, \cdots, x_n) + G(x_1, \cdots, x_n) \\
+            (FG)(x_1, \cdots, x_n) &= F(x_1, \cdots, x_n)G(x_1, \cdots, x_n)
+        \end{align*}
+
+        乘积法则表明有 $2^{2^n}$ 个不同的 $n$ 元布尔函数。
+    }
+
+    \subsection{布尔代数恒等式}
+    {
+        将布尔恒等式、逻辑等价式和集合恒等式相比较，所有这些都是一个更抽象结构中恒等式集合的特殊情形。
+        每个恒等式都可以通过适当的转换得到。
+    }
+
+    \subsection{对偶性}
+    {
+        一个布尔表达式的\emreg{对偶}可以用如下方法得到：交换布尔和与布尔积，并交换 $0$ 和 $1$ 。
+
+        对于由布尔表达式表示的函数的恒等式，当取恒等式两边的函数的对偶时，等式仍然成立，此结果叫\emreg{对偶性}原理。
+    }
+
+    \subsection{布尔代数的抽象定义}
+    {
+        布尔函数和表达式所有的结论都可以转换成命题的结论，也可以转换成关于集合的结论。
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 1
+                \item 0
+                \item 0
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 0
+                \item 0
+                \item 0, 1
+                \item 不存在
+            \end{enumerate}
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        (1 \cdot 1) + (\overline{0 \cdot 1} + 0)
+                        &= 1 + (1 + 0) \\
+                        &= 1
+                    \end{align*}
+                }
+                \item
+                {
+                    $(T \wedge T) \vee (\neg (F \wedge T) \vee F) = T$
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{align*}
+                        (\overline{1} \cdot \overline{0}) + (1 \cdot \overline{0})
+                        &= 0 + 1 \\
+                        &= 1
+                    \end{align*}
+                }
+                \item
+                {
+                    $(\neg T \wedge \neg F) \vee (T \wedge \neg F) = T$
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & \overline{x}y \\
+                                \hline
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 1 & 0 \\
+                                0 & 1 & 0 & 1 \\
+                                0 & 1 & 1 & 1 \\
+                                1 & 0 & 0 & 0 \\
+                                1 & 0 & 1 & 0 \\
+                                1 & 1 & 0 & 0 \\
+                                1 & 1 & 1 & 0 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & x + yz \\
+                                \hline
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 1 & 0 \\
+                                0 & 1 & 0 & 0 \\
+                                0 & 1 & 1 & 1 \\
+                                1 & 0 & 0 & 1 \\
+                                1 & 0 & 1 & 1 \\
+                                1 & 1 & 0 & 1 \\
+                                1 & 1 & 1 & 1 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & x\overline{y} + \overline{xyz} \\
+                                \hline
+                                0 & 0 & 0 & 1 \\
+                                0 & 0 & 1 & 1 \\
+                                0 & 1 & 0 & 1 \\
+                                0 & 1 & 1 & 1 \\
+                                1 & 0 & 0 & 1 \\
+                                1 & 0 & 1 & 1 \\
+                                1 & 1 & 0 & 1 \\
+                                1 & 1 & 1 & 0 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & x(yz + \overline{y}\overline{z}) \\
+                                \hline
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 1 & 0 \\
+                                0 & 1 & 0 & 0 \\
+                                0 & 1 & 1 & 0 \\
+                                1 & 0 & 0 & 1 \\
+                                1 & 0 & 1 & 0 \\
+                                1 & 1 & 0 & 0 \\
+                                1 & 1 & 1 & 1 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & \overline{z} \\
+                                \hline
+                                0 & 0 & 0 & 1 \\
+                                0 & 0 & 1 & 0 \\
+                                0 & 1 & 0 & 1 \\
+                                0 & 1 & 1 & 0 \\
+                                1 & 0 & 0 & 1 \\
+                                1 & 0 & 1 & 0 \\
+                                1 & 1 & 0 & 1 \\
+                                1 & 1 & 1 & 0 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & \overline{x}y + \overline{y}z \\
+                                \hline
+                                0 & 0 & 0 & 0 \\
+                                0 & 0 & 1 & 1 \\
+                                0 & 1 & 0 & 1 \\
+                                0 & 1 & 1 & 1 \\
+                                1 & 0 & 0 & 0 \\
+                                1 & 0 & 1 & 1 \\
+                                1 & 1 & 0 & 0 \\
+                                1 & 1 & 1 & 0 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & x\overline{y} + \overline{xyz} \\
+                                \hline
+                                0 & 0 & 0 & 1 \\
+                                0 & 0 & 1 & 1 \\
+                                0 & 1 & 0 & 1 \\
+                                0 & 1 & 1 & 1 \\
+                                1 & 0 & 0 & 1 \\
+                                1 & 0 & 1 & 1 \\
+                                1 & 1 & 0 & 1 \\
+                                1 & 1 & 1 & 0 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+                \item
+                {
+                    \begin{table}[H]
+                        \centering
+
+                        \[
+                            \begin{array}{c|c|c|c}
+                                \hline
+                                x & y & z & \overline{y}(xz + \overline{x}\overline{z}) \\
+                                \hline
+                                0 & 0 & 0 & 1 \\
+                                0 & 0 & 1 & 0 \\
+                                0 & 1 & 0 & 0 \\
+                                0 & 1 & 1 & 0 \\
+                                1 & 0 & 0 & 0 \\
+                                1 & 0 & 1 & 1 \\
+                                1 & 1 & 0 & 0 \\
+                                1 & 1 & 1 & 0 \\
+                                \hline
+                            \end{array}
+                        \]
+                    \end{table}
+                }
+            \end{enumerate}
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            都为 $1$ 或都为 $0$ 。
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            $2^{(2^7)}$
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            \begin{align*}
+                x + xy
+                &= x \cdot 1 + xy \\
+                &= x(1 + y) \\
+                &= x \cdot 1 \\
+                &= x
+            \end{align*}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            如果 $F$ 取值为 $1$ ，证明 $xy, xz, yz$ 中至少有一个为 $1$ ，则其中至少有两个为 $1$ 。
+            如果其中至少有两个为 $1$ ，则 $xy, xz, yz$ 中至少有一个为 $1$ ， $F$ 取值为 $1$ 。
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            使用真值表即可。
+        \end{practices}
+
+        %14.
+        \begin{practices}
+
+        \end{practices}
+
+        %15.
+        \begin{practices}
+
+        \end{practices}
+
+        %16.
+        \begin{practices}
+
+        \end{practices}
+
+        %17.
+        \begin{practices}
+
+        \end{practices}
+
+        %18.
+        \begin{practices}
+
+        \end{practices}
+
+        %19.
+        \begin{practices}
+
+        \end{practices}
+
+        %20.
+        \begin{practices}
+
+        \end{practices}
+
+        %21.
+        \begin{practices}
+
+        \end{practices}
+
+        %22.
+        \begin{practices}
+
+        \end{practices}
+
+        %23.
+        \begin{practices}
+
+        \end{practices}
+
+        %24.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $x$
+                \item $\overline{x}$
+                \item $0$
+                \item $1$
+            \end{enumerate}
+        \end{practices}
+
+        %25.
+        \begin{practices}
+            真值表。
+        \end{practices}
+
+        %26.
+        \begin{practices}
+            真值表。
+        \end{practices}
+
+        %27.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item T
+                \item F
+                \item F
+            \end{enumerate}
+        \end{practices}
+
+        %28.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $xy$
+                \item $\overline{x} + \overline{y}$
+                \item $(x + y + z)(\overline{x}\overline{y}\overline{z})$
+                \item $(x + \overline{z})(x + 1)(\overline{x} + 0)$
+            \end{enumerate}
+        \end{practices}
+
+        %29.
+        \begin{practices}
+            根据德·摩根律，对一个表达式的求补，除了变元取补外，其余等同于对偶律。
+        \end{practices}
+
+        %30.
+        \begin{practices}
+            由练习29可知， $F(\overline{x_1}, \cdots, \overline{}{x_n}) = G(\overline{x_1}, \cdots, \overline{}{x_n})$ 。
+            由德摩根律可知，其相等。
+        \end{practices}
+
+        %31.
+        \begin{practices}
+            16
+        \end{practices}
+
+        %32.
+        \begin{practices}
+            ?
+        \end{practices}
+
+        %33.
+        \begin{practices}
+
+        \end{practices}
+
+        %34.
+        \begin{practices}
+
+        \end{practices}
+
+        %35.
+        \begin{practices}
+
+        \end{practices}
+
+        %36.
+        \begin{practices}
+
+        \end{practices}
+
+        %37.
+        \begin{practices}
+
+        \end{practices}
+
+        %38.
+        \begin{practices}
+
+        \end{practices}
+
+        %39.
+        \begin{practices}
+
+        \end{practices}
+
+        %40.
+        \begin{practices}
+
+        \end{practices}
+
+        %41.
+        \begin{practices}
+
+        \end{practices}
+
+        %42.
+        \begin{practices}
+
+        \end{practices}
+
+        %43.
+        \begin{practices}
+            ?
+        \end{practices}
+    }
+}

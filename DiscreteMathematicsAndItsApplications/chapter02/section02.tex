@@ -38,7 +38,7 @@
 
         \begin{defines}
             令 $U$ 为全集。
-            集合 $A$ 的补集，用 $\bar{A}$ 表示，是 $A$ 相对于 $U$ 的补集。
+            集合 $A$ 的补集，用 $\overline{A}$ 表示，是 $A$ 相对于 $U$ 的补集。
             所以，集合 $A$ 的补集是 $U - A$ 。
         \end{defines}
     }
@@ -61,7 +61,7 @@
                 $A \cup A = A$ & \multirow{2}*{幂等律} \\
                 $A \cap A = A$ & \\
                 \hline
-                $\bar{(\bar{A})} = A$ & 补律 \\
+                $\overline{(\overline{A})} = A$ & 补律 \\
                 \hline
                 $A \cup B = B \cup A$ & \multirow{2}*{交换律} \\
                 $A \cap B = B \cap A$ & \\
@@ -72,14 +72,14 @@
                 $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ & \multirow{2}*{分配律} \\
                 $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ & \\
                 \hline
-                $\bar{A \cap B} = \bar{A} \cup \bar{B}$ & \multirow{2}*{德·摩根律} \\
-                $\bar{A \cup B} = \bar{A} \cap \bar{B}$ & \\
+                $\overline{A \cap B} = \overline{A} \cup \overline{B}$ & \multirow{2}*{德·摩根律} \\
+                $\overline{A \cup B} = \overline{A} \cap \overline{B}$ & \\
                 \hline
                 $A \cup (A \cap B) = A$ & \multirow{2}*{吸收律} \\
                 $A \cap (A \cup B) = A$ & \\
                 \hline
-                $A \cup \bar{A} = U$ & \multirow{2}*{互补律} \\
-                $A \cap \bar{A} = \varnothing$ & \\
+                $A \cup \overline{A} = U$ & \multirow{2}*{互补律} \\
+                $A \cap \overline{A} = \varnothing$ & \\
                 \hline
             \end{tabular}
 
@@ -141,7 +141,7 @@
                 \item $A \cap B$
                 \item $A - B$
                 \item $A \cup B$
-                \item $\bar{A} \cup \bar{B}$
+                \item $\overline{A} \cup \overline{B}$
             \end{enumerate}
         \end{practices}
 
@@ -167,7 +167,7 @@
 
         %5.
         \begin{practices}
-            $\bar{\bar{A}} = \{x | x \notin \bar{A}\} = \{x | \neg (\neg x \in A)\} = \{x | x \in A\} = A$
+            $\overline{\overline{A}} = \{x | x \notin \overline{A}\} = \{x | \neg (\neg x \in A)\} = \{x | x \in A\} = A$
         \end{practices}
 
         %6.
@@ -197,8 +197,8 @@
         %9.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $A \cup \bar{A} = \{x | x \in A \vee x \in \bar{A}\} = \{x | x \in U\} = U$
-                \item $A \cap \bar{A} = \{x | x \in A \wedge x \in \bar{A}\} = \varnothing$
+                \item $A \cup \overline{A} = \{x | x \in A \vee x \in \overline{A}\} = \{x | x \in U\} = U$
+                \item $A \cap \overline{A} = \{x | x \in A \wedge x \in \overline{A}\} = \varnothing$
             \end{enumerate}
         \end{practices}
 
@@ -240,10 +240,10 @@
         %15.
         \begin{practices}
             \begin{align*}
-                \bar{A \cup B}
+                \overline{A \cup B}
                 &= \{x | x \notin (A \cup B)\} \\
                 &= \{x | x \notin A \wedge x \notin B\} \\
-                &= \bar{A} \cap \bar{B}
+                &= \overline{A} \cap \overline{B}
             \end{align*}
         \end{practices}
 
@@ -260,10 +260,10 @@
         %17.
         \begin{practices}
             \begin{align*}
-                \bar{A \cap B \cap C}
+                \overline{A \cap B \cap C}
                 &= \{x | x \notin (A \cap B \cap C)\} \\
                 &= \{x | x \notin A \vee x \notin B \vee x \notin C\} \\
-                &= \bar{A} \cup \bar{B} \cup \bar{C}
+                &= \overline{A} \cup \overline{B} \cup \overline{C}
             \end{align*}
         \end{practices}
 
@@ -281,7 +281,7 @@
         %19.
         \begin{practices}
             \begin{enumerate}[A.]
-                \item $x \in A \wedge x \notin B \rightarrow x \in A \wedge x \in \bar{B}$
+                \item $x \in A \wedge x \notin B \rightarrow x \in A \wedge x \in \overline{B}$
                 \item $(x \in A \wedge x \in B) \vee (x \in A \wedge x \notin B) \rightarrow (x \in A) \vee (x \in \varnothing) \rightarrow x \in A$
             \end{enumerate}
         \end{practices}
@@ -418,8 +418,8 @@
             \begin{enumerate}[A.]
                 \item $(A \cup A) - (A \cap A) = \varnothing$
                 \item $(A \cup \varnothing) - (A \cap \varnothing) = A$
-                \item $(A \cup U) - (A \cap U) = \bar{A}$
-                \item $(A \cup \bar{A}) - (A \cap \bar{A}) = U$
+                \item $(A \cup U) - (A \cap U) = \overline{A}$
+                \item $(A \cup \overline{A}) - (A \cap \overline{A}) = U$
             \end{enumerate}
         \end{practices}
 
@@ -605,8 +605,8 @@
 
         %63.
         \begin{practices}
-            $$\bar{F} = \{0.4 Alice, 0.1 Brian, 0.6 Fred, 0.9 Oscar, 0.5 Rita\}$$
-            $$\bar{R} = \{0.6 Alice, 0.2 Brian, 0.8 Fred, 0.1 Oscar, 0.3 Rita\}$$
+            $$\overline{F} = \{0.4 Alice, 0.1 Brian, 0.6 Fred, 0.9 Oscar, 0.5 Rita\}$$
+            $$\overline{R} = \{0.6 Alice, 0.2 Brian, 0.8 Fred, 0.1 Oscar, 0.3 Rita\}$$
         \end{practices}
 
         %64.

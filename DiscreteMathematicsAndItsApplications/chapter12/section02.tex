@@ -1,0 +1,182 @@
+%%
+%% Author: Clay
+%% 2020/2/18
+%%
+
+\section{布尔函数的表示}
+{
+    任何一个布尔函数都可由变元及其补的布尔积或布尔和表示。
+    所有的布尔函数都可以仅用一个运算符来表示。
+
+    \subsection{积之和展开式}
+    {
+        \begin{defines}
+            布尔变元或其补称为文字。
+            布尔变元 $x_1, x_2, \cdots, x_n$ 的小项是一个布尔积 $y_1y_2\cdots y_n$ ，其中 $y_i = x_i$ 或 $y_i = \overline{x_i}$ 。
+            因此小项是 $n$ 个文字的积，每个文字对应于一个变元。
+        \end{defines}
+
+        给定一个布尔函数，可以构造小项的布尔和使得，当该布尔函数具有值 $1$ 时它的值为 $1$ ，否则相反。
+        表示布尔函数的小项的和称为此函数的积之和展开式或析取范式。
+
+        构造积之和展开式的第一种方法是用布尔恒等式将这个积展开然后化简。
+
+        构造积之和展开式的第二种方法是对每个变元所有可能的取值都算出 $F$ 的值。
+        积之和展开式是所有小项的布尔和。
+
+        也可以通过取布尔和的布尔积来求一个布尔表达式，所得到的展开式称为\emreg{合取范式}或\emreg{和之积展开式}。
+    }
+
+    \subsection{函数完备性}
+    {
+        因为每个布尔函数都可以由这些布尔运算表示，所以称集合 $\{\cdot, +, \bar{}\}$ 是函数完备的。
+        利用德·摩根律可以证明 $\{\cdot, \bar{}\}$ 和 $\{+, \bar{}\}$ 都是函数完备的。
+        $\{|\}$ 和 $\{\downarrow\}$ 也是函数完备的。
+    }
+
+    \subsection{练习}
+    {
+        %1.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\overline{x}\overline{y}z$
+                \item $\overline{x}y\overline{z}$
+                \item $\overline{x}yz$
+                \item $\overline{x}\overline{y}\overline{z}$
+            \end{enumerate}
+        \end{practices}
+
+        %2.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $xy + \overline{x}y + \overline{x}\overline{y}$
+                \item $x\overline{y}$
+                \item $xy + \overline{x}y + \overline{x}\overline{y}$
+                \item $x\overline{y} + \overline{x}\overline{y}$
+            \end{enumerate}
+        \end{practices}
+
+        %3.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $xyz + xy\overline{z} + x\overline{y}z + x\overline{y}\overline{z} + \overline{x}yz + \overline{x}y\overline{z} + \overline{x}\overline{y}z$
+                \item $xyz + xy\overline{z} + \overline{x}yz$
+                \item $xyz + xy\overline{z} + x\overline{y}z + x\overline{y}\overline{z}$
+                \item $x\overline{y}z + x\overline{y}\overline{z}$
+            \end{enumerate}
+        \end{practices}
+
+        %4.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\overline{x}yz + \overline{x}y\overline{z} + \overline{x}\overline{y}z + \overline{x}\overline{y}\overline{z}$
+                \item $x\overline{y}z + x\overline{y}\overline{z} + \overline{x}yz + \overline{x}y\overline{z} + \overline{x}\overline{y}z + \overline{x}\overline{y}\overline{z}$
+                \item $\overline{x}\overline{y}z + \overline{x}\overline{y}\overline{z}$
+                \item $xy\overline{z} + x\overline{y}z + x\overline{y}\overline{z} + \overline{x}yz + \overline{x}y\overline{z} + \overline{x}\overline{y}z + \overline{x}\overline{y}\overline{z}$
+            \end{enumerate}
+        \end{practices}
+
+        %5.
+        \begin{practices}
+            $w\overline{x}\overline{y}\overline{z} + \overline{w}x\overline{y}\overline{z} + \overline{w}\overline{x}y\overline{z} + \overline{w}\overline{x}\overline{y}z + wxy\overline{z} + wx\overline{y}z + w\overline{x}yz + \overline{w}xyz$
+        \end{practices}
+
+        %6.
+        \begin{practices}
+            同上类似。
+        \end{practices}
+
+        %7.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $xy\overline{z}$
+                \item $\overline{x}\overline{y}\overline{z}$
+                \item $\overline{x}y\overline{z}$
+            \end{enumerate}
+        \end{practices}
+
+        %8.
+        \begin{practices}
+            $xy\overline{z} + \overline{x}\overline{y}\overline{z} + \overline{x}y\overline{z}$
+        \end{practices}
+
+        %9.
+        \begin{practices}
+            根据题意， $y_i$ 都为 $0$ ，故大项布尔和为 $0$ 。
+        \end{practices}
+
+        %10.
+        \begin{practices}
+            可以构造大项的布尔积，大项与使得函数值为 $1$ 的值的组合相对应。
+        \end{practices}
+
+        %11.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $x + y + z$
+                \item $(x + z + \overline{y})(x + z + y)(x + \overline{z} + y)(\overline{x} + z + y)(\overline{x} + \overline{z} + y)$
+                \item $(x + y + z)(x + \overline{y} + z)(x + y + \overline{z})(x + \overline{y} + \overline{z})$
+                \item $(x + y + z)(x + \overline{y} + z)(x + y + \overline{z})(x + \overline{y} + \overline{z})(\overline{x} + \overline{y} + z)(\overline{x} + \overline{y} + \overline{z})$
+            \end{enumerate}
+        \end{practices}
+
+        %12.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $\overline{\bar{x}\bar{y}\bar{z}}$
+                \item $\overline{\bar{x}(\overline{\bar{y}(\overline{x\bar{z}})})}$
+                \item $\overline{x}y$
+                \item $\bar{x}(\overline{\bar{x}yz})$
+            \end{enumerate}
+        \end{practices}
+
+        %13.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item $x + y + z$
+                \item $x + \overline{y + \overline{(\bar{x} + z)}}$
+                \item $\overline{x + \overline{y}$
+                \item $\overline{x + \overline{(x + \overline{y} + \overline{z})}}$
+            \end{enumerate}
+        \end{practices}
+
+        %14.
+        \begin{practices}
+
+        \end{practices}
+
+        %15.
+        \begin{practices}
+
+        \end{practices}
+
+        %16.
+        \begin{practices}
+
+        \end{practices}
+
+        %17.
+        \begin{practices}
+
+        \end{practices}
+
+        %18.
+        \begin{practices}
+
+        \end{practices}
+
+        %19.
+        \begin{practices}
+
+        \end{practices}
+
+        %20.
+        \begin{practices}
+            \begin{enumerate}[A.]
+                \item 不是。
+                \item 不是。
+                \item 不是。
+            \end{enumerate}
+        \end{practices}
+    }
+}
