@@ -23,14 +23,14 @@
 
         \begin{enumerate}
             \item $0, 1, x_1, x_2, \cdots, x_n$ 是布尔表达式。
-            \item 如果 $E_1, E_2$ 是布尔表达式，则 $\overline{E_1}, E_1E_2, E_1 + E_2$ 是布尔表达式。
+            \item 如果 $E_1, E_2$ 是布尔表达式，则 $\bar{E_1}, E_1E_2, E_1 + E_2$ 是布尔表达式。
         \end{enumerate}
 
         每个布尔表达式表示一个布尔函数，此函数的值是通过在表达式中用 $0, 1$ 替换变元得到的。
 
         $n$ 个变元的布尔函数 $F$ 和 $G$ 是相等的，当且仅当 $F(b_1, b_2, \cdots, b_n) = G(b_1, b_2, \cdots, b_n)$ ，其中 $b_1, b_2, \cdots, b_n$ 属于 $B$ 。
         表示同一个函数的不同的布尔表达式称为是\emreg{等价的}。
-        布尔函数 $F$ 的\emreg{补函数}是 $\overline{F}$ ，其中 $\overline{F}(x_1, \cdots, x_n) = \overline{F(x_1, \cdots, x_n)}$ 。
+        布尔函数 $F$ 的\emreg{补函数}是 $\bar{F}$ ，其中 $\bar{F}(x_1, \cdots, x_n) = \overline{F(x_1, \cdots, x_n)}$ 。
         设 $F$ 和 $G$ 是 $n$ 元布尔函数，函数的\emreg{布尔和} $F + G$ 与\emreg{布尔积} $FG$ 分别定义为：
         
         \begin{align*}
@@ -105,7 +105,7 @@
                 \item
                 {
                     \begin{align*}
-                        (\overline{1} \cdot \overline{0}) + (1 \cdot \overline{0})
+                        (\bar{1} \cdot \bar{0}) + (1 \cdot \bar{0})
                         &= 0 + 1 \\
                         &= 1
                     \end{align*}
@@ -128,7 +128,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & \overline{x}y \\
+                                x & y & z & \bar{x}y \\
                                 \hline
                                 0 & 0 & 0 & 0 \\
                                 0 & 0 & 1 & 0 \\
@@ -174,7 +174,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & x\overline{y} + \overline{xyz} \\
+                                x & y & z & x\bar{y} + \overline{xyz} \\
                                 \hline
                                 0 & 0 & 0 & 1 \\
                                 0 & 0 & 1 & 1 \\
@@ -197,7 +197,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & x(yz + \overline{y}\overline{z}) \\
+                                x & y & z & x(yz + \bar{y}\bar{z}) \\
                                 \hline
                                 0 & 0 & 0 & 0 \\
                                 0 & 0 & 1 & 0 \\
@@ -226,7 +226,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & \overline{z} \\
+                                x & y & z & \bar{z} \\
                                 \hline
                                 0 & 0 & 0 & 1 \\
                                 0 & 0 & 1 & 0 \\
@@ -249,7 +249,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & \overline{x}y + \overline{y}z \\
+                                x & y & z & \bar{x}y + \bar{y}z \\
                                 \hline
                                 0 & 0 & 0 & 0 \\
                                 0 & 0 & 1 & 1 \\
@@ -272,7 +272,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & x\overline{y} + \overline{xyz} \\
+                                x & y & z & x\bar{y} + \overline{xyz} \\
                                 \hline
                                 0 & 0 & 0 & 1 \\
                                 0 & 0 & 1 & 1 \\
@@ -295,7 +295,7 @@
                         \[
                             \begin{array}{c|c|c|c}
                                 \hline
-                                x & y & z & \overline{y}(xz + \overline{x}\overline{z}) \\
+                                x & y & z & \bar{y}(xz + \bar{x}\bar{z}) \\
                                 \hline
                                 0 & 0 & 0 & 1 \\
                                 0 & 0 & 1 & 0 \\
@@ -409,7 +409,7 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $x$
-                \item $\overline{x}$
+                \item $\bar{x}$
                 \item $0$
                 \item $1$
             \end{enumerate}
@@ -438,9 +438,9 @@
         \begin{practices}
             \begin{enumerate}[A.]
                 \item $xy$
-                \item $\overline{x} + \overline{y}$
-                \item $(x + y + z)(\overline{x}\overline{y}\overline{z})$
-                \item $(x + \overline{z})(x + 1)(\overline{x} + 0)$
+                \item $\bar{x} + \bar{y}$
+                \item $(x + y + z)(\bar{x}\bar{y}\bar{z})$
+                \item $(x + \bar{z})(x + 1)(\bar{x} + 0)$
             \end{enumerate}
         \end{practices}
 
@@ -451,7 +451,7 @@
 
         %30.
         \begin{practices}
-            由练习29可知， $F(\overline{x_1}, \cdots, \overline{}{x_n}) = G(\overline{x_1}, \cdots, \overline{}{x_n})$ 。
+            由练习29可知， $F(\bar{x_1}, \cdots, \bar{x_n}) = G(\bar{x_1}, \cdots, \bar{x_n})$ 。
             由德摩根律可知，其相等。
         \end{practices}
 
