@@ -188,3 +188,5 @@ add_executable(ProgrammingInC_c18_e_04 ProgrammingInC/chapter18/example/example0
 add_executable(ProgrammingInC_c18_e_05 ProgrammingInC/chapter18/example/example05.c)
 add_executable(ProgrammingInC_c19_e_01 ProgrammingInC/chapter19/example/example01.c)
 add_executable(ProgrammingInC_c19_e_03 ProgrammingInC/chapter19/example/example03.cpp)
+
+add_executable(ComputerSystemsAProgrammersPerspective_c01_e01 ComputerSystemsAProgrammersPerspective/chapter01/example/example01.c)
