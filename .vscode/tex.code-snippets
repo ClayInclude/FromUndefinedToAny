@@ -1,8 +1,8 @@
 {
-    "pracItem":
+    "pracItems":
     {
         "scope": "latex",
-        "prefix": "pracItem",
+        "prefix": "pracItems",
         "body":
         [
             "%$1.",
@@ -14,16 +14,44 @@
         ],
         "description": "DiscreteMath"
     },
-    "pracSingle":
+    "pracSingles":
     {
         "scope": "latex",
-        "prefix": "pracSingle",
+        "prefix": "pracSingles",
         "body":
         [
             "%$1.",
             "\\begin{practices}",
             "    $2",
             "\\end{practices}"
+        ],
+        "description": "DiscreteMath"
+    },
+    "pracItemc":
+    {
+        "scope": "latex",
+        "prefix": "pracItemc",
+        "body":
+        [
+            "%$1.",
+            "\\begin{practicec}",
+            "    \\begin{enumerate}[A.]",
+            "        \\item $2",
+            "    \\end{enumerate}",
+            "\\end{practicec}"
+        ],
+        "description": "DiscreteMath"
+    },
+    "pracSinglec":
+    {
+        "scope": "latex",
+        "prefix": "pracSinglec",
+        "body":
+        [
+            "%$1.",
+            "\\begin{practicec}",
+            "    $2",
+            "\\end{practicec}"
         ],
         "description": "DiscreteMath"
     },

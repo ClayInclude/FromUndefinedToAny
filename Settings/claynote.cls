@@ -130,6 +130,28 @@
     \end{@practices}
 }
 
+\newtheorem{@examplec}{例题}[chapter]
+\NewDocumentEnvironment{examplec}{o}
+{
+    \IfNoValueTF{#1}
+    {\begin{@examplec}\mbox{}\par}
+    {\begin{@examplec}[#1]\mbox{}\par}
+}
+{    
+    \end{@examplec}
+}
+
+\newtheorem{@practicec}{习题}[chapter]
+\NewDocumentEnvironment{practicec}{o}
+{
+    \IfNoValueTF{#1}
+    {\begin{@practicec}\mbox{}\par}
+    {\begin{@practicec}[#1]\mbox{}\par}
+}
+{    
+    \end{@practicec}
+}
+
 \newtheorem*{@minienv}{}
 \NewDocumentEnvironment{minienv}{}
 {
