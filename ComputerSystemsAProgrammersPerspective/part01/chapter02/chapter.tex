@@ -1,11 +1,19 @@
 %%
 %% Author: Clay
-%% 2020/2/20
+%% 2020/2/21
 %%
 
 \chapter{信息的表示和处理}
 {
+    把\emreg{位(bit)}组合在一起，再加上某种\emreg{解释(interpretation)}，即赋予不同的可能位模式以含意，就能够表示任何有限集合的元素。
 
+    \emreg{无符号(unsigned)}编码基于传统的二进制表示方法，表示大于或者等于零的数字。
+    \emreg{补码(two's--complement)}编码是表示有符号整数的最常见的方式，有符号整数就是可以为正或者为负的数字。
+    \emreg{浮点数(floating-point)}编码是表示实数的科学计数法的以2为基数的版本。
+
+    计算机的表示法是用有限数量的位来对一个数字编码，当结果太大以至不能表示时，某些运算就会\emreg{溢出(overflow)}。
+
+    \input{section01.tex}
 }
 
 \cleardoublepage

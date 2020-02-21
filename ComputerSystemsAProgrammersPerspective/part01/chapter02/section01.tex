@@ -1,0 +1,33 @@
+%%
+%% Author: Clay
+%% 2020/2/21
+%%
+
+\section{信息存储}
+{
+    大多数计算机使用8位的块，或者\emreg{字节(byte)}，作为最小的可寻址的内存单位，而不是访问内存中单独的位。
+    机器级程序将内存视为一个非常大的字节数组，称为\emreg{虚拟内存(virtual memory)}。
+    内存的每个字节都由一个唯一的数字来标识，称为它的\emreg{地址(address)}，所有可能地址的集合就称为\emreg{虚拟地址空间(virtual address space)}。
+
+    编译器和运行时系统将存储器空间划分为更可管理的单元，来存放不同的\emreg{程序对象(program object)}。
+
+    \subsection{十六进制表示法}
+    {
+        \emreg{十六进制(hexadecimal, hex)}使用数字 $0 \sim 9$ 和字符 $A \sim F$ 来表示16个可能的值。
+
+        通过展开每个十六进制数字，将它转换为二进制格式。
+
+        如果给定一个二进制数字，可以通过把它分为每4位一组来转换为十六进制。
+        如果位总数不是4的倍数，最左边的一组可以少于4位，前面用0补足。
+
+        %1.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item $11 1001 1010 0111 1111 1000$
+                \item $0xC97A$
+                \item $1101 0101 1110 0100 1100$
+                \item $0x26E7B5$
+            \end{enumerate}
+        \end{practicec}
+    }
+}
