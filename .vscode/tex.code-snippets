@@ -65,8 +65,8 @@
             "    \\[",
             "        \\begin{array}{$2}",
             "            $3",
-            "       \\end{array}",
-            "   \\]",
+            "        \\end{array}",
+            "    \\]",
             "\\end{table}$4"
         ],
         "description": "DiscreteMath"
