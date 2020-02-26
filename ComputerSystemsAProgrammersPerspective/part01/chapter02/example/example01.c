@@ -1,10 +1,11 @@
 /**
- * example02
+ * example01
  * @author Clay
  * @date 2020/2/25
  */
 
 #include <stdio.h>
+#include <string.h>
 
 void testShowBytes(int value);
 
@@ -14,12 +15,17 @@ void testShowBytes3();
 
 void testShowBytes4();
 
+void testShowBytes5();
+
 int main(void)
 {
     testShowBytes(12345);
     testShowBytes2();
     testShowBytes3();
     testShowBytes4();
+    testShowBytes5();
+
+    return 0;
 }
 
 typedef unsigned char *BytePointer;
@@ -84,4 +90,11 @@ void testShowBytes3()
 void testShowBytes4()
 {
     showBytes((BytePointer) "12345", 6);
+}
+
+void testShowBytes5()
+{
+    char const *s = "abcdef";
+
+    showBytes((BytePointer) s, strlen(s));
 }

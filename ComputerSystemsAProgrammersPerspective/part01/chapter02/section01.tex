@@ -168,5 +168,117 @@
     {
         C语言中字符串编码为一个以\emcode{null}（其值为0）字符结尾的字符数组。
         在使用ASCII码作为字符码的任何系统上都将得到相同的结果，与字节顺序和字大小规则无关。
+        因而，文本数据比二进制数据具有更强的平台独立性。
+
+        %7.
+        \begin{practicec}
+            $61 62 63 64 65 66 00$
+        \end{practicec}
+    }
+
+    \subsection{表示代码}
+    {
+        不同的机器类型使用不同的且不兼容的指令和编码方式。
+
+        从机器的角度看，程序仅仅只是字节序列。
+        机器没有关于原始源程序的任何信息。
+    }
+
+    \subsection{布尔代数简介}
+    {
+        二进制值是计算机编码、存储和操作信息的核心。
+
+        \emreg{布尔代数(Boolean algebra)}将逻辑值 $True$ 和 $False$ 编码为二进制值 $1$ 和 $0$ ，以研究逻辑推理的基本原则。
+
+        最简单的布尔代数是在二元集合 $\{0, 1\}$ 基础上的定义。
+        运算符\emcode{\~{}}、\emcode{\&}、\emcode{|}和\emcode{\^{}}分别对应逻辑运算NOT、AND、OR和EXCLUSIVE--OR。
+
+        可以将上述4个布尔运算扩展到\emreg{位向量}的运算，位向量就是固定长度为 $w$ 、由 $0$ 和 $1$ 组成的串。
+        位向量的运算可以定义成参数的每个对应元素之间的运算。
+
+        %8.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|}
+                        \hline
+                        \text{运算} & \text{结果} \\
+                        \hline
+                        a & 0110 1001 \\
+                        b & 0101 0101 \\
+                        \text{\~{}} a & 1001 0110 \\
+                        \text{\~{}} b & 1010 1010 \\
+                        a \& b & 0100 0000 \\
+                        a | b & 0111 1101 \\
+                        a \oplus b & 0011 1100 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+
+        位向量一个很有用的应用就是表示有限集合。
+        可以用位向量 $[a_{w - 1}, \cdots, a_1, a_0]$ 来编码任何子集 $A \subseteq \{0, 1, \cdots, w - 1\}$ ，其中 $a_i = 1$ 当且仅当 $i \in A$ 。
+
+        %9.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 黑色，白色。蓝色，黄色。绿色，红紫色。蓝绿色，红色。
+                \item 蓝绿色。绿色。蓝色。
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{C语言中的位级运算}
+    {
+        %10.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                        \text{步骤} & *x & *y \\
+                        \hline
+                        \text{初始} & a & b \\
+                        \hline
+                        \text{第1步} & a & a \oplus b \\
+                        \hline
+                        \text{第2步} & a \oplus (a \oplus b) = b & a \oplus b \\
+                        \hline
+                        \text{第3步} & b & (a \oplus b) \oplus b = a \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+
+        %11.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item $k, k$
+                \item $a \oplus a = 0$
+                \item \emcode{first < last}
+            \end{enumerate}
+        \end{practicec}
+
+        位级运算的一个常见用法就是实现\emreg{掩码}运算。
+        这里掩码是一个位模式，表示从一个字中选出的位的集合。
+
+        %12.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{x \& 0xFF}
+                \item \emcode{x \^{} \~{} 0xFF}
+                \item \emcode{x | 0xFF}
+            \end{enumerate}
+        \end{practicec}
+
+        %13.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{x | m}
+                \item \emcode{x \& \~{} m}
+            \end{enumerate}
+        \end{practicec}
     }
 }
