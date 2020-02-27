@@ -206,8 +206,8 @@
                         \hline
                         a & 0110 1001 \\
                         b & 0101 0101 \\
-                        \text{\~{}} a & 1001 0110 \\
-                        \text{\~{}} b & 1010 1010 \\
+                        \text{\~{}}a & 1001 0110 \\
+                        \text{\~{}}b & 1010 1010 \\
                         a \& b & 0100 0000 \\
                         a | b & 0111 1101 \\
                         a \oplus b & 0011 1100 \\
@@ -279,6 +279,75 @@
                 \item \emcode{x | m}
                 \item \emcode{x \& \~{} m}
             \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{C语言中的逻辑运算}
+    {
+        逻辑运算认为所有非零的参数都表示\emcode{True}，参数\emcode{0}表示\emcode{False}。
+        它们返回\emcode{0}或者\emcode{1}。
+        按位运算只有参数被限制为0或1时，才和其对应的逻辑运算有相同的行为。
+
+        第二个区别是：如果对第一个参数求值就能确定表达式的结果，那么逻辑运算符就不会对第二个参数求值。
+
+        %14.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|}
+                        \hline
+                        x & 0110 0110 & y & 0011 1001 \\
+                        \hline
+                        x \&{} y & 0010 0000 & x \&{}\&{} y & 1 \\
+                        \hline
+                        x | y & 0111 1111 & x || y & 1 \\
+                        \hline
+                        \text{\~{}}x | \text{\~{}}y & 1000 0000 & !x || !y & 0 \\
+                        \hline
+                        x \&{} !y & 0100 0000 & x \&{}\&{} \text{\~{}}y & 0 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+
+        %15.
+        \begin{practicec}
+            \emcode{!(x \^{} y)}
+        \end{practicec}
+    }
+
+    \subsection{C语言中的移位运算}
+    {
+        C语言还提供了一组\emreg{移位运算}，向左或向右移动位模式。
+        对于一个位表示为 $[x_{w - 1}, \cdots, x_1, x_0]$ 的操作数 $x$ ， \emcode{x << k}会生成一个值，其位表示为 $[x_{w - k - 1}, \cdots, x_1, x_0, 0, \cdots, 0]$ 。
+        也就是说， $x$ 向左移 $k$ 位，丢弃最高的 $k$ 位，并在右端补 $k$ 个 $0$ 。
+        移位量应该是一个 $0 \sim w - 1$ 之间的值。
+        移位运算是从左至右可结合的。
+
+        有一个相应的右移运算\emcode{x >> k}。
+        机器支持两种形式的右移：\emreg{逻辑右移}和\emreg{算术右移}。
+        逻辑右移在左端补 $k$ 个 $0$ ，得到的结果是 $[0, \cdots, 0, x_{w - 1}, x_{w - 2}, \cdots, x_k]$ 。
+        算术右移是在左端补 $k$ 个最高有效位的值，得到的结果是 $[x_{w - 1}, \cdots, x_{w - 1}, x_{w - 1}, x_{w - 2}, \cdots, x_k]$ 。
+
+        %16.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|c|c|c|c|}
+                        \hline
+                        \multicolumn{2}{|c|}{x} & \multicolumn{2}{c|}{x << 3} & \multicolumn{2}{c|}{x >> 2\text{（逻辑）}} & \multicolumn{2}{c|}{x >> 2\text{（算数）}} \\
+                        \hline
+                        \text{十六进制} & \text{二进制} & \text{二进制} & \text{十六进制} & \text{二进制} & \text{十六进制} & \text{二进制} & \text{十六进制} \\
+                        \hline
+                        0xc3 & 1100 0011 & 0001 1000 & 0x18 & 0011 0000 & 0x30 & 1111 0000 & 0xF0 \\
+                        0x75 & 0111 0101 & 1010 1000 & 0xA8 & 0001 1101 & 0x1E & 0001 1101 & 0x1E \\
+                        0x87 & 1000 0111 & 0011 1000 & 0x38 & 0010 0001 & 0x21 & 1110 0001 & 0xE1 \\
+                        0x66 & 0110 0110 & 0011 0000 & 0x30 & 0001 1001 & 0x19 & 0001 1001 & 0x19 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
         \end{practicec}
     }
 }
