@@ -102,4 +102,149 @@
             \end{enumerate}
         \end{practicec}
     }
+
+    \subsection{有符号数和无符号数之间的转换}
+    {
+        对于大多数的C语言实现，处理同样字长的有符号数和无符号数之间相互转换的一般规则是：
+        数值可能会改变，但是位模式不变。
+        定义函数 $U2B_w$ 和 $T2B_w$ ，它们将数值映射为无符号数和补码形式的位表示。
+
+        定义函数 $T2U_w$ 为 $T2U_w(x) = B2U_w(T2B_w(x))$ 。
+        类似的，定义函数 $U2T_w$ 为 $B2T_w(U2B_w(x))$ 。
+
+        %19.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|}
+                        \hline
+                        x & T2U_4(x) \\
+                        \hline
+                        -8 & 8 \\
+                        \hline
+                        -3 & 13 \\
+                        \hline
+                        -2 & 14 \\
+                        \hline
+                        -1 & 15 \\
+                        \hline
+                        0 & 0 \\
+                        \hline
+                        5 & 5 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+
+        \begin{defines}[补码转换为无符号数]
+            对满足 $TMin_w \leq x \leq TMax_w$ 的 $x$ 有：
+
+            \begin{align}
+                T2U_w(x) =
+                \begin{cases}
+                    x + 2^w, x < 0
+                    \\
+                    x, x \geq 0
+                \end{cases}
+            \end{align}
+        \end{defines}
+
+        \begin{defines}[无符号数转为补码]
+            对满足 $0 \leq u \leq UMax_w$ 的 $u$ 有
+
+            \begin{align}
+                U2T_w(u) =
+                \begin{cases}
+                    u, u \leq TMax_w
+                    \\
+                    u - 2^w, u > TMax_w
+                \end{cases}
+            \end{align}
+        \end{defines}
+    }
+
+    \subsection{C语言中的有符号数与无符号数}
+    {
+        %21.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                        \text{表达式} & \text{类型} & \text{求值} \\
+                        \hline
+                        -2147483647 - 1 == 2147483647U & unsigned & 1 \\
+                        \hline
+                        -2147483647 - 1 < 2147483647 & signed & 1 \\
+                        \hline
+                        -2147483647 - 1U < 2147483647 & unsigned & 0 \\
+                        \hline
+                        -2147483647 - 1 < -2147483647 & signed & 1 \\
+                        \hline
+                        -2147483647 - 1U < -2147483647 & unsigned & 0 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{扩展一个数字的位表示}
+    {
+        要将一个无符号数转换为一个更大的数据类型，我们只要简单地在表示的开头添加 $0$ 。
+        这种运算被称为\emreg{零扩展(zero extension)}。
+
+        \begin{defines}[无符号数的零扩展]
+            定义宽度为 $w$ 的位向量 $\vec u = [u_{w - 1}, u_{w - 2}, \cdots, u_0]$  和宽度为 $w'$ 的位向量 $\vec u' = [0, \cdots, 0, u_{w - 1}, u_{w - 2}, \cdots, u_0]$ ，其中 $w' > w$ 。
+            则 $B2U_w(\vec u) = B2U_{w'}(\vec u')$ 。
+        \end{defines}
+
+        要将一个补码数字转换为一个更大的数据类型，可以执行一个\emreg{符号扩展(sign extension)}，在表示中添加最高有效位的值。
+
+        \begin{defines}
+            定义宽度为 $w$ 的位向量 $\vec x = [x_{w - 1}, x_{w - 2}, \cdots, x_0]$  和宽度为 $w'$ 的位向量 $\vec x' = [x_{w - 1}, \cdots, x_{w - 1}, x_{w - 1}, x_{w - 2}, \cdots, x_0]$ ，其中 $w' > w$ 。
+            则 $B2U_w(\vec x) = B2U_{w'}(\vec x')$ 。
+        \end{defines}
+
+        %22.
+        \begin{practicec}
+            都是对 $1011$ 执行了符号扩展。
+        \end{practicec}
+
+        从一个数据大小到另一个数据大小的转换，以及无符号和有符号数字之间的转换的相对顺序能够影响一个程序的行为。
+
+        %23.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                        w & fun1(w) & fun2(w) \\
+                        \hline
+                        0x00000076 & 0x00000076 & 0x00000076 \\
+                        \hline
+                        0x87654321 & 0x00000021 & 0x00000021 \\
+                        \hline
+                        0x000000c9 & 0x000000c9 & 0x111111c9 \\
+                        \hline
+                        0xEDCBA987 & 0x00000087 & 0x11111187 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{截断数字}
+    {
+        截断一个数字可能会改变它的值---溢出的一种形式。
+
+        \begin{defines}[截断无符号数]
+            令 $\vec x$ 等于位向量 $[x_{w - 1}, x_{w - 2}, \cdots, x_0]$ ，而 $\vec x'$ 是将其截断为 $k$ 位的结果： $\vec x' = [x_{k - 1}, x_{k - 2}, \cdots, x_0]$ 。
+            则 $B2T_k(\vec x') = U2T_k(B2U_w(\vec x))$ 。
+        \end{defines}
+
+
+    }
 }

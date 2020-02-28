@@ -17,6 +17,8 @@ void testShowBytes4();
 
 void testShowBytes5();
 
+void testShowBytes6();
+
 int main(void)
 {
     testShowBytes(12345);
@@ -24,6 +26,7 @@ int main(void)
     testShowBytes3();
     testShowBytes4();
     testShowBytes5();
+    testShowBytes6();
 
     return 0;
 }
@@ -97,4 +100,21 @@ void testShowBytes5()
     char const *s = "abcdef";
 
     showBytes((BytePointer) s, strlen(s));
+}
+
+void testShowBytes6()
+{
+    short int sx = -12345;
+    unsigned short int usx = sx;
+    int x = sx;
+    unsigned int ux = usx;
+
+    printf("sx = %d:\t", sx);
+    showBytes((BytePointer) &sx, sizeof(short));
+    printf("usx = %u:\t", usx);
+    showBytes((BytePointer) &usx, sizeof(unsigned short));
+    printf("x = %d:\t", x);
+    showBytes((BytePointer) &x, sizeof(int));
+    printf("ux = %u:\t", ux);
+    showBytes((BytePointer) &ux, sizeof(unsigned int));
 }
