@@ -242,9 +242,58 @@
 
         \begin{defines}[截断无符号数]
             令 $\vec x$ 等于位向量 $[x_{w - 1}, x_{w - 2}, \cdots, x_0]$ ，而 $\vec x'$ 是将其截断为 $k$ 位的结果： $\vec x' = [x_{k - 1}, x_{k - 2}, \cdots, x_0]$ 。
-            则 $B2T_k(\vec x') = U2T_k(B2U_w(\vec x))$ 。
+            则 $B2U_k(\vec x') = B2U_w(\vec x) \ mod \ 2^k$ 。
         \end{defines}
 
+        \begin{defines}[截断补码数值]
+            令 $\vec x$ 等于位向量 $[x_{w - 1}, x_{w - 2}, \cdots, x_0]$ ，而 $\vec x'$ 是将其截断为 $k$ 位的结果： $\vec x' = [x_{k - 1}, x_{k - 2}, \cdots, x_0]$ 。
+            则 $B2T_k(\vec x') = U2T_k(B2U_w(\vec x) \ mod \ 2^k)$ 。
+        \end{defines}
 
+        %24.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                        \multicolumn{2}{|c|}{\text{十六进制}} & \multicolumn{2}{c|}{\text{无符号}} & \multicolumn{2}{c|}{\text{补码}} \\
+                        \hline
+                        \text{原始值} & \text{截断值} & \text{原始值} & \text{截断值} & \text{原始值} & \text{截断值} \\
+                        \hline
+                        0000 & 000 & 0 & 0 & 0 & 0 \\
+                        0010 & 010 & 2 & 2 & 2 & 2 \\
+                        1001 & 001 & 9 & 1 & -7 & 1 \\
+                        1011 & 011 & 11 & 3 & -5 & 3 \\
+                        1111 & 111 & 15 & 7 & -1 & 7 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{关于有符号数与无符号数的建议}
+    {
+        有符号数到无符号数的隐士强制类型转换导致了某些非直观的行为。
+
+        %25.
+        \begin{practices}
+            改为\emcode{i < length}。
+        \end{practices}
+
+        %26.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 当\emcode{strlen(s) < strlen(t)}时。
+                \item 两个无符号数相减永远大于等于 $0$ 。
+                \item 返回\emcode{strlen(s) > strlen(t)}。
+            \end{enumerate}
+        \end{practicec}
+
+        避免这类错误的一种方式就是绝不使用无符号数。
+
+        当仅仅把字看作是位的集合而没有任何数字意义时，无符号数值是非常有用的。
+        往一个字中放入描述各种布尔条件的\emreg{标记(flag)}时就是这样。
+        地址自然地就是无符号的。
     }
 }

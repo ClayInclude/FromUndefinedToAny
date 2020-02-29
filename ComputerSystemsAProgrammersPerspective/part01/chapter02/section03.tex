@@ -1,0 +1,61 @@
+%%
+%% Author: Clay
+%% 2020/2/29
+%%
+
+\section{整数运算}
+{
+    \subsection{无符号加法}
+    {
+        要想完整的表示算术运算的结果，不能对字长做任何限制。
+        \emcode{List}实际上就支持\emreg{无限精度}的运算，允许任意的（要在机器的内存限制之内）整数运算。
+        更常见的是，编程语言支持固定精度的运算。
+
+        \begin{defines}[无符号数加法]
+            对满足 $0 \leq x, y < 2^w$ 的 $x, y$ 有：
+
+            \begin{align}
+                x +_w^u y =
+                \begin{cases}
+                    x + y, x + y < 2^w
+                    \\
+                    x + y - 2^w, 2^w \leq x + y < 2^{w + 1}
+                \end{cases}
+            \end{align}
+        \end{defines}
+
+        说一个算数\emreg{溢出}，是指完整的整数结果不能放到数据类型的字长限制中去。
+
+        \begin{defines}[检测无符号数加法中的溢出]
+            对在范围 $0 \leq x, y \leq UMax_w$ 中的 $x, y$ ，令 $s = x +_w^u y$ 。
+            则对计算 $s$ ，当且仅当 $s < x$ （或者等价地 $s < y$ ）时，发生了溢出。
+        \end{defines}
+
+        %27.
+        \begin{practicec}
+
+        \end{practicec}
+
+        模数加法形成了一种数学结构，称为\emreg{阿贝尔群(Abelian group)}。
+        也就是说，它是可交换的和可结合的。
+        它有一个单位元 $0$ ，并且每个元素有一个加法逆元。
+
+        \begin{defines}[无符号数求反]
+            对满足 $0 \leq x < 2^w$ 的任意 $x$ ，其 $w$ 位的无符号逆元 $-_w^ux$ 由下式给出：
+
+            \begin{align}
+                -_w^u x =
+                \begin{cases}
+                    x, x = 0
+                    \\
+                    2^w - x, x > 0
+                \end{cases}
+            \end{align}
+        \end{defines}
+
+        %28.
+        \begin{practicec}
+
+        \end{practicec}
+    }
+}
