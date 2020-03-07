@@ -55,7 +55,143 @@
 
         %28.
         \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|}
+                        \hline
+                        \multicolumn{2}{|c|}{x} & \multicolumn{2}{c|}{-_4^ux} \\
+                        \hline
+                        \text{十六进制} & \text{十进制} & \text{十进制} & \text{十六进制} \\
+                        \hline
+                        0 & 0 & 0 & 0 \\
+                        \hline
+                        5 & 5 & 11 & B \\
+                        \hline
+                        8 & 8 & 8 & 8 \\
+                        \hline
+                        D & 13 & 3 & 3 \\
+                        \hline
+                        F & 15 & 1 & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{补码加法}
+    {
+        \begin{defines}[补码加法]
+            对满足 $-2^{w - 1} \leq x, y \leq 2^{w - 1} - 1$ 的整数 $x, y$ ，有：
+
+            \begin{align}
+                x+_w^ty =
+                \begin{cases}
+                    x + y - 2^w, 2^{w - 1} \leq x + y
+                    \\
+                    x + y, -2^{w - 1} \leq x + y < 2{w - 1}
+                    \\
+                    x + y + 2^w, x + y < -2^{w - 1}
+                \end{cases}
+            \end{align}
+        \end{defines}
+
+        \begin{defines}[检测补码加法中的溢出]
+            对满足 $TMin_w \leq x, y \leq TMax_w$ 的 $x, y$ ，令 $s = x +_w^t y$ 。
+            当且仅当 $x > 0, y > 0$ ，但 $s \leq 0$ 时，计算发生了\emspe{正溢出(positive overflow)}。
+            当且仅当 $x < 0, y < 0$ ，但 $s \geq 0$ 时，计算发生了\emspe{负溢出(negative overflow)}。
+        \end{defines}
+
+        %29.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|c|}
+                        \hline
+                        x & y & x + y & x +_5^t y & \text{情况} \\
+                        \hline
+                        10100 & 10001 & -27 & 5 & \text{负溢出} \\
+                        \hline
+                        11000 & 11000 & -16 & -16 & \text{正常} \\
+                        \hline
+                        10111 & 01000 & -1 & -1 & \text{正常} \\
+                        \hline
+                        00010 & 00101 & 7 & 7 & \text{正常} \\
+                        \hline
+                        01100 & 00100 & 16 & -16 & \text{正溢出} \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+
+        %30.
+        \begin{practicec}
 
         \end{practicec}
+
+        %31.
+        \begin{practicec}
+            如果有 $sum = x + y$ ，由于补码加法形成了一个阿贝尔群，满足交换律，则有 $sum - x = x + y - x$ ，得出 $sum - x = y$ 。
+            无论溢出都会得到相同的结果。
+        \end{practicec}
+
+        %32.
+        \begin{practicec}
+            $y$ 为 $TMin$ 时。
+        \end{practicec}
+    }
+
+    \subsection{补码的非}
+    {
+        \begin{defines}[补码的非]
+            对满足 $TMin_w \leq x \leq TMax_w$ 的 $x$ ，其补码的非 $-_w^tx$ 由下式给出
+
+            \begin{align}
+                -_w^tx =
+
+                \begin{cases}
+                    TMin_w, x = TMin_w
+                    \\
+                    -x, x ? TMin_w
+                \end{cases}
+            \end{align}
+        \end{defines}
+
+        %33.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|}
+                        \hline
+                        \multicolumn{2}{|c|}{x} & \multicolumn{2}{c|}{-_4^tx} \\
+                        \hline
+                        \text{十六进制} & \text{十进制} & \text{十进制} & \text{十六进制} \\
+                        \hline
+                        0 & 0 & 0 & 0 \\
+                        \hline
+                        5 & 5 & -5 & A \\
+                        \hline
+                        8 & -8 & -8 & 8 \\
+                        \hline
+                        D & -3 & 3 & 3 \\
+                        \hline
+                        F & -1 & 1 & 1 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{无符号乘法}
+    {
+        \begin{defines}[无符号数乘法]
+            对满足 $0 \leq x, y \leq < UMax_w$ 的 $x, y$ 有：
+
+            \begin{align}
+
+            \end{align}
+        \end{defines}
     }
 }
