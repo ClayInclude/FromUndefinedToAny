@@ -187,11 +187,126 @@
     \subsection{无符号乘法}
     {
         \begin{defines}[无符号数乘法]
-            对满足 $0 \leq x, y \leq < UMax_w$ 的 $x, y$ 有：
+            对满足 $0 \leq x, y \leq UMax_w$ 的 $x, y$ 有：
 
             \begin{align}
-
+                x *_w^u y = (x \cdot y) \ mod \ 2^w
             \end{align}
         \end{defines}
+    }
+
+    \subsection{补码乘法}
+    {
+        \begin{defines}[补码乘法]
+            对满足 $TMin_w \leq x, y \leq TMax_w$ 的 $x, y$ 有：
+
+            \begin{align}
+                x *_w^t y = U2T_w((x \cdot y) \ mod \ 2^w)
+            \end{align}
+        \end{defines}
+
+        \begin{defines}[无符号和补码乘法的位级等价性]
+            给定长度为 $w$ 的位向量 $\vec x$ 和 $\vec y$ ，用补码形式的位向量表示来来定义整数 $x = B2T_w(\vec x), y = B2T_w(\vec y)$ 。
+            用无符号形式的位向量表示来定义非负整数 $x' = B2U_w(\vec x), y' = B2U_w(\vec y)$ 。
+            则
+
+            \begin{align}
+                T2B_w(x *_w^t y) = U2B_w(x' *_w^u y')
+            \end{align}
+        \end{defines}
+
+        %34.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|c|}
+                        \hline
+                        \text{模式} & x & y & x \cdot y & \text{截断的} x \cdot y \\
+                        \hline
+                        \text{无符号} & 100 & 101 & 01 0100 & 100 \\
+                        \text{补码} & 100 & 101 & 110100 & 100 \\
+                        \hline
+                        \text{无符号} & 010 & 111 & 00 1110 & 110 \\
+                        \text{补码} & 010 & 111 & 11 1110 & 110 \\
+                        \hline
+                        \text{无符号} & 110 & 110 & 10 0100 & 100 \\
+                        \text{补码} & 110 & 110 & 11 1100 & 100 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+
+        %35.
+        \begin{practicec}
+            根据定义有： $x \cdot y = p + t2^w$ ，$p$ 的计算溢出当且仅当 $t \neq 0$ 。
+            其中 $p = x \cdot q + r$ 并且 $|r| < |x| < 2^w$ 。
+            如果 $q = y$ ，则 $r = t = 0$ 。
+            如果 $r = t = 0$ ，则 $q = y$ 。
+            证毕。
+        \end{practicec}
+
+        %36.
+        \begin{practicec}
+
+        \end{practicec}
+
+        %37.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 没有改进。
+                \item 当溢出时，拒绝分配空间。
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{乘以常数}
+    {
+        在大多数机器上，整数乘法指令相当慢，需要10个或者更多的时钟周期，然而其他整数运算（例如加法、减法、位级运算和移位）只需要一个时钟周期。
+        因此编译器使用了一项重要的优化，试着用移位和加法运算的组合来代替乘以常数因子的乘法。
+
+        \begin{defines}[乘以2的幂]
+            设 $x$ 为位模式 $[x_{w - 1}, x_{w - 2}, \cdots, x_0]$ 表示的无符号整数。
+            对于任何 $k \geq 0$ ，都认为 $[x_{w - 1}, x_{w - 2}, \cdots, x_0, 0, \cdots, 0]$ 给出了 $x2^k$ 的 $w + k$ 位的无符号表示，这里右边增加了 $k$ 个 $0$ 。
+        \end{defines}
+
+        \begin{defines}[与2的幂相乘的无符号乘法]
+            C变量 $x$ 和 $k$ 为无符号数，且 $0 \leq k < w$ ，则C表达式 $x << k$ 产生数值 $x *_w^u 2^k$ 。
+        \end{defines}
+
+        \begin{defines}[与2的幂相乘的补码乘法]
+            C变量 $x$ 为补码值， $k$ 为无符号数，且 $0 \leq k < w$ ，则C表达式 $x << k$ 产生数值 $x *_w^t 2^k$ 。
+        \end{defines}
+
+        由于整数乘法比移位和加法的代价要大的多，许多C编译器试图以移位、加法和减法的组合来消除很多整数乘以常数的情况。
+
+        %38.
+        \begin{practicec}
+            1, 2, 3, 4, 5, 8, 9
+        \end{practicec}
+
+        %39.
+        \begin{practicec}
+            $x << n + x << n - x$
+        \end{practicec}
+
+        %40.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|c|c|}
+                        \hline
+                        K & \text{移位} & \text{加法\/减法} & \text{表达式} \\
+                        \hline
+                        6 & 2 & 1 & x << 2 + x << 1 \\
+                        \hline
+                        31 & 1 & 1 & x << 5 - x \\
+                        \hline
+                        -6 & x << 32 - x << 1 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
     }
 }
