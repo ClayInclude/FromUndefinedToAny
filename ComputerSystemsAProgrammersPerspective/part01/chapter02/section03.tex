@@ -254,7 +254,46 @@
         \begin{practicec}
             \begin{enumerate}[A.]
                 \item 没有改进。
-                \item 当溢出时，拒绝分配空间。
+                \item
+                {
+                    当溢出时，拒绝分配空间。
+
+                    \begin{codelist}
+                        \begin{lstlisting}[language=C]
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+
+void *copyElements(void *eleSrc[], int eleCnt, size_t eleSize)
+{
+    uint64_t requestSize = eleCnt * (uint64_t) eleSize;
+    size_t realSize = eleCnt * eleSize;
+
+    if (requestSize != realSize)
+    {
+        return NULL;
+    }
+
+    void *result = malloc(realSize);
+
+    if (!result)
+    {
+        return NULL;
+    }
+
+    void *next = result;
+    for (int i = 0; i < eleCnt; ++i)
+    {
+        memcpy(next, eleSrc[i], eleSize);
+
+        next += eleSize;
+    }
+
+    return result;
+}
+                        \end{lstlisting}
+                    \end{codelist}
+                }
             \end{enumerate}
         \end{practicec}
     }

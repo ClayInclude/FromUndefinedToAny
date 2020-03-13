@@ -1,37 +1,32 @@
 /**
  * example06
  * @author Clay
- * @date 2020/3/9
+ * @date 2020/3/10
  */
 
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
+#include <stdio.h>
 
-void *copyElements(void *eleSrc[], int eleCnt, size_t eleSize)
+void test1(int x);
+
+int main(void)
 {
-    uint64_t requestSize = eleCnt * (uint64_t) eleSize;
-    size_t realSize = eleCnt * eleSize;
+    test1(16);
+    test1(17);
+    test1(0);
+    test1(-16);
+    test1(-17);
+    test1(8);
+    test1(-8);
 
-    if (requestSize != realSize)
-    {
-        return NULL;
-    }
+    return 0;
+}
 
-    void *result = malloc(realSize);
+int div16(int x)
+{
+    return (x > 0 ? x : x + 15) >> 4u; // NOLINT(hicpp-signed-bitwise)
+}
 
-    if (!result)
-    {
-        return NULL;
-    }
-
-    void *next = result;
-    for (int i = 0; i < eleCnt; ++i)
-    {
-        memcpy(next, eleSrc[i], eleSize);
-
-        next += eleSize;
-    }
-
-    return result;
+void test1(int x)
+{
+    printf("%d / 16 = %d\n", x, div16(x));
 }

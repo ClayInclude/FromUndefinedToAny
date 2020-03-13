@@ -1,6 +1,6 @@
 %%
 %% Author: Clay
-%% 2020/2/29
+%% 2020/3/11
 %%
 
 \section{浮点数}
@@ -175,7 +175,7 @@
                         \hline
                         0 11 01 & - & - & - & - & - & NaN & - \\
                         \hline
-                        0 11 10 & - & - & - & - & - & Nan & - \\
+                        0 11 10 & - & - & - & - & - & NaN & - \\
                         \hline
                         0 11 11 & - & - & - & - & - & NaN & - \\
                         \hline
@@ -288,6 +288,86 @@
                     \end{array}
                 \]
             \end{table}
+        \end{practicec}
+    }
+
+    \subsection{浮点运算}
+    {
+        IEEE标准指定了一个简单的规则，来确定诸如加法和乘法这样的算术运算的结果。
+        把浮点值 $x$ 和 $y$ 看成实数，而某个运算 $\odot$ 定义在实数上，计算将产生 $Round(x \odot y)$ ，这是对实际运算的精确结果进行舍入后的结果。
+
+        IEEE标准中指定浮点运算行为方法的一个优势在于，它可以独立于任何具体的硬件或者软件实现。
+
+        实数上的加法也形成了阿贝尔群，但是必须考虑舍入对这些属性的影响。
+        我们将 $x +^f y$ 定义为 $Round(x + y)$ 。
+        这个运算的定义针对 $x$ 和 $y$ 的所有取值，但是 $x, y$ 都是实数，由于溢出，该运算可能得到无穷值。
+        对于所有 $x, y$ ，这个运算是可交换的。
+        另一方面，这个运算是不可结合的。
+        作为阿贝尔群，大多数值在浮点加法下都有逆元，也就是说 $x +^f -x = 0$ 。
+        无穷和 $NaN$ 是例外，因为 $+\infty - \infty = NaN, NaN +^f x = NaN$ 。
+
+        另一方面，浮点加法满足了单调性属性：
+        如果 $a \geq b$ ，那么对于任何 $x$ ，除了 $NaN$ ，都有 $x + a \geq x + b$ 。
+
+        浮点乘法也遵循通常乘法所具有的许多属性。
+        定义 $x *^f y$ 为 $Round(x \times y)$ 。
+        这个运算在乘法中是封闭的（可能产生无穷大或 $NaN$ ），它是可交换的，它的乘法单位元为 $1.0$ 。
+        另一方面，由于可能发生溢出，或者由于舍入而失去精度，它不具有结合性。
+        浮点乘法在加法上不具备分配性。
+
+        对于任何 $a, b, c$ ，并且都不等于 $NaN$ ，浮点乘法满足下列单调性：
+
+        \begin{align}
+            (a \geq b \wedge c \geq 0) \rightarrow (a *^f c) \geq (b *^f c) \\
+            (a \geq b \wedge c \leq 0) \rightarrow (a *^f c) \leq (b *^f c) \\
+        \end{align}
+
+        此外，还可以保证，只要 $a \neq NaN$ ，就有 $a *^f a \geq 0$ 。
+    }
+
+    \subsection{C语言中的浮点数}
+    {
+        %53.
+        \begin{practicec}
+            \begin{codelist}
+                \begin{lstlisting}[language=C]
+#define POS_INFINITY 10e309
+#define NEG_INFINITY -10e309
+#define NEG_ZERO -0.0
+                \end{lstlisting}
+            \end{codelist}
+
+        \end{practicec}
+
+        当在\emcode{int}、\emcode{float}和\emcode{double}格式之间进行强制类型转换时，程序改变数值和位模式的原则如下：
+
+        \begin{itemize}
+            \item 从\emcode{int}转为\emcode{float}，数字不会溢出，但是可能被舍入。
+            \item 从\emcode{int}或\emcode{float}转成\emcode{double}，因为\emcode{double}有更大的范围，也有更高的精度，所以能够保留精确的数值。
+            \item
+            {
+                从\emcode{double}转成\emcode{float}，因为范围要小一些，所以值可能溢出为无穷。
+                因为精确度较小，还可能被舍入。
+            }
+            \item
+            {
+                从\emcode{float}或者\emcode{double}转成\emcode{int}，值将会向零舍入。
+                进一步来说，值可能会溢出。
+            }
+        \end{itemize}
+
+        %54.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 1
+                \item 0
+                \item 0
+                \item 1
+                \item 1
+                \item 1
+                \item 1
+                \item 0
+            \end{enumerate}
         \end{practicec}
     }
 }

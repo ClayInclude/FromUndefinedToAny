@@ -9,15 +9,15 @@
 
 void testShowBytes(int value);
 
-void testShowBytes2();
+void testShowBytes2(void);
 
-void testShowBytes3();
+void testShowBytes3(void);
 
-void testShowBytes4();
+void testShowBytes4(void);
 
-void testShowBytes5();
+void testShowBytes5(void);
 
-void testShowBytes6();
+void testShowBytes6(void);
 
 int main(void)
 {
@@ -74,7 +74,7 @@ void testShowBytes(int value)
     showPointer(pValue);
 }
 
-void testShowBytes2()
+void testShowBytes2(void)
 {
     unsigned int value = 0x87654321;
     BytePointer pValue = (BytePointer) &value;
@@ -84,25 +84,25 @@ void testShowBytes2()
     showBytes(pValue, 3);
 }
 
-void testShowBytes3()
+void testShowBytes3(void)
 {
     showInt(3510593);
     showFloat(3510593.0f);
 }
 
-void testShowBytes4()
+void testShowBytes4(void)
 {
     showBytes((BytePointer) "12345", 6);
 }
 
-void testShowBytes5()
+void testShowBytes5(void)
 {
     char const *s = "abcdef";
 
     showBytes((BytePointer) s, strlen(s));
 }
 
-void testShowBytes6()
+void testShowBytes6(void)
 {
     short int sx = -12345;
     unsigned short int usx = sx;

@@ -22,7 +22,7 @@
 
         一般地，设计 $n$ 个变量 $x_1, x_2, \cdots , x_n$ 的语句可以表示成
         $$P(x_1, x_2, \cdots , x_n)$$
-        形式为 $P(x_1, x_2, \cdots , x_n)$ 的语句是 \emreg{命题函数} $P$ 在 $n$ 元组 $(x_1, x_2, \cdots , x_n)$ 的值， $P$ 也称为\emreg{ $n$ 位谓词} 或 \emreg{ $n$ 元谓词}。 
+        形式为 $P(x_1, x_2, \cdots , x_n)$ 的语句是 \emreg{命题函数} $P$ 在 $n$ 元组 $(x_1, x_2, \cdots , x_n)$ 的值， $P$ 也称为\emreg{ $n$ 位谓词} 或 \emreg{ $n$ 元谓词}。
 
         \paraph{前置和后置条件}
         {
@@ -717,16 +717,20 @@
 
         %57.
         \begin{practices}
+            \begin{codelist}
                 \begin{lstlisting}
 sibling(X, Y) :- mother(M, X), mother(M, Y), father(F, X), father(F, Y).
                 \end{lstlisting}
+            \end{codelist}
         \end{practices}
 
         %58.
         \begin{practices}
+            \begin{codelist}
                 \begin{lstlisting}
 grandfather(X, Y) :- mother(C, Y), father(X, C); father(C, Y), father(X, C).
                 \end{lstlisting}
+            \end{codelist}
         \end{practices}
 
         %59.

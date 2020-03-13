@@ -1,32 +1,32 @@
 {
-    "pracItems":
-    {
-        "scope": "latex",
-        "prefix": "pracItems",
-        "body":
-        [
-            "%$1.",
-            "\\begin{practices}",
-            "    \\begin{enumerate}[A.]",
-            "        \\item $2",
-            "    \\end{enumerate}",
-            "\\end{practices}"
-        ],
-        "description": "DiscreteMath"
-    },
-    "pracSingles":
-    {
-        "scope": "latex",
-        "prefix": "pracSingles",
-        "body":
-        [
-            "%$1.",
-            "\\begin{practices}",
-            "    $2",
-            "\\end{practices}"
-        ],
-        "description": "DiscreteMath"
-    },
+    // "pracItems":
+    // {
+    //     "scope": "latex",
+    //     "prefix": "pracItems",
+    //     "body":
+    //     [
+    //         "%$1.",
+    //         "\\begin{practices}",
+    //         "    \\begin{enumerate}[A.]",
+    //         "        \\item $2",
+    //         "    \\end{enumerate}",
+    //         "\\end{practices}"
+    //     ],
+    //     "description": "DiscreteMath"
+    // },
+    // "pracSingles":
+    // {
+    //     "scope": "latex",
+    //     "prefix": "pracSingles",
+    //     "body":
+    //     [
+    //         "%$1.",
+    //         "\\begin{practices}",
+    //         "    $2",
+    //         "\\end{practices}"
+    //     ],
+    //     "description": "DiscreteMath"
+    // },
     "pracItemc":
     {
         "scope": "latex",
