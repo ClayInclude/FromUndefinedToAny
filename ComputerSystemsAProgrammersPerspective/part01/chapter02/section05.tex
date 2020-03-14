@@ -115,8 +115,163 @@ void copyInt(int val, void *buf, int maxbytes)
 
     \end{practicec}
 
-    %74.
+    %75.
     \begin{practicec}
 
+    \end{practicec}
+
+    %76.
+    \begin{practicec}
+        \begin{codelist}
+            \begin{lstlisting}[language=C]
+void *calloc(size_t nMember, size_t size)
+{
+    size_t buffSize = nMember * size;
+    void *ptr = NULL;
+
+    if (!nMember || !size)
+    {
+        return NULL;
+    }
+
+    if (nMember != buffSize / size)
+    {
+        return NULL;
+    }
+
+    ptr = malloc(buffSize);
+    if (!ptr)
+    {
+        return NULL;
+    }
+
+    memset(ptr, 0, buffSize);
+
+    return ptr;
+}
+            \end{lstlisting}
+        \end{codelist}
+    \end{practicec}
+
+    %77.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item \emcode{(x << 4) + x}
+            \item \emcode{x -- (x << 3)}
+            \item \emcode{(x << 6) -- (x << 2)}
+            \item \emcode{(x << 4) -- (x << 7)}
+        \end{enumerate}
+    \end{practicec}
+
+    %78.
+    \begin{practicec}
+
+    \end{practicec}
+
+    %79.
+    \begin{practicec}
+
+    \end{practicec}
+
+    %80.
+    \begin{practicec}
+
+    \end{practicec}
+
+    %81.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item \emcode{(\~{}0 >> k) << k}
+            \item \emcode{(\~{}0 >> (k + j)) << (k + j) \^{} (\~{}0 >> j) << j}
+        \end{enumerate}
+    \end{practicec}
+
+    %82.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 0
+            \item 1
+            \item 1
+            \item 1
+            \item 1
+        \end{enumerate}
+    \end{practicec}
+
+    %83.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item
+            {
+                \begin{align}
+                    n &= 0.yyyyyyy\cdots \\
+                    n << k &= y.yyyyyyy\cdots \\
+                    n << k &= Y + n \\
+                    n * 2^k - n &= Y \\
+                    n &= Y / (2^k - 1)
+                \end{align}
+            }
+            \item
+            {
+                \begin{enumerate}[(a)]
+                    \item $n = 5 / (2^3 - 1) = 5 / 7$
+                    \item $n = 6 / (2^4 - 1) = 6 / 15 = 0.4$
+                    \item $n = 19 / 31$
+                \end{enumerate}
+            }
+        \end{enumerate}
+    \end{practicec}
+
+    %85.
+    \begin{practicec}
+        $Bias = 2^{k - 1} - 1$
+        \begin{enumerate}[A.]
+            \item
+            {
+                \begin{align*}
+                    E &= 2
+                    M &= 0x11 \\
+                    f &= 1.11 \\
+                    V &= 1.11 * 2^2
+                \end{align*}
+            }
+            \item
+            {
+                \begin{align*}
+                    E &= n
+                    M &= 0x1111\cdots (n bits 1) \\
+                    f &= 1.11 (n + 1 bits 1) \\
+                    V &= 11111\cdots (n + 1 bits 1) = 2^{n + 1} - 1
+                \end{align*}
+            }
+            \item
+            {
+                最小规格数： $V = 2^{1 - Bias}$ 。
+                倒数： $V = 2^{Bias - 1}$ 。
+
+                \begin{align*}
+                    E &= Bias - 1 \\
+                    M &= 0 \\
+                    f &= 1 \\
+                    V &= 0 1111...101 000000
+                \end{align*}
+            }
+        \end{enumerate}
+    \end{practicec}
+
+    %86.
+    \begin{practicec}
+        \begin{table}[H]
+            \[
+                \begin{array}{|c|c|}
+                    \hline
+                    000\cdots001 & 2^{2 - 2^{k - 1} -n} \\
+                    \hline
+                    000\cdots0110000\cdots & 2^{2 - 2^{k - 1}} \\
+                    \hline
+                    0111111111111110111111\cdots & 2^{2^{k - 1} -1} * (2 - 2^{-63}) \\
+                    \hline
+                \end{array}
+            \]
+        \end{table}
     \end{practicec}
 }

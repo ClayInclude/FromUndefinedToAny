@@ -33,9 +33,18 @@ void test73(int x, int y);
 
 void test74(int x, int y);
 
+void test75(int x, int y);
+
+void test78(int x, unsigned int k);
+
+void test79(int x);
+
+void test80(int x);
+
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 #pragma ide diagnostic ignored "bugprone-narrowing-conversions"
+
 int main(void)
 {
     test61(0xFF111100);
@@ -46,8 +55,8 @@ int main(void)
 
     test62();
 
-    test63(0x80000000, 0x80000000,31);
-    test63(0xF0000000, 0xF0000000,31);
+    test63(0x80000000, 0x80000000, 31);
+    test63(0xF0000000, 0xF0000000, 31);
     test63(0xF0000000, 0xF0000000, 1);
 
     test64(1);
@@ -103,8 +112,36 @@ int main(void)
     test74(100, -100);
     test74(-100, -1);
 
+    test75(1324235, 1324765);
+    test75(-1324235, -1324765);
+    test75(1111324235, 1324765);
+    test75(1243241235, 1323424765);
+
+    test78(4, 1);
+    test78(4, 0);
+    test78(12, 3);
+    test78(-12, 3);
+    test78(-12, 0);
+
+    test79(3);
+    test79(0);
+    test79(-3);
+    test79(-2000000000);
+    test79(2000000000);
+    test79(2000000001);
+    test79(-2000000001);
+
+    test80(3);
+    test80(0);
+    test80(-3);
+    test80(-2000000000);
+    test80(2000000000);
+    test80(2000000001);
+    test80(-2000000001);
+
     return 0;
 }
+
 #pragma clang diagnostic pop
 
 int practice61_1(int x)
@@ -328,7 +365,7 @@ int tSubOk(int x, int y)
     y = -y;
 
     int tMin = 1u << (w - 1);
-    int notEqualTMin = tMin ^ y;
+    int notEqualTMin = tMin ^y;
 
     int diffSign = (x ^ y) >> (w - 1);
     int isOverflow = ((x + y) ^ x) >> (w - 1);
@@ -347,8 +384,87 @@ void test74(int x, int y)
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "hicpp-signed-bitwise"
 #pragma ide diagnostic ignored "bugprone-narrowing-conversions"
+
 int signedHighProd(int x, int y)
 {
-    return ((int64_t) x * y) >> 32;
+    return ((int64_t) x * y) >> 32u;
+}
+
+#pragma clang diagnostic pop
+
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "hicpp-signed-bitwise"
+
+unsigned int unsignedHighProd(int x, int y)
+{
+    uint64_t prod = (uint64_t) signedHighProd(x, y) << 32u;
+    unsigned int w = sizeof(int) << 3u;
+
+    uint64_t x_w = x >> (w - 1u);
+    uint64_t y_w = y >> (w - 1u);
+
+    prod += x_w * (int) y * (1 << w) + y_w * (int) x * (1 << w) + (x_w & y_w) * (1 << (1 << w));
+
+    return prod >> w;
+}
+
+#pragma clang diagnostic pop
+
+void test75(int x, int y)
+{
+    printf("unsigned1: 0x%x, unsigned2: 0x%x.\n\n", unsignedHighProd(x, y),
+           (unsigned int) (((uint64_t) x * (uint64_t) y) >> 32u));
+}
+
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "hicpp-signed-bitwise"
+#pragma ide diagnostic ignored "bugprone-narrowing-conversions"
+
+int dividePower2(int x, unsigned int k)
+{
+    unsigned int w = sizeof(int) << 3u;
+    int offset = (x >> (w - 1)) & ((1 << k) - 1);
+
+    return (x + offset) >> k;
+}
+
+#pragma clang diagnostic pop
+
+void test78(int x, unsigned int k)
+{
+    printf("%d / %d = %d.\n\n", x, 1u << k, dividePower2(x, k));
+}
+
+int mul3div4(int x)
+{
+    return dividePower2((x << 1) + x, 2); // NOLINT(hicpp-signed-bitwise)
+}
+
+void test79(int x)
+{
+    printf("3 * %d / 4 = %d.\n\n", x, mul3div4(x));
+}
+
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "hicpp-signed-bitwise"
+int threeFourths(int x)
+{
+    int f = x & ~0x3;
+    int l = x & 0x3;
+    unsigned int w = sizeof(int) << 3u;
+    int offset = (x >> (w - 1)) & ((1 << 2) - 1);
+
+    f = dividePower2(f, 2);
+    f += f << 1;
+
+    l += l << 1;
+    l = (l + offset) >> 2;
+
+    return f + l;
 }
 #pragma clang diagnostic pop
+
+void test80(int x)
+{
+    printf("3 / 4 * %d = %d.\n\n", x, threeFourths(x));
+}
