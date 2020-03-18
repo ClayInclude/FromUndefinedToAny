@@ -49,18 +49,12 @@ int uAddOk(unsigned int x, unsigned int y)
 
 int tAddOk(int x, int y)
 {
-    if (x > 0 && y > 0)
-    {
-        return x + y > 0;
-    }
-    else if (x < 0 && y < 0)
-    {
-        return x + y < 0;
-    }
-    else
-    {
-        return 1;
-    }
+    int sum = x + y;
+
+    unsigned int negOver = x < 0 && y < 0 && sum >= 0;
+    unsigned int posOver = x >= 0 && y >= 0 && sum < 0;
+
+    return !(negOver || posOver);
 }
 
 int tMultiOk(int x, int y)
@@ -72,7 +66,7 @@ int tMultiOk(int x, int y)
 
 int tMultiOk32(int32_t x, int32_t y)
 {
-    int64_t p = (int64_t)x * y;
+    int64_t p = (int64_t) x * y;
 
     return x * y == p;
 }

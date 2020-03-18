@@ -325,7 +325,7 @@ void *copyElements(void *eleSrc[], int eleCnt, size_t eleSize)
 
         %39.
         \begin{practicec}
-            $x << n + x << n - x$
+            $-(x << m)$
         \end{practicec}
 
         %40.
@@ -336,13 +336,13 @@ void *copyElements(void *eleSrc[], int eleCnt, size_t eleSize)
                         \hline
                         K & \text{移位} & \text{加法\/减法} & \text{表达式} \\
                         \hline
-                        6 & 2 & 1 & x << 2 + x << 1 \\
+                        6 & 2 & 1 & (x << 2) + (x << 1) \\
                         \hline
-                        31 & 1 & 1 & x << 5 - x \\
+                        31 & 1 & 1 & (x << 5) - x \\
                         \hline
-                        -6 & 2 & 1 & x << 5 - x << 1 \\
+                        -6 & 2 & 1 & (x << 1) - (x << 3) \\
                         \hline
-                        55 & 2 & 2 & x << 6 - x << 3 - x \\
+                        55 & 2 & 2 & (x << 6) - (x << 3) - x \\
                         \hline
                     \end{array}
                 \]
@@ -382,7 +382,7 @@ void *copyElements(void *eleSrc[], int eleCnt, size_t eleSize)
 
         %43.
         \begin{practicec}
-            $M = 32, N = 8$
+            $M = 31, N = 8$
         \end{practicec}
     }
 
@@ -395,13 +395,13 @@ void *copyElements(void *eleSrc[], int eleCnt, size_t eleSize)
         %44.
         \begin{practicec}
             \begin{enumerate}[A.]
-                \item 1
-                \item 0
                 \item 0
                 \item 1
+                \item 0
                 \item 1
                 \item 0
-                \item 0
+                \item 1
+                \item 1
             \end{enumerate}
         \end{practicec}
     }

@@ -161,7 +161,7 @@ int practice61_3(int x)
 
 int practice61_4(int x)
 {
-    return !(x & 0xffu << ((sizeof(x) - 1) << 3)); // NOLINT(hicpp-signed-bitwise)
+    return !(x & (0xffu << ((sizeof(x) - 1) << 3))); // NOLINT(hicpp-signed-bitwise)
 }
 
 void test61(int x)

@@ -23,7 +23,7 @@ int main(void)
 
 int div16(int x)
 {
-    return (x > 0 ? x : x + 15) >> 4u; // NOLINT(hicpp-signed-bitwise)
+    return (int) ((x + ((x >> 31u) & 0xfu)) >> 4u); // NOLINT(hicpp-signed-bitwise)
 }
 
 void test1(int x)

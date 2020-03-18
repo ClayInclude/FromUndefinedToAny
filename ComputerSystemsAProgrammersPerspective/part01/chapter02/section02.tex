@@ -150,6 +150,11 @@
             \end{align}
         \end{defines}
 
+        %20.
+        \begin{practicec}
+
+        \end{practicec}
+
         \begin{defines}[无符号数转为补码]
             对满足 $0 \leq u \leq UMax_w$ 的 $u$ 有
 
@@ -174,7 +179,7 @@
                         \hline
                         \text{表达式} & \text{类型} & \text{求值} \\
                         \hline
-                        -2147483647 - 1 == 2147483647U & unsigned & 1 \\
+                        -2147483647 - 1 == 2147483648U & unsigned & 1 \\
                         \hline
                         -2147483647 - 1 < 2147483647 & signed & 1 \\
                         \hline
@@ -182,7 +187,7 @@
                         \hline
                         -2147483647 - 1 < -2147483647 & signed & 1 \\
                         \hline
-                        -2147483647 - 1U < -2147483647 & unsigned & 0 \\
+                        -2147483647 - 1U < -2147483647 & unsigned & 1 \\
                         \hline
                     \end{array}
                 \]
@@ -264,7 +269,7 @@
                         0010 & 010 & 2 & 2 & 2 & 2 \\
                         1001 & 001 & 9 & 1 & -7 & 1 \\
                         1011 & 011 & 11 & 3 & -5 & 3 \\
-                        1111 & 111 & 15 & 7 & -1 & 7 \\
+                        1111 & 111 & 15 & 7 & -1 & -1 \\
                         \hline
                     \end{array}
                 \]
@@ -277,9 +282,9 @@
         有符号数到无符号数的隐士强制类型转换导致了某些非直观的行为。
 
         %25.
-        \begin{practices}
+        \begin{practicec}
             改为\emcode{i < length}。
-        \end{practices}
+        \end{practicec}
 
         %26.
         \begin{practicec}
