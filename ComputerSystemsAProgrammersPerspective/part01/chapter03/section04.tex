@@ -11,4 +11,68 @@
     最初的8086中有8个16位的寄存器，即\emcode{\%ax, \%bx, \%cx, \%dx, \%si, \%di, \%bp, \%sp}。
     扩展到IA32架构时，这些寄存器也扩展成32位寄存器，标号从\emcode{\%eax}到\emcode{\%esp}。
     扩展到x86--64后，原来的8个寄存器扩展成64位，标号从从\emcode{\%rax}到\emcode{\%rsp}。
+
+    \subsection{操作数指示符}
+    {
+        大多数指令有一个或多个\emreg{操作数(operand)}，指示出执行一个操作中要使用的源数据值，以及放置结果的目的位置。
+
+        各种不同的操作数的可能性被分为三种类型：
+
+        \begin{itemize}
+            \item \emreg{立即数(immediate)}，用来表示常数值。
+            \item \emreg{寄存器(register)}，它表示某个寄存器的内容。
+            \item \emreg{内存}引用，它会根据计算出来的地址（\emreg{有效地址}）访问某个内存位置。
+        \end{itemize}
+
+        有多种不同的\emreg{寻址模式}，允许不同形式的内存引用。
+        用语法 $Imm(r_b, r_i, s)$ 表示的是最常用的形式。
+        这样的引用有四个组成部分：
+        一个立即数偏移 $Imm$ ，一个基址寄存器 $r_b$ ，一个变址寄存器 $r_i$ 和一个比例因子 $s$ 。
+        这里 $s$ 必须是 $1, 2, 4$ 或者 $8$ 。
+
+        %1.
+        \begin{practicec}
+            \begin{table}[H]
+                \[
+                    \begin{array}{|c|c|}
+                        \hline
+                        \%rax & 0x100 \\
+                        \hline
+                        0x104 & 0xab \\
+                        \hline
+                        \$0x108 & 0x108 \\
+                        \hline
+                        (\%rax) & 0xff \\
+                        \hline
+                        4(\%rax) & 0xab \\
+                        \hline
+                        9(\%rax, \%rdx) & 0x11 \\
+                        \hline
+                        260(\%rcx, \%rdx) & 0x13 \\
+                        \hline
+                        0xfc(, \%rcx, 4) & 0xff \\
+                        \hline
+                        (\%rax, \%rdx, 4) & 0x11 \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{数据传送指令}
+    {
+        最频繁使用的指令是将数据从一个位置复制到另一个位置的指令。
+
+        MOV类由四条指令组成：\emcode{movb, movw, movl, movq}。
+        源操作数指定的值是一个立即数，存储在寄存器中或者内存中。
+        目的操作数指定一个位置，要么是一个寄存器，要么是一个内存地址。
+        传送指令的两个操作数不能都指向内存位置。
+
+        大多数情况中，MOV指令只会更新目的操作数指定的那些寄存器字节或内存位置。
+        唯一的例外是\emcode{movl}指令以寄存器作为目的时，它会把该寄存器的高位4字节设置为0。
+        任何为寄存器生成32位值的指令都会把该寄存器的高位部分置成0。
+
+        常规的\emcode{movq}只能以表示为32位补码数字的立即数作为源操作数，然后把这个值符号扩展得到64位的值。
+    }
 }
