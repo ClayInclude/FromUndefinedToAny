@@ -74,5 +74,46 @@
         任何为寄存器生成32位值的指令都会把该寄存器的高位部分置成0。
 
         常规的\emcode{movq}只能以表示为32位补码数字的立即数作为源操作数，然后把这个值符号扩展得到64位的值。
+        \emcode{movabsq}能够以任意64位立即数作为源操作数，并且只能以寄存器作为目的。
+
+        在将较小的原值复制到较大的目的时，MOVZ类中的指令把目的中剩余的字节填充为0，而MOVS类中的指令通过符号扩展来填充。
+        \emcode{movzlq}可以用\emcode{movl}指令来实现。
+
+        \emcode{cltq}的效果与\emcode{movslq \%eax, \%rax}完全一致。
+
+        %2.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{movl}
+                \item \emcode{movw}
+                \item \emcode{movb}
+                \item \emcode{movq}
+                \item \emcode{movw}
+            \end{enumerate}
+        \end{practicec}
+
+        %3.
+        \begin{practicec}
+
+        \end{practicec}
+    }
+
+    \subsection{数据传送示例}
+    {
+        参数通过寄存器传递给函数。
+        函数值通过把值存储在寄存器rax或该寄存器的某个低位部分中返回。
+
+        所谓指针其实就是地址。
+        间接引用就是将该指针放在一个寄存器中，然后在内存引用中使用这个寄存器。
+        局部变量通常是保存在寄存器中，而不是内存中。
+        访问寄存器比访问内存快的多。
+
+        %.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{movsbl (\%dil), \%eax; movslq \%eax, (\%rsi)}
+                \item
+            \end{enumerate}
+        \end{practicec}
     }
 }
