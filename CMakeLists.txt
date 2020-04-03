@@ -203,3 +203,4 @@ add_executable(ComputerSystemsAProgrammersPerspective_c02_p04 ComputerSystemsAPr
 add_executable(ComputerSystemsAProgrammersPerspective_c03_e_mStore
         ComputerSystemsAProgrammersPerspective/part01/chapter03/example/main.c
         ComputerSystemsAProgrammersPerspective/part01/chapter03/example/mStore.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c03_e01 ComputerSystemsAProgrammersPerspective/part01/chapter03/example/example01.c)

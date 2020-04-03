@@ -108,12 +108,33 @@
         局部变量通常是保存在寄存器中，而不是内存中。
         访问寄存器比访问内存快的多。
 
-        %.
+        %.4
         \begin{practicec}
             \begin{enumerate}[A.]
-                \item \emcode{movsbl (\%dil), \%eax; movslq \%eax, (\%rsi)}
-                \item
+                \item \emcode{movsbl (\%rdi), \%eax; movl \%eax, (\%rsi)}
+                \item \emcode{movzbl (\%rdi), \%eax; movl \%eax, (\%rsi)}
+                \item \emcode{movsbq (\%rdi), \%rax; movq \%rax, (\%rsi)}
+                \item \emcode{movb (\%rdi), \%al; movb \%al, (\%rsi)}
+                \item \emcode{movb (\%rdi), \%al; movb \%al, (\%rsi)}
+                \item \emcode{movsbw (\%rdi), \%ax; movw \%ax, (\%rsi)}
             \end{enumerate}
         \end{practicec}
+
+        %5.
+        \begin{practicec}
+
+        \end{practicec}
+    }
+
+    \subsection{压入和弹出栈数据}
+    {
+        通过push操作把数据压入栈中，通过pop操作删除数据。
+        弹出的值永远是最近被压入而且仍然在栈中的值。
+        栈可以实现为一个数组，总是从数组的一端插入和删除元素，这一端被称为\emreg{栈顶}。
+        栈指针\%rsp保存着栈顶元素的地址。
+
+        将一个四字值压入栈中，首先将栈指针减8，然后将值写到新的栈顶地址。
+        弹出一个四字的操作包括从栈顶位置读出数据，然后将栈指针加8。
+        程序可以用标准的内存寻址方法访问栈内的任意位置。
     }
 }
