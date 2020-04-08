@@ -28,7 +28,7 @@
 
         %7.
         \begin{practicec}
-            5 * x + 2 * y + 8 * z
+            \emcode{5 * x + 2 * y + 8 * z}
         \end{practicec}
     }
 
@@ -42,6 +42,83 @@
         第二个操作数可以是寄存器或内存位置。
         当第二个操作数为内存地址时，处理器必须从内存读出值，执行操作，再把结果写回内存。
 
+        %8.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 0x100, 0x100
+                \item 0x108, 0x98
+                \item 0x118, 0x176
+                \item 0x116
+                \item \%rcx, 0x0
+                \item \%rax, 0xfd
+            \end{enumerate}
+        \end{practicec}
+    }
 
+    \subsection{移位操作}
+    {
+        移位操作先给出移位量，然后第二项给出的是要移位的数。
+        移位量可以是一个立即数，或者放在单字节寄存器\emcode{\%cl}中。
+
+        移位操作对 $w$ 位长的数据值进行操作，移位量是由\emcode{\%cl}的低 $m$ 位决定的，这里 $2^m = w$ 。
+        高位会被忽略。
+
+        移位操作的目的操作数可以是一个寄存器或是一个内存位置。
+
+        %9.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{salq \$4, \%rax}
+                \item \emcode{sarq \%ecx, \%rax}
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{讨论}
+    {
+        大多数指令既可以用于无符号运算，也可以用于补码运算。
+        只有右移操作要求区分有符号数和无符号数。
+        这个特性使得补码运算成为实现有符号整数运算的一种比较好的原因之一。
+
+        %10.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{x \| y}
+                \item \emcode{t1 >> 3}
+                \item \emcode{\~t2}
+                \item \emcode{z - t3}
+            \end{enumerate}
+        \end{practicec}
+
+        %11.
+        \begin{practicec}
+            \emcode{movl 0, \%rdx}
+        \end{practicec}
+    }
+
+    \subsection{特殊的算术操作}
+    {
+        \emcode{mulq}和\emcode{imulq}指令都要求一个参数必须在寄存器\emcode{\%rax}中，另一个作为指令的源操作数给出。
+        然后乘积存放在寄存器\emcode{\%rdx}（高64位）和\emcode{\%rax}（低64位）中。
+        汇编器能够通过计算操作数的数目，分辨出想用哪条指令。
+
+        对于大多数64位除法来说，除数也常常是一个64位的值。
+        这个值应该存放在\emcode{\%rax}中，\emcode{\%rdx}中的位应该全设置为0（无符号运算）或者\emcode{\%rax}的符号位（有符号运算）。
+        后面这个操作可以用指令\emcode{cqto}来完成。
+        这条指令不需要操作数，它隐含读出\emcode{\%rax}的符号位，并将它复制到\emcode{\%rdx}的所有位。
+
+        %12.
+        \begin{practicec}
+            \begin{lstlisting}
+uremdiv:
+    movq %rdx, %r8
+    movq %rdi, %rax
+    movl $0, %rdx
+    divq %rsi
+    movq %rax, (%r8)
+    movl $0, (%rcx)
+    ret
+            \end{lstlisting}
+        \end{practicec}
     }
 }
