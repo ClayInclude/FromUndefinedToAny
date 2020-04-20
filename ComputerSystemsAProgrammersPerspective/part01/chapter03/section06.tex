@@ -46,6 +46,114 @@
             \item 可以有条件地传送数据
         \end{enumerate}
 
-        SET类指令之间的区别就在于它们考虑的条件码的组合是什么，这些指令名字的不同后缀指明了它们所考虑的条件码的组合
+        SET类指令之间的区别就在于它们考虑的条件码的组合是什么，这些指令名字的不同后缀指明了它们所考虑的条件码的组合而不是操作数大小。
+        一条SET指令的目的操作数是低位单字节寄存器元素之一，或是一个字节的内存位置，指令会将这个字节设置成0或者1。
+        为了得到一个32位或64位结果，必须将高位清零。
+
+        各个SET命令的描述都适用的情况是：执行比较指令，根据计算 $t = a -^t_w b$ 设置条件码。
+
+        %13.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{int32\_t, <}
+                \item \emcode{int16\_t, >=}
+                \item \emcode{uint8\_t, <=}
+                \item \emcode{int64\_t, !=}
+            \end{enumerate}
+        \end{practicec}
+
+        %14.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{int64\_t, >=}
+                \item \emcode{int16\_t, ==}
+                \item \emcode{uint8\_t, >}
+                \item \emcode{int32\_t, !=}
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{跳转指令}
+    {
+        正常执行的情况下，指令按照它们出现的顺序一条一条地执行。
+        \emreg{跳转(jump)}指令会导致执行切换到程序中一个全新的位置。
+        在汇编代码中，这些跳转的目的地通常用一个\emreg{标号(label)}指明。
+
+        jmp指令是无条件跳转。
+        它可以是\emreg{直接}跳转，即跳转目标是作为指令的一部分编码的；
+        也可以是\emreg{间接}跳转，即跳转目标是从寄存器或内存位置中读出的。
+
+        其他跳转指令都是\emreg{有条件}的。
+        这些指令的名字和跳转条件与SET指令的名字和设置条件是相匹配的。
+    }
+
+    \subsection{跳转指令的编码}
+    {
+        在汇编代码中，跳转目标用符号标号书写。
+        汇编器，以及后来的连接器，会产生跳转目标的适当编码。
+        跳转指令有几种不同的编码，但是最常用都是\emreg{PC相对的(PC-relative)}。
+        第二种编码方法是给出绝对地址。
+
+        当执行PC相对寻址时，程序计数器的值是跳转指令后面的那条指令的地址。
+
+        %15.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item $4003fe$
+                \item $400425$
+                \item $400543, 400545$
+                \item $8d$
+            \end{enumerate}
+        \end{practicec}
+
+        跳转指令提供了一种实现条件执行和几种不同循环结构的方式。
+
+        C语言中的\emcode{if--else}语句的通用形式模板如下：
+
+        \begin{lstlisting}[language=C]
+if (test-expr)
+    then-statement
+else
+    else-statement
+        \end{lstlisting}
+
+        对于这种通用形式，汇编实现通常会使用下面这种形式，这里，用C语法来描述控制流：
+
+        \begin{lstlisting}
+    t = test-expr;
+
+    if (!t)
+        goto false;
+    then-statement;
+    goto done;
+false:
+    else-statement;
+done:
+        \end{lstlisting}
+
+        也就是，汇编器为\emcode{then--statement}和\emcode{else--statement}产生各自的代码块，它会插入条件和无条件分支，以保证能执行正确的代码块。
+
+        %16.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{lstlisting}[language=C]
+void cond(long int a, long int *p)
+{
+    if (!p || a <= *p)
+        goto done;
+
+    *p = a;
+done:
+}
+                    \end{lstlisting}
+                }
+                \item
+                {
+                    \emcode{\&\&}被拆为两个\emcode{if}。
+                }
+            \end{enumerate}
+        \end{practicec}
     }
 }
