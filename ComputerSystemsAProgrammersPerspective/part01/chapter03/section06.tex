@@ -155,5 +155,65 @@ done:
                 }
             \end{enumerate}
         \end{practicec}
+
+        %17.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \begin{lstlisting}[language=C]
+void cond(long int a, long int *p)
+{
+    if (p && a > *p)
+        goto true;
+
+    goto done;
+true:
+    *p = a;
+done:
+}
+                    \end{lstlisting}
+                }
+                \item
+                {
+                    只有一个分支时，可以减少一个标签和一次跳转。
+                }
+            \end{enumerate}
+        \end{practicec}
+
+        %18.
+        \begin{practicec}
+            \begin{lstlisting}[language=C]
+void test(long int x, long int y, long int z)
+{
+    long int val = x + y + z;
+
+    if (x < -3)
+    {
+        if (y < z)
+        {
+            val = x * y;
+        }
+        else
+        {
+            val = y * z;
+        }
+    }
+    else if (x > 2)
+    {
+        val = x * z;
+    }
+}
+            \end{lstlisting}
+        \end{practicec}
+    }
+
+    \subsection{用条件传送来实现条件分支}
+    {
+        实现条件操作的传统方法是通过使用\emreg{控制}的条件转移。
+
+        一种替代的策略是使用\emreg{数据}的条件转移。
+        这种方法计算一个条件操作的两种结果，然后再根据条件是否满足从中选取一个。
+        只有在一些受限制的情况中，这种策略才可行，但是如果可行，就可以用一条简单的\emreg{条件传送}指令来实现，条件传送指令更符合现代处理器的性能特性。
     }
 }
