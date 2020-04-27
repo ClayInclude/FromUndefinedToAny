@@ -1,0 +1,27 @@
+%%
+%% Author: Clay
+%% 2020/4/27
+%%
+
+\section{异质的数据结构}
+{
+    C语言提供了两种将不同类型的对象组合到一起创建数据类型的机制：
+    \emreg{结构(structure)}和\emreg{联合(union)}。
+
+    \subsection{结构}
+    {
+        类似于数组的实现，结构的所有组成部分都存放在内存中一段连续的区域内。
+        指向结构的指针就是结构第一个字节的地址。
+        编译器维护关于每个结构类型的信息，指示每个\emreg{字段(field)}的字节偏移。
+
+        要产生一个指向结构内部对象的指针，只需将结构的地址加上该字段的偏移量。
+
+        %41.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 0, 8, 12, 16
+                \item 24
+            \end{enumerate}
+        \end{practicec}
+    }
+}

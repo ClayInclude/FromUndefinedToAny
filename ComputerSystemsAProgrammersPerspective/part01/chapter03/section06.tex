@@ -338,6 +338,7 @@ long int loop_while(long int a, long int b)
 
             %25.
             \begin{practicec}
+                \begin{lstlisting}[language=C]
 lont int loop_while(long int a, long int b)
 {
     long int result = b;
@@ -348,7 +349,151 @@ lont int loop_while(long int a, long int b)
         b = b - a;
     }
 }
+                \end{lstlisting}
+            \end{practicec}
+
+            %26.
+            \begin{practicec}
+                \begin{lstlisting}[language=C]
+long int func_a(unsigned long int x)
+{
+    long val = 0;
+
+    while (x != 0)
+    {
+        val = val | x;
+        x = x >> 1;
+    }
+
+    return val & 1;
+}
+                \end{lstlisting}
             \end{practicec}
         }
+
+        \subsubsection{for循环}
+        {
+            %27.
+            \begin{practicec}
+                \begin{lstlisting}[language=C]
+long int fact_for_while(long int n)
+{
+    long int i = 2;
+    long int result = 1;
+
+    if (i > n)
+    {
+        goto done;
+    }
+
+    do
+    {
+        result *= i;
+        ++i;
+    } while (i != n);
+
+done:
+    return result;
+}
+                \end{lstlisting}
+            \end{practicec}
+
+            C语言中三种形式的所有循环都可以用一种简单的策略来翻译，产生包含一个或多个条件分支的代码。
+            控制的条件转移提供了将循环翻译成机器代码的基本机制。
+
+            %28.
+            \begin{practicec}
+                \begin{lstlisting}[language=C]
+long int fun_b(unsigned long int x)
+{
+    long int val = 0;
+    long int i = 0;
+
+    for (int count = 64; count != 0; --count)
+    {
+        i = x;
+        i = i & 1;
+        val = val + val;
+        val = val | i;
+        i = i >> 1;
+    }
+
+    return val;
+}
+                \end{lstlisting}
+            \end{practicec}
+
+            %29.
+            \begin{practicec}
+                \begin{enumerate}[A.]
+                    \item 少执行update--statement。
+                    \item goto之前执行一次update--statement。
+                \end{enumerate}
+            \end{practicec}
+        }
+    }
+
+    \subsection{switch语句}
+    {
+        \emreg{switch（开关）}语句可以根据一个整数索引值进行\emreg{多重分支(multiway branching)}。
+        通过使用\emreg{跳转表(jump table)}这种数据结构使得实现更加高效。
+
+        程序代码用开关索引值来执行一个跳转表内的数组引用，确定跳转指令的目标。
+        和使用一组很长的if--else语句相比，使用跳转表的优点是执行开关语句的时间与开关情况的数量无关。
+
+        关键是领会使用跳转表是一种非常有效的实现多重分支的方法。
+
+        %30.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    case -1, l9
+                    case 0, l5
+                    case 1, l6
+                    case 2, l7
+                    case 3, default
+                    case 4, l7
+                    case 5, l8
+                    case 6, default
+                    case 7, l5
+                }
+                \item
+                {
+                    l5, l7
+                }
+            \end{enumerate}
+        \end{practicec}
+
+        %31.
+        \begin{practicec}
+            \begin{lstlisting}[language=C]
+void switcher(long int a, long int b, long int c, long int *dest)
+{
+    long val;
+
+    switch (a)
+    {
+    case 5:
+        c = b ^ 15;
+    case 0:
+        val = c + 112;
+        break;
+    case 2:
+    case 7:
+        val = (c + b) << 2;
+        break;
+    case 4:
+        val = a;
+        break;
+    default:
+        val = b;
+        break;
+    }
+
+    *dest = val;
+}
+            \end{lstlisting}
+        \end{practicec}
     }
 }

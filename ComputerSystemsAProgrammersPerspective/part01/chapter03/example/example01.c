@@ -38,7 +38,7 @@ int64_t scale(int64_t x, int64_t y, int64_t z)
 
 long int arith(long int x, long int y, long int z)
 {
-    long int t1 = x ^ y; // NOLINT(hicpp-signed-bitwise)
+    long int t1 = x ^y; // NOLINT(hicpp-signed-bitwise)
     long int t2 = z * 48;
     long int t3 = t1 & 0x0f0f0f0f; // NOLINT(hicpp-signed-bitwise)
     long int t4 = t2 - t3;
@@ -54,4 +54,30 @@ long int arith2(long int x, long int y, long int z)
     long int t4 = z - t3;
 
     return t4;
+}
+
+void switcher(int64_t a, int64_t b, int64_t c, int64_t *dest)
+{
+    int64_t val;
+
+    switch (a)
+    {
+    case 5:
+        c = b ^ 15; // NOLINT(hicpp-signed-bitwise)
+    case 0:
+        val = c + 112;
+        break;
+    case 2:
+    case 7:
+        val = (c + b) << 2; // NOLINT(hicpp-signed-bitwise)
+        break;
+    case 4:
+        val = a;
+        break;
+    default:
+        val = b;
+        break;
+    }
+
+    *dest = val;
 }
