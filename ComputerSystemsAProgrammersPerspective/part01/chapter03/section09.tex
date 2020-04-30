@@ -21,6 +21,102 @@
             \begin{enumerate}[A.]
                 \item 0, 8, 12, 16
                 \item 24
+                \item
+                {
+                    \begin{lstlisting}[language=C]
+void sp_init(struct prob *sp)
+{
+    sp->s.x = sp->s.y;
+    sp->p = sp->s;
+    sp->next = sp;
+}
+                    \end{lstlisting}
+                }
+            \end{enumerate}
+        \end{practicec}
+
+        %42.
+        \begin{practicec}
+            \begin{lstlisting}[language=C]
+long int fun(struct ELE *ptr)
+{
+    long int result = 0;
+
+    while (ptr)
+    {
+        result += ptr.v;
+        ptr = ptr.p;
+    }
+
+    return result;
+}
+            \end{lstlisting}
+        \end{practicec}
+    }
+
+    \subsection{联合}
+    {
+        联合提供了一种方式，能够规避C语言的类型系统，允许以多种类型来引用一个对象。
+        联合声明的语法结构的语法一样，只不过语义相差比较大。
+        它们是用不同的字段来引用相同的内存块。一个联合的总的大小总是等于它最大字段的大小。
+
+        联合可以减小分配空间的总量。
+
+        联合还可以用来访问不同数据类型的位模式。
+
+        %43.
+        \begin{practicec}
+            \begin{table}[htb]
+                \[
+                    \begin{array}{|c|c|c|}
+                        \hline
+                        up->t1.u & long & \makecell{movq (\%rdi), \%rax \\ movq \%rax, (\%rsi)} \\
+                        \hline
+                        up->t1.v & short & \makecell{movq 8(\%rdi), \%ax \\ movw \%ax, (\%rsi)} \\
+                        \hline
+                        \&up->t1.w & char* & \makecell{leaq 10(\%rdi), \%rsi} \\
+                        \hline
+                        up->t2.a & int* & \makecell{movq \%rid, \%rsi} \\
+                        \hline
+                        up->t2.a[up->t1.u] & int & \makecell{movq (\%rdi), \%rdx \\ movl (\%rdi, \%rdx, 4), \%rax \\ movl (\%rax) \%rsi} \\
+                        \hline
+                        up->t2.p & char* & \makecell{leaq 8(\%rdi), \%rsi} \\
+                        \hline
+                    \end{array}
+                \]
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{数据对齐}
+    {
+        许多计算机系统对基本数据类型的合法地址做出了一些限制，要求某种类型对象的地址必须是某个值 $K$ （通常是2、4或8）的倍数。
+        这种\emreg{对齐限制}简化了形成处理器和内存系统之间接口的硬件设计。
+        如果能保证地址对齐，那么就可以用一个内存操作来读或者写值。
+        否则可能需要执行两次内存访问，因为对象可能被分放在两个8字节内存块中。
+
+        无论数据是否对齐，x86--64硬件都能正确工作。
+        不过，Intel还是建议要对齐数据已提高内存系统的性能。
+        对齐原则是任何K字节的基本对象的地址，必须是K的倍数。
+        编译器必须保证任何结构体或联合的指针满足其中最大类型的大小对齐。
+
+        %44.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 0, 4, 8, 12; 16; 4
+                \item 0, 4, 5, 8; 16; 8
+                \item 0, 2, 4, 6, 7, 8; 10; 2
+                \item 0, 2, 4, 6, 8, 16, 24, 32; 40; 8
+                \item 0, 10, 24; 40, 8;
+            \end{enumerate}
+        \end{practicec}
+
+        %45.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 0, 8, 16, 24, 28, 32, 40, 48
+                \item 52
+                \item 36
             \end{enumerate}
         \end{practicec}
     }
