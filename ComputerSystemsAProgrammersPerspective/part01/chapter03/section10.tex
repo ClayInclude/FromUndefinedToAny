@@ -142,5 +142,40 @@
     \subsection{支持变长栈帧}
     {
         有些函数需要的局部存储是变长的。
+
+        %49.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item
+                {
+                    \%rax = 22 + 8 * n;
+                    \%rax &= -16;
+                    \%rsp -= \%rax;
+                }
+                \item
+                {
+                    \%rax = \%rsp + 7
+                    \%rax >= 3
+                    \%r8 = 8 * \%rax
+                }
+                \item
+                {
+                    \begin{table}[htb]
+                        \begin{tabular}{|cccccc|}
+                            \hline
+                            n & s_1 & s_2 & p & e_1 & e_2 \\
+                            \hline
+                            5 & 2065 & 2017 & 2024 & 1 & 7 \\
+                            6 & 2064 & 2000 & 2000 & 16 & 0 \\
+                            \hline
+                        \end{tabular}
+                    \end{table}
+                }
+                \item
+                {
+                    $s_2$ 与 $s_1$ 以16对齐， $p$ 与
+                }
+            \end{enumerate}
+        \end{practicec}
     }
 }
