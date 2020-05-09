@@ -17,7 +17,7 @@
         首先在内存中分配一个 $L \cdot N$ 字节的连续区域，这里 $L$ 是数据类型T的大小。
         其次，引入标识符A，可以用A来作为指向数组开头的指针，这个指针的值就是 $x_A$ 。
         可以用 $0 \sim N - 1$ 的整数索引来访问该数组元素。
-        数组元素i会被存放在地址为 $x_A + L \codt i$ 的地方。
+        数组元素i会被存放在地址为 $x_A + L \cdot i$ 的地方。
 
         假设 E是一个\emcode{int}型的数组，想计算\emcode{E[i]}，E的存放地址在寄存器\%rdx中，而i放在寄存器\%rcx中，然后指令
 
@@ -31,7 +31,7 @@
                 \centering
 
                 \[
-                    \begin{array}[|c|c|c|c|c|]
+                    \begin{array}{|c|c|c|c|c|}
                         \hline
                         S & 2 & 14 & x_S & x_S + i * 2 \\
                         \hline
@@ -60,7 +60,7 @@
                 \centering
 
                 \[
-                    \begin{array}[|c|c|c|]
+                    \begin{array}{|c|c|c|}
                         \hline
                         address & x_S + 2 & leaq (\%rdx, 1, 2) \%rax \\
                         \hline

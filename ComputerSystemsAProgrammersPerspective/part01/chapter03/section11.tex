@@ -32,5 +32,109 @@
         VCVT指令把整数转换成浮点数。
 
         vunpcklps指令通常用来交叉放置来自两个XMM寄存器的值，把它们的值存储到第三个寄存器中。
+
+        %50.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item val1: d
+                \item val2: i
+                \item val3: l
+                \item val4: f
+            \end{enumerate}
+        \end{practicec}
+
+        %51.
+        \begin{practicec}
+            \begin{table}[htb]
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    $T_x$ & $T_y$ & 指令 \\
+                    \hline
+                    long & double & \emcode{vcvtsi2sdq \%rdi, \%xmm0} \\
+                    \hline
+                    double & int & \emcode{vcvttsd2si \%xmm0, \%eax} \\
+                    \hline
+                    double & float & \makecell{\emcode{vmovddup \%xmm0, \%xmm0} \\ \emcode{vcvtpd2psx \%xmm0, \%xmm0}} \\
+                    \hline
+                    long & float & \emcode{vcvtsi2ssq \%rdi, \%xmm0} \\
+                    \hline
+                    float & long & \emcode{vcvttss2siq \%xmm0, \%rdi} \\
+                    \hline
+                \end{tabular}
+            \end{table}
+        \end{practicec}
+    }
+
+    \subsection{过程中的浮点代码}
+    {
+        XMM寄存器用来向函数传递浮点参数，以及从函数返回浮点值。
+
+        \begin{itemize}
+            \item XMM寄存器 $\%xmm0 \sim \%xmm7$ 最多可以传递8个浮点参数。
+            \item 函数使用寄存器 $\%xmm0$ 来返回浮点值。
+            \item 所有的XMM寄存器都是调用者保存的。
+        \end{itemize}
+
+        %52.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item \emcode{\%xmm0, \%rdi, \%xmm1, \%esi}
+                \item \emcode{\%edi, \%rsi, \%rdx, \%rcx}
+                \item \emcode{\%rdi, \%xmm0, \%esi, \%xmm1}
+                \item \emcode{\%xmm0, \%rdi, \%xmm1, \%xmm2}
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{浮点运算操作}
+    {
+        第一个源操作数可以是一个XMM寄存器或一个内存位置。
+        第二个源操作数合目的操作数都必须是XMM寄存器。
+        每个操作都有一条针对单精度的指令和一条针对双精度的指令。
+
+        %53.
+        \begin{practicec}
+            long, int, float, double
+        \end{practicec}
+
+        %54.
+        \begin{practicec}
+            \begin{lstlisting}[language=C]
+double funct2(double w, int x, float y, long z)
+{
+    return x * y - w / z;
+}
+            \end{lstlisting}
+        \end{practicec}
+    }
+
+    \subsection{定义和使用浮点常数}
+    {
+        AVX浮点操作不能以立即数值作为操作数。
+        编译器必须为所有的常量值分配和初始化存储空间。
+
+        %55.
+        \begin{practicec}
+            IEEE 754
+        \end{practicec}
+    }
+
+    \subsection{在浮点代码中使用位级操作}
+    {
+        XMM寄存器的位级操作作用于封装好的数据，即它们更新整个目的XMM寄存器，对两个源寄存器的所有位都实施指定的位级操作。
+
+        %56.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item fabs(x)
+                \item x ^ x
+                \item -x
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{浮点比较操作}
+    {
+
     }
 }

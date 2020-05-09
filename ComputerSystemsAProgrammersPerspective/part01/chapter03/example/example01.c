@@ -81,3 +81,35 @@ void switcher(int64_t a, int64_t b, int64_t c, int64_t *dest)
 
     *dest = val;
 }
+
+typedef enum
+{
+    NEG,
+    ZERO,
+    POS,
+    OTHER
+} rangeT;
+
+rangeT findRange(float x)
+{
+    int result;
+
+    if (x < 0)
+    {
+        result = NEG;
+    }
+    else if (x == 0)
+    {
+        result = ZERO;
+    }
+    else if (x > 0)
+    {
+        result = POS;
+    }
+    else
+    {
+        result = OTHER;
+    }
+
+    return result;
+}
