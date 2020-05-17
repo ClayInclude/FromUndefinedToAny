@@ -136,5 +136,19 @@ double funct2(double w, int x, float y, long z)
     \subsection{浮点比较操作}
     {
         对于浮点比较，当两个操作数中任一个是NaN时，就会设置奇偶标志位PF。
+        当任一操作数为NaN时，就会出现\emreg{无序}的情况。
+
+        %57.
+        \begin{practicec}
+            \begin{lstlisting}[language=C]
+double funct3(int *ap, double b, long int c, float *dp)
+{
+    float x = *dp;
+    double y = (double) *ap;
+
+
+}
+            \end{lstlisting}
+        \end{practicec}
     }
 }
