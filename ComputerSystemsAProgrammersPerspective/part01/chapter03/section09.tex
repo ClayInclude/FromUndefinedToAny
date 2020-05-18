@@ -27,7 +27,7 @@
 void sp_init(struct prob *sp)
 {
     sp->s.x = sp->s.y;
-    sp->p = sp->s;
+    sp->p = &(sp->s.x);
     sp->next = sp;
 }
                     \end{lstlisting}
@@ -78,9 +78,9 @@ long int fun(struct ELE *ptr)
                         \hline
                         up->t2.a & int* & \makecell{movq \%rid, \%rsi} \\
                         \hline
-                        up->t2.a[up->t1.u] & int & \makecell{movq (\%rdi), \%rdx \\ movl (\%rdi, \%rdx, 4), \%rax \\ movl (\%rax) \%rsi} \\
+                        up->t2.a[up->t1.u] & int & \makecell{movq (\%rdi), \%rdx \\ movl (\%rdi, \%rdx, 4), \%eax \\ movl \%eax (\%rsi)} \\
                         \hline
-                        up->t2.p & char* & \makecell{leaq 8(\%rdi), \%rsi} \\
+                        *up->t2.p & char* & \makecell{movq 8(\%rdi), \%rax \\ movb (\%rax), \%al \\ movb \%al, (\%rsi)} \\
                         \hline
                     \end{array}
                 \]
@@ -116,7 +116,7 @@ long int fun(struct ELE *ptr)
             \begin{enumerate}[A.]
                 \item 0, 8, 16, 24, 28, 32, 40, 48
                 \item 52
-                \item 36
+                \item 40
             \end{enumerate}
         \end{practicec}
     }

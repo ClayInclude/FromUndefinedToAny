@@ -102,7 +102,7 @@
                 \item $4003fe$
                 \item $400425$
                 \item $400543, 400545$
-                \item $8d$
+                \item $400560$
             \end{enumerate}
         \end{practicec}
 
@@ -151,7 +151,7 @@ done:
                 }
                 \item
                 {
-                    \emcode{\&\&}被拆为两个\emcode{if}。
+                    \emcode{\&\&}被拆为两个\emcode{if}，实现短路运算。
                 }
             \end{enumerate}
         \end{practicec}
@@ -258,7 +258,7 @@ long int test(long int x, long int y)
 {
     long int val = 8 * x;
 
-    if (x > 0)
+    if (y > 0)
     {
         if (x < y)
         {
@@ -291,7 +291,7 @@ long int test(long int x, long int y)
             %22.
             \begin{practicec}
                 \begin{enumerate}[A.]
-                    \item 12
+                    \item 13
                     \item 20
                 \end{enumerate}
             \end{practicec}
@@ -301,7 +301,7 @@ long int test(long int x, long int y)
             %23.
             \begin{practicec}
                 \begin{enumerate}[A.]
-                    \item \emcode{\%rdi, \%rcx, \%rdx}
+                    \item \emcode{\%rax, \%rcx, \%rdx}
                     \item 直接当成变量使用。
                 \end{enumerate}
             \end{practicec}
@@ -359,9 +359,9 @@ long int func_a(unsigned long int x)
 {
     long val = 0;
 
-    while (x != 0)
+    while (x)
     {
-        val = val | x;
+        val = val ^ x;
         x = x >> 1;
     }
 
@@ -381,16 +381,19 @@ long int fact_for_while(long int n)
     long int i = 2;
     long int result = 1;
 
-    if (i > n)
+    if (n <= 1)
     {
         goto done;
     }
 
-    do
+loop:
+    result *= i;
+    ++i;
+
+    if (i <= n)
     {
-        result *= i;
-        ++i;
-    } while (i != n);
+        goto loop;
+    }
 
 done:
     return result;
@@ -409,13 +412,10 @@ long int fun_b(unsigned long int x)
     long int val = 0;
     long int i = 0;
 
-    for (int count = 64; count != 0; --count)
+    for (int i = 64; i != 0; --i)
     {
-        i = x;
-        i = i & 1;
-        val = val + val;
-        val = val | i;
-        i = i >> 1;
+        val = (val << 1) | (x & 1);
+        x >>= 1;
     }
 
     return val;
@@ -460,7 +460,10 @@ long int fun_b(unsigned long int x)
                 }
                 \item
                 {
-                    l5, l7
+                    0, 7
+                }
+                {
+                    2, 4
                 }
             \end{enumerate}
         \end{practicec}

@@ -50,15 +50,15 @@
                     \hline
                     $T_x$ & $T_y$ & 指令 \\
                     \hline
-                    long & double & \emcode{vcvtsi2sdq \%rdi, \%xmm0} \\
+                    long & double & \emcode{vcvtsi2sdq \%rdi, \%xmm0, \%xmm0} \\
                     \hline
                     double & int & \emcode{vcvttsd2si \%xmm0, \%eax} \\
                     \hline
-                    double & float & \makecell{\emcode{vmovddup \%xmm0, \%xmm0} \\ \emcode{vcvtpd2psx \%xmm0, \%xmm0}} \\
+                    double & float & \makecell{\emcode{vmovddup \%xmm0, \%xmm0, \%xmm0} \\ \emcode{vcvtpd2psx \%xmm0, \%xmm0}} \\
                     \hline
-                    long & float & \emcode{vcvtsi2ssq \%rdi, \%xmm0} \\
+                    long & float & \emcode{vcvtsi2ssq \%rdi, \%xmm0, \%xmm0} \\
                     \hline
-                    float & long & \emcode{vcvttss2siq \%xmm0, \%rdi} \\
+                    float & long & \emcode{vcvttss2siq \%xmm0, \%rax} \\
                     \hline
                 \end{tabular}
             \end{table}
@@ -94,7 +94,7 @@
 
         %53.
         \begin{practicec}
-            long, int, float, double
+            int, long, float, double
         \end{practicec}
 
         %54.
@@ -126,9 +126,9 @@ double funct2(double w, int x, float y, long z)
         %56.
         \begin{practicec}
             \begin{enumerate}[A.]
-                \item fabs(x)
-                \item x ^ x
-                \item -x
+                \item \emcode{fabs(x)}
+                \item \emcode{x \^ x}
+                \item \emcode{-x}
             \end{enumerate}
         \end{practicec}
     }
@@ -146,9 +146,29 @@ double funct3(int *ap, double b, long int c, float *dp)
     float x = *dp;
     double y = (double) *ap;
 
+    if (b > y)
+    {
+        b = (double) c;
+        b = float (b * x);
 
+        return (double) b;
+    }
+    else
+    {
+        x = x + x;
+        float z = (float) c;
+        z = z + x;
+
+        return (double) z;
+    }
 }
             \end{lstlisting}
         \end{practicec}
+    }
+
+    \subsection{对浮点代码的观察结论}
+    {
+        用AVX2为浮点数上的操作产生的机器代码风格类似于为整数上的操作产生代码风格。
+        它们都使用一组寄存器来保存和操作数据值，也都使用这些寄存器来传递函数参数。
     }
 }

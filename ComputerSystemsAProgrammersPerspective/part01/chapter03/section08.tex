@@ -41,7 +41,7 @@
                         \hline
                         V & 4 & 32 & x_V & x_V + i * 4 \\
                         \hline
-                        W & 8 & 4 & x_W & x_W + i * 8 \\
+                        W & 8 & 32 & x_W & x_W + i * 8 \\
                         \hline
                     \end{array}
                 \]
@@ -68,9 +68,9 @@
                         \hline
                         address & x_S + i * 2 & leaq (\%rdx, \%rcx, 2) \%rax \\
                         \hline
-                        value & M[x_S + 8 * i + 4] & movw 4(\%rdx, \%rcx, 8) \%ax \\
+                        value & M[x_S + 8 * i + 2] & movw 2(\%rdx, \%rcx, 8) \%ax \\
                         \hline
-                        value & M[x_S * 2 * i - 20] & movw -20(\%rdx, \%rcx, 2) \%ax \\
+                        address & M[x_S + 2 * i - 10] & movw -10(\%rdx, \%rcx, 2) \%ax \\
                         \hline
                     \end{array}
                 \]
