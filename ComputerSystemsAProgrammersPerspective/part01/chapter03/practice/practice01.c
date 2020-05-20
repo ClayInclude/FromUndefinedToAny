@@ -5,6 +5,7 @@
  */
 
 #include <inttypes.h>
+#include <stdio.h>
 
 int64_t decode2(long int x, long int y, long int z)
 {
@@ -73,4 +74,49 @@ long int switch3(long *p1, long *p2, modeT action)
     }
 
     return result;
+}
+
+long int switchProb(long int x, long int n)
+{
+    long int result = x;
+
+    switch (n)
+    {
+    case 60:
+    case 62:
+        result *= 8;
+        break;
+    case 63:
+        result >>= 3; // NOLINT(hicpp-signed-bitwise)
+        break;
+    case 64:
+        x <<= 4; // NOLINT(hicpp-signed-bitwise)
+        x -= x;
+    case 65:
+        x = x * x;
+    default:
+        result = x + 0x4b;
+        break;
+    }
+
+    return result;
+}
+
+#define BUFF_SIZE 12
+
+void goodEcho()
+{
+    char buff[BUFF_SIZE];
+
+    while (1)
+    {
+        char *p = fgets(buff, BUFF_SIZE, stdin);
+
+        if (!p)
+        {
+            break;
+        }
+
+        printf("%s", p);
+    }
 }

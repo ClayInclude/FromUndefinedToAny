@@ -24,4 +24,153 @@
     \begin{practicec}
 
     \end{practicec}
+
+    %62.
+    \begin{practicec}
+
+    \end{practicec}
+
+    %63.
+    \begin{practicec}
+
+    \end{practicec}
+
+    %64.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item $A + L(S(T \cdot i + j) + k)$
+            \item 7, 5, 13
+        \end{enumerate}
+    \end{practicec}
+
+    %65.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item rdx
+            \item rax
+            \item 15
+        \end{enumerate}
+    \end{practicec}
+
+    %66.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 3n
+            \item 4n + 1
+        \end{enumerate}
+    \end{practicec}
+
+    %67.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item
+            {
+                (rsp) = x;
+                8(rsp) = y;
+                16(rsp) = \&z;
+                24(rsp) = z;
+            }
+            \item rdi = 64(rsp)
+            \item rsp
+            \item rdi
+            \item 64(rsp)
+            \item 调用前分配好返回结构的空间。
+        \end{enumerate}
+    \end{practicec}
+
+    %68.
+    \begin{practicec}
+        $A = 9, B = 5$
+    \end{practicec}
+
+    %69.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 7
+            \item
+            {
+                \begin{lstlisting}[language=C]
+typedef struct
+{
+    long int idx;
+    long int x[4];
+} a_struct;
+                \end{lstlisting}
+            }
+        \end{enumerate}
+    \end{practicec}
+
+    %70.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 0, 8, 0, 8
+            \item 16
+            \item \emcode{up->e2.x = *(up->e2.next->e1.p) - up->e1.y}
+        \end{enumerate}
+    \end{practicec}
+
+    %71.
+    \begin{practicec}
+
+    \end{practicec}
+
+    %72.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item
+            {
+                $s_2 = s_1 - ((n * 8 + 30) \& 0xfffffff0)$ 。
+                如果 $n$ 是奇数， $s_2 = s_1 - (n * 8 + 24)$ 。
+                如果 $n$ 是偶数， $s_2 = s_1 - (n * 8 + 16)$ 。
+            }
+            \item $p = (s_2 + 15) \& 0xfffffff0$ 。
+            \item 当 $s_1 \% 16 == 1$ 时， $e_1 = 1$ 最小；当 $s_1 \% 16 == 0$ 时， $e_1 = 24$ 最大。
+            \item $s_2$ 与 $s_1$ 以16对齐； $p$ 以16位对齐。
+        \end{enumerate}
+    \end{practicec}
+
+    %73.
+    \begin{practicec}
+        \begin{lstlisting}
+find_range:
+    vxorps %xmm1, %xmm1, %xmm1
+    vucomiss %xmm0, %xmm1
+    ja .L1
+    jb .L2
+    je .L2
+    movl $3, %eax
+    ret
+.L1
+    movl $2, %eax
+    ret
+.L2
+    movl $0, %eax
+    ret
+.L3
+    movl $1, %eax
+    ret
+        \end{lstlisting}
+    \end{practicec}
+
+    %74.
+    \begin{practicec}
+        \begin{lstlisting}
+find_range:
+    vxorps %xmm1, %xmm1, %xmm1
+    vucomiss %xmm0, %xmm1
+    movl $0, %eax
+    cmove $1, %eax
+    cmova $2, %eax
+    cmovp $3, %eax
+    ret
+        \end{lstlisting}
+    \end{practicec}
+
+    %75.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 两个连续的xmm寄存器，前一个存放实数部分，后一个存放虚数部分。
+            \item xmm0实数部分，xmm1虚数部分。
+        \end{enumerate}
+    \end{practicec}
 }
