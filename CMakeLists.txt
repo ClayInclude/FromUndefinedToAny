@@ -205,3 +205,7 @@ add_executable(ComputerSystemsAProgrammersPerspective_c03_e_mStore
         ComputerSystemsAProgrammersPerspective/part01/chapter03/example/mStore.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c03_e01 ComputerSystemsAProgrammersPerspective/part01/chapter03/example/example01.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c03_p01 ComputerSystemsAProgrammersPerspective/part01/chapter03/practice/practice01.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c05_e01 ComputerSystemsAProgrammersPerspective/part01/chapter05/example/example01.c ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c05_vec
+        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.h
+        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)

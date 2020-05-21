@@ -1,0 +1,26 @@
+%%
+%% Author: Clay
+%% 2020/5/21
+%%
+
+\section{表示程序性能}
+{
+    度量标准\emreg{每元素的周期数(Cycles Per Element, CPE)}作为一种表示程序性能并指导改进代码的方法。
+
+    函数pSum1每次迭代计算结果向量的一个元素。
+    第二个函数使用\emreg{循环展开(loop unrolling)}的技术，每次迭代计算两个元素。
+
+    函数需要的周期关于 $n$ 的取值范围，使用\emreg{最小二乘拟合(least squares fit)}可以得出。
+
+    项中的系数称为\emreg{每元素的周期数(CPE)}。
+    用每个\emreg{元素}的周期数而不是每次\emreg{循环}的周期数来度量。
+
+    %2.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item $[0, 2]$
+            \item $[3, 7]$
+            \item $[8, +\infty]$
+        \end{enumerate}
+    \end{practicec}
+}
