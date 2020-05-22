@@ -53,6 +53,11 @@ long int vecLength(vecPtr v)
     return v->len;
 }
 
+dataT *getVecStart(vecPtr v)
+{
+    return v->data;
+}
+
 void combine1(vecPtr v, dataT *dest)
 {
     *dest = IDENT;
@@ -79,19 +84,28 @@ void combine2(vecPtr v, dataT *dest)
     }
 }
 
-long int min(long int x, long int y)
+void combine3(vecPtr v, dataT *dest)
 {
-    return x < y ? x : y;
+    dataT *data = getVecStart(v);
+
+    *dest = IDENT;
+
+    for (long int i = 0, len = vecLength(v); i < len; ++i)
+    {
+        *dest = *dest OP data[i];
+    }
 }
 
-long int max(long int x, long int y)
+void combine4(vecPtr v, dataT *dest)
 {
-    return x < y ? y : x;
-}
+    dataT *data = getVecStart(v);
 
-void increase(long int *xp, long int v)
-{
-    *xp += v;
-}
+    dataT acc = IDENT;
 
-long
+    for (long int i = 0, len = vecLength(v); i < len; ++i)
+    {
+        acc = acc OP data[i];
+    }
+
+    *dest = acc;
+}

@@ -87,3 +87,23 @@ void pSum2(float const a[], float p[], long int n)
         p[i] = p[i - 1] + a[i];
     }
 }
+
+long int min(long int x, long int y)
+{
+    return x < y ? x : y;
+}
+
+long int max(long int x, long int y)
+{
+    return x < y ? y : x;
+}
+
+void increase(long int *xp, long int v)
+{
+    *xp += v;
+}
+
+long int square(long int x)
+{
+    return x * x;
+}

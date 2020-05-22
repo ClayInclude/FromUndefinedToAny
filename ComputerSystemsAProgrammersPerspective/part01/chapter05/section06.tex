@@ -1,0 +1,20 @@
+%%
+%% Author: Clay
+%% 2020/5/22
+%%
+
+\section{消除不必要的内存引用}
+{
+    消除不必要的内存读写。
+    引入一个临时变量，在循环中累积算出来的值。
+    只有在循环完成后结果才存放在内存中。
+
+    %4.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item O1中，每次会从内存中读取值到xmm0，即使值相同；O2中不会有这一次多余的读取。
+            \item 是。
+            \item 因为每次读取都是没有必要的，xmm0和内存中的值相同。
+        \end{enumerate}
+    \end{practicec}
+}

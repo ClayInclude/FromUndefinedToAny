@@ -104,7 +104,7 @@
     {\begin{@sidenote}\mbox{}\par}
     {\begin{@sidenote}[#1]\mbox{}\par}
 }
-{    
+{
     \end{@sidenote}
 }
 
@@ -115,7 +115,7 @@
     {\begin{@examples}\mbox{}\par}
     {\begin{@examples}[#1]\mbox{}\par}
 }
-{    
+{
     \end{@examples}
 }
 
@@ -126,7 +126,7 @@
     {\begin{@practices}\mbox{}\par}
     {\begin{@practices}[#1]\mbox{}\par}
 }
-{    
+{
     \end{@practices}
 }
 
@@ -137,7 +137,7 @@
     {\begin{@examplec}\mbox{}\par}
     {\begin{@examplec}[#1]\mbox{}\par}
 }
-{    
+{
     \end{@examplec}
 }
 
@@ -148,7 +148,7 @@
     {\begin{@practicec}\mbox{}\par}
     {\begin{@practicec}[#1]\mbox{}\par}
 }
-{    
+{
     \end{@practicec}
 }
 
@@ -218,7 +218,7 @@
 %
     \cleardoublepage%
 }
-    
+
 \newenvironment{body}%
 {%
     % body settings
