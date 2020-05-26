@@ -16,16 +16,6 @@
     "workbench.iconTheme": "vscode-great-icons",
     // 在未能恢复上一会话信息的情况下，控制启动时显示的编辑器。选择 "none" 表示启动时不打开编辑器，"welcomePage" 表示打开欢迎页面(默认)，"newUntitledFile" 表示打开新的无标题文档(仅打开一个空工作区)。
     "workbench.startupEditor": "newUntitledFile",
-    // Markdownlint规则
-    "markdownlint.config": {
-        "MD033": {
-            "allowed_elements": [
-                "sub",
-                "sup"
-            ]
-        }
-    },
-    "markdown.extension.toc.updateOnSave": false,
     "editor.wordWrap": "on",
     "latex-workshop.latex.tools": [
         {
@@ -82,7 +72,6 @@
     // "latex-workshop.latex.autoBuild.onSave.enabled": false,
     "latex-workshop.message.update.show": false,
     "editor.fontFamily": "'Source Code Pro', Consolas, 'Courier New', monospace",
-    "systemverilog.disableIndexing": true,
     "typescript.suggest.completeFunctionCalls": true,
     "javascript.suggest.completeFunctionCalls": true,
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -99,7 +88,6 @@
     "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-    "lua.format.indentCount": 4,
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.default.cppStandard": "c++11",
     "C_Cpp.default.cStandard": "c11",
@@ -116,9 +104,8 @@
     "emmet.showSuggestionsAsSnippets": true,
     "editor.snippetSuggestions": "top",
     "markdown-preview-enhanced.enableScriptExecution": true,
-    "latex-workshop.tikzpreview.enabled": false,
-    "latex-workshop.tikzpreview.parseTeXFile": false,
     "markdown-preview-enhanced.mermaidTheme": "dark",
     "markdown-preview-enhanced.previewTheme": "monokai.css",
-    "editor.tabCompletion": "on"
+    "editor.tabCompletion": "on",
+    "files.trimTrailingWhitespace": true
 }
