@@ -101,7 +101,40 @@
 
         \subsubsection{机器级代码数据流图}
         {
+            程序的数据流表示是非正式的。
 
+            将访问到的寄存器分为四类：
+
+            \begin{description}
+                \item[只读] 这些寄存器只用做源值，可以作为数据，也可以用来计算内存地址，但是在循环中它们是不会被修改的。
+                \item[只写] 这些寄存器作为数据传送操作的目的。
+                \item[局部] 这些寄存器在循环内部被修改和使用，迭代与迭代之间不相关。
+                \item[循环] 对于循环来说，这些寄存器既作为源值，又作为目的，一次迭代中产生的值会在另一次迭代中用到。
+            \end{description}
+
+            循环寄存器之间的操作连决定了限制性能的数据相关。
+        }
+
+        \subsubsection{其它性能因素}
+        {
+            看上去，延迟界限是基本的限制。
+
+            %5.
+            \begin{practicec}
+                \begin{enumerate}[A.]
+                    \item $2n$ 次乘法和 $n$ 次加法。
+                    \item 两次乘法可以并行。
+                \end{enumerate}
+            \end{practicec}
+
+            %6.
+            \begin{practicec}
+                \begin{enumerate}[A.]
+                    \item $n$ 次乘法和 $n$ 次加法。
+                    \item 加法要在乘法之后进行。
+                    \item 两次乘法和加法可以并行。
+                \end{enumerate}
+            \end{practicec}
         }
     }
 }

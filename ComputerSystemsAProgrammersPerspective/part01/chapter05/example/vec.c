@@ -4,59 +4,7 @@
  * @date 2020/5/21
  */
 
-#include <stdlib.h>
 #include "vec.h"
-
-vecPtr newVec(long int len)
-{
-    vecPtr result = (vecPtr) malloc(sizeof(vecRec));
-    dataT *data = NULL;
-
-    if (!result)
-    {
-        return NULL;
-    }
-
-    result->len = len;
-
-    if (len > 0)
-    {
-        data = (dataT *) calloc(len, sizeof(dataT));
-
-        if (!data)
-        {
-            free((void *) result);
-
-            return NULL;
-        }
-    }
-
-    result->data = data;
-
-    return result;
-}
-
-int getVecElement(vecPtr v, long int index, dataT *dest)
-{
-    if (index < 0 || index >= v->len)
-    {
-        return 0;
-    }
-
-    *dest = v->data[index];
-
-    return 1;
-}
-
-long int vecLength(vecPtr v)
-{
-    return v->len;
-}
-
-dataT *getVecStart(vecPtr v)
-{
-    return v->data;
-}
 
 void combine1(vecPtr v, dataT *dest)
 {
@@ -105,6 +53,113 @@ void combine4(vecPtr v, dataT *dest)
     for (long int i = 0, len = vecLength(v); i < len; ++i)
     {
         acc = acc OP data[i];
+    }
+
+    *dest = acc;
+}
+
+void combine5(vecPtr v, dataT *dest)
+{
+    dataT *data = getVecStart(v);
+
+    dataT acc = IDENT;
+    long int i = 0;
+    long int length = vecLength(v);
+    long int limit = length - 1;
+
+    for (; i < limit; i += 2)
+    {
+        acc = acc OP data[i] OP data[i + 1];
+    }
+
+    for (; i < length; ++i)
+    {
+        acc = acc OP data[i];
+    }
+
+    *dest = acc;
+}
+
+void combine5_5(vecPtr v, dataT *dest)
+{
+    dataT *data = getVecStart(v);
+
+    dataT acc = IDENT;
+    long int i = 0;
+    long int length = vecLength(v);
+    long int limit = length - 4;
+
+    for (; i < limit; i += 5)
+    {
+        acc = acc OP data[i] OP data[i + 1] OP data[i + 2] OP data[i + 3] OP data[i + 4];
+    }
+
+    for (; i < length; ++i)
+    {
+        acc = acc OP data[i];
+    }
+
+    *dest = acc;
+}
+
+void combine6(vecPtr v, dataT *dest)
+{
+    dataT *data = getVecStart(v);
+
+    dataT acc0 = IDENT;
+    dataT acc1 = IDENT;
+    long int i = 0;
+    long int length = vecLength(v);
+    long int limit = length - 1;
+
+    for (; i < limit; i += 2)
+    {
+        acc0 = acc0 OP data[i];
+        acc1 = acc1 OP data[i + 1];
+    }
+
+    for (; i < length; ++i)
+    {
+        acc0 = acc0 OP data[i];
+    }
+
+    *dest = acc0 OP acc1;
+}
+
+void combine7(vecPtr v, dataT *dest)
+{
+    dataT *data = getVecStart(v);
+
+    dataT acc = IDENT;
+    long int i = 0;
+    long int length = vecLength(v);
+    long int limit = length - 1;
+
+    for (; i < limit; i += 2)
+    {
+        acc = acc OP (data[i] OP data[i + 1]);
+    }
+
+    for (; i < length; ++i)
+    {
+        acc = acc OP data[i];
+    }
+
+    *dest = acc;
+}
+
+void combine4b(vecPtr v, dataT *dest)
+{
+    dataT *data = getVecStart(v);
+
+    dataT acc = IDENT;
+
+    for (long int i = 0, len = vecLength(v); i < len; ++i)
+    {
+        if (i >= 0 && i < v->len)
+        {
+            acc = acc OP data[i];
+        }
     }
 
     *dest = acc;

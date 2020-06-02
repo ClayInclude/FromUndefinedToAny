@@ -107,3 +107,14 @@ long int square(long int x)
 {
     return x * x;
 }
+
+void pSum3(float const a[], float p[], long int n)
+{
+    float result = p[0] = a[0];
+
+    for (long int i = 1; i < n; ++i)
+    {
+        result += a[i];
+        p[i] = result;
+    }
+}
