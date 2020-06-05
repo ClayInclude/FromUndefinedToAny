@@ -210,4 +210,5 @@ add_executable(ComputerSystemsAProgrammersPerspective_c05_vec
         ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.h
         ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c05_p01 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice01.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c05_p02 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice02.c)
 
