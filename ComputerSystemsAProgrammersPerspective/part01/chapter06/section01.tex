@@ -1,0 +1,209 @@
+%%
+%% Author: Clay
+%% 2020/6/8
+%%
+
+\section{存储技术}
+{
+    \subsection{随机访问存储器}
+    {
+        \emreg{随机访问存储器(Random-Access Memory, RAM)}分为两类：静态的和动态的。
+        \emreg{静态RAM(SRAM)}比\emreg{动态RAM(DRAM)}更快。
+        SRAM用来作为高速缓存存储器。
+        DRAM用来作为主存以及图形系统的帧缓冲区。
+
+        \subsubsection{静态RAM}
+        {
+            SRAM将每个位存储在一个\emreg{双稳态(bistable)}存储器单元里。
+            每个单元是用一个六晶体管电路来实现的。
+            它可以无限期地保持在两个不同的电压配置(configuration)或状态(state)之一。
+
+            当钟摆倾斜到最左边或最右边时，它是稳定的。
+            从其他任何位置，钟摆都会倒向另一边。
+            原则上，钟摆也能在垂直的位置无限期地保持平衡，但是这个状态是\emreg{亚稳态(metastable)}的---最细微的扰动也能使它倒下，而且一旦倒下就永远不会再恢复到垂直的位置。
+
+            由于SRAM存储单元的双稳态特性，只要有电，它就会永远地保持它的值。
+            即使有干扰来扰乱电压，当干扰消除时，电路就会恢复到稳定值。
+        }
+
+        \subsubsection{动态RAM}
+        {
+            DRAM将每个位存储为对一个电容的充电。
+            DRAM存储器单元对干扰非常敏感。
+            当电容的电压被扰乱之后，它就永远不会恢复了。
+
+            内存系统必须周期性地通过读出，然后重写来刷新内存每一位。
+        }
+
+        \subsubsection{传统的DRAM}
+        {
+            DRAM芯片中的单元（位）被分成 $d$ 个\emreg{超单元(supercell)}，每个超单元都由 $w$ 个DRAM单元组成。
+            一个 $d \times w$ 的DRAM总共存储了 $dw$ 位信息。
+            超单元被组织成一个 $r$ 行 $c$ 列的长方形矩阵，这里 $rc = d$ 。
+            每个超单元有形如 $(i, j)$ 的地址。
+
+            信息通过称为\emreg{引脚(pin)}的外部连接器流入和流出芯片。
+            每个引脚携带一位的信号。
+
+            每个DRAM芯片被连接到某个称为\emreg{内存控制器(memory controller)}的电路，这个电路可以一次传送 $w$ 位。
+
+            为了读出超单元 $(i, j)$ 的内容，内存控制器将行地址 $i$ 发送到DRAM，然后是列地址 $j$ 。
+            DRAM把超单元的内容发送回给控制器作为响应。
+
+            行地址 $i$ 称为 RAS(Row Access Strobe, 行访问选通脉冲)请求。
+            列地址 $j$ 称为 CAS(Column Access Strobe, 列访问选通脉冲)请求。
+            RAS和CAS请求共享相同的DRAM地址引脚。
+
+            内存控制器发送行地址，响应是将整行的内容都复制到一个内部行缓冲区。
+            接下来发送列地址，响应是从行缓冲区复制出位，并发送到内存控制器。
+
+            将DRAM组织成二维阵列而不是线性数组的一个原因是降低芯片上地址引脚的数量。
+            缺点是必须分两步发送地址，这增加了访问时间。
+        }
+
+        \subsubsection{内存模块}
+        {
+            DRAM芯片封装在\emreg{内存模块(memory module)}中，它查到主板的扩展槽上。
+            Core i7系统使用的240个引脚的\emreg{双列直插内存模块(Dual Inline Memory Module, DIMM)}，它以64位为块传送数据。
+
+            通过将多个内存模块连接到内存控制器，能够聚合成主存。
+
+            %1.
+            \begin{practicec}
+                \begin{enumerate}[A.]
+                    \item 4, 4
+                    \item 4, 4
+                    \item 16, 8
+                    \item 16, 32
+                    \item 32, 32
+                \end{enumerate}
+            \end{practicec}
+        }
+
+        \subsubsection{增强的DRAM}
+        {
+            每种都是基于传统的DRAM单元，并进行一些优化：
+
+            \begin{description}
+                \item[快页模式DRAM(Fast Page Mode DRAM, FPM DRAM)]
+                {
+                    传统的DRAM将超单元的一整行复制到它的内部行缓冲区中，使用一个，然后丢弃剩余的。
+                    FPM DARM允许对用一行连续地访问可以直接从行缓冲区得到服务。
+                }
+                \item[扩展数据输出DRAM(Extended Data Out DRAM, EDO DRAM)] FPM DRAM的一个增强形式，它允许各个CAS信号在时间上靠的更紧密一点。
+                \item[同步DRAM(Synchronous DRAM, SDRAM)] SDRAM用于驱动内存控制器相同的外部时钟信号的上升沿来代替许多这样的控制信号。
+                \item[\emspe{双倍数据速率同步}DRAM(Double Data-Rate Synchromous DRAM, DDR SDRAM)] DDR SDRAM是对SDRAM的一种增强，它通过使用两个时钟沿作为控制信号，从而使DRAM的速度翻倍。
+                \item[视频RAM(Video RAM, VRAM)]
+                {
+                    VRAM的输出是通过依次对内部缓冲区的整个内容进行位移得到的。
+                    VRAM允许对内存并行地读和写。
+                }
+            \end{description}
+        }
+
+        \subsubsection{非易失性存储器}
+        {
+            如果断电，DRAM和SRAM会丢失它们的信息，从这个意义上说，它们是\emreg{易失的(volatile)}。
+            另一方面，\emreg{非易失性存储器(nonvolatile memory)}即使是在关电后，仍然保存着它们的信息。
+
+            虽然ROM中有的类型既可以读也可写，但是它们整体上都被称为\emreg{只读存储器(Read--Only Memory, ROM)}。
+
+            PROM(Programmable ROM, 可编程ROM)只能被编程一次。
+            PROM的每个存储器单元都有一种\emreg{熔丝(fuse)}，只能用高电流熔断一次。
+
+            \emreg{可擦写可编程ROM(Erasable Programmable ROM, EPROM)}能够被擦除和重编程的数量级可以达到1000次。
+            \emreg{电子可擦除PROM(Electrically Erasable PROM, EEPROM)}类似于EPROM，但它不需要一个物理上独立的编程设备。
+
+            \emreg{闪存(flash memory)}是一类非易失性存储器，基于EEPROM。
+            \emreg{固态硬盘(Solid State Disk, SSD)}，它能提供相对于传统旋转磁盘的一种更快速、更强健和更低能耗的选择。
+
+            存储在ROM设备中的程序通常被称为\emreg{固件(firmware)}。
+            当一个计算机系统通电以后，它会运行存储在ROM中的固件。
+        }
+
+        \subsubsection{访问主存}
+        {
+            数据流通过称为\emreg{总线(bus)}的共享电子电路在处理器和DRAM主存之间来来回回。
+            每次CPU和主存之间的数据传送都是通过一系列步骤来完成的，这些步骤称为\emreg{总线事务(bus transaction)}。
+            \emreg{读事务(read transaction)}从主存传送数据到CPU。
+            \emreg{写事务(write transaction)}从CPU传送数据到主存。
+
+            总线是一组并行的导线，能携带地址、数据和控制信号。
+
+            计算机系统配置的主要部件是CPU芯片、I/O桥接器(I/O bridge)的芯片组（其中包括内存控制器），以及组成主存的DRAM内存模块。
+            这些部件由一对总线连接起来。
+            其中一条是\emreg{系统总线(system bus)}，它连接CPU和I/O桥接器。
+            另一条是\emreg{内存总线(memory bus)}，它链接I/O桥接器和主存。
+
+            CPU芯片上称为\emreg{总线接口(bus interface)}的电路在总线上发起读事务。
+        }
+    }
+
+    \subsection{磁盘存储}
+    {
+        \emreg{磁盘}是广为应用的保存大量数据的存储设备。
+
+        \subsubsection{磁盘构造}
+        {
+            磁盘是由\emreg{盘片(platter)}构成的。
+            每个盘片有两面或者称为\emreg{表面(surface)}，表面覆盖着磁性记录材料。
+            盘片中央有一个可以旋转的\emreg{主轴(spindle)}，它使得盘片以固定的\emreg{旋转速率(rotational rate)}旋转，通常是 $5400 \sim 15000$ \emreg{转每分钟(Revolution Per Minute, PRM)}。
+            磁盘通常包含一个或多个这样的盘片，并封装在一个密封的容器内。
+
+            每个表面是由一组称为\emreg{磁道(track)}的同心圆组成的。
+            每个磁道被划分为一组\emreg{扇区(sector)}。
+            每个扇区包含相同的数据位，这些数据编码在扇区上的磁性材料中。
+            扇区之间由一些\emreg{间隙(gap)}分隔开，这些间隙中不存储数据位。
+            间隙存储用来表示扇区的格式化位。
+
+            磁盘是由一个或多个叠放在一起的盘片组成的，它们被封装在一个密封的包装里。
+            整个装置通常被称为\emreg{磁盘驱动器(disk drive)}，我们通常简称为\emreg{磁盘(disk)}。
+            有时会称为\emreg{旋转磁盘(rotating disk)}，以使之区别于基于闪存的\emreg{固态硬盘}(SSD)，SSD是没有移动部分的。
+
+            磁盘制造商通常用术语\emreg{柱面(cylinder)}来描述多个盘片驱动器的构造，柱面是所有盘片表面上到主轴中心的距离相等的磁道的集合。
+        }
+
+        \subsubsection{磁盘容量}
+        {
+            一个磁盘上可以记录的最大位数称为它的\emreg{最大容量}，或者简称为\emreg{容量}。
+            磁盘容量是由以下技术因素决定的：
+
+            \begin{description}
+                \item[记录密度(recording density)（位/英寸）] 磁道中一英寸的段中可以放入的位数。
+                \item[磁道密度(track density)（道/英寸）] 从盘片中心出发半径上一英寸的段内可以有的磁道数。
+                \item[面密度(areal density)（位/平方英寸）] 记录密度与磁道密度的乘积。
+            \end{description}
+
+            最初的磁盘，是在面密度很低的时代设计的，将磁道分为数目相同的扇区，扇区的数目是由最靠内的磁道能记录的扇区数决定的。
+            为了保持每个磁道有固定的扇区数，越往外的磁道扇区隔得越开。
+            随着面密度的提高，扇区之间的间隙变得不可接受地变大。
+            现代大容量磁盘使用一种称为\emreg{多区记录(multiple zone recording)}的技术，在这种技术中，柱面的集合被分割成不相交的子集合，称为\emreg{记录区(recording zone)}。
+            每个区包含一组连续的柱面。
+            一个区中的每个柱面中的每条磁道都有相同数量的扇区，这个扇区的数量是由该区中最里面的磁道所能包含的扇区数确定的。
+
+            下面的公式给出了一个磁盘的容量：
+
+            $$\text{磁盘容量} = \text{字节数} \times \text{平均扇区数} \times \text{磁道数} \times \text{表面数} \times \text{盘片数}$$
+
+            %2.
+            \begin{practicec}
+                \begin{align*}
+                    \text{磁盘容量}
+                    &= 512 * 400 * 10000 * 2 * 2 \\
+                    &= 8192000000 \text{字节} \\
+                    &= 8.192GB
+                \end{align*}
+            \end{practicec}
+        }
+
+        \subsubsection{磁盘操作}
+        {
+            磁盘用\emreg{读/写头(read/write head)}来读写存储在磁性表面的位，而读写头连接到一个\emreg{传动臂(actuator arm)}一端。
+            通过沿着半径轴前后移动这个传动臂，驱动器可以将读写头定位在盘面上的任何磁道上。
+            这样的机械运动称为\emreg{寻道(seek)}。
+            一旦读写头定位到了期望的磁道上，那么磁道上的每个位通过它的下面时，读写头可以感知到这个位的值，也可以修改这个位的值。
+            有多个盘片的磁盘针对每个盘面都有一个独立的读写头。
+            读写头垂直排列，一致行动，在任何时刻，所有的读写头都位于同一个柱面上。
+        }
+    }
+}
