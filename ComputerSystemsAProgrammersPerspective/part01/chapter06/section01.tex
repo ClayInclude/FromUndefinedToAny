@@ -204,6 +204,66 @@
             一旦读写头定位到了期望的磁道上，那么磁道上的每个位通过它的下面时，读写头可以感知到这个位的值，也可以修改这个位的值。
             有多个盘片的磁盘针对每个盘面都有一个独立的读写头。
             读写头垂直排列，一致行动，在任何时刻，所有的读写头都位于同一个柱面上。
+
+            如果读写头碰到了灰尘，读写头会停下来，撞到盘面---所谓的\emreg{读写头冲撞(head crash)}。
+
+            磁盘以扇区为大小的块来读写数据。
+            对扇区的\emreg{访问时间(access time)}有三个主要的部分：
+            \emreg{寻道时间(seek time)}、\emreg{旋转时间(rotational latency)}和\emreg{传送时间(transfer time)}。
+
+            \begin{description}
+                \item[寻道时间]
+                {
+                    为了读取某个目标扇区的内容，传动臂首先将读写头定位到包含目标扇区的磁道上。
+                    移动传动臂所需的时间称为\emreg{寻道时间}。
+                    寻道时间 $T_{seek}$ 依赖于读写头以前的位置和传动臂在盘面上移动的速度。
+                }
+                \item[旋转时间]
+                {
+                    一旦读写头定位到了期望的磁道，驱动器等待目标扇区的第一个位旋转到读写头下。
+                    这个步骤的性能依赖于当前读写头到达目标扇区时盘面的位置以及磁盘的旋转速度。
+                    最大旋转延迟是
+
+                    \begin{align*}
+                        T_{max rotation} = \frac{1}{RPM} \times \frac{60s}{1min}
+                    \end{align*}
+
+                    平均旋转时间 $T_{avg rotation}$ 是 $T_{max rotation}$ 的一半。
+                }
+                \item[传送时间]
+                {
+                    当目标扇区的第一个位位于读写头下时，驱动器就可以开始读写该扇区的内容了。
+                    一个扇区的传送时间依赖于旋转速度和每条磁道的扇区数目。
+                    粗略地估计一个扇区以秒为单位的平均传送时间如下
+
+                    \begin{align*}
+                        T_{avg transfer} = \frac{1}{RPM} \times \frac{1}{(\text{平均扇区数 / 磁道})} \times \frac{60s}{1min}
+                    \end{align*}
+                }
+            \end{description}
+
+            %3.
+            \begin{practicec}
+                \begin{align*}
+                    T_{avg rotation}
+                    &= \frac{1}{2} \times T_{max rotation} \\
+                    &= \frac{1}{2} \times \frac{60}{15000} \times 1000ms \\
+                    &= 2ms \\
+                    \\
+                    T_{avg transfer}
+                    &= T_{max rotation} \times \frac{1}{500} \\
+                    &= 0.004ms \\
+                    \\
+                    T_{access}
+                    &= T_{avg seek} + T_{avg rotation} + T_{avg transfer} \\
+                    &= 10.004ms
+                \end{align*}
+            \end{practicec}
+        }
+
+        \subsubsection{逻辑磁盘块}
+        {
+
         }
     }
 }
