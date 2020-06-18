@@ -263,7 +263,122 @@
 
         \subsubsection{逻辑磁盘块}
         {
+            现代磁盘将它们的构造呈现为一个简单的视图，一个 $B$ 个扇区大小的\emreg{逻辑块}的序列，编号为 $0, 1, \cdots, B - 1$ 。
+            磁盘封装中有一个小的硬件/固件设备，称为\emreg{磁盘控制器}，维护着逻辑块号和实际磁盘扇区之间的映射关系。
 
+            控制器上的固件执行一个快速表查找，将一个逻辑块号翻译成一个 $(\text{盘面}, \text{磁道}, \text{扇区})$ 的三元组，这个三元组唯一地标识了对应的物理扇区。
+
+            %4.
+            \begin{practicec}
+                \begin{align*}
+                    T_{avg seek} &= 9ms \\
+                    T_{max rotation} &= 60 * 1000 / 10000 \\
+                    &= 6ms \\
+                    T_{avg ratation} &= T_{max rotation} / 2 \\
+                    &= 3ms \\
+                    T_{avg transfer} &= T_{max rotation} / 1000 \\
+                    &= 0.006ms
+                \end{align*}
+
+                \begin{enumerate}[A.]
+                    \item
+                    {
+                        \begin{align*}
+                            T_{access} &= (T_{avg seek} + T_{avg rotation}) * 3 + T_{avg transfer} * 2048 \\
+                            &= 48.288ms
+                        \end{align*}
+                    }
+                    \item
+                    {
+                        \begin{align*}
+                            T_{access} &= (T_{avg seek} + T_{avg rotation} + T_{avg transfer}) * 2048 \\
+                            &= 24588.288ms
+                        \end{align*}
+                    }
+                \end{enumerate}
+            \end{practicec}
         }
+
+        \subsubsection{连接I/O设备}
+        {
+            输入/输出(I/O)设备通过\emreg{I/O总线}，例如Intel的\emreg{外围设备互连(Peripheral Component Interconnect, PCI)}总线连接到CPU和主存的。
+            系统总线和内存总线是与CPU相关的，I/O总线设计成与底层CPU无关。
+
+            I/O总线比系统总线和内存总线慢，但是它可以容纳种类繁多的第三方I/O设备
+
+            \begin{itemize}
+                \item \emreg{通用串行总线(Universal Serial Bus, USB)}控制器是一个连接到USB总线的设备的中转机构。
+                \item \emreg{图形卡（适配器）}包含硬件和软件逻辑。
+                \item \emreg{主机总线适配器}将一个或多个磁盘连接到I/O总线，使用的是一个特别的\emreg{主机总线接口}定义的通信协议。
+            \end{itemize}
+
+            其他的设备，例如\emreg{网络适配器}，可以通过就爱那个适配器插入到主板上空的\emreg{扩展槽}中，从而连接到I/O总线。
+        }
+
+        \subsubsection{访问磁盘}
+        {
+            CPU使用一种称为\emreg{内存映射I/O(memory-mapped I/O)}的技术来向I/O设备发射命令。
+            在使用内存映射I/O的系统中，地址空间中有一块地址是为与I/O设备通信保留的。
+            每个这样的地址称为一个\emreg{I/O端口(I/O port)}。
+            当一个设备连接到总线时，它与一个或多个端口相关联。
+
+            CPU通过执行三个对端口的存储指令，发起磁盘读：
+            第一条指令是发送一个命令字，告诉磁盘发起一个读，同时还发送了其他的参数。
+            第二条指令指明应该读的逻辑块号。
+            第三条指令指明应该存储磁盘扇区内容的主存地址。
+
+            当CPU发出了请求之后，在磁盘执行读的时候，它通常会做些其他的工作。
+
+            在磁盘控制器收到来自CPU的读命令之后，它将逻辑块号翻译成一个扇区地址，读该扇区的内容，然后将这些内容直接传送到主存，不需要CPU的干涉。
+            设备可以自己执行读写总线事务而不需要CPU干涉的过程，称为\emreg{直接内存访问(Direct Memory Access DMA)}。
+            这种数据传送称为\emreg{DMA传送(DMA transfer)}。
+
+            在DMA传送完成，磁盘扇区的内容被安全的存储在主存中以后，磁盘控制器通过给CPU发送一个中断信号来通知CPU。
+        }
+    }
+
+    \subsection{固态硬盘}
+    {
+        \emreg{固态硬盘(Solid State Disk, SSD)}是一种基于闪存的存储技术。
+        SSD封装插到I/O总线上标准盘插槽中，行为就和其他硬盘一样，处理来自CPU的读写逻辑磁盘块的请求。
+        一个SSD封装由一个或多个闪存芯片和\emreg{闪存翻译层(flash translation)}组成。
+        闪存芯片替代传统旋转磁盘中的机械驱动器，而闪存翻译层是一个硬件/固件设备，扮演与磁盘控制器相同的角色，将对逻辑块的请求翻译成对底层物理设备的访问。
+
+        读SSD要比写快。
+        随机读和写的性能差别是由底层闪存基本属性决定的。
+        一个闪存由 $B$ 个块的序列组成，每个块由P页组成。
+        数据是以页为单位读写的。
+        只有在一页所属的块整个被\emreg{擦除}之后，才能写这一页。
+
+        如果写操作试图修改一个包含已经有数据的页 $p$ ，那么这个块中所有带有用数据的页都必须被复制到一个新块，然后才能进行对页 $p$ 的写。
+        制造商已经在闪存翻译层中实现了复杂的逻辑，试图抵消擦写块的高昂代价，最小化内部写的次数。
+
+        因为反复写之后，闪存块会磨损，所以SSD也容易磨损。
+        闪存翻译层中的\emreg{平均磨损(wear leveling)}逻辑试图通过将擦除平均分布在所有的块上开最大化每个块的寿命。
+
+        %5.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item $128000000000 / 470 / 3600 / 24 / 365.25 = 8.63\text{年}$
+                \item $128000000000 / 303 / 3600 / 24 / 365.25 = 13.39\text{年}$
+                \item $128000000 / 20 / 365.25 = 17522.24\text{年}$
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{存储技术趋势}
+    {
+        \emreg{不同的存储技术有不同的价格和性能折中}。
+        \emreg{不同存储技术的价格和性能属性以截然不同的速率变化着}。
+        \emreg{DRAM和磁盘的性能滞后于CPU的性能}。
+
+        现代计算机频繁地使用基于SRAM的高速缓存，试图弥补处理器--内存之间的差距。
+        这种方法行之有效是因为应用程序的一个称为\emreg{局部性(locality)}的基本属性。
+
+        %6.
+        \begin{practicec}
+            即 $500 / 1000000 = 0.0005$ 美元/G 。
+            $5 / 0.0005 / (5 / 0.03 / 10) = 600$ 年，即2605年
+        \end{practicec}
     }
 }
