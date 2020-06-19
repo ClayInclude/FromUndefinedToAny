@@ -48,3 +48,71 @@ int sumArrayColumns(int const a[][N])
 
     return sum;
 }
+
+int sumArray3d(int const a[][N][N])
+{
+    int sum = 0;
+
+    for (int i = 0; i < N; ++i)
+    {
+        for (int j = 0; j < N; ++j)
+        {
+            for (int k = 0; k < N; ++k)
+            {
+                sum += a[i][j][k];
+            }
+        }
+    }
+
+    return sum;
+}
+
+typedef struct
+{
+    int vel[3];
+    int acc[3];
+} point;
+
+void clear1(point *const p, int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            p[i].vel[j] = 0;
+        }
+
+        for (int j = 0; j < 3; ++j)
+        {
+            p[i].acc[j] = 0;
+        }
+    }
+}
+
+void clear2(point *const p, int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            p[i].vel[j] = 0;
+            p[i].acc[j] = 0;
+        }
+    }
+}
+
+void clear3(point *const p, int n)
+{
+    for (int j = 0; j < 3; ++j)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            p[i].vel[j] = 0;
+        }
+
+        for (int i = 0; i < n; ++i)
+        {
+            p[i].acc[j] = 0;
+        }
+    }
+}
