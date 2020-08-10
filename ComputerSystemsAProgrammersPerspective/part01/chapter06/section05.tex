@@ -1,0 +1,54 @@
+%%
+%% Author: Clay
+%% 2020/8/10
+%%
+
+\section{编写高速缓存友好的代码}
+{
+    确保代码\emreg{高速缓存友好(cache friendly)}的基本方法：
+
+    \begin{enumerate}
+        \item 让最常见的情况运行得快。
+        \item 尽量减小每个循环内部的缓存不命中数量。
+    \end{enumerate}
+
+    对局部变量的反复引用是好的，因为编译器能够将它们缓存在寄存器文件中。
+    步长为一的引用模式是好的，因为存储器层次结构中所有层次上的缓存都是将数据存储为连续的块。
+
+    %17.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 相同的行会缓存到相同的组，容量小于两个数组大小之和，会引起容量不命中。仅有src最后一次访问会有缓存命中。
+            \item 缓存大小能够存储两个数组，所有的不命中都是因为一开始的冷不命中。
+        \end{enumerate}
+    \end{practicec}
+
+    %18.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 512
+            \item 256
+            \item 50\%
+        \end{enumerate}
+    \end{practicec}
+
+    %19.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 512
+            \item 256
+            \item 50\%
+            \item 25\%
+        \end{enumerate}
+    \end{practicec}
+
+    %20.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 512
+            \item 128
+            \item 25\%
+            \item 25\%
+        \end{enumerate}
+    \end{practicec}
+}

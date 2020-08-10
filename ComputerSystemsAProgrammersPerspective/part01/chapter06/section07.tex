@@ -1,0 +1,29 @@
+%%
+%% Author: Clay
+%% 2020/8/10
+%%
+
+\section{小结}
+{
+    %22.
+    \begin{practicec}
+        $x = 0.5$
+    \end{practicec}
+
+    %23.
+    \begin{practicec}
+        \begin{align*}
+            T_{avg seek} &= 4ms \\
+            \\
+            T_{avg rotation} &= \frac{1}{RPM} * \frac{60s}{1min} * \frac{1}{2} \\
+            &= 2ms \\
+            \\
+            T_{avg transfer} &= T_{max rotation} * \frac{1}{\text{平均扇区数/磁道}} \\
+            &= 0.005ms \\
+            \\
+            T_{access}
+            &= T_{avg seek} + T_{avg rotation} + T_{avg transfer} \\
+            &= 6.005ms
+        \end{align*}
+    \end{practicec}
+}

@@ -252,11 +252,11 @@
                     \\
                     T_{avg transfer}
                     &= T_{max rotation} \times \frac{1}{500} \\
-                    &= 0.004ms \\
+                    &= 0.008ms \\
                     \\
                     T_{access}
                     &= T_{avg seek} + T_{avg rotation} + T_{avg transfer} \\
-                    &= 10.004ms
+                    &= 10.008ms
                 \end{align*}
             \end{practicec}
         }
@@ -271,7 +271,7 @@
             %4.
             \begin{practicec}
                 \begin{align*}
-                    T_{avg seek} &= 9ms \\
+                    T_{avg seek} &= 5ms \\
                     T_{max rotation} &= 60 * 1000 / 10000 \\
                     &= 6ms \\
                     T_{avg ratation} &= T_{max rotation} / 2 \\
@@ -284,15 +284,15 @@
                     \item
                     {
                         \begin{align*}
-                            T_{access} &= (T_{avg seek} + T_{avg rotation}) * 3 + T_{avg transfer} * 2048 \\
-                            &= 48.288ms
+                            T_{access} &= T_{avg seek} + T_{avg rotation}+ T_{max rotation} * 2 \\
+                            &= 20ms
                         \end{align*}
                     }
                     \item
                     {
                         \begin{align*}
-                            T_{access} &= (T_{avg seek} + T_{avg rotation} + T_{avg transfer}) * 2048 \\
-                            &= 24588.288ms
+                            T_{access} &= (T_{avg seek} + T_{avg rotation} + T_{avg transfer}) * 2000 \\
+                            &= 16012ms
                         \end{align*}
                     }
                 \end{enumerate}
@@ -377,8 +377,7 @@
 
         %6.
         \begin{practicec}
-            即 $500 / 1000000 = 0.0005$ 美元/G 。
-            $5 / 0.0005 / (5 / 0.03 / 10) = 600$ 年，即2605年
+            2025
         \end{practicec}
     }
 }
