@@ -1,0 +1,25 @@
+%%
+%% Author: Clay
+%% 2020/8/18
+%%
+
+\section{基本组成}
+{
+    计算机包括处理器、存储器和I/O组件，其中每个类型包含一个或多个模块。
+    这些组件以某种方式相互连接，实现计算机执行程序的主要功能。
+
+    \begin{description}
+        \item[处理器] 控制计算机的操作，并执行数据处理的功能。
+        \item[内存] 存储数据和程序。
+        \item[I/O模块] 在计算机和外部环境之间交换数据。
+        \item[系统总线] 提供处理器、主存，以及I/O模块之间的通信。
+    \end{description}
+
+    处理器的一个功能是与内存交换数据。
+    它通常使用两个内部寄存器：\emreg{内存地址寄存器(Memory Address Register, MAR)}和\emreg{内存缓冲寄存器(Memory Buffer Register, MBR)}。
+    \emreg{I/O地址寄存器(I/O Address Register, I/O AR)}用于指定一个特定的I/O设备。
+    \emreg{I/O缓冲寄存器(I/O Buffer Register, I/O BR)}用于I/O模块和处理器之间的数据交换。
+
+    内存由一组顺序编号的、由地址定义的单元组成。
+    每个单元都包含一个二进制数，代表一条指令或数据。
+}
