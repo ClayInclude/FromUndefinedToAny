@@ -130,6 +130,17 @@
     \end{@practices}
 }
 
+\newtheorem{@reviews}{复习题}[section]
+\NewDocumentEnvironment{reviews}{o}
+{
+    \IfNoValueTF{#1}
+    {\begin{@reviews}\mbox{}\par}
+    {\begin{@reviews}[#1]\mbox{}\par}
+}
+{
+    \end{@reviews}
+}
+
 \newtheorem{@examplec}{例题}[chapter]
 \NewDocumentEnvironment{examplec}{o}
 {
@@ -150,6 +161,17 @@
 }
 {
     \end{@practicec}
+}
+
+\newtheorem{@reviewc}{复习题}[chapter]
+\NewDocumentEnvironment{reviewc}{o}
+{
+    \IfNoValueTF{#1}
+    {\begin{@reviewc}\mbox{}\par}
+    {\begin{@reviewc}[#1]\mbox{}\par}
+}
+{
+    \end{@reviewc}
 }
 
 \newtheorem*{@minienv}{}
