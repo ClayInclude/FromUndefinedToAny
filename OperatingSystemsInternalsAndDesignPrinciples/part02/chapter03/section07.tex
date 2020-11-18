@@ -1,0 +1,92 @@
+%%
+%% Author: Clay
+%% 2020/11/18
+%%
+
+\section{复习题}
+{
+    %1.
+    \begin{reviewc}
+        将单个进程的行为抽象为一串指令。
+    \end{reviewc}
+
+    %2.
+    \begin{reviewc}
+        进程是程序运行的一个实例。
+    \end{reviewc}
+
+    %3.
+    \begin{reviewc}
+        \begin{enumerate}[A.]
+            \item 进程刚被创建，没有加入到就绪队列，也没有被载入到内存。
+            \item 就绪态，只要分配给处理器资源，就能立即运行。
+            \item 运行态，正在运行。
+            \item 阻塞态，等待特定事件发生，在事件发生之前，无法运行。
+            \item 结束态，进程运行结束，占用的系统资源被释放，但进程控制块仍保留。
+        \end{enumerate}
+    \end{reviewc}
+
+    %4.
+    \begin{reviewc}
+        意味着该进程从运行态转为就绪且挂起态，而另一个进程从阻塞被唤醒。
+    \end{reviewc}
+
+    %5.
+    \begin{reviewc}
+        通过显式系统调用创建一个新进程。
+    \end{reviewc}
+
+    %6.
+    \begin{reviewc}
+        阻塞态，进程在主存中；
+        阻塞且挂起态，进程在辅存中。
+    \end{reviewc}
+
+    %7.
+    \begin{reviewc}
+        \begin{itemize}
+            \item 进程不能够被立即调入执行。
+            \item 进程可能在等待某事件的发生，如果这一条成立，阻塞态跟挂起态将同时存在且相互独立。
+            \item 进程必然是被另一个实体置为挂起状态的：可能时它的父进程、操作员或操作系统。
+            \item 一个处于挂起状态的进程必须等到将它挂起的实体发出明确的命令后，才能从挂起状态装换为其他状态。
+        \end{itemize}
+    \end{reviewc}
+
+    %8.
+    \begin{reviewc}
+        内存，I/O设备，文件和进程。
+    \end{reviewc}
+
+    %9.
+    \begin{practicec}
+        进程所对应的程序、数据、堆栈，以及它的属性信息所构成的全集。
+    \end{practicec}
+
+    %10.
+    \begin{reviewc}
+        有一些特权指令只能在内核态下执行，防止其他程序意外破坏进程控制表。
+    \end{reviewc}
+
+    %11.
+    \begin{reviewc}
+        某些情况下，父进程结束后，操作系统会强制结束子进程。
+    \end{reviewc}
+
+    %12.
+    \begin{reviewc}
+        中断是与当前正在运行的进程无关、异步的、独立外部事件。
+        异常是当前进程产生的错误或异常。
+    \end{reviewc}
+
+    %13.
+    \begin{reviewc}
+        使得操作系统的开发更加模块化和简便，并且，在各个模块之间可以定义非常清楚的接口。
+        操作系统的一些非关键功能能够很自然地使用进程的方式得以实现。
+    \end{reviewc}
+
+    %14.
+    \begin{reviewc}
+        处理器模式的切换，并不会直接导致当前正在运行的进程被切换。
+        这种情况下，当前进程上下文的保存和随后的恢复并不会带来太大的系统开销。
+    \end{reviewc}
+}

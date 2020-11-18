@@ -7,10 +7,10 @@
 {
     确保代码\emreg{高速缓存友好(cache friendly)}的基本方法：
 
-    \begin{enumerate}
+    \begin{itemize}
         \item 让最常见的情况运行得快。
         \item 尽量减小每个循环内部的缓存不命中数量。
-    \end{enumerate}
+    \end{itemize}
 
     对局部变量的反复引用是好的，因为编译器能够将它们缓存在寄存器文件中。
     步长为一的引用模式是好的，因为存储器层次结构中所有层次上的缓存都是将数据存储为连续的块。
