@@ -102,15 +102,15 @@ long int switchProb(long int x, long int n)
     return result;
 }
 
-#define BUFF_SIZE 12
+#define BUFFER_SIZE 12
 
 void goodEcho()
 {
-    char buff[BUFF_SIZE];
+    char buff[BUFFER_SIZE];
 
     while (1)
     {
-        char *p = fgets(buff, BUFF_SIZE, stdin);
+        char *p = fgets(buff, BUFFER_SIZE, stdin);
 
         if (!p)
         {
