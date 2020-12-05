@@ -1,0 +1,95 @@
+%%
+%% Author: Clay
+%% 2020/12/5
+%%
+
+\section{复习题}
+{
+    %1.
+    \begin{reviewc}
+        \begin{enumerate}[A.]
+            \item 操作系统必须能够跟踪进程的执行状态。
+            \item 操作系统必须能够为进程分配和回收各种系统资源。
+            \item 操作系统能够保护进程的数据和已拥有的物理资源，避免它们被其它进程非法访问。
+            \item 进程的功能以及它的输出结果，必须与它跟系统中其它并发进程的相对速度无关。
+        \end{enumerate}
+    \end{reviewc}
+
+    %2.
+    \begin{reviewc}
+
+    \end{reviewc}
+
+    %3.
+    \begin{reviewc}
+        当系统中有多个进程对公共变量不加限制的读写，该变量最终值取决于进程的读写顺序，就称该系统发生了竞态。
+    \end{reviewc}
+
+    %.4
+    \begin{reviewc}
+        \begin{enumerate}[A.]
+            \item 无交互
+            \item 间接交互
+            \item 直接交互
+        \end{enumerate}
+    \end{reviewc}
+
+    %5.
+    \begin{reviewc}
+        竞争关系是进程间互相独立、无联系，但是需要竞争同一系统资源。
+        协作是指进程间有关联，需要同步数据来完成工作。
+    \end{reviewc}
+
+    %6.
+    \begin{reviewc}
+        \begin{enumerate}[A.]
+            \item 互斥
+            \item 死锁
+            \item 饥饿
+        \end{enumerate}
+    \end{reviewc}
+
+    %7.
+    \begin{reviewc}
+        如果系统对资源访问的排队算法不恰当，会导致饥饿。
+    \end{reviewc}
+
+    %8.
+    \begin{reviewc}
+        \begin{enumerate}[A.]
+            \item 信号灯的初值为非负整数。
+            \item semWait操作将信号灯的值减1，如果之后它的值为负数，进程将被阻塞，否则继续执行。
+            \item semSignal操作将型号等的值加1，如果之后它的值大于等于0，则进程唤醒在该信号灯上等待的一个进程，并继续自己的执行。
+        \end{enumerate}
+    \end{reviewc}
+
+    %9.
+    \begin{reviewc}
+        二进制信号量取值只能是0和1。
+    \end{reviewc}
+
+    %10.
+    \begin{reviewc}
+        信号量的wait和signal操作可以是不同的进程。
+        互斥锁的lock和unlock必须是同一进程。
+    \end{reviewc}
+
+    %11.
+    \begin{reviewc}
+        抽象、封装。
+    \end{reviewc}
+
+    %12.
+    \begin{reviewc}
+        间接寻址的优势在于消息通信的灵活性，因为通过去耦合，发送端和接收端的关系可以实一对一、多对一、或者多对多。
+    \end{reviewc}
+
+    %13.
+    \begin{reviewc}
+        \begin{enumerate}[A.]
+            \item 可以有任意多个读者同时读取数据区中的内容。
+            \item 一次只有一个写着允许向数据区中写。
+            \item 写者在想数据区中写时，不允许读者同时读取。
+        \end{enumerate}
+    \end{reviewc}
+}
