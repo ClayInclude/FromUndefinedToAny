@@ -5,7 +5,24 @@
 
 \chapter{链接}
 {
+    \emreg{链接(linking)}是将各种代码和数据片段收集并组合为一个单一文件的过程，这个文件可被\emreg{加载}（复制）到内存并执行。
+    链接可以执行于\emreg{编译时(compile time)}，也就是在源代码被翻译成机器代码时；
+    也可以执行于\emreg{加载时(load time)}，也就是程序被\emreg{加载器(loader)}加载到内存并执行时；
+    甚至执行于\emreg{运行时(run time)}，也就是由应用程序来执行。
+    在早期的计算机系统中，链接是手动执行的。
+    在现代系统中，链接是由叫做\emreg{链接器(linker)}的程序自动执行的。
 
+    链接器在软件开发中扮演着一个关键的角色，因为他们使得\emreg{分离编译(separate compilation)}成位可能。
+
+    \begin{itemize}
+        \item 理解链接器将帮助你构造大型程序。
+        \item 理解链接器将帮助你避免一些危险的编程错误。
+        \item 理解链接将帮助你理解语言的作用域规则是如何实现的。
+        \item 理解链接将帮助你理解其它重要的系统概念。
+        \item 理解链接将使你能够利用共享库。
+    \end{itemize}
+
+    \input{section01.tex}
 }
 
 \cleardoublepage
