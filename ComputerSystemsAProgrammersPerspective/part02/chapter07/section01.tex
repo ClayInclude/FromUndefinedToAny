@@ -4,3 +4,15 @@
 %%
 
 \section{编译器驱动程序}
+{
+    大多数编译系统提供\emreg{编译器驱动程序(compiler driver)}，它代表用户在需要时调用语言预处理器、编译器、汇编器和链接器
+
+    \begin{enumerate}
+        \item 驱动程序先运行预处理器，将源程序\emcode{main.c}翻译成一个ASCII码的中间文件\emcode{main.i}。
+        \item 驱动程序运行C编译器，将\emcode{main.i}翻译成一个ASCII汇编语言文件\emcode{main.s}。
+        \item 驱动程序运行汇编器，将\emcode{main.s}翻译成一个\emspe{可重定位目标文件(relocatable object file)}\emcode{main.o}。
+        \item 驱动程序经过相同的过程生成\emcode{sum.o}。
+        \item 最后，它运行链接器程序将\emcode{main.o}和\emcode{sum.o}以及一些必要的系统目标文件组合起来，创建一个\emspe{可执行目标文件(executable object file)}。
+        \item shell调用操作系统中一个叫做\emspe{加载器(loader)}的函数，它将可执行文件中的代码和数据复制到内存，然后将控制转移到这个程序的开头。
+    \end{enumerate}
+}
