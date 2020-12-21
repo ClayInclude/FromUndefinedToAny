@@ -40,7 +40,7 @@
             "    \\end{enumerate}",
             "\\end{practicec}"
         ],
-        "description": "DiscreteMath"
+        "description": "CSAPP"
     },
     "pracSinglec":
     {
@@ -53,36 +53,36 @@
             "    $2",
             "\\end{practicec}"
         ],
-        "description": "DiscreteMath"
+        "description": "CSAPP"
     },
-    "reviewItemc":
-    {
-        "scope": "latex",
-        "prefix": "reviewItemc",
-        "body":
-        [
-            "%$1.",
-            "\\begin{reviewc}",
-            "    \\begin{enumerate}[A.]",
-            "        \\item $2",
-            "    \\end{enumerate}",
-            "\\end{reviewc}"
-        ],
-        "description": "OS"
-    },
-    "reviewSinglec":
-    {
-        "scope": "latex",
-        "prefix": "reviewSinglec",
-        "body":
-        [
-            "%$1.",
-            "\\begin{reviewc}",
-            "    $2",
-            "\\end{reviewc}"
-        ],
-        "description": "OS"
-    },
+    // "reviewItemc":
+    // {
+    //     "scope": "latex",
+    //     "prefix": "reviewItemc",
+    //     "body":
+    //     [
+    //         "%$1.",
+    //         "\\begin{reviewc}",
+    //         "    \\begin{enumerate}[A.]",
+    //         "        \\item $2",
+    //         "    \\end{enumerate}",
+    //         "\\end{reviewc}"
+    //     ],
+    //     "description": "OS"
+    // },
+    // "reviewSinglec":
+    // {
+    //     "scope": "latex",
+    //     "prefix": "reviewSinglec",
+    //     "body":
+    //     [
+    //         "%$1.",
+    //         "\\begin{reviewc}",
+    //         "    $2",
+    //         "\\end{reviewc}"
+    //     ],
+    //     "description": "OS"
+    // },
     "tArray":
     {
         "scope": "latex",

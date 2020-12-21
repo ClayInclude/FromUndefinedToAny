@@ -1,0 +1,56 @@
+%%
+%% Author: Clay
+%% 2020/12/21
+%%
+
+\section{符号和符号表}
+{
+    在链接器的上下文中，有三种不同的符号：
+
+    \begin{itemize}
+        \item 由模块m定义并能够被其他模块引用的\emspe{全局符号}。
+        \item 由其它模块定义并被模块m引用的\emspe{全局符号}，这些符号称为\emspe{外部符号}。
+        \item 只被模块m定义和引用的局部符号。
+    \end{itemize}
+
+    符号表是由汇编器够造的，使用编译器输出到汇编语言.s文件中的符号。
+
+    name是字符串表中的字节偏移，指向符号的以null结尾的字符串名字。
+    value是符号的地址。
+    size是目标的大小。
+    type通常要么是数据，要么是函数。
+    符号表还可以包含各个节的条目，以及对应原始源文件的路径名的条目。
+    binding字段表示符号是本地的还是全局的。
+
+    每个符号都被分配到目标文件的某个节，由section字段表示。
+    有三个特殊的\emreg{伪节(pseudosection)}，它们在节头部表中是没有条目的：
+    ABS代表不该被重定位的符号；
+    UNDEF代表未定义的符号；
+    COMMON表示还未被分配的未初始化的数据目标。
+
+    COMMON和.bss的区别很细微，
+    COMMON：维持化的全局变量，.bss：未初始化的静态变量，以及初始化为0的全局或静态变量。
+
+    %1.
+    \begin{practicec}
+        \begin{table}{htb}
+            \centering
+
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                符号 & .symtab条目？ & 符号类型 & 在哪个模块中定义 & 节 \\
+                \hline
+                buf & Y & 外部 & m.o & .data \\
+                \hline
+                bufp0 & Y & 全局 & swap.o & .data \\
+                \hline
+                bufp1 & Y & 全局 & swap.o & COMMON \\
+                \hline
+                swap & Y & 全局 & swap.o & .text \\
+                \hline
+                temp & N & - & - & - \\
+                \hline
+            \end{tabular}
+        \end{table}
+    \end{practicec}
+}

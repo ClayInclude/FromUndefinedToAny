@@ -217,6 +217,7 @@ add_executable(ComputerSystemsAProgrammersPerspective_c06_e01 ComputerSystemsAPr
 add_executable(ComputerSystemsAProgrammersPerspective_c07_e_link
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/LinkMain.c
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/LinkSum.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c07_e_ElfStructs ComputerSystemsAProgrammersPerspective/part02/chapter07/example/ElfStructs.c)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
