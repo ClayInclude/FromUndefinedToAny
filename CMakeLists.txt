@@ -214,10 +214,16 @@ add_executable(ComputerSystemsAProgrammersPerspective_c05_vec
 add_executable(ComputerSystemsAProgrammersPerspective_c05_p01 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice01.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c05_p02 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice02.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c06_e01 ComputerSystemsAProgrammersPerspective/part01/chapter06/example/example01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c07_e_link
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/LinkMain.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/LinkSum.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main
+        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main.c
+        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Sum.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c07_e_ElfStructs ComputerSystemsAProgrammersPerspective/part02/chapter07/example/ElfStructs.c)
+add_library(ComputerSystemsAProgrammersPerspective_c07_e_LibVector
+        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/AddVec.c
+        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/MulVec.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main2
+        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main2.c
+        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Vector.h)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
