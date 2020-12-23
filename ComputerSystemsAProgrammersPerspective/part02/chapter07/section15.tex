@@ -1,0 +1,84 @@
+%%
+%% Author: Clay
+%% 2020/12/22
+%%
+
+\section{小结}
+{
+    %6.
+    \begin{practicec}
+        \begin{table}{htb}
+            \centering
+
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                符号 & .symtab条目？ & 符号类型 & 定义符号的模块 & 节 \\
+                \hline
+                buf & Y & 外部 & m.o & .data \\
+                \hline
+                bufp0 & Y & 全局 & swap.o & .data \\
+                \hline
+                bufp1 & Y & 全局 & swap.o & COMMON \\
+                \hline
+                swap & Y & 全局 & swap.o & .text \\
+                \hline
+                temp & N & - & - & - \\
+                \hline
+                incr & Y & 全局 & swap.o  & .text \\
+                \hline
+                count & Y & 全局 & swap.o & .bss \\
+                \hline
+            \end{tabular}
+        \end{table}
+    \end{practicec}
+
+    %7.
+    \begin{practicec}
+        删除 x = -0.0
+    \end{practicec}
+
+    %8.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item main.1;main.2
+            \item 未知
+            \item 错误
+        \end{enumerate}
+    \end{practicec}
+
+    %9.
+    \begin{practicec}
+        main函数起始地址的值。
+    \end{practicec}
+
+    %10.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item p.o libx.a p.o
+            \item p.o libx.a liby.a libx.a
+            \item p.o libx.a liby.a libx.a libz.a
+        \end{enumerate}
+    \end{practicec}
+
+    %11.
+    \begin{practicec}
+        .bss节对齐。
+    \end{practicec}
+
+    %12.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item 10
+            \item 34
+        \end{enumerate}
+    \end{practicec}
+
+    %13.
+    \begin{practicec}
+        \begin{enumerate}[A.]
+            \item ar t libm.a
+            \item 一样
+            \item ldd
+        \end{enumerate}
+    \end{practicec}
+}
