@@ -224,6 +224,7 @@ add_library(ComputerSystemsAProgrammersPerspective_c07_e_LibVector
 add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main2
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main2.c
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Vector.h)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_HelloWorld ComputerSystemsAProgrammersPerspective/part02/chapter08/example/HelloWorld.c)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
