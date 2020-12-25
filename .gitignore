@@ -14,9 +14,10 @@
 .vscode/tasks.json
 
 *.exe
-*.out
 *.ilk
 *.pdb
+
+ComputerSystemsAProgrammersPerspective/include
 
 cmake-build-debug
 .idea

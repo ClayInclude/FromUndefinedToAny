@@ -225,6 +225,10 @@ add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main2
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main2.c
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Vector.h)
 add_executable(ComputerSystemsAProgrammersPerspective_c08_e_HelloWorld ComputerSystemsAProgrammersPerspective/part02/chapter08/example/HelloWorld.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Fork ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Fork.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0 ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ForkProb0.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0 ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb0.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1 ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid1.c)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)

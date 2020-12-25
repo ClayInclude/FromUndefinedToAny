@@ -1,0 +1,125 @@
+%%
+%% Author: Clay
+%% 2020/12/25
+%%
+
+\section{进程控制}
+{
+    \subsection{获取进程ID}
+    {
+        每个进程都有一个唯一的正数\emreg{进程ID(PID)}。
+        \emcode{getpid}函数返回调用进程的PID。
+        \emcode{getppid}函数返回它的父进程的PID。
+    }
+
+    \subsection{创建和终止进程}
+    {
+        进程总是处于下面三种状态之一：
+
+        \begin{description}
+            \item[运行] 进程要么在CPU上执行，要么在等待执行且最终会被内核调度。
+            \item[停止] 进程的执行被\emspe{挂起(suspended)}，且不会被调度。
+            \item[终止] 进程永远的停止了。
+        \end{description}
+
+        \emcode{exit}函数以\emcode{status}\emreg{退出状态}来终止进程。
+
+        \emreg{父进程}通过调用\emcode{fork}函数创建一个新的运行的\emreg{子进程}。
+
+        子进程得到与父进程用户级虚拟地址空间相同的一份副本，包括代码的数据段、堆、共享库以及用户栈。
+        子进程还获得与父进程任何打开文件描述符相同的副本。
+
+        fork函数只被调用\emreg{一次}，却会返回\emreg{两次}。
+        在子进程中，fork返回0。
+
+        \begin{description}
+            \item[调用一次，返回两次]
+            \item[并发执行] 不能对不同进程中指令的交替做任何假设。
+            \item[相同但是独立的地址空间]
+            \item[共享文件]
+        \end{description}
+
+        对于运行在单处理器上的程序，对应进程图中所有顶点的\emreg{拓扑排序(topological sort)}表示程序中语句的一个可行的全序排列。
+
+        %2.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item 2;1
+                \item 0
+            \end{enumerate}
+        \end{practicec}
+    }
+
+    \subsection{回收子进程}
+    {
+        当一个进程由于某种原因终止时，内核并不是立即把它从系统中清除。
+        相反，进程被保持在一种已终止的状态中，直到被它的父进程\emreg{回收(reaped)}。
+        当父进程回收已终止的子进程时，内核将子进程的退出状态传递给父进程，然后抛弃已终止的进程，从此时开始该进程就不存在了。
+        一个终止了但还未被回收的进程称为\emreg{僵死进程(zombie)}。
+
+        如果一个父进程终止了，内核会安排init进程成为它的孤儿进程的养父。
+        init进程的PID为1，是在系统启动时由内核创建的，它不会终止，是所有进程的祖先。
+        如果父进程没有回收它的僵死进程就终止了，那么内核会安排init进程去回收他们。
+
+        一个进程可以通过调用\emcode{waitpid}函数来等待它的子进程终止或者停止。
+
+        默认情况下（当options=0）时，waitpid挂起调用进程的执行，直到它的\emreg{等待集合(wait set)}中的一个子进程终止。
+        如果等待集合中的一个进程在刚调用的时刻就已经终止了，那么waitpid就立即返回。
+        在这两种情况中，waitpid返回导致waitpid返回的已终止子进程的pid。
+
+        \subsubsection{判定等待集合的成员}
+        {
+            \begin{itemize}
+                \item 如果pid>0，那么等待集合就是一个单独的子进程
+                \item 如果pid=-1，那么等待集合就是由父进程所有的子进程组成的
+            \end{itemize}
+        }
+
+        \subsubsection{修改默认行为}
+        {
+            \begin{description}
+                \item[WNOHANG] 如果等待集合中的任何子进程都还没有终止，那么就立即返回。
+                \item[WUNTRACED] 挂起调用进程的执行，知道等待集合中的一个进程变成已终止或者被停止。
+                \item[WCONTINUED] 挂起调用进程的执行，知道等待集合中一个正在运行的进程终止或等待集合中一个被停止的进程收到SIGCONT信号重新开始执行。
+            \end{description}
+        }
+
+        \subsubsection{检查已回收子进程的退出状态}
+        {
+            \begin{description}
+                \item[WIFEXITED] 如果子进程通过调用exit或者一个返回正常终止，就返回真。
+                \item[WEXITSTATUS] 返回一个正常终止的子进程的退出状态。
+                \item[WIFSIGNALED] 如果子进程是因为一个未被捕获的信号终止的，那么就返回真。
+                \item[WTERMSIG] 返回导致子进程终止的信号的编号。
+                \item[WIFSTOPPED] 如果引起返回的子进程当前是停止的，那么就返回真。
+                \item[WSTOPSIG]  返回引起子进程停止的信号的编号。
+                \item[WIFCONTINUED] 如果子进程收到SIGCONT信号重新启动，则返回真。
+            \end{description}
+        }
+
+        \subsubsection{错误条件}
+        {
+            如果调用进程没有子进程，那么waitpid返回-1，并设置errno为ECHILD。
+            如果waitpid函数被一个信号中断，那么它返回-1，并设置errno为EINTR。
+
+            %3.
+        \begin{practicec}
+            \begin{enumerate}[A.]
+                \item bacc
+                \item abcc
+                \item acbc
+            \end{enumerate}
+        \end{practicec}
+        }
+
+        \subsubsection{wait函数}
+        {
+            调用wait等价于wait(\-1, \&status, 0)。
+        }
+
+        \subsubsection{使用waitpid的示例}
+        {
+
+        }
+    }
+}
