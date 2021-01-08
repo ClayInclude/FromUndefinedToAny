@@ -5,6 +5,9 @@ project(FromUndefinedToAny CXX)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
 #add_executable(ProgrammingInC_c03_e_01 ProgrammingInC/chapter03/example/example01.c)
 #add_executable(ProgrammingInC_c03_e_02 ProgrammingInC/chapter03/example/example02.c)
 #add_executable(ProgrammingInC_c03_e_03 ProgrammingInC/chapter03/example/example03.c)
@@ -225,10 +228,26 @@ add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main2
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main2.c
         ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Vector.h)
 add_executable(ComputerSystemsAProgrammersPerspective_c08_e_HelloWorld ComputerSystemsAProgrammersPerspective/part02/chapter08/example/HelloWorld.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Fork ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Fork.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0 ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ForkProb0.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0 ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb0.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1 ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid1.c)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Fork
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Fork.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Fork PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ForkProb0.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb0.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid1.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid2.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2 PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)

@@ -4,7 +4,6 @@
  * @date 2020/12/24
  */
 
-#include <io.h>
 #include <unistd.h>
 
 int main(void)

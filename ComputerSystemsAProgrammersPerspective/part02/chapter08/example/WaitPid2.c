@@ -1,7 +1,7 @@
 /**
- * WaitPid1
+ * WaitPid2
  * @author Clay
- * @date 2020/12/25
+ * @date 2021/1/7
  */
 
 #include "../../../include/csapp.h"
@@ -13,25 +13,26 @@
 int main(void)
 {
     int status;
-    pid_t pid;
+    pid_t pid[N];
 
     for (int i = 0; i < N; ++i)
     {
-        if ((pid = Fork()) == 0)
+        if ((pid[i] = Fork()) == 0)
         {
             exit(100 + i);
         }
     }
 
-    while ((pid = waitpid(-1, &status, 0)) > 0)
+    int i = N;
+    while ((waitpid(pid[--i], &status, 0)) > 0)
     {
         if (WIFEXITED(status))
         {
-            printf("child %d terminated normally with exit status=%d\n", pid, WEXITSTATUS(status));
+            printf("child %d terminated normally with exit status=%d\n", pid[i], WEXITSTATUS(status));
         }
         else
         {
-            printf("child %d terminated abnormally\n", pid);
+            printf("child %d terminated abnormally\n", pid[i]);
         }
     }
 
