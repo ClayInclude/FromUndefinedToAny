@@ -103,13 +103,13 @@
             如果waitpid函数被一个信号中断，那么它返回-1，并设置errno为EINTR。
 
             %3.
-        \begin{practicec}
-            \begin{enumerate}[A.]
-                \item bacc
-                \item abcc
-                \item acbc
-            \end{enumerate}
-        \end{practicec}
+            \begin{practicec}
+                \begin{enumerate}[A.]
+                    \item bacc
+                    \item abcc
+                    \item acbc
+                \end{enumerate}
+            \end{practicec}
         }
 
         \subsubsection{wait函数}
@@ -124,6 +124,46 @@
             子进程回收的顺序是这台特定的计算机系统的属性。
             这是\emreg{非确定性}行为的一个示例，这种非确定性行为使得对并发进行推理非常困难。
             唯一正确的假设是每一个可能的结果都同样可能出现。
+
+            %4.
+            \begin{practicec}
+                \begin{enumerate}[A.]
+                    \item 6
+                    \item
+                    {
+                        Hello;
+                        0;
+                        1;
+                        Bye;
+                        0;
+                        Bye;
+                    }
+                \end{enumerate}
+            \end{practicec}
         }
+    }
+
+    \subsection{让进程休眠}
+    {
+        如果请求的时间时间量已经到了，sleep返回零，否则返回还剩下的要休眠的秒数。
+        后一种情况是可能的，如果因为sleep函数被一个\emreg{信号}中断而过早地返回。
+
+        pause函数让调用函数休眠，直到该进程收到一个信号。
+    }
+
+    \subsection{加载并运行程序}
+    {
+        execve函数在当前进程的上下文中加载并运行一个新程序。
+
+        只有当出现错误时，execve才会返回到调用程序。
+        execve调用一次并从不返回。
+
+        argv指向一个以null结尾的指针数组，其中每个指针都指向一个参数字符串。
+        envp变量指向一个以null结尾的指针数组，其中每个指针指向一个环境变量字符串，每个串都是形如name=value的名字-值对。
+    }
+
+    \subsection{利用fork和execve运行程序}
+    {
+        shell执行一系列的\emreg{读/求值(read/evaluate)}步骤，然后终止。
     }
 }

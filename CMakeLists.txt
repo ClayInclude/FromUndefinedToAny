@@ -248,6 +248,22 @@ add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2
         ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid2.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb1
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb1.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb1 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Snooze
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Snooze.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Snooze PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Echo
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Echo.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Echo PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ShellEx.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)

@@ -8,8 +8,6 @@
 
 #define N 4
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "hicpp-signed-bitwise"
 int main(void)
 {
     int status;
@@ -42,4 +40,3 @@ int main(void)
 
     exit(0);
 }
-#pragma clang diagnostic pop
