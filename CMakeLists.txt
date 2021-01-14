@@ -192,6 +192,7 @@ find_package(Threads REQUIRED)
 #add_executable(ProgrammingInC_c19_e_01 ProgrammingInC/chapter19/example/example01.c)
 #add_executable(ProgrammingInC_c19_e_03 ProgrammingInC/chapter19/example/example03.cpp)
 
+include_directories(ComputerSystemsAProgrammersPerspective/include)
 add_executable(ComputerSystemsAProgrammersPerspective_c01_e01 ComputerSystemsAProgrammersPerspective/chapter01/example/example01.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c02_e01 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example01.c)
 add_executable(ComputerSystemsAProgrammersPerspective_c02_e02 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example02.c)
@@ -264,6 +265,18 @@ add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx
         ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ShellEx.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Kill
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Kill.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Kill PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SigInt
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SigInt.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SigInt PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Signal
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Signal.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Signal PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)

@@ -17,7 +17,9 @@
 *.ilk
 *.pdb
 
-ComputerSystemsAProgrammersPerspective/include
+ComputerSystemsAProgrammersPerspective/include/csapp.c
+ComputerSystemsAProgrammersPerspective/include/csapp.h
+ComputerSystemsAProgrammersPerspective/include/csapp.o
 
 cmake-build-debug
 cmake-build-debug-wsl
