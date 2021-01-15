@@ -13,7 +13,7 @@ void handler2(int sig);
 
 int main(void)
 {
-    if (signal(SIGCHLD, handler1) == SIG_ERR)
+    if (signal(SIGCHLD, handler2) == SIG_ERR)
     {
         unix_error("signal error");
     }
@@ -23,6 +23,7 @@ int main(void)
         if (Fork() == 0)
         {
             printf("Hello from %d\n", getpid());
+            Sleep(1);
 
             exit(0);
         }
@@ -48,7 +49,22 @@ int main(void)
 
 void handler2(int sig)
 {
+    int oldErrno = errno;
 
+    while  (waitpid(-1, NULL, 0) >= 0)
+    {
+        Sio_puts("Handler reaped child\n");
+
+    }
+
+    if (errno != ECHILD)
+    {
+        Sio_error("wait pid error\n");
+    }
+
+    Sleep(1);
+
+    errno = oldErrno;
 }
 
 void handler1(int sig)
@@ -57,12 +73,12 @@ void handler1(int sig)
 
     if (waitpid(-1, NULL, 0) < 0)
     {
-        sio_error("wait pid error\n");
+        Sio_error("wait pid error\n");
     }
 
     Sio_puts("Handler reaped child\n");
 
-    // Sleep(1);
+    Sleep(1);
 
     errno = oldErrno;
 }

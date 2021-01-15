@@ -277,6 +277,10 @@ add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Signal
         ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Signal.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Signal PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SignalProb0
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SignalProb0.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SignalProb0 PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
