@@ -18,16 +18,24 @@ int main(void)
         unix_error("signal error");
     }
 
+    sigset_t maskOne, pre;
+    Sigemptyset(&maskOne);
+    Sigaddset(&maskOne, SIGCHLD);
+    Sigprocmask(SIG_BLOCK, &maskOne, &pre);
+
     for (int i = 0; i < 3; ++i)
     {
         if (Fork() == 0)
         {
+            Sigprocmask(SIG_SETMASK, &pre, NULL);
             printf("Hello from %d\n", getpid());
             Sleep(1);
 
             exit(0);
         }
     }
+
+    Sigprocmask(SIG_SETMASK, &pre, NULL);
 
     int n;
     char buffer[128];
