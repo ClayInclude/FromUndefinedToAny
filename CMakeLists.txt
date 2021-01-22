@@ -289,6 +289,22 @@ add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask2
         ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ProcMask2.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask2 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitForSignal
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitForSignal.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitForSignal PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SigSuspend
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SigSuspend.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SigSuspend PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SetJump
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SetJump.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SetJump PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Restart
+        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Restart.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Restart PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)

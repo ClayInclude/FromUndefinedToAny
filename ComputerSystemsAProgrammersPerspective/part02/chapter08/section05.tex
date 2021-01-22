@@ -96,8 +96,8 @@
         signal函数可以通过下列三种方法之一来改变和信号signum相关联的行为。
 
         \begin{itemize}
-            \item 如果handler是SIG_IGN，那么忽略信号。
-            \item 如果handler是SIG_DEL，那么恢复默认行为。
+            \item 如果handler是SIG\_IGN，那么忽略信号。
+            \item 如果handler是SIG\_DEL，那么恢复默认行为。
             \item
             {
                 否则，handler就是用户定义的函数的地址，这个函数被称为\emreg{信号处理程序}，只要进程接收到一个类型为signum的信号，就会调用这个程序。
@@ -152,7 +152,7 @@
                 \item[保存和恢复errno] 只有在处理程序要返回时才有必要。
                 \item[阻塞所有的信号，保护对共享全局数据结构的访问]
                 \item[用volatile声明全局变量] 用volatile类型限定符来定义一个变量，告诉编译器不要缓存这个变量。
-                \item[用sig_atomic_t声明标志] C提供一种整型数据类型，对它的读和写保证会是原子的。
+                \item[用sig\_atomic\_t声明标志] C提供一种整型数据类型，对它的读和写保证会是原子的。
             \end{description}
         }
 
@@ -196,5 +196,10 @@
         基本的问题是以某种方式\emreg{同步}并发流，从而得到的最大的可行的交错的集合，每个可行的交错都能得到正确的结果。
 
         子进程继承了他们父进程的被阻塞集合。
+    }
+
+    \subsection{显示地等待信号}
+    {
+        原子属性消除了潜在的竞争。
     }
 }

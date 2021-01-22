@@ -4,19 +4,12 @@
  * @date 2021/1/18
  */
 
-#include <stdbool.h>
 #include "csapp.h"
 
 #define MAX_PID_LIST 10
 
 pid_t pidList[MAX_PID_LIST];
 size_t pidLength = 0;
-
-void handler(int sig)
-{
-    int oldErrno = errno;
-    sigset_t maskAll, prevAll;
-}
 
 void addJob(pid_t pid)
 {
@@ -35,7 +28,7 @@ void deleteJob(pid_t pid)
         return;
     }
 
-    size_t index = MAX_PID_LIST;
+    size_t index = MAX_PID_LIST + 100;
 
     for (size_t i = 0; i < MAX_PID_LIST; ++i)
     {
@@ -47,9 +40,9 @@ void deleteJob(pid_t pid)
         }
     }
 
-    if (index != MAX_PID_LIST)
+    if (index != MAX_PID_LIST + 100)
     {
-        for (size_t i = 0; i < pidLength - 1; ++i)
+        for (size_t i = index; i < pidLength - 1; ++i)
         {
             pidList[i] = pidList[i + 1];
         }
@@ -62,12 +55,36 @@ void deleteJob(pid_t pid)
     }
 }
 
+void handler(int sig)
+{
+    int oldErrno = errno;
+    sigset_t maskAll, prevAll;
+    pid_t pid;
+
+    Sigfillset(&maskAll);
+
+    while ((pid = waitpid(-1, NULL, 0)) > 0)
+    {
+        Sigprocmask(SIG_BLOCK, &maskAll, &prevAll);
+        deleteJob(pid);
+        Sigprocmask(SIG_SETMASK, &prevAll, NULL);
+    }
+
+    if (errno != ECHILD)
+    {
+        Sio_error("wait pid error");
+    }
+
+    errno = oldErrno;
+}
+
 int main(int argc, char **argv)
 {
     pid_t pid;
     sigset_t maskAll, prevAll;
 
     Sigfillset(&maskAll);
+    Signal(SIGCHLD, handler);
 
     while (pidLength < MAX_PID_LIST)
     {
