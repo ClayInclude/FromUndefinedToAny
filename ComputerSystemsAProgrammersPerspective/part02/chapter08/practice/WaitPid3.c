@@ -1,7 +1,7 @@
 /**
- * WaitPid1
+ * WaitPid3
  * @author Clay
- * @date 2020/12/25
+ * @date 2021/1/29
  */
 
 #include "csapp.h"
@@ -27,6 +27,13 @@ int main(void)
         {
             printf("child %d terminated normally with exit status=%d\n", pid, WEXITSTATUS(status));
         }
+        else if(WIFSIGNALED(status))
+        {
+            char buf[128];
+
+            sprintf(buf, "child %d terminated by signal %d\n", pid, WTERMSIG(status));
+            psignal(WTERMSIG(status), buf);
+        }
         else
         {
             printf("child %d terminated abnormally\n", pid);
@@ -38,5 +45,6 @@ int main(void)
         unix_error("waitpid error");
     }
 
-    exit(0);
+    exit(2);
 }
+

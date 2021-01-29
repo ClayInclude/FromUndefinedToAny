@@ -29,5 +29,5 @@ int main(void)
 
     printf("Bye\n");
 
-    return 0;
+    exit(2);
 }
