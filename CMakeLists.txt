@@ -329,22 +329,6 @@ add_executable(ComputerSystemsAProgrammersPerspective_c08_p_TFGets
         ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/TFGets.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_TFGets PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_shell_ShellLoop
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/ShellLoop.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_shell_ShellLoop PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_shell_ShellSleep
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/ShellSleep.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_shell_ShellSleep PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_shell_Shell
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/Main.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/Shell.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/Shell.h
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/Job.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/shell/Job.h
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_shell_Shell PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
