@@ -1,0 +1,42 @@
+%%
+%% Author: Clay
+%% 2021/2/18
+%%
+
+\section{地址空间}
+{
+    \emreg{地址空间(address space)}是一个非负整数地址的有序集合。
+    如果地址空间中的整数是连续的，那么说它是一个\emreg{线性地址空间(linear address space)}。
+
+    在一个带虚拟内存的系统中，CPU从一个有 $N = 2^n$ 的地址空间中生成虚拟地址，这个地址空间称为\emreg{虚拟地址空间(virtual address space)}。
+
+    一个系统还有一个\emreg{物理地址空间(physical address space)}，对应于系统中物理内存的 $M$ 个字节。
+    $M$ 不要求是2的幂。
+
+    允许每个数据对象有多个独立的地址，每个地址都选自一个不同的地址空间。
+    这就是虚拟内存的基本思想。
+    主存中的每个字节都有一个选自虚拟地址空间的虚拟地址和一个选自物理地址空间的物理地址。
+
+    %1.
+    \begin{practicec}
+        \begin{table}
+            \[
+                \begin{array}{|c|c|c|}
+                    \hline
+                    \text{虚拟地址位数}(n) & \text{虚拟地址数}(N) & \text{最大可能的虚拟地址} \\
+                    \hline
+                    8 & 2^8 = 256 & 2^8 - 1 = 255 \\
+                    \hline
+                    16 & 2^16 = 64K & 2^16 - 1 = 64K - 1 \\
+                    \hline
+                    32 & 2^32 = 4G & 2^32 - 1 = 4G - 1 \\
+                    \hline
+                    48 & 2^48 = 256T & 2^48 - 1 = 256T - 1 \\
+                    \hline
+                    64 & 2^64 = 16E & 2^64 - 1 = 16E - 1 \\
+                    \hline
+                \end{array}
+            \]
+        \end{table}
+    \end{practicec}
+}

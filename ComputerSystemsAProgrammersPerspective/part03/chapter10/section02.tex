@@ -1,0 +1,41 @@
+%%
+%% Author: Clay
+%% 2021/2/19
+%%
+
+\section{文件}
+{
+    每个Linux文件都有一个\emreg{类型(type)}来表明它在系统中的角色：
+
+    \begin{description}
+        \item[普通文件(reguluarfile)]
+        {
+            包含任意数据。
+            应用程序常常要区分\emspe{文本文件(text file)}和\emspe{二进制文件(binary file)}。
+            对内核而言，文本文件和二进制文件没有区别。
+        }
+        \item[目录(directory)]
+        {
+            包含一组\emspe{链接(link)}的文件，其中每个链接都将一个\emspe{文件名(filename)}映射到一个文件，这个文件可能是另一个目录。
+            每个目录都至少包含两个条目：
+            \emcode{.}是到该目录自身的映射，以及\emcode{..}是到目录层次结构中\emspe{父目录(parent directory)}的链接。
+        }
+        \item[套接字(socket)] 用来与另一个进程进行跨网络通信的文件。
+    \end{description}
+
+    其他文件类型包含\emreg{命名通道(named pipe)}、\emreg{符号链接(symbolic link)}以及\emreg{字符和块设备(character and block device)}。
+
+    Linux内核将所有文件都组织成一个\emreg{目录层次结构(directory hierarch)}，由\emreg{根目录}确定。
+    系统每个文件都是根目录的直接或间接的后代。
+
+    作为其上下文的一部分，每个进程都有一个\emreg{当前工作目录(current working directory)}来确定其在目录层次结构中的当前位置。
+
+    目录层次结构中的位置用\emreg{路径名(pathname)}来指定。
+    路径是一个字符串，包括一个可选斜杠，其后紧跟一系列的文件名，文件名之间用斜杠分隔。
+    路径名有两种形式：
+
+    \begin{description}
+        \item[绝对路径名(absolute pathname)] 以一个斜杠开始，表示从根节点开始的路径。
+        \item[相对路径名(relative pathname)] 以文件名开始，表示从当前工作目录开始的路径。
+    \end{description}
+}

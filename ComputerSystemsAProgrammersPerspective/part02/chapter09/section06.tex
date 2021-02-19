@@ -1,0 +1,94 @@
+%%
+%% Author: Clay
+%% 2021/2/18
+%%
+
+\section{地址翻译}
+{
+    形式上来说，地址翻译是一个 $N$ 元素的虚拟地址空间(VAS)中的元素和一个 $M$ 元素的物理地址空间(PAS)中元素之间的映射，
+
+    $$MAP: VAS \rightarrow PAS \cup \emptyset$$
+
+    这里
+
+    \begin{align*}
+        MAP(A) =
+        \begin{cases}
+            A',\text{如果虚拟地址 $A$ 处的数据在PAS的物理地址 $A'$ 处} \\
+            \emptyset{}, \text{如果虚拟地址 $A$ 处的数据不在物理内存中}
+        \end{cases}
+    \end{align*}
+
+    CPU中的一个控制寄存器，\emreg{页表基址寄存器(Page Table Base Register, PTBR)}指向当前页表。
+    $n$ 位的虚拟地址包含两个部分：
+    一个 $p$ 位的\emreg{虚拟页面偏移(Virtual Page Offset, VPO)}和一个 $n - p$ 位的\emreg{虚拟页号(Virtual Page Number, VPN)}。
+    MMU利用VPN来选择适当的PTE。
+    将页表条目中\emreg{物理页号(Physical Page Number, PPN)}和虚拟地址中的VPO串联起来，就得到相应的物理地址。
+    因为物理和虚拟页面都是P字节的，所以\emreg{物理页面偏移(Physical Page Offset, PPO)}和VPO是相同的。
+
+    当页面命中时，CPU硬件执行的步骤：
+
+    \begin{enumerate}
+        \item 处理器生成一个虚拟地址，并把它传送给MMU。
+        \item MMU生成PTE地址，并从高速缓存/主存请求。
+        \item 高速缓存/主存像MMU返回PTE。
+        \item MMU构造物理地址，并把它传送给高速缓存/主存。
+        \item 高速缓存/主存返回所请求的数据字给处理器。
+    \end{enumerate}
+
+    页面命中完全是由硬件来处理的，与之不同的是，处理缺页要求硬件和操作系统内核协作完成：
+
+    \begin{enumerate}
+        \item 处理器生成一个虚拟地址，并把它传送给MMU。
+        \item MMU生成PTE地址，并从高速缓存/主存请求。
+        \item 高速缓存/主存像MMU返回PTE。
+        \item PTE中的有效位是零，所以MMU触发一次异常，传递CPU中的控制到操作系统内核中的缺页异常处理程序。
+        \item 缺页处理程序确定出物理内存中的牺牲页，如果这个页面已经被修改了，则把它换出到磁盘。
+        \item 缺页处理程序页面调入新的页面，并更新内存中的PTE。
+        \item 缺页处理程序返回到原来的进程，再次执行导致缺页的指令。
+        \item CPU将引起缺页的虚拟地址重新发送给MMU，这一次将会命中。
+    \end{enumerate}
+
+    %3.
+    \begin{practicec}
+        \begin{table}
+            \[
+                \begin{array}{|c|c|c|c|c|}
+                    \hline
+                    p & VPN & VPO & PPN & PPO \\
+                    \hline
+                    1KB & 22 & 10 & 14 & 10 \\
+                    \hline
+                    2KB & 21 & 11 & 13 & 11 \\
+                    \hline
+                    4KB & 20 & 12 & 12 & 12 \\
+                    \hline
+                    8KB & 19 & 13 & 11 & 13 \\
+                    \hline
+                \end{array}
+            \]
+        \end{table}
+    \end{practicec}
+
+    \subsection{结合高速缓存和虚拟内存}
+    {
+        大多数系统使用物理寻址来访问SRAM高速缓存的问题。
+        使用物理寻址，多个进程同时在高速缓存中有存储块和共享来自相同虚拟页面的块成为很简单的事情。
+        而且，高速缓存无需处理保护问题。
+
+        主要的思路是地址翻译发生在高速缓存查找之前。
+        页表条目可以缓存，就像其他的数据字一样。
+    }
+
+    \subsection{利用TLB加速地址翻译}
+    {
+        每次CPU产生一个虚拟地址，MMU就必须查阅一个PTE，以便将虚拟地址翻译为物理地址。
+        最糟糕的情况下，这会要求从内存多取一次数据。
+        许多系统试图消除这样的开销，在MMU中包括了一个关于PTE的小的缓存，称为\emreg{翻译后备缓冲器(Translation Lookaside Buffer, TLB)}。
+    }
+
+    \subsection{多级页表}
+    {
+        用来压缩页表的常用方法是使用层次结构的页表。
+    }
+}
