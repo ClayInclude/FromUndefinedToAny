@@ -1,0 +1,27 @@
+%%
+%% Author: Clay
+%% 2021/2/20
+%%
+
+\section{用RIO包健壮的读写}
+{
+    RIO提供了两类不同的函数：
+
+    \begin{description}
+        \item[无缓冲的输入输出函数] 这些函数直接在内存和文件之间传送数据，没有应用级缓冲。
+        \item[带缓冲的输入函数] 这些函数允许高效的从文件中读取文本行和二进制数据，这些文件的内容缓存在应用级缓冲区内。
+    \end{description}
+
+    \subsection{RIO的无缓冲的输入输出函数}
+    {
+        通过调用rio\_readn和rio\_writen函数，应用程序可以在内存和文件之间直接传送数据。
+    }
+
+    \subsection{RIO的带缓冲的输入函数}
+    {
+        rio\_readlineb从一个内部\emreg{读缓冲}复制一个文本行，当缓冲区变空时，会自动地调用read重新填满缓冲区。
+        对于既包含文本行也包含二进制数据的文件，也提供了一个rio\_readn的带缓冲区的版本，叫做rio\_readnb。
+
+        每打开一个描述符，都会调用一次rio\_readinitb函数，它将描述符fd和地址rp处的一个类型为rio\_t的读缓冲区联系起来。
+    }
+}

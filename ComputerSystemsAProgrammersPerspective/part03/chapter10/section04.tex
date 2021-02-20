@@ -1,0 +1,24 @@
+%%
+%% Author: Clay
+%% 2021/2/20
+%%
+
+\section{读和写文件}
+{
+    应用程序是通过分别调用read和write函数来执行输入和输出的。
+
+    read函数从描述符为fd的当前文件位置复制最多 $n$ 个字节到内存位置buf。
+    write函数从内存位置buf至多 $n$ 个字节到描述符fd的当前文件位置。
+
+    通过调用lseek函数，应用程序能够显示地修改当前文件的的位置。
+
+    在某些情况下，read和write传送的字节比应用程序要求的要少。
+    这些\emreg{不足值(short count)}不表示有错误。
+    出现这样情况的原因有：
+
+    \begin{description}
+        \item[读时遇到EOF]
+        \item[从终端读文本行]
+        \item[读写网络套接字(socket)和Linux管道(pipe)]
+    \end{description}
+}

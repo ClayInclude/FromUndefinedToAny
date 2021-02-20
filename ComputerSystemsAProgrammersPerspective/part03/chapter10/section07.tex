@@ -1,0 +1,15 @@
+%%
+%% Author: Clay
+%% 2021/2/20
+%%
+
+\section{读取目录内容}
+{
+    应用程序可以用readdir系列函数来读取目录的内容。
+
+    函数opendir以路径名为参数，返回指向\emreg{目录流(directory stream)}的指针。
+
+    每次对readdir的调用返回的都是指向流dirp中下一个目录项的指针。
+
+    函数closedir关闭流并释放其所有的资源。
+}

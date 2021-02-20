@@ -1,0 +1,27 @@
+%%
+%% Author: Clay
+%% 2021/2/20
+%%
+
+\section{综合：该使用哪些I/O函数}
+{
+    \begin{enumerate}
+        \item 只要有可能就使用标准I/O。
+        \item 不要使用scanf或rio\_readlineb来读二进制文件。
+        \item 对网络套接字的I/O使用RIO函数。
+    \end{enumerate}
+
+    标准I/O流，从某种意义上而言时\emreg{全双工}的，因为程序能够在同一个流上执行输入和输出。
+
+    \begin{description}
+        \item[跟在输出函数之后的输入函数] 中间需要插入对fflush、fseek、fsetpos或rewind的调用。
+        \item[跟在输入函数之后的输出函数] 中间需要插入对fseek、fsetpos或rewind的调用，除非该输入函数遇到了一个文件结束。
+    \end{description}
+
+    对套接字使用lseek函数是非法的。
+    对流I/O的第一个限制能够通过采用在每个输入操作前刷新缓冲区这样的规则来满足。
+    满足第二个限制的唯一办法是，对同一个打开的套接字描述符打开两个流，一个用来读，一个用来写。
+
+    这种方法也有问题，因为它要求程序在两个流上都要调用fclose，这样才能释放内存资源。
+    第二个close操作会失败。
+}

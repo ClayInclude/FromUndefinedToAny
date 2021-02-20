@@ -329,6 +329,26 @@ add_executable(ComputerSystemsAProgrammersPerspective_c08_p_TFGets
         ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/TFGets.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_TFGets PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c10_e_01
+        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example01.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_01 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c10_e_CopyStdIn
+        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/CopyStdIn.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_CopyStdIn PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c10_e_02
+        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example02.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_02 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c10_e_03
+        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example03.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_03 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c10_e_04
+        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example04.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_04 PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
