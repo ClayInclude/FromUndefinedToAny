@@ -349,6 +349,15 @@ add_executable(ComputerSystemsAProgrammersPerspective_c10_e_04
         ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example04.c
         ComputerSystemsAProgrammersPerspective/include/csapp.o)
 target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_04 PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c11_e_EchoClient
+        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/EchoClient.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoClient PUBLIC Threads::Threads)
+add_executable(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer
+        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/EchoServer.c
+        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/Echo.c
+        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)

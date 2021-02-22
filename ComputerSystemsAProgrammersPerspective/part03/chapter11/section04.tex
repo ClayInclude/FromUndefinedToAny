@@ -1,0 +1,87 @@
+%%
+%% Author: Clay
+%% 2021/2/22
+%%
+
+\section{套接字接口}
+{
+    \emreg{套接字接口(socket interface)}是一组函数，它们和Unix I/O函数结合起来，用以创建网络应用。
+
+    \subsection{套接字地址结构}
+    {
+        从Linux程序的角度来看，套接字就是一个有相应描述符的打开文件。
+
+        IP地址和端口号总是以网络字节顺序存放的。
+    }
+
+    \subsection{socket函数}
+    {
+        客户端和服务器使用socket函数来创建一个\emreg{套接字描述符(socket descriptor)}。
+
+        socket返回的clientfd描述符仅是部分打开的，还不能用于读写。
+    }
+
+    \subsection{connect函数}
+    {
+        客户端通过调用connect函数来建立和服务器的连接。
+    }
+
+    \subsection{bind函数}
+    {
+        bind函数告诉内核将addr中的服务器套接字地址和套接字描述符sockfd联系起来。
+    }
+
+    \subsection{listen函数}
+    {
+        客户端时发起连接请求的主动实体。
+        服务器是等待来自客户端的连接请求的被动实体。
+        默认情况下，内核会认为socket函数创建的描述对应于\emreg{主动套接字(active socket)}，它存在于一个连接的客户端。
+        服务器调用listen函数告诉内核，描述符是被服务器而不是客户端使用的。
+
+        listen函数将sockfd从一个主动套接字转化为一个\emreg{监听套接字(listening socket)}，该套接字可以接受来自客户端的连接请求。
+    }
+
+    \subsection{accept函数}
+    {
+        服务器通过调用accept函数来等待来自客户端的连接请求。
+
+        acept函数等待来自客户端的连接请求到达侦听描述符listenfd，然后在addr中填写客户端的套接字地址，并返回一个\emreg{已连接描述符(connected descriptor)}。
+    }
+
+    \subsection{主机和服务的转换}
+    {
+        Linux提供了一些强大的函数实现二进制套接字地址结构和主机名、主机地址、服务名和端口号的字符串表示之间的相互转化。
+        当和套接字接口一起使用时，这些函数能编写独立于任何特定版本的IP协议的网络程序。
+
+        \subsubsection{getaddrinfo函数}
+        {
+            getaddrinfo函数将主机名、主机地址、服务器名和端口号的字符串表示转化成套接字地质结构。
+
+            应用程序必须在最后调用freeaddrinfo，避免内存泄漏。
+        }
+
+        \subsubsection{getnameinfo}
+        {
+            getnameinfo函数和getaddrinfo是相反的，将一个套接字地址结构转换成相应的主机和服务名字符串。
+        }
+    }
+
+    \subsection{套接字接口的辅助函数}
+    {
+        \subsubsection{open\_clientfd函数}
+        {
+            客户端调用open\_clientfd函数建立与服务器的连接。
+        }
+
+        \subsubsection{open\_listenfd函数}
+        {
+            调用open\_listenfd函数，服务器创建一个监听描述符，准备好接收连接请求。
+        }
+    }
+
+    \subsection{echo客户端和服务器的示例}
+    {
+        简单的echo服务器一次只能处理一个客户端。
+        这种类型的服务器一次一个地在客户端间迭代，称为\emreg{迭代服务器(iterative server)}。
+    }
+}

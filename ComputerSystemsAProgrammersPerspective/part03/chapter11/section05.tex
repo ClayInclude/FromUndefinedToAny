@@ -1,0 +1,89 @@
+%%
+%% Author: Clay
+%% 2021/2/22
+%%
+
+\section{Web服务器}
+{
+    \subsection{Web基础}
+    {
+        Web客户端和服务器之间的交互用的是一个基于文本的应用级协议，叫做\emreg{HTTP(Hypertext Transfer Protocol, 超文本传输协议)}。
+        一个Web客户端（即\emreg{浏览器}）打开一个到服务器的因特网连接，并且请求某些\emreg{内容}。
+        服务器响应所请求的内容，然后关闭连接。
+        浏览器读取这些内容，并把它显示在屏幕上。
+
+        Web内容可以用一种叫做\emreg{HTML(Hypertext Markup Language, 超文本标记语言)}的语言来编写。
+    }
+
+    \subsubsection{Web内容}
+    {
+        对于Web客户端和服务器而言，\emreg{内容}是一个\emreg{MIME(Multipurpose Internet Mail Extensions, 多用途的网际邮件扩充协议)}类型相关的字节序列。
+
+        Web服务器以两种不同的方式向客户端提供内容：
+
+        \begin{itemize}
+            \item
+            {
+                取一个磁盘文件，并将它的内容返回给客户端。
+                磁盘文件称为\emspe{静态内容(static content)}，而返回给客户端的过程称为\emspe{服务静态内容(serving static content)}。
+            }
+            \item
+            {
+                运行一个可执行文件，并将它的输出返回给客户端。
+                运行时可执行文件产生的输出称为\emspe{动态内容(dynamic content)}，而运行程序并返回它的输出到客户端的过程称为\emspe{服务动态内容(serving dynamic content)}。
+            }
+        \end{itemize}
+
+        每条由Web服务器返回的内容都是和它管理的某个文件相关联的。
+        这些文件中的每一个都有一个唯一地名字，叫做\emreg{URL(Universal Resource Locator, 通用资源定位符)}。
+        可执行文件的URL可以在文件名后包括参数。
+        客户端使用前缀来决定与哪类服务器联系，服务器在哪里，以及它监听的端口号是多少。
+        服务器使用后缀来发现在它文件系统中的文件，并确定求的是静态内容还是动态内容。
+    }
+
+    \subsection{HTTP事务}
+    {
+        \subsubsection{HTTP请求}
+        {
+            一个\emreg{HTTP请求}的组成是这样的：
+            一个\emreg{请求行(request line)}，后面跟随零个或更多个\emreg{请求报头(request header)}，再更随意个空的文本行来终止报头列表。
+
+            一个请求行的形式是 method URI verison 。
+            请求报头位服务器提供了额外的信息，格式为 header--name: header--data 。
+        }
+
+        \subsubsection{HTTP响应}
+        {
+            一个HTTP响应的组成是这样的：
+            一个\emreg{响应行(response line)}，后面跟随着零个或更多的\emreg{响应报头(response header)}，再跟随一个\emreg{响应主体(response body)}。
+            一个响应行的格式是 version status-code status-message
+        }
+    }
+
+    \subsection{服务动态内容}
+    {
+        一个称为\emreg{CGI(Common Gateway Interface, 通用网关接口)}的实际标准解决这些问题。
+
+        \subsubsection{客户端如何将程序参数传递给服务器}
+        {
+            GET请求的参数在URI中传递。
+            POST请求的参数在请求主体中传递。
+        }
+
+        \subsubsection{服务器如何将参数传递给子进程}
+        {
+            再调用execve之前，子进程将CGI环境变量设置为参数，程序在运行时可以用getenv函数来引用。
+        }
+
+        \subsubsection{服务器如何将其他信息传给子进程}
+        {
+            CGI定义了大量的其它环境变量。
+        }
+
+        \subsubsection{子进程将它的输出发送到哪里}
+        {
+            一个CGI程序将他的动态内容发送到标准输出。
+            在子进程加载并运行CGI程序之前，它使用dup2函数将标准输出重定向到和客户端相关联的已连接描述符。
+        }
+    }
+}
