@@ -1,0 +1,60 @@
+<!-- index -->
+<!-- @author Clay -->
+<!-- @date 2021/2/26 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter02</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function sayHi()
+            {
+                console.log("Hi!");
+            }
+
+            function sayScript()
+            {
+                // 注释中都不能出现 "<" + "/script>"
+                console.log("<\/script>");
+            }
+        </script>
+
+        <!-- src 可指向外部域 -->
+        <script type="text/javascript" src="index.js">
+            // 指定了 src 后，嵌入的代码会被忽略
+            console.log("Can't see me!");
+        </script>
+
+        <script type="text/javascript">
+            <!--
+            //<![CDATA[
+            function compare(a, b)
+            {
+                if (a < b)
+                {
+                    console.log(`${a} is less than ${b}`);
+                }
+                else if (a > b)
+                {
+                    console.log(`${a} is greater than ${b}`);
+                }
+                else
+                {
+                    console.log(`${a} is equal to ${b}`);
+                }
+            }
+
+            //]]>
+            -->
+        </script>
+
+        <noscript>
+            <p>
+                本页面需要浏览器支持（启用） JavaScript 。
+            </p>
+        </noscript>
+    </body>
+</html>
