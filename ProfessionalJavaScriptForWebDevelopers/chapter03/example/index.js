@@ -200,3 +200,60 @@ function toNumber(param)
 
     return Number(param.toString());
 }
+
+// parseInt 更多的是看其是否符合数值模式，尽可能地指定基数
+// 1234
+parseInt("1234blue");
+// ES 3 认为是八进制， ES 5 认为是十进制
+parseInt("070");
+
+// parseFloat 只解析十进制
+// 0
+parseFloat("0xa");
+
+// String.prototype.length 返回的字符数包括16位字符的数目
+// 1
+console.log("\u03a3".length);
+
+// 字符串不可变
+let lang = "Java";
+lang += "Script";
+
+// "true"
+true.toString();
+// "[object Object]"
+({}).toString();
+// "string"
+"string".toString();
+// "10"
+(10).toString();
+// "1010"
+(10).toString(2);
+
+// "null"
+String(null);
+// "undefined"
+String(undefined);
+
+// 不推荐省略圆括号
+// let o = new Object();
+let o = {};
+
+// ES 中所有的数值都以 IEEE 754 64位格式存储，但位操作符先将64位的值转换为32位的整数，然后执行操作，最后将结果转回64位。
+
+// 0
+console.log(Infinity >> 0);
+// 0
+console.log(NaN >> 0);
+
+/**
+ * &&
+ * 如果第一个操作数为 false 、 null 、 NaN 或 undefined ，则返回。
+ * 否则返回第二个操作数
+ */
+
+/**
+ * ||
+ * 如果第一个为 true 或 对象、字符串，则返回。
+ * 否则返回第二个操作数
+ */

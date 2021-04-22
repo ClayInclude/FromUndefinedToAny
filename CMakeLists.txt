@@ -192,172 +192,172 @@ find_package(Threads REQUIRED)
 #add_executable(ProgrammingInC_c19_e_01 ProgrammingInC/chapter19/example/example01.c)
 #add_executable(ProgrammingInC_c19_e_03 ProgrammingInC/chapter19/example/example03.cpp)
 
-include_directories(ComputerSystemsAProgrammersPerspective/include)
-add_executable(ComputerSystemsAProgrammersPerspective_c01_e01 ComputerSystemsAProgrammersPerspective/chapter01/example/example01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_e01 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_e02 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example02.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_e03 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example03.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_e04 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example04.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_e05 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example05.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_e06 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example06.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_p01 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_p02 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice02.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_p03 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice03.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c02_p04 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice04.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c03_e_mStore
-        ComputerSystemsAProgrammersPerspective/part01/chapter03/example/main.c
-        ComputerSystemsAProgrammersPerspective/part01/chapter03/example/mStore.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c03_e01 ComputerSystemsAProgrammersPerspective/part01/chapter03/example/example01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c03_p01 ComputerSystemsAProgrammersPerspective/part01/chapter03/practice/practice01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c05_e01
-        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/example01.c
-        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c05_vec
-        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.h
-        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c05_p01 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c05_p02 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice02.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c06_e01 ComputerSystemsAProgrammersPerspective/part01/chapter06/example/example01.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Sum.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c07_e_ElfStructs ComputerSystemsAProgrammersPerspective/part02/chapter07/example/ElfStructs.c)
-add_library(ComputerSystemsAProgrammersPerspective_c07_e_LibVector
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/AddVec.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/MulVec.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main2
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main2.c
-        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Vector.h)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_HelloWorld ComputerSystemsAProgrammersPerspective/part02/chapter08/example/HelloWorld.c)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Fork
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Fork.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Fork PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ForkProb0.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb0.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid1.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid2.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb1
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb1.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb1 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Snooze
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Snooze.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Snooze PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Echo
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Echo.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Echo PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ShellEx.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Kill
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Kill.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Kill PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SigInt
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SigInt.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SigInt PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Signal
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Signal.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Signal PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SignalProb0
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SignalProb0.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SignalProb0 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask1
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ProcMask1.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask1 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask2
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ProcMask2.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask2 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitForSignal
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitForSignal.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitForSignal PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SigSuspend
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SigSuspend.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SigSuspend PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SetJump
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SetJump.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SetJump PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Restart
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Restart.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Restart PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_MyLs
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/MyLs.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_MyLs PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_MySystem
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/MySystem.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_MySystem PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_ExitCode
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/ExitCode.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_ExitCode PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_WaitSig
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/WaitSig.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_WaitSig PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_WaitPid3
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/WaitPid3.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_WaitPid3 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c08_p_TFGets
-        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/TFGets.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_TFGets PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c10_e_01
-        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example01.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_01 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c10_e_CopyStdIn
-        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/CopyStdIn.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_CopyStdIn PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c10_e_02
-        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example02.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_02 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c10_e_03
-        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example03.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_03 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c10_e_04
-        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example04.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_04 PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c11_e_EchoClient
-        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/EchoClient.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoClient PUBLIC Threads::Threads)
-add_executable(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer
-        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/EchoServer.c
-        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/Echo.c
-        ComputerSystemsAProgrammersPerspective/include/csapp.o)
-target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer PUBLIC Threads::Threads)
+#include_directories(ComputerSystemsAProgrammersPerspective/include)
+#add_executable(ComputerSystemsAProgrammersPerspective_c01_e01 ComputerSystemsAProgrammersPerspective/chapter01/example/example01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_e01 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_e02 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example02.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_e03 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example03.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_e04 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example04.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_e05 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example05.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_e06 ComputerSystemsAProgrammersPerspective/part01/chapter02/example/example06.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_p01 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_p02 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice02.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_p03 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice03.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c02_p04 ComputerSystemsAProgrammersPerspective/part01/chapter02/practice/practice04.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c03_e_mStore
+#        ComputerSystemsAProgrammersPerspective/part01/chapter03/example/main.c
+#        ComputerSystemsAProgrammersPerspective/part01/chapter03/example/mStore.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c03_e01 ComputerSystemsAProgrammersPerspective/part01/chapter03/example/example01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c03_p01 ComputerSystemsAProgrammersPerspective/part01/chapter03/practice/practice01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c05_e01
+#        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/example01.c
+#        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c05_vec
+#        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.h
+#        ComputerSystemsAProgrammersPerspective/part01/chapter05/example/vec.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c05_p01 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c05_p02 ComputerSystemsAProgrammersPerspective/part01/chapter05/practice/practice02.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c06_e01 ComputerSystemsAProgrammersPerspective/part01/chapter06/example/example01.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main
+#        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main.c
+#        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Sum.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c07_e_ElfStructs ComputerSystemsAProgrammersPerspective/part02/chapter07/example/ElfStructs.c)
+#add_library(ComputerSystemsAProgrammersPerspective_c07_e_LibVector
+#        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/AddVec.c
+#        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/MulVec.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c07_e_Main2
+#        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Main2.c
+#        ComputerSystemsAProgrammersPerspective/part02/chapter07/example/Vector.h)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_HelloWorld ComputerSystemsAProgrammersPerspective/part02/chapter08/example/HelloWorld.c)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Fork
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Fork.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Fork PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ForkProb0.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ForkProb0 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb0.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb0 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid1.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid1 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitPid2.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitPid2 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb1
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitProb1.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitProb1 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Snooze
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Snooze.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Snooze PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Echo
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Echo.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Echo PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ShellEx.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ShellEx PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Kill
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Kill.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Kill PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SigInt
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SigInt.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SigInt PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Signal
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Signal.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Signal PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SignalProb0
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SignalProb0.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SignalProb0 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask1
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ProcMask1.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask1 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask2
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/ProcMask2.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_ProcMask2 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_WaitForSignal
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/WaitForSignal.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_WaitForSignal PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SigSuspend
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SigSuspend.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SigSuspend PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_SetJump
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/SetJump.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_SetJump PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_e_Restart
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/example/Restart.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_e_Restart PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_p_MyLs
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/MyLs.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_MyLs PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_p_MySystem
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/MySystem.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_MySystem PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_p_ExitCode
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/ExitCode.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_ExitCode PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_p_WaitSig
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/WaitSig.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_WaitSig PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_p_WaitPid3
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/WaitPid3.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_WaitPid3 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c08_p_TFGets
+#        ComputerSystemsAProgrammersPerspective/part02/chapter08/practice/TFGets.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c08_p_TFGets PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c10_e_01
+#        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example01.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_01 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c10_e_CopyStdIn
+#        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/CopyStdIn.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_CopyStdIn PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c10_e_02
+#        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example02.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_02 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c10_e_03
+#        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example03.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_03 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c10_e_04
+#        ComputerSystemsAProgrammersPerspective/part03/chapter10/example/example04.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c10_e_04 PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c11_e_EchoClient
+#        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/EchoClient.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoClient PUBLIC Threads::Threads)
+#add_executable(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer
+#        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/EchoServer.c
+#        ComputerSystemsAProgrammersPerspective/part03/chapter11/example/Echo.c
+#        ComputerSystemsAProgrammersPerspective/include/csapp.o)
+#target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer PUBLIC Threads::Threads)
 
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_simpleExample
 #        OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/simpleExample.c)
@@ -369,3 +369,28 @@ target_link_libraries(ComputerSystemsAProgrammersPerspective_c11_e_EchoServer PU
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c05_rwProblemW OperatingSystemsInternalsAndDesignPrinciples/part02/chapter05/code/rwProblemW.c)
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c06_bankers OperatingSystemsInternalsAndDesignPrinciples/part02/chapter06/code/bankers.c)
 #add_executable(OperatingSystemsInternalsAndDesignPrinciples_c06_dining OperatingSystemsInternalsAndDesignPrinciples/part02/chapter06/code/dining.c)
+
+add_executable(CppPrimer_c01_e_01 CppPrimer/chapter01/example/example01.cpp)
+add_executable(CppPrimer_c01_e_02 CppPrimer/chapter01/example/example02.cpp)
+add_executable(CppPrimer_c01_e_03 CppPrimer/chapter01/example/example03.cpp)
+add_executable(CppPrimer_c01_e_04 CppPrimer/chapter01/example/example04.cpp)
+add_executable(CppPrimer_c01_e_05 CppPrimer/chapter01/example/example05.cpp)
+add_executable(CppPrimer_c01_e_06 CppPrimer/chapter01/example/example06.cpp)
+add_executable(CppPrimer_c01_e_sales CppPrimer/chapter01/example/sales.cpp
+        CppPrimer/chapter01/example/SalesItem.cpp
+        CppPrimer/chapter01/example/SalesItem.h)
+add_executable(CppPrimer_c02_e_01 CppPrimer/part01/chapter02/example/example01.cpp)
+add_executable(CppPrimer_c02_e_02 CppPrimer/part01/chapter02/example/example02.cpp)
+add_executable(CppPrimer_c02_e_03 CppPrimer/part01/chapter02/example/example03.cpp)
+add_executable(CppPrimer_c02_e_04 CppPrimer/part01/chapter02/example/example04.cpp)
+add_executable(CppPrimer_c02_e_05 CppPrimer/part01/chapter02/example/example05.cpp)
+add_executable(CppPrimer_c02_e_sales CppPrimer/part01/chapter02/example/sales.cpp
+        CppPrimer/part01/chapter02/example/SalesData.h)
+add_executable(CppPrimer_c02_p_01 CppPrimer/part01/chapter02/practice/practice01.cpp)
+add_executable(CppPrimer_c02_p_02 CppPrimer/part01/chapter02/practice/practice02.cpp)
+add_executable(CppPrimer_c02_p_03 CppPrimer/part01/chapter02/practice/practice03.cpp)
+add_executable(CppPrimer_c03_e_01 CppPrimer/part01/chapter03/example/example01.cpp)
+add_executable(CppPrimer_c03_e_02 CppPrimer/part01/chapter03/example/example02.cpp)
+add_executable(CppPrimer_c03_e_03 CppPrimer/part01/chapter03/example/example03.cpp)
+add_executable(CppPrimer_c03_e_04 CppPrimer/part01/chapter03/example/example04.cpp)
+add_executable(CppPrimer_c03_e_05 CppPrimer/part01/chapter03/example/example05.cpp)
